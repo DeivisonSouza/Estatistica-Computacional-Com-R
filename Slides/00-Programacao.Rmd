@@ -411,18 +411,31 @@ knitr::include_graphics("fig/part0/Agosto.png")
 ```
 
 ---
+## 📖 Bibliografia básica
 
-## Orientações e materias da disciplina
 <br>
 
-.font90[
-- Todo material da disciplina está disponível gratuitamente no repositório GitHub do facilitador. 
-<br><br>
-- Link para acesso ao repositório: https://github.com/DeivisonSouza/PPGBC0030-Estatistica-Computacional
-<br><br>
-- Esta é apenas a segunda versão deste material. Mas, a ideia é continuar melhorando. Portanto, toda sugestão é bem vinda!
-<br><br><br>
-]
+- **Mayer et al. (2023)**. *Estatística Computacional com R*.
+  <http://cursos.leg.ufpr.br/ecr/index.html>
+- **Morettin & Singer (2022)**. *Estatística e Ciência de Dados*.
+  <https://www.ime.usp.br/~jmsinger/MAE5755/cdados2020set30.pdf>
+- **Peng (2015)**. *Exploratory Data Analysis with R*.
+  <https://leanpub.com/exdata>
+- **Xie, Allaire & Grolemund (2021)**. *R Markdown: The Definitive Guide*.
+  <https://bookdown.org/yihui/rmarkdown/>
+- **Morettin & Bussab (2017)**. *Estatística Básica*. 9. ed.
+  <https://www.amazon.com.br/Estat%C3%ADstica-B%C3%A1sica-Wilton-Bussab/dp/8547220224>
+
+---
+
+## 📖 Bibliografia complementar
+
+<br>
+
+- **Damiani et al. (2021)**. *Ciência de Dados em R*. <https://livro.curso-r.com/>
+- **Guerra et al. (2021)**. *Ciência de Dados com R – Introdução*. <http://sillasgonzaga.com/material/cdr/>
+- **Torgo (2006)**. *Introdução à Programação em R*. <https://cran.r-project.org/>
+- **Wickham, Navarro & Pedersen (2023)**. *ggplot2: Elegant Graphics for Data Analysis*. <https://ggplot2-book.org/>
 
 <!--Slide XX -->
 ---
