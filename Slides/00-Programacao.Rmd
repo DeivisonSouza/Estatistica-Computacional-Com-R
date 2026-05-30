@@ -407,7 +407,15 @@ Email: deivisonvs@ufpa.br
 ## Cronograma .black[.font70[(**Horário: 07h30min - 13h50min**)]]
 
 ```{r, echo = FALSE, out.width='80%', fig.align='center', fig.cap='', dpi=600}
-knitr::include_graphics("fig/part0/Agosto.png")
+knitr::include_graphics("fig/part0/Junho.png")
+```
+
+---
+
+## Cronograma .black[.font70[(**Horário: 07h30min - 13h50min**)]]
+
+```{r, echo = FALSE, out.width='80%', fig.align='center', fig.cap='', dpi=600}
+knitr::include_graphics("fig/part0/Julho.png")
 ```
 
 <!-- Slide 10 -->
