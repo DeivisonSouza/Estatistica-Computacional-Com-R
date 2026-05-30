@@ -1,9 +1,9 @@
 /***********
  Slide margins and spacings
- ***********/
+ ************/
 
 .remark-slide-content {
-  padding-top: 30px;
+  padding-top: 5px;
   padding-left: 50px;
   padding-right: 50px;
 }
@@ -22,13 +22,13 @@ To specify the margin of the first title h1
 */
 
 .remark-slide-content > h1:first-of-type {
-  margin-top: 40px;
+  margin-top: 20px;
   margin-bottom: -10px;
 }
 
 .remark-slide-content > h2:first-of-type {
   color: #006633;
-  margin-top: 5px;
+  margin-top: 20px;
   margin-bottom: 10px;
 }
 
@@ -58,8 +58,8 @@ To specify the margin of the first title h1
 /* footer and header */
 
 div.my-header {
-    background-color: #ffe066;
-    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#ffcc00), color-stop(0%,#ffa73d), color-stop(0%,#ffcc00), color-stop(10%,#ffcc00), color-stop(25%,#ffe066), color-stop(100%,#ffe066));
+    background-color: #3dbb53;
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#3bb250), color-stop(0%,#2f9040), color-stop(0%,#3bb250), color-stop(10%,#3bb250), color-stop(25%,#3dbb53), color-stop(100%,#3dbb53));
     position: fixed;
     top: 0px;
     left: 0px;
@@ -74,7 +74,7 @@ div2 {
 }
 
 div3 {
-  color: #ff0000;
+  color: #DAF7A6;
   font-weight: bold;
 }
 
@@ -87,7 +87,7 @@ div3 {
 }
 
 div.my-footer {
-    background-color: #ffcc00;
+    background-color: #3dbb53;
     position: absolute;
     bottom: 0px;
     left: 0px;
@@ -235,6 +235,21 @@ div.my-footer span {
 .pull-right-15 {
   float: right;
   width: 100%;
+}
+
+.pull-left-15 {
+  float: left;
+  width: 80%;
+}
+
+.pull-left-16 {
+  float: left;
+  width: 90%;
+}
+
+.pull-right-16 {
+  float: right;
+  width: 10%;
 }
 
 
@@ -496,7 +511,7 @@ slides > slide {
   margin-bottom: 0.2em;
   margin-left: 10px;
   margin-right: 10px;
-  max-width: 900px;
+  max-width: 1000px;
   border-radius: 2px;
   padding-top: 0px;
   padding-left: 15px;
@@ -532,7 +547,7 @@ slides > slide {
   margin-bottom: 0.2em;
   margin-left: 10px;
   margin-right: 10px;
-  max-width: 1000px;
+  max-width: 1100px;
   border-radius: 2px;
   padding-top: -5px;
   padding-left: 15px;
@@ -562,7 +577,7 @@ slides > slide {
   margin-bottom: 0.2em;
   margin-left: 10px;
   margin-right: 10px;
-  max-width: 900px;
+  max-width: 1000px;
   border-radius: 2px;
   padding-top: -5px;
   padding-left: 15px;
@@ -681,20 +696,30 @@ h1 {
   padding-top: 0px;
 }
 
-h3, h4 {
-  padding-top: -15px;
+h2 {
+  padding-top: 20px;
   padding-bottom: 00px;
-  color: #00cc00;
+  color: #b83505;
   text-shadow: none;
   font-weight: 400;
   margin-left: 5px;
   margin-bottom: 0px;
 }
 
-h2 {
-  padding-top: -20px;
+h3 {
+  padding-top: -15px;
   padding-bottom: 00px;
-  color: #006633;
+  color: #dd7321;
+  text-shadow: none;
+  font-weight: 200;
+  margin-left: 5px;
+  margin-bottom: 0px;
+}
+
+h4 {
+  padding-top: -15px;
+  padding-bottom: 00px;
+  color: #ed4406;
   text-shadow: none;
   font-weight: 400;
   margin-left: 5px;
@@ -703,15 +728,15 @@ h2 {
 
 /* H1 fonts */
 .title-slide h1 {
-  color: black; /* first of type is master brand red */
+  color: #0B1F3A; /* first of type is master brand red */
   font-size: 40px;
   font-weight: bold;
-  padding-top: 30px;
+  padding-top: 20px;
   padding-left: 0px;
   padding-right: 0px;
   padding-bottom: 50px;
   margin-left: 0px;
-  margin-top: 0px;
+  margin-top: -5px;
   text-align: center;
   vertical-align: middle;
 }
@@ -719,12 +744,12 @@ h2 {
 
 /* H2 fonts */
 .title-slide h2 {
-  color: black !important; /* first of type is master brand red */
+  color: #1B5E20 !important; /* first of type is master brand red */
   font-size: 50px;
   font-weight: bold;
-  padding-top: 70px;
+  padding-top: 30px;
   padding-left: 0px;
-  padding-bottom: 50px;
+  padding-bottom: 0px;
   margin-top: 0px;
   margin-left: 0px;
   text-align: center;
@@ -733,21 +758,21 @@ h2 {
 
 /* H3 fonts */
 .title-slide h3 {
-  font-size: 28px;
+  font-size: 48px;
   font-weight: normal;
   color: #00cc00;
   padding-left: 20px;
   margin: 0px;
   line-height: 1;
   text-align: left;
-  margin-left: 70px;
+  margin-left: 50px;
   vertical-align: middle;
 }
 
 
 /* H4 fonts */
 .title-slide h4 {
-  color: black !important;
+  color: white !important;
   font-size: 20px;
   font-weight: normal;
   padding-top: 0px;
@@ -761,7 +786,7 @@ h2 {
 
 /* H5 fonts */
 .title-slide h5 {
-  color: black !important;
+  color: #1B5E20 !important;
   font-size: 15px;
   font-weight: normal;
   padding-top: 0px;
@@ -769,6 +794,21 @@ h2 {
   padding-bottom: 0px;
   margin-bottom: 0px;
   margin-top: 0px;
+  margin-left: 0px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* H6 fonts */
+.title-slide h6 {
+  color: orange !important;
+  font-size: 25px;
+  font-weight: normal;
+  padding-top: 0px;
+  padding-left: 0px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  margin-top: -5px;
   margin-left: 0px;
   text-align: center;
   vertical-align: middle;
@@ -864,6 +904,11 @@ ul li::before {
   left: 50%;
   /*-ms-transform: translate(-50%, -50%);*/
   transform: translate(-50%, -5%);
+}
+
+.landscape {
+    height: 30px;
+    width: 80px;
 }
 
 /* if wanted to change mathjax formatting
