@@ -78,10 +78,10 @@ library(readr)
 library(xaringanExtra)
 
 use_logo(
-  image_url = "fig/slide-title/LMFTCA_hor.png",
-  position = css_position(top = "1.3em", right = ".1em"),
-  width = "250px",
-  height = "250px")
+  image_url = "fig/slide-title/LMFTCA_vert.png",
+  position = css_position(top = "1.3em", right = "-1.5em"),
+  width = "150px",
+  height = "150px")
 
 
 use_scribble() # para escrever nos slides
