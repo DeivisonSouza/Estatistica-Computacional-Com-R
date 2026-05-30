@@ -4,7 +4,7 @@
     <title>Estatística Computacional (PPGBC0030)</title>
     <meta charset="utf-8" />
     <meta name="author" content="Prof. Dr. Deivison Venicio Souza" />
-    <script src="01-Introducao-RBase_files/header-attrs-2.24/header-attrs.js"></script>
+    <script src="01-Introducao-RBase_files/header-attrs-2.29/header-attrs.js"></script>
     <link href="01-Introducao-RBase_files/remark-css-0.0.1/default.css" rel="stylesheet" />
     <script src="01-Introducao-RBase_files/fabric-4.3.1/fabric.min.js"></script>
     <link href="01-Introducao-RBase_files/xaringanExtra-scribble-0.0.1/scribble.css" rel="stylesheet" />
@@ -17,7 +17,7 @@
     <script src="01-Introducao-RBase_files/xaringanExtra-shareagain-0.2.6/shareagain.js"></script>
     <script src="01-Introducao-RBase_files/xaringanExtra-progressBar-0.0.1/progress-bar.js"></script>
     <link href="01-Introducao-RBase_files/xaringanExtra-extra-styles-0.2.6/xaringanExtra-extra-styles.css" rel="stylesheet" />
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x803311396b845babf62733c46969ad6","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"aee0a8db54d04fdbb9f0d1a973d563eb","expires":1}</script>
     <script src="01-Introducao-RBase_files/himalaya-1.1.0/himalaya.js"></script>
     <script src="01-Introducao-RBase_files/js-cookie-3.0.0/js.cookie.js"></script>
     <link href="01-Introducao-RBase_files/editable-0.2.6/editable.css" rel="stylesheet" />
@@ -27,15 +27,15 @@
     <script>window.xaringanExtraClipboard(null, {"button":"Copy Code","success":"Copied!","error":"Press Ctrl+C to Copy"})</script>
     <link href="01-Introducao-RBase_files/font-awesome-animation-1.0/font-awesome-animation-emi.css" rel="stylesheet" />
     <script src="01-Introducao-RBase_files/fontawesome-5.0.13/js/fontawesome-all.min.js"></script>
-    <script src="01-Introducao-RBase_files/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+    <script src="01-Introducao-RBase_files/htmlwidgets-1.6.4/htmlwidgets.js"></script>
     <link href="01-Introducao-RBase_files/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-    <script src="01-Introducao-RBase_files/datatables-binding-0.29/datatables.js"></script>
+    <script src="01-Introducao-RBase_files/datatables-binding-0.33/datatables.js"></script>
     <script src="01-Introducao-RBase_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-    <link href="01-Introducao-RBase_files/dt-core-1.13.4/css/jquery.dataTables.min.css" rel="stylesheet" />
-    <link href="01-Introducao-RBase_files/dt-core-1.13.4/css/jquery.dataTables.extra.css" rel="stylesheet" />
-    <script src="01-Introducao-RBase_files/dt-core-1.13.4/js/jquery.dataTables.min.js"></script>
-    <link href="01-Introducao-RBase_files/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
-    <script src="01-Introducao-RBase_files/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+    <link href="01-Introducao-RBase_files/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="01-Introducao-RBase_files/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet" />
+    <script src="01-Introducao-RBase_files/dt-core-1.13.6/js/jquery.dataTables.min.js"></script>
+    <link href="01-Introducao-RBase_files/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet" />
+    <script src="01-Introducao-RBase_files/crosstalk-1.2.1/js/crosstalk.min.js"></script>
     <script type="text/x-mathjax-config">
       MathJax.Hub.Config({
         TeX: { equationNumbers: { autoNumber: "AMS" } },
@@ -158,7 +158,7 @@ top:1em;right:.5em;
 ##### Faculdade de Engenharia Florestal
 ##### E-mail: deivisonvs@ufpa.br
 &lt;br&gt;
-##### 1ª versão: 14/outubro/2022 &lt;br&gt; (Atualizado em: 19/agosto/2024)
+##### 1ª versão: 14/outubro/2022 &lt;br&gt; (Atualizado em: 16/abril/2026)
 
 ---
 
@@ -358,8 +358,8 @@ Veja na tabela a seguir os principais espelhos disponíveis no Brasil.
 &lt;br&gt;&lt;br&gt;
 
 .center2[
-<div id="htmlwidget-d7957c199ce8b21b7a5d" style="width:750px;height:auto;" class="datatables html-widget "></div>
-<script type="application/json" data-for="htmlwidget-d7957c199ce8b21b7a5d">{"x":{"filter":"none","vertical":false,"caption":"<caption><\/caption>","editable":{"target":"cell","disable":{"columns":null},"numeric":[],"date":[]},"data":[["http://cran-r.c3sl.ufpr.br/","http://nbcgib.uesc.br/mirrors/cran/","https://cran.fiocruz.br/","https://vps.fmvz.usp.br/CRAN/","http://brieger.esalq.usp.br/CRAN/"],["Universidade Federal do Paraná - UFPR","Center for Comp Biol at Universidade Estadual de Santa Cruz","Oswaldo Cruz Foundation, Rio de Janeiro","University of São Paulo, São Paulo","University of São Paulo, Piracicaba"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Link<\/th>\n      <th>Instituição<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":10,"dom":"tip","autoWidth":false,"initComplete":"function(settings, json) {\n$(this.api().table().container()).css({'font-size': '12pt'});\n}","columnDefs":[],"order":[],"orderClasses":false}},"evals":["options.initComplete"],"jsHooks":[]}</script>
+<div id="htmlwidget-5d0682f4097cf074474f" style="width:750px;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-5d0682f4097cf074474f">{"x":{"filter":"none","vertical":false,"caption":"<caption><\/caption>","editable":{"target":"cell","disable":{"columns":null},"numeric":[],"date":[]},"data":[["http://cran-r.c3sl.ufpr.br/","http://nbcgib.uesc.br/mirrors/cran/","https://cran.fiocruz.br/","https://vps.fmvz.usp.br/CRAN/","http://brieger.esalq.usp.br/CRAN/"],["Universidade Federal do Paraná - UFPR","Center for Comp Biol at Universidade Estadual de Santa Cruz","Oswaldo Cruz Foundation, Rio de Janeiro","University of São Paulo, São Paulo","University of São Paulo, Piracicaba"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Link<\/th>\n      <th>Instituição<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":10,"dom":"tip","autoWidth":false,"initComplete":"function(settings, json) {\n$(this.api().table().container()).css({'font-size': '12pt'});\n}","columnDefs":[{"name":"Link","targets":0},{"name":"Instituição","targets":1}],"order":[],"orderClasses":false}},"evals":["options.initComplete"],"jsHooks":[]}</script>
 ]
 
 ---
@@ -597,13 +597,13 @@ Usada para criar vetores diretamente no R Console.
 .pull-left-4[
 **Classe "character"**
 
-```r
+``` r
 # Cria um vetor
 c("Acapu", "Araucaria", "Mogno", "Cedro")
 ```
 
 
-```r
+``` r
 # Cria um vetor e faz atribuição
 especie &lt;- c("Acapu", "Mogno", "Cedro", "Ipe")
 #class(especie)
@@ -613,13 +613,13 @@ especie &lt;- c("Acapu", "Mogno", "Cedro", "Ipe")
 .pull-right-4[
 **Classe "numeric"**
 
-```r
+``` r
 # Cria um vetor
 c(23.0, 27.0, 33.6, 42.6, 52.1)
 ```
 
 
-```r
+``` r
 # Cria um vetor e faz atribuição
 diametro &lt;- c(23.0, 27.0, 33.6, 42.6, 52.1)
 #class(diametro)
@@ -646,7 +646,7 @@ diametro &lt;- c(23.0, 27.0, 33.6, 42.6, 52.1)
 
 .pull-right-10[
 
-```r
+``` r
 # Cria um vetor - Fitofisionomia
 (Fito &lt;- c("FOM", "FOA", "FOM", "FOM", "FOM", "FOA"))
 ## [1] "FOM" "FOA" "FOM" "FOM" "FOM" "FOA"
@@ -655,7 +655,7 @@ class(Fito)
 ```
 
 
-```r
+``` r
 # Codifica para "factor"
 Fito &lt;- c("FOM", "FOA", "FOM", "FOM", "FOM", "FOA")
 (Fito &lt;- factor(Fito))
@@ -686,7 +686,7 @@ class(Fito)
 .font90[
 **Níveis do mês não ordenados**
 
-```r
+``` r
 (mes &lt;- factor(
   c("Janeiro", "Abril", "Julho", "Outubro")
   ))
@@ -697,7 +697,7 @@ class(Fito)
 **Níveis do mês ordenados**
 
 
-```r
+``` r
 (mes &lt;- 
    factor(x = mes,
           levels = c("Janeiro", "Abril", 
@@ -745,7 +745,7 @@ class(Fito)
 .pull-top[
 .pull-left-4[
 
-```r
+``` r
 # 1 a 10, com intervalo 1.
 seq(10)
 
@@ -812,7 +812,7 @@ seq(along.with = especie)
 .pull-left-4[
 .font90[
 
-```r
+``` r
 # Repete a sequência de 1 a 4 (2x).
 rep(x = 1:4, 2)
 
@@ -941,13 +941,13 @@ name: mat
 .pull-left-4[
 .font90[
 
-```r
+``` r
 # Cria uma matriz de 1 a 6, com 2 linhas e 3 colunas
 (mat1 &lt;- matrix(data=1:6, nrow=2, ncol=3))
 ```
 
 
-```r
+``` r
 # Atribui nomes às linhas e colunas
 rownames(mat1) &lt;- c("L1","L2"); print(mat1)
 
@@ -996,7 +996,7 @@ colnames(mat1) &lt;- c("C1","C2","C3"); print(mat1)
 
 .pull-left-4[
 
-```r
+``` r
 (mat2 &lt;- 
    matrix(data=1:6, nrow=2, 
           ncol=3, byrow=TRUE,
@@ -1079,7 +1079,7 @@ name: arrays
 .pull-left-4[
 .font90[
 
-```r
+``` r
 # Cria um array sem elementos
 (ar1 &lt;- array(dim = c(3, 2, 2)))
 
@@ -1123,7 +1123,7 @@ name: arrays
 .pull-left-4[
 .font90[
 
-```r
+``` r
 # Cria um array com elementos
 (ar2 &lt;- array(data = 1:12, dim = c(3, 2, 2)))
 ```
@@ -1166,7 +1166,7 @@ name: arrays
 .pull-left-4[
 .font90[
 
-```r
+``` r
 # Cria um array a partir de vetores de 
 # tamanhos diferentes
 vect1 &lt;- c(3, 6, 1)
@@ -1210,7 +1210,7 @@ vect2 &lt;- c(15, 18, 13, 11, 17, 16)
 .pull-left-4[
 .font90[
 
-```r
+``` r
 # Nomeando linhas, colunas e matrizes do array
 array(c(vect1, vect2),
       dim = c(3, 3, 2),
@@ -1294,7 +1294,7 @@ Use o comando x &lt;- edit(data.frame()) e crie a tabela a seguir:
 .font90[
 **Cria um data frame a partir de vetores existentes**
 
-```r
+``` r
 especie &lt;- c("Acapu", "Araucaria", "Cedro", "Tauari")
 diametro &lt;- c(23.0, 27.0, 33.6, 52.6)
 altura &lt;- c(8.4, 8.7, 9.1, 18.2)
@@ -1322,7 +1322,7 @@ cortar &lt;- c("Não", "Não", "Não", "Sim")
 .font90[
 **Cria um data frame com apenas um comando**
 
-```r
+``` r
 (invFlor2 &lt;- 
   data.frame(
     especie=c("Acapu", "Araucaria", "Cedro", "Tauari"),
@@ -1369,7 +1369,7 @@ função list().
 .pull-left-4[
 **Uma lista a partir de objetos já existentes**
 
-```r
+``` r
 especie &lt;- c("Acapu", "Mogno", "Cedro", "Ipe")
 diametro &lt;- c(23.0, 27.0, 33.6, 52.6)
 altura &lt;- c(8.4, 8.7, 9.1, 18.2)
@@ -1424,7 +1424,7 @@ altura &lt;- c(8.4, 8.7, 9.1, 18.2)
 .font90[
 **Uma lista com diferentes estruturas de dados**
 
-```r
+``` r
 diametro &lt;- c(23.0, 27.0, 33.6, 52.6)
 
 mat &lt;- 
@@ -1492,7 +1492,7 @@ a função .green[as.data.frame()].
 .pull-right-4[
 **Lista para Data Frame**
 
-```r
+``` r
 # Criando lista nomeada
 list4 &lt;- list(
   Esp = c("Acapu", "Mogno", "Cedro", "Ipe"),
@@ -1569,7 +1569,7 @@ name: IndV
 .font90[
 **Extração por indexação positiva**
 
-```r
+``` r
 # cria os vetores
 especie &lt;- c("Acapu", "Mogno", "Cedro", "Ipe")
 diametro &lt;- c(23.0, 27.0, 33.6, 42.6)
@@ -1622,7 +1622,7 @@ diametro[seq(from = 1, to = 4, by = 1)]
 .font90[
 **Extração por indexação negativa**
 
-```r
+``` r
 # cria os vetores
 especie &lt;- c("Acapu", "Mogno", "Cedro", "Ipe")
 diametro &lt;- c(23.0, 27.0, 33.6, 42.6)
@@ -1668,7 +1668,7 @@ especie[-c(1,3,5)]
 .font90[
 **Extração por indexação lógica**
 
-```r
+``` r
 Especie &lt;- c("Mogno", "Cedro", "Ipe", "Tauari")
 Diametro &lt;- c(23.0, 27.0, 33.6, 42.6, 52.1)
 
@@ -1706,7 +1706,7 @@ Diametro[Diametro &gt;= 50]
 .font90[
 
 
-```r
+``` r
 Especie &lt;- c("Mogno", "Cedro", "Ipe", NA, NA)
 Diametro &lt;- c(23.0, 27.0, 33.6, 42.6, 52.1)
 
@@ -1766,7 +1766,7 @@ name: IndM
 .font90[
 **Extração por indexação positiva**
 
-```r
+``` r
 # Cria uma matriz
 (mat &lt;- 
   matrix(1:6, nrow=2, ncol=3, byrow = TRUE,
@@ -1833,7 +1833,7 @@ mat[c(1, 2), c(2, 3)]
 .font90[
 **Extração por indexação negativa**
 
-```r
+``` r
 # Cria uma matriz
 (mat &lt;- 
   matrix(1:6, nrow=2, ncol=3, byrow = TRUE,
@@ -1885,7 +1885,7 @@ mat[, -2]
 .font90[
 **Substituição de elementos na matriz**
 
-```r
+``` r
 # Cria uma matriz
 (mat &lt;- 
   matrix(1:6, nrow=2, ncol=3, byrow = TRUE,
@@ -1951,7 +1951,7 @@ name: iae
 .font90[
 **Extração por indexação positiva**
 
-```r
+``` r
 # Cria um array
 arr &lt;- array(1:18,
       dim = c(3, 3, 2),
@@ -2001,7 +2001,7 @@ arr[ , , 2]
 .font90[
 **Extração por indexação positiva**
 
-```r
+``` r
 
 # extrai 1ª linha da matriz "M1"
 arr[1, , 1]
@@ -2057,7 +2057,7 @@ arr[1, 2, 1]
 .font90[
 **Extração por indexação negativa**
 
-```r
+``` r
 
 # extrai matriz, exceto a 1ª
 arr[ , , -1]   
@@ -2106,7 +2106,7 @@ arr[1, -2, -2]
 .font90[
 **Substituição de elementos**
 
-```r
+``` r
 # Substitui o elemento da 1ª linha e 1ª coluna 
 # da matriz 1
 arr[1, 1, 1] &lt;- 0; print(arr)
@@ -2149,7 +2149,7 @@ arr[1, 1, 1] &lt;- 0; print(arr)
 .font90[
 **Substituição de elementos**
 
-```r
+``` r
 # Substitui todos os elementos da 1ª linha 
 # da matriz 2
 arr[1, , 2] &lt;- c(50,60,70); print(arr)
@@ -2204,7 +2204,7 @@ name: IndDF
 .font90[
 **Extração de elementos do data frame**
 
-```r
+``` r
 (invFlor &lt;- 
   data.frame(
     especie=c("Acapu", "Mogno", "Cedro", "Tauari"),
@@ -2268,7 +2268,7 @@ invFlor[, 2, drop=FALSE]
 .font90[
 **Extração de elementos do data frame**
 
-```r
+``` r
 (invFlor &lt;- 
   data.frame(
     especie=c("Acapu", "Mogno", "Cedro", "Tauari"),
@@ -2335,7 +2335,7 @@ invFlor[, c("cortar", "especie")]
 .font90[
 **Extração de elementos do data frame**
 
-```r
+``` r
 (invFlor &lt;- 
   data.frame(
     especie=c("Acapu", "Mogno", "Cedro", "Tauari"),
@@ -2389,7 +2389,7 @@ invFlor$altura[c(3,4)]
 .font90[
 **Extração de elementos do data frame**
 
-```r
+``` r
 (invFlor &lt;- 
   data.frame(
     especie=c("Acapu", "Mogno", "Cedro", "Tauari"),
@@ -2452,7 +2452,7 @@ invFlor$cortar == "Sim"
 .font80[
 **Extração de elementos do data frame**
 
-```r
+``` r
 (invFlor &lt;- 
   data.frame(
     especie=c("Acapu", "Mogno", "Cedro", "Tauari"),
@@ -2525,7 +2525,7 @@ invFlor[invFlor$diametro &lt; 50 &amp; invFlor$cortar == "Não", ]
 .pull-left-4[
 .font80[
 
-```r
+``` r
 (invFlor &lt;- 
   data.frame(
     especie=c("Acapu", "Mogno", "Cedro", "Tauari"),
@@ -2602,7 +2602,7 @@ name: IndL
 .font90[
 **Lista com níveis superiores não nomeados**
 
-```r
+``` r
 diametro &lt;- c(23.0, 27.0, 33.6, 52.6)
 
 invFlor &lt;- 
@@ -2672,7 +2672,7 @@ list[[2]]$especie
 .font90[
 **Lista com níveis superiores nomeados**
 
-```r
+``` r
 diametro &lt;- c(23.0, 27.0, 33.6, 52.6)
 
 invFlor &lt;- 
@@ -2785,7 +2785,7 @@ das chaves .green[\{\}], e este irá trabalhar sobre os argumentos da função.
 .blue[**1. Função para calcular a média aritmética de um vetor x**].
 
 
-```r
+``` r
 # Criando uma função
 
 Media &lt;- function(x){
@@ -2795,6 +2795,7 @@ Media &lt;- function(x){
   
   return(Media)                                
 }
+
 ```
 &lt;br&gt;&lt;br&gt;
 
@@ -2815,7 +2816,7 @@ Media &lt;- function(x){
 **Dado um vetor de diâmetros de árvores pode-se calcular a média usando a função:**
 
 
-```r
+``` r
 diametro &lt;- c(23.4, 54.3, 45.1, 67.1, 34.7)
 Media(diametro)
 ## [1] 44.92
@@ -2841,7 +2842,7 @@ mean(diametro) # R-base
 .blue[**2. Função para calcular o coeficiente de variação de um vetor x**].
 
 
-```r
+``` r
 # Criando uma função para CV
 
 CV &lt;- function(x){
@@ -2851,6 +2852,7 @@ CV &lt;- function(x){
   
   return(CV)                                                                            
 }
+
 ```
 &lt;br&gt;
 
@@ -2868,7 +2870,7 @@ CV &lt;- function(x){
 **Dado um vetor de diâmetros de árvores pode-se calcular o CV usando a função:**
 
 
-```r
+``` r
 diametro &lt;- c(23.4, 54.3, 45.1, 67.1, 34.7)
 CV(diametro)
 ## [1] 37.70612
@@ -2914,7 +2916,7 @@ name: Sint
 
 .pull-left[
 
-```r
+``` r
 "a" == "A"
 "mogno" == "Mogno"
 
@@ -2957,7 +2959,7 @@ Se uma atribuições é um comando, então o R: .blue[avalia], .blue[atribui] o 
 
 .pull-left[
 
-```r
+``` r
 # Atribuição: Avalia, atribui e suprime
 DAP &lt;- c(49, 56, 44, 46, 56, 
          87, 45, 98, 100, 120)
@@ -3070,7 +3072,7 @@ name: arit
 .pull-left[
 .font80[
 
-```r
+``` r
 2+3             # adição
 4*9             # multiplicação
 20/5            # divisão
@@ -3081,13 +3083,13 @@ name: arit
 ```
 
 
-```r
+``` r
 (x &lt;- c(2,4,6,8))
 (y &lt;- c(1,5,9,0))
 ```
 
 
-```r
+``` r
 x + y
 y/x+2
 ```
@@ -3134,7 +3136,7 @@ Acesse o script: [01-R-Operadores](https://deivisonsouza.github.io/FL03034-EF/Sl
 
 .pull-left[
 
-```r
+``` r
 (2+3)*10
 4*3**3
 5+8-4*9/3
@@ -3168,7 +3170,7 @@ name: relac
 .pull-left-9[
 .font80[
 
-```r
+``` r
 # vetor com um elemento
 (x &lt;- 20)
 (y &lt;- 10)
@@ -3180,7 +3182,7 @@ name: relac
 ```
 
 
-```r
+``` r
 x &gt; y        # x é maior do que y?
 x &lt; y        # x é menor do que y?
 x != y       # x é diferente de y?
@@ -3237,7 +3239,7 @@ Considere um vetor de nomes de espécies florestais...
 .pull-left-9[
 .font80[
 
-```r
+``` r
 especie &lt;- 
    c("Vouacapoua-americana", "Cedrela-odorata",
      "Bertholletia-excelsa", "Dinizia-excelsa Ducke",
@@ -3278,7 +3280,7 @@ Essas espécies estão classificadas na categoria Vulnerável (VU), conforme a [
 
 .pull-left-9[
 
-```r
+``` r
 especie &lt;- 
    c("Vouacapoua-americana", "Cedrela-odorata",
      "Bertholletia-excelsa", "Dinizia-excelsa Ducke",
@@ -3330,8 +3332,8 @@ name: log
 ]
 
 .pull-right-5[
-<div id="htmlwidget-7a0195e74afe7a28c0d7" style="width:1000px;height:auto;" class="datatables html-widget "></div>
-<script type="application/json" data-for="htmlwidget-7a0195e74afe7a28c0d7">{"x":{"filter":"none","vertical":false,"caption":"<caption>Dados fictícios para 10 árvores de duas espécies florestais.<\/caption>","editable":{"target":"cell","disable":{"columns":null},"numeric":[1,2,4],"date":[]},"data":[["Swietenia macrophylla","Swietenia macrophylla","Swietenia macrophylla","Hymenolobium petraeum","Hymenolobium petraeum","Hymenolobium petraeum","Hymenolobium petraeum","Hymenolobium petraeum","Swietenia macrophylla","Swietenia macrophylla"],[33.6,42.6,52.1,80.3,90.8,49.4,70.5,100.5,60.7,27.1],[9.1,13.2,15.4,18.6,19.5,16.8,17.9,22.4,15.3,8.699999999999999],["Sim","Não","Sim","Não","Sim","Não","Sim","Não","Sim","Sim"],[2,1,3,1,2,1,2,3,1,3],["Protegida","Protegida","Protegida","Explorar","Explorar","Remanescente","Explorar","Remanescente","Protegida","Protegida"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Especie<\/th>\n      <th>DAP<\/th>\n      <th>H<\/th>\n      <th>Cipo<\/th>\n      <th>QF<\/th>\n      <th>Selecao<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":10,"dom":"tip","autoWidth":true,"initComplete":"function(settings, json) {\n$(this.api().table().container()).css({'font-size': '12pt'});\n}","columnDefs":[{"className":"dt-right","targets":[1,2,4]}],"order":[],"orderClasses":false}},"evals":["options.initComplete"],"jsHooks":[]}</script>
+<div id="htmlwidget-9da7e028bb06e3e14a1b" style="width:1000px;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-9da7e028bb06e3e14a1b">{"x":{"filter":"none","vertical":false,"caption":"<caption>Dados fictícios para 10 árvores de duas espécies florestais.<\/caption>","editable":{"target":"cell","disable":{"columns":null},"numeric":[1,2,4],"date":[]},"data":[["Swietenia macrophylla","Swietenia macrophylla","Swietenia macrophylla","Hymenolobium petraeum","Hymenolobium petraeum","Hymenolobium petraeum","Hymenolobium petraeum","Hymenolobium petraeum","Swietenia macrophylla","Swietenia macrophylla"],[33.6,42.6,52.1,80.3,90.8,49.4,70.5,100.5,60.7,27.1],[9.1,13.2,15.4,18.6,19.5,16.8,17.9,22.4,15.3,8.699999999999999],["Sim","Não","Sim","Não","Sim","Não","Sim","Não","Sim","Sim"],[2,1,3,1,2,1,2,3,1,3],["Protegida","Protegida","Protegida","Explorar","Explorar","Remanescente","Explorar","Remanescente","Protegida","Protegida"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Especie<\/th>\n      <th>DAP<\/th>\n      <th>H<\/th>\n      <th>Cipo<\/th>\n      <th>QF<\/th>\n      <th>Selecao<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":10,"dom":"tip","autoWidth":true,"initComplete":"function(settings, json) {\n$(this.api().table().container()).css({'font-size': '12pt'});\n}","columnDefs":[{"className":"dt-right","targets":[1,2,4]},{"name":"Especie","targets":0},{"name":"DAP","targets":1},{"name":"H","targets":2},{"name":"Cipo","targets":3},{"name":"QF","targets":4},{"name":"Selecao","targets":5}],"order":[],"orderClasses":false}},"evals":["options.initComplete"],"jsHooks":[]}</script>
 
 ]
 
@@ -3351,7 +3353,7 @@ Use o operador lógico `&amp;` para responder as questões a seguir:
 --
 
 
-```r
+``` r
 data$DAP &gt;= 50 &amp; data$QF == 1
 #data[data$DAP &gt;= 50 &amp; data$QF == 1, ]
 ```
@@ -3385,7 +3387,7 @@ A [Resolução CONAMA nº 406 de 02/02/2009](http://www2.mma.gov.br/port/conama/
 --
 
 
-```r
+``` r
 data$Cipo == "Não" &amp; data$QF == 1 &amp; data$DAP &gt;= 50
 #data[data$Cipo == "Não" &amp; data$QF == 1 &amp; data$DAP &gt;= 50,]
 ```
@@ -3402,7 +3404,7 @@ data$Cipo == "Não" &amp; data$QF == 1 &amp; data$DAP &gt;= 50
 
 --
 
-```r
+``` r
 data$Selecao == "Explorar" &amp; data$QF == 1
 #data[data$Selecao == "Explorar" &amp; data$QF == 1, ]
 ```
@@ -3494,14 +3496,14 @@ background-size: cover
 <script src="assets/remark-zoom.js"></script>
 <script src="https://platform.twitter.com/widgets.js"></script>
 <script>var slideshow = remark.create({
-"highlightStyle": "github",
-"highlightLines": true,
-"countIncrementalSlides": false,
-"highlightLanguage": ["r", "css", "yaml"],
-"ratio": "16:9",
-"navigation": {
-"scroll": false
-}
+  "highlightStyle": "github",
+  "highlightLines": true,
+  "countIncrementalSlides": false,
+  "highlightLanguage": ["r", "css", "yaml"],
+  "ratio": "16:9",
+  "navigation": {
+    "scroll": false
+  }
 });
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   window.dispatchEvent(new Event('resize'));
