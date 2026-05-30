@@ -58,8 +58,8 @@ To specify the margin of the first title h1
 /* footer and header */
 
 div.my-header {
-    background-color: #3dbb53;
-    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#3bb250), color-stop(0%,#2f9040), color-stop(0%,#3bb250), color-stop(10%,#3bb250), color-stop(25%,#3dbb53), color-stop(100%,#3dbb53));
+    background-color: #E6C229;
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#D4B106), color-stop(0%,#E6C229), color-stop(0%,#E6C229), color-stop(10%,#E6C229), color-stop(25%,#F0D85C), color-stop(100%,#F0D85C));
     position: fixed;
     top: 0px;
     left: 0px;
@@ -74,7 +74,7 @@ div2 {
 }
 
 div3 {
-  color: #DAF7A6;
+  color: #0B2545;
   font-weight: bold;
 }
 
@@ -87,7 +87,7 @@ div3 {
 }
 
 div.my-footer {
-    background-color: #3dbb53;
+    background-color: #F0D85C;
     position: absolute;
     bottom: 0px;
     left: 0px;

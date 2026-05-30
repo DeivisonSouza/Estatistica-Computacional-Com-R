@@ -78,10 +78,10 @@ library(readr)
 library(xaringanExtra)
 
 use_logo(
-  image_url = "fig/slide-title/LMFTCA.png",
-  position = css_position(top = "1em", right = ".5em"),
-  width = "130px",
-  height = "130px")
+  image_url = "fig/slide-title/LMFTCA_hor.png",
+  position = css_position(top = "1.3em", right = ".1em"),
+  width = "250px",
+  height = "250px")
 
 
 use_scribble() # para escrever nos slides
@@ -121,7 +121,7 @@ use_clipboard()
 layout: true
 class: with-logo logo-ufpa
 <div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R (PPGBC0030)</div3>/ <div2>Programação e Orientações</div2> </div>
+<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Programação da disciplina</div2> </div>
 
 ---
 
@@ -257,123 +257,158 @@ Email: deivisonvs@ufpa.br
 ✔️ *Site do IJ*:
 [https://institutojuma.org/](https://institutojuma.org/)
 
+
+<!-- Slide 7 -->
+---
+
+## 📚 Ementa da disciplina
+<br>
+.shadow4[
+.font80[
+**Módulo 1 – Introdução ao R-base e Motivação**
+
+&nbsp;&nbsp;&nbsp;&nbsp; 1.1 - Motivação Para Usar Linguagem de Programação;
+
+&nbsp;&nbsp;&nbsp;&nbsp; 1.2 - Sintaxe da Linguagem R, RGui e o IDE Rstudio;
+
+&nbsp;&nbsp;&nbsp;&nbsp; 1.3 - Estrutura de Dados;
+
+&nbsp;&nbsp;&nbsp;&nbsp; 1.4 - Indexação no R;
+
+&nbsp;&nbsp;&nbsp;&nbsp; 1.5 - Construção de Funções no R; e
+
+&nbsp;&nbsp;&nbsp;&nbsp; 1.6 - Operadores Aritméticos, Relacionais e Lógicos
+
+]
+]
+
+---
+
+## 📚 Ementa da disciplina
+
+<br>
+
+.shadow4[
+.font80[
+**Módulo 2 – Importação, Exportação, Manipulação e Visualização de Dados (Framework Tidyverse)**
+
+&nbsp;&nbsp;&nbsp;&nbsp; 2.1 - Importação e Exportação de Dados (Pacote readr);
+
+&nbsp;&nbsp;&nbsp;&nbsp; 2.2 - Importação de Dados Usando a Interface Gráfica do RStudio;
+
+&nbsp;&nbsp;&nbsp;&nbsp; 2.3 - Manipulação de Dados (Pacote dplyr);
+
+&nbsp;&nbsp;&nbsp;&nbsp; 2.4 - Visualização de Dados (Pacote ggplot2); e
+
+&nbsp;&nbsp;&nbsp;&nbsp; 2.5 - Combinação de Gráficos (Pacote Patchwork).
+]
+]
+
+<br>
+
+.pull-bottom[
+<center>
+
+<img src="https://readr.tidyverse.org/logo.png" width="120">
+&nbsp;&nbsp;&nbsp;
+<img src="https://dplyr.tidyverse.org/logo.png" width="120">
+&nbsp;&nbsp;&nbsp;
+<img src="https://ggplot2.tidyverse.org/logo.png" width="120">
+&nbsp;&nbsp;&nbsp;
+<img src="https://patchwork.data-imaginist.com/reference/figures/logo.png" width="120">
+
+</center>
+]
+
+
+---
+
+## 📚 Ementa da disciplina
+
+<br>
+
+.shadow4[
+.font80[
+**Módulo 3 – Análise Exploratória de Dados**
+
+&nbsp;&nbsp;&nbsp;&nbsp; 3.1 - Funções do R-base para Estatística Descritiva;
+
+&nbsp;&nbsp;&nbsp;&nbsp; 3.2 - Pacotes em R para Estatística Descritiva; e
+
+&nbsp;&nbsp;&nbsp;&nbsp; 3.3 - Estudos de Caso: Iris Flower e Milsa
+]
+]
+
+<br>
+
+.pull-bottom[
+<div style="display:flex; align-items:center; justify-content:space-around;">
+
+<div style="width:30%; text-align:center;">
+<img src="fig/part5/atributos.png" width="250">
+<br>
+<small><b>Iris Flower</b></small>
+</div>
+
+<div style="width:85%; text-align:center;">
+
+<span style="font-size:22px; font-weight:bold;">DataExplorer</span>
+&nbsp;&nbsp;&nbsp;
+<span style="font-size:22px; font-weight:bold;">GGally</span>
+
+<br><br>
+
+<span style="font-size:22px; font-weight:bold;">SmartEDA</span>
+&nbsp;&nbsp;&nbsp;
+<span style="font-size:22px; font-weight:bold;">psych</span>
+
+<br><br>
+
+<span style="font-size:22px; font-weight:bold;">summarytools</span>
+
+</div>
+
+</div>
+]
+
+---
+
+## 📚 Ementa da disciplina
+
+<br><br>
+
+.shadow4[
+.font80[
+**Módulo 4 – Produção de Relatórios Dinâmicos**
+
+&nbsp;&nbsp;&nbsp;&nbsp; 4.1 - Markdown: Linguagem de Marcação;
+
+&nbsp;&nbsp;&nbsp;&nbsp; 4.2 - R Markdown: Componentes Básicos e Formatos de Saída; e
+
+&nbsp;&nbsp;&nbsp;&nbsp; 4.3 - Estudo de Caso: Elaboração de Relatório Estatístico com R Markdown.
+]
+]
+
+<br>
+.pull-bottom[
+<center>
+
+<img src="fig/part0/rmarkdown.png" width="110">
+&nbsp;&nbsp;&nbsp;
+<img src="fig/part0/knitr.png" width="110">
+&nbsp;&nbsp;&nbsp;
+
+</center>
+]
+
 <!-- Slide 2 -->
 ---
 
-## Cronograma .black[.font70[(**Horário: 14h00min - 19h00min**)]]
+## Cronograma .black[.font70[(**Horário: 07h30min - 13h50min**)]]
 
 ```{r, echo = FALSE, out.width='80%', fig.align='center', fig.cap='', dpi=600}
 knitr::include_graphics("fig/part0/Agosto.png")
 ```
-
-<!-- Slide 3 -->
----
-
-## Programação
-<br>
-A disciplina .blue["Estatística Computacional com R (PPGBC0030)"] está organizada em 2 partes:
-<br><br>
-
-**Parte 1** - .green[**Introdução à Linguagem de Programação R**]
-
-.pull-left-4[
-.font80[
-**Módulo 1** - .orange[**Introdução ao R-base**]
-
-- Conhecendo o R e o IDE Rstudio;
-- Estrutura de dados na linguagem R;
-- Indexação no R; e
-- Funções no R.
-]
-]
-
-.pull-right-4[
-.font80[
-**Módulo 2** - .orange[**Introdução ao Tidyverse**]
-
-- Importação de dados com pacote .green[**readr**];
-- Manipulação de dados com pacote .green[**dplyr**]; e
-- Visualização de dados com pacote .green[**ggplot2**] e extensões.
-
-.pull-right-15[
-.pull-left-4[
-```{r echo=FALSE, out.width='30%', fig.align='center', fig.cap='', dpi=600}
-knitr::include_graphics("https://readr.tidyverse.org/logo.png")
-knitr::include_graphics("https://dplyr.tidyverse.org/logo.png")
-```
-]
-
-.pull-right-4[
-```{r echo=FALSE, out.width='30%', fig.align='center', fig.cap='', dpi=600}
-knitr::include_graphics("https://ggplot2.tidyverse.org/logo.png")
-knitr::include_graphics("https://patchwork.data-imaginist.com/reference/figures/logo.png")
-```
-]
-]
-]
-]
-
----
-
-## Programação
-<br>
-A disciplina .blue["Estatística Computacional com R (PPGBC0030)"] está organizada em 2 partes:
-<br><br>
-
-**Parte 2** - .green[**Estatística Básica com R**]
-
-.pull-left-4[
-.font80[
-**Módulo 3** - .orange[**Análise Exploratória de Dados**]
-
-- Terminologias e conceitos básicos
-- Medidas de tendência central (ou posição)
-- Medidas de dispersão (ou variabilidade)
-- AED - Iris Flower
-- Atividade Prática (AED em Dados Reais)
-
-.pull-right-15[
-.pull-left-4[
-```{r echo=FALSE, out.width='100%', fig.align='center', fig.cap='', dpi=600}
-knitr::include_graphics("https://github.com/dcomtois/summarytools/raw/master/img/st-banner-fuzzy.png")
-```
-]
-
-.pull-left-4[
-```{r echo=FALSE, out.width='35%', fig.align='center', fig.cap='', dpi=600}
-knitr::include_graphics("https://ggplot2.tidyverse.org/logo.png")
-```
-]
-]
-]
-]
-
-
-.pull-right-4[
-.font80[
-**Módulo 4** - .orange[**R markdown: Relatórios Dinâmicos**]
-
-- Sintaxe da linguagem de marcação Markdown.
-- Estrutura do R markdown.
-- Formatos de saída (html, pdf, word,...)
-- Construindo um relatório estatístico para Iris Flower.
-]
-
-
-.pull-right-15[
-.pull-left-4[
-```{r echo=FALSE, out.width='35%', fig.align='center', fig.cap='', dpi=600}
-knitr::include_graphics("https://github.com/rstudio/rmarkdown/raw/main/man/figures/logo.png")
-```
-]
-
-.pull-right-4[
-```{r echo=FALSE, out.width='35%', fig.align='center', fig.cap='', dpi=600}
-knitr::include_graphics("https://indrajeetpatil.github.io/ggstatsplot/reference/figures/logo.png")
-```
-]
-]
-]
 
 ---
 
@@ -392,6 +427,17 @@ knitr::include_graphics("https://indrajeetpatil.github.io/ggstatsplot/reference/
 <!--Slide XX -->
 ---
 layout: false
-class: inverse, top, right
-background-image: url(fig/slide-title/end.png)
+name: etim
+class: inverse, middle, center
+background-image: url(fig/slide-title/sec.png)
 background-size: cover
+
+## .font200[Obrigado!]
+
+```{r, echo=FALSE, out.width='20%', fig.align='center', fig.cap='', dpi=600}
+knitr::include_graphics('fig/slide-title/LMFTCA_TCB2.png')
+```
+
+👨🏻‍👩🏻‍👦🏻‍👦🏻 [@lmftca_ufpa](https://www.instagram.com/lmftca_ufpa/)
+
+🌎 [https://www.lmftca.com.br/](https://www.lmftca.com.br/)
