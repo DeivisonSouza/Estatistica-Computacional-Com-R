@@ -417,7 +417,7 @@ knitr::include_graphics("fig/part0/Agosto.png")
 
 O plano de ensino da disciplina pode ser acessado em:
 
-[Plano de Ensino - Estatística Computacional com R](https://github.com/DeivisonSouza/FL03034-EF/blob/master/Slides/PE/EF-PE.pdf)
+[Plano de Ensino - Estatística Computacional com R](https://raw.githubusercontent.com/DeivisonSouza/Estatistica-Computacional-Com-R/master/Slides/fig/part0/PE.pdf)
 
 ---
 ## 📖 Bibliografia básica
