@@ -902,6 +902,25 @@ name:
 ]
 
 
+---
+
+## Boas Práticas
+<br>
+
+✅ Crie um projeto para cada análise.
+
+✅ Mantenha dados, scripts e resultados separados.
+
+✅ Utilize caminhos relativos.
+
+✅ Evite o uso frequente de `setwd()`.
+
+<br>
+
+.alert[
+💡 Um projeto bem organizado facilita a análise, a colaboração e a reprodução dos resultados.
+]
+
 <!--Slide XX -->
 ---
 layout: false
