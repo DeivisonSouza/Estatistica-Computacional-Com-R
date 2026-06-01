@@ -17,7 +17,7 @@
     <script src="01-Introducao-RBase-M1_files/xaringanExtra-shareagain-0.2.6/shareagain.js"></script>
     <script src="01-Introducao-RBase-M1_files/xaringanExtra-progressBar-0.0.1/progress-bar.js"></script>
     <link href="01-Introducao-RBase-M1_files/xaringanExtra-extra-styles-0.2.6/xaringanExtra-extra-styles.css" rel="stylesheet" />
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"xe5fa2483bc647a98ea2b4107366641b","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"bcfeb5f59ec44e508538d6911daccf28","expires":1}</script>
     <script src="01-Introducao-RBase-M1_files/himalaya-1.1.0/himalaya.js"></script>
     <script src="01-Introducao-RBase-M1_files/js-cookie-3.0.0/js.cookie.js"></script>
     <link href="01-Introducao-RBase-M1_files/editable-0.2.6/editable.css" rel="stylesheet" />
@@ -174,22 +174,38 @@ Ao final do **Módulo 1 - Introdução ao R-base** espera-se que os discentes po
 
 ## Conteúdo
 
-.pull-left-4[
-**Parte 1 - Conhecendo o R e o IDE Rstudio**
+&lt;br&gt;
 
-[1- A linguagem R](#R)
+### Parte 1 — Conhecendo o R e o RStudio
 
-[2 - Por que usar a linguagem R?](#pqR)
+[1- A linguagem R: Origem](#R)
 
-[3 - RGui - Download, instalação e interface](#RGui)
+[2 - A linguagem R: multiplas facetas](#pqR)
 
-[4 - IDE RStudio - Download, instalação e interface](#Rstudio)
+[3 - Por que utilizar o R?](#pqR)
 
-]
+[4 - RGui: download, instalação e interface](#RGui)
+
+[5 - RStudio: download, instalação e interface](#Rstudio)
+
+--
 
 .pull-right-4[
 .pull-down[
-**Parte 2 - Sintaxe da linguagem R**
+
+### Parte 2 — Sintaxe da Linguagem R
+
+[1 - R é uma Linguagem de Expressão](#expressao)
+
+[2 - R é Case Sensitive](#casesensitive)
+
+[3 - Operador de Atribuição](#atribuicao)
+
+[4 - Comentários](#comentarios)
+
+[5 - Funções](#funcoes)
+
+[6 - Ajuda e Documentação](#ajuda)
 
 ]
 ]
@@ -199,8 +215,7 @@ Ao final do **Módulo 1 - Introdução ao R-base** espera-se que os discentes po
 ## Conteúdo
 
 .pull-left-4[
-**Parte 3 - Criando Projetos em R**
-
+### Parte 3 - Criando Projetos em R
 
 ]
 
@@ -225,34 +240,46 @@ background-size: cover
 layout: true
 class: with-logo logo-ufpa
 &lt;div class="my-header"&gt;&lt;/div&gt;
-&lt;div class="my-footer"&gt;&lt;span&gt;Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp; &lt;div3&gt;Estatística Computacional (PPGBC0030)&lt;/div3&gt;/ &lt;div2&gt;Módulo 1 - Introdução ao R-base&lt;/div2&gt; &lt;/div&gt;
+&lt;div class="my-footer"&gt;&lt;span&gt;Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp; &lt;div3&gt;Estatística Computacional Com R&lt;/div3&gt;/ &lt;div2&gt;Módulo 1 - Introdução ao R-base&lt;/div2&gt; &lt;/div&gt;
 
 ---
 name: R
-## Linguagem R
+## Linguagem de Programação R - Origem
+&lt;br&gt;&lt;br&gt;
 
-.pull-left-4[
 .font90[
-- É uma linguagem de programação de computadores de código aberto e gratuita;
-- Criada em 1993: Ross Ihaka e por Robert Gentleman;
-- Departamento de Estatística da Universidade de Auckland, Nova Zelândia;
-- O R foi desenvolvido a partir da Linguagem S.
+.alert[
+- Linguagem de programação **livre**, **gratuita** e de **código aberto**;
+- Desenvolvida em 1993 por **Ross Ihaka** e **Robert Gentleman**;
+- Criada na Universidade de **Auckland** (Nova Zelândia);
+- Baseada na **linguagem S**; e
+- Amplamente usada em estatística, ciência de dados e pesquisa científica.
 ]
 ]
 
-.pull-right-4[
+---
+
+name: R
+## Linguagem de Programação R - Múltiplas Facetas
+&lt;br&gt;&lt;br&gt;
+
 .font90[
-**Possui múltiplas facetas:**
+.alert[
+📊 **Análise estatística**
 
-- Pacotes para implementação de métodos estatísticos;
-- Pacotes para manipulação de dados;
-- Pacotes para visualização gráfica elegantes;
-- Pacotes para criação de aplicações web, Dashboard;
-- Pacote para geração de relatórios dinâmicos;
-- Pacotes para criação de apresentações elegantes.
+🗂️ **Manipulação de dados**
+
+📈 **Visualização gráfica**
+
+🌐 **Aplicações web e dashboards**
+
+📝 **Relatórios dinâmicos**
+
+🎓 **Apresentações profissionais**
 ]
 ]
 
+&lt;br&gt;
 
 .pull-left-7[
 &lt;img src="https://tidyverse.tidyverse.org/articles/tidyverse-logo.png" alt="" width="30%" style="display: block; margin: auto;" /&gt;
@@ -336,63 +363,74 @@ name: RGui
 ## RGui - Interface
 &lt;br&gt;
 
-Ao inicializar o **R Development Core Team** pela primeira vez aparecerá a seguinte imagem:
+.pull-left-13[
+- Ao iniciar o RGui, é exibido o .red[R Console].
+- O símbolo .red[&gt;] representa o prompt de comando.
 
+.alert[
+#### Experimente:
+
+&lt;span class="code-pill"&gt;getwd()&lt;/span&gt;
+&lt;span class="code-pill"&gt;help()&lt;/span&gt;
+&lt;span class="code-pill"&gt;q()&lt;/span&gt;
+]
+]
+
+.pull-right-13[
 &lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="fig/part1/Rgui.png" alt="R Console" width="40%" /&gt;
+&lt;img src="fig/part1/Rgui.png" alt="R Console" width="80%" /&gt;
 &lt;p class="caption"&gt;R Console&lt;/p&gt;
 &lt;/div&gt;
+]
 
 ---
 
-## RGui - Interface
+## RGui - R Editor
+&lt;br&gt;
 
-- No contato inicial do usuário com o RGui tem-se a visão do .green[R Console].
-- O sinal .red[&gt;] é o prompt de comando.
-- Execute as funções .green[demo(), help(), help.start(), q()].
+.pull-left-13[
+- O RGui possui um .green[R Editor] para criação e edição de scripts.
+- Acesse: **Arquivo → Novo script** ou **Arquivo → Abrir script**.
+- O código é executado no .red[R Console] usando **Ctrl + R**.
+]
 
+
+.pull-right-13[
 &lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="fig/part1/Rgui.png" alt="R Console" width="50%" /&gt;
-&lt;p class="caption"&gt;R Console&lt;/p&gt;
-&lt;/div&gt;
-
----
-
-## RGui - R editor
-
-O RGui possui um .green[R editor] `\(\rightarrow\)` Abrir script.
-
-&lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="fig/part1/Reditor.png" alt="R editor" width="50%" /&gt;
+&lt;img src="fig/part1/Reditor.png" alt="R editor" width="80%" /&gt;
 &lt;p class="caption"&gt;R editor&lt;/p&gt;
 &lt;/div&gt;
+]
 
 ---
 name: Rstudio
 ## IDE RStudio - download e instalação
 &lt;br&gt;
 
-O .green[RStudio] é um ambiente de desenvolvimento integrado (*Integrated Development Environment - IDE*) de códigos em R mais comumente usado por usuários da linguagem.
+👉 O .green[RStudio] é um ambiente integrado de desenvolvimento (IDE) amplamente utilizado por usuários da linguagem R.
 
-**1⁰ Passo**: Acessar a página do projeto RStudio: https://www.rstudio.com;
+**1⁰ Passo**: Acessar o site oficial: https://www.rstudio.com;
 
 **2⁰ Passo**: Products `\(\rightarrow\)` RStudio;
 
-**3⁰ Passo**: Selecionar a versão do RStudio para Desktop;
+**3⁰ Passo**: Selecionar **RStudio Desktop**;
 
-**4⁰ Passo**: Na edição Open source `\(\rightarrow\)` Download Rstudio Desktop;
+**4⁰ Passo**: Escolher a versão **Open Source** e clicar em **Download RStudio Desktop**;
 
-**5⁰ Passo**: Por fim, basta usar o setup baixado para instalar o programa.
+**5⁰ Passo**: Executar o instalador baixado e concluir a instalação.
 &lt;br&gt;&lt;br&gt;
 
-&lt;img src="fig/part1/RStudio.png" alt="" width="30%" style="display: block; margin: auto;" /&gt;
+.alert[
+💡 O R deve estar instalado previamente para o funcionamento do RStudio.
+]
+
+&lt;img src="fig/part1/RStudio.png" alt="" width="20%" style="display: block; margin: auto;" /&gt;
 
 ---
 
 ## IDE RStudio - Interface
 
 &lt;img src="fig/part1/RstudioIG.svg" alt="" width="80%" style="display: block; margin: auto;" /&gt;
-&lt;!-- http://material.curso-r.com/rbase/ --&gt;
 
 ---
 
@@ -429,18 +467,306 @@ background-size: cover
 
 &lt;br&gt;&lt;br&gt;
 
-.right[.font150[**.green[Parte 2] - Estrutura de dados na linguagem R**]]
+.right[.font150[**.green[Parte 2] - Sintaxe da linguagem R**]]
 
 ---
 
 layout: true
 class: with-logo logo-ufpa
 &lt;div class="my-header"&gt;&lt;/div&gt;
-&lt;div class="my-footer"&gt;&lt;span&gt;Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp; &lt;div3&gt;Estatística Computacional (PPGBC0030)&lt;/div3&gt;/ &lt;div2&gt;Módulo 1 - Introdução ao R-base&lt;/div2&gt; &lt;/div&gt;
+&lt;div class="my-footer"&gt;&lt;span&gt;Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp; &lt;div3&gt;Estatística Computacional Com R&lt;/div3&gt;/ &lt;div2&gt;Módulo 1 - Introdução ao R-base&lt;/div2&gt; &lt;/div&gt;
+
+---
+name: expressao
+## R é uma Linguagem de Expressão
+&lt;br&gt;
+
+👉 Em R, toda instrução é avaliada para produzir um **valor** ou um **objeto**.
+
+- **Objetos:** armazenam dados, funções, modelos, gráficos e outros resultados.
+- **Avaliação:** cada comando é processado e retorna um resultado.
+- **Concisão:** Permite combinar operações de forma simples e eficiente.
+&lt;br&gt;
+
+.alert[
+💡 Um **objeto** é qualquer elemento armazenado na memória do R.
+]
+
+&lt;br&gt;
+
+.alert[
+**Exemplo**: `mean(c(10, 20, 30))` cria um vetor e retorna sua média.
+]
+
+---
+name: casesensitive
+## R é Case Sensitive
+
+.pull-left[
+
+### Conceito
+
+👉 Letras .blue[maiúsculas] e .blue[minúsculas] possuem significados diferentes.
+
+.alert[
+`a` ≠ `A`
+
+`altura` ≠ `Altura`
+]
+
+&lt;br&gt;
+
+⚠️ Diferenças de capitalização podem gerar erros do tipo *"object not found"*.
+
+]
+
+--
+
+.pull-right[
+
+### Recomendação
+
+💡 Adote o padrão .blue[snake_case]:
+
+- Apenas letras minúsculas;
+- Palavras separadas por `_`.
+
+&lt;br&gt;
+
+.alert[
+`altura_arvore`
+
+`volume_total`
+
+`media_dap`
+]
+]
+
+---
+name: atribuicao
+## Operador de Atribuição
+&lt;br&gt;
+
+.pull-left[
+
+👉 Em R, utiliza-se .blue[`&lt;-`] para atribuição de valores.
+
+.alert[
+.blue[`&lt;-`] → Atribuição
+
+.blue[`==`] → Comparação
+]
+]
+
+
+.pull-right[
+
+``` r
+# atribuição (cria/modifica um objeto)
+dap &lt;- 20    
+
+# comparação (retorna TRUE ou FALSE)
+dap == 20
+```
+]
+
+&lt;br&gt;
+
+.alert[
+💡 .blue[`&lt;-`] atribui valores; .blue[`==`] faz perguntas.
+]
+
+---
+name: comentarios
+## Comentários
+
+&lt;br&gt;
+
+.pull-left[
+👉 Comentários servem para **documentar e explicar o código**.
+
+👉 O R ignora comentários durante a execução.
+
+&lt;br&gt;
+
+.alert[
+O símbolo .blue[`#`] indica um comentário.
+]
+]
+
+--
+
+.pull-right[
+
+``` r
+# Armazena os DAPs das árvores
+dap &lt;- c(12.5, 15.8, 18.2, 20.1)
+
+# Calcula a média
+mean(dap)
+```
+]
+
+&lt;br&gt;
+
+--
+
+.alert[
+💡 Um código bem comentado hoje economiza tempo no futuro!
+]
+
+---
+name: funcoes
+## Funções
+&lt;br&gt;
+
+.pull-left[
+👉 Grande parte das tarefas em R é realizada por meio de funções.
+
+👉 Funções executam tarefas específicas.
+
+.alert[
+**Estrutura geral**:
+`nome_da_funcao(argumentos)`
+]
+
+]
+
+--
+
+.pull-right[
+**Exemplo**
+&lt;br&gt;
+
+``` r
+sqrt(25)
+## [1] 5
+sum(c(10, 20, 30))
+## [1] 60
+```
+
+]
+
+&lt;br&gt;
+
+.alert[
+💡 Funções recebem **argumentos** e retornam **resultados**.
+]
+
+---
+name: FunsMat
+## Funções - Alguns Exemplos
+&lt;br&gt;
+
+| Função                 | Descrição                        |
+|------------------------|----------------------------------|
+| sqrt()                 | Raiz quadrada                    |
+| abs()                  | Valor absoluto                   |
+| sin(); cos(); tan()    | Funções trigonométricas          |
+| asin(); acos(); atan() | Funções trigonométricas inversas |
+| exp()                  | Exponencial                      |
+| log10()                | Logarítmo na base 10             |
+| log()                  | Logarítmo natural                |
+| factorial              | Fatorial                         |
 
 ---
 
+## Funções - Alguns Exemplos
+&lt;br&gt;
 
+.font80[
+| **Funções**                             | **Ação**                                      |
+| :-------------------------------------: | :-------------------------------------------: |
+| q()                                     | Fechar o programa                             |
+| rm(nome do objeto)                      | Remover um objeto qualquer                    |
+| ls()                                    | Listar os objetos na janela de trabalho atual |
+| help(nome da função) ou ?nome da função | Solicitar ajuda sobre o uso de uma função     |
+| save.image()                            | Salvar                                        |
+| Ctrl + L                                | Limpar a tela do R console                    |
+| history(max.show, nrow = 3)             | Listar os últimos 3 comandos executados       |
+| getwd()                                 | Mostrar o diretório de trabalho               |
+| setwd("diretório desejado")             | Mudar o diretório de trabalho                 |
+| install.packages("nome do pacote")      | Instalar um pacote específico                 |
+]
+
+---
+
+## Funções - Alguns Exemplos
+&lt;br&gt;
+
+.font80[
+| **Funções**               | **Ação**                                       |
+| :-----------------------: | :--------------------------------------------: |
+| library("nome do pacote") | Carregar um pacote específico                  |
+| dir()                     | Lista os arquivos existentes no diretório      |
+| getOption("OutDec")       | Verificar o separador decimal definido         |
+| options("OutDec=")        | Mudar o separador decimal para vírgula         |
+| round(5.9845, digits=2)  | Função para arredondamento de casas decimais   |
+| data()                    | Lista de conjuntos de dados disponíveis no R             |
+| ?nomedodataset            | Obter informações detalhadas sobre um conjunto de dado |
+| class(nome do objeto)     | Verifica a classe de um objeto específico      |
+| search()                  | Lista todos os pacotes carregados              |
+]
+
+---
+name: ajuda
+## Ajuda e Documentação
+&lt;br&gt;
+
+.pull-left[
+
+👉 O R possui um sistema de ajuda integrado.
+
+.alert[
+**Comandos úteis:**
+
+`?funcao`
+
+`help(funcao)`
+
+`example(funcao)`
+]
+
+]
+
+--
+
+.pull-right[
+
+**Exemplos**
+
+
+``` r
+?mean
+
+help(mean)
+
+example(mean)
+```
+]
+
+&lt;br&gt;
+
+.alert[
+💡 Consulte a documentação sempre que tiver dúvidas sobre uma função.
+]
+
+---
+
+## O que aprendemos?
+&lt;br&gt;&lt;br&gt;
+
+✅ R é uma linguagem de expressão
+
+✅ R é case sensitive
+
+✅ Utilizamos `&lt;-` para atribuição
+
+✅ Comentários iniciam com `#`
+
+✅ Funções seguem o padrão `funcao(argumentos)`
+
+✅ A documentação pode ser acessada com `?`
 
 ---
 
@@ -895,8 +1221,8 @@ name: log
 ]
 
 .pull-right-5[
-<div id="htmlwidget-1f6be28eb6bbae01552a" style="width:1000px;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-1f6be28eb6bbae01552a">{"x":{"filter":"none","vertical":false,"caption":"<caption>Dados fictícios para 10 árvores de duas espécies florestais.<\/caption>","editable":{"target":"cell","disable":{"columns":null},"numeric":[1,2,4],"date":[]},"data":[["Swietenia macrophylla","Swietenia macrophylla","Swietenia macrophylla","Hymenolobium petraeum","Hymenolobium petraeum","Hymenolobium petraeum","Hymenolobium petraeum","Hymenolobium petraeum","Swietenia macrophylla","Swietenia macrophylla"],[33.6,42.6,52.1,80.3,90.8,49.4,70.5,100.5,60.7,27.1],[9.1,13.2,15.4,18.6,19.5,16.8,17.9,22.4,15.3,8.699999999999999],["Sim","Não","Sim","Não","Sim","Não","Sim","Não","Sim","Sim"],[2,1,3,1,2,1,2,3,1,3],["Protegida","Protegida","Protegida","Explorar","Explorar","Remanescente","Explorar","Remanescente","Protegida","Protegida"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Especie<\/th>\n      <th>DAP<\/th>\n      <th>H<\/th>\n      <th>Cipo<\/th>\n      <th>QF<\/th>\n      <th>Selecao<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":10,"dom":"tip","autoWidth":true,"initComplete":"function(settings, json) {\n$(this.api().table().container()).css({'font-size': '12pt'});\n}","columnDefs":[{"className":"dt-right","targets":[1,2,4]},{"name":"Especie","targets":0},{"name":"DAP","targets":1},{"name":"H","targets":2},{"name":"Cipo","targets":3},{"name":"QF","targets":4},{"name":"Selecao","targets":5}],"order":[],"orderClasses":false}},"evals":["options.initComplete"],"jsHooks":[]}</script>
+<div id="htmlwidget-15d7dc9de265fc4b0bdd" style="width:1000px;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-15d7dc9de265fc4b0bdd">{"x":{"filter":"none","vertical":false,"caption":"<caption>Dados fictícios para 10 árvores de duas espécies florestais.<\/caption>","editable":{"target":"cell","disable":{"columns":null},"numeric":[1,2,4],"date":[]},"data":[["Swietenia macrophylla","Swietenia macrophylla","Swietenia macrophylla","Hymenolobium petraeum","Hymenolobium petraeum","Hymenolobium petraeum","Hymenolobium petraeum","Hymenolobium petraeum","Swietenia macrophylla","Swietenia macrophylla"],[33.6,42.6,52.1,80.3,90.8,49.4,70.5,100.5,60.7,27.1],[9.1,13.2,15.4,18.6,19.5,16.8,17.9,22.4,15.3,8.699999999999999],["Sim","Não","Sim","Não","Sim","Não","Sim","Não","Sim","Sim"],[2,1,3,1,2,1,2,3,1,3],["Protegida","Protegida","Protegida","Explorar","Explorar","Remanescente","Explorar","Remanescente","Protegida","Protegida"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Especie<\/th>\n      <th>DAP<\/th>\n      <th>H<\/th>\n      <th>Cipo<\/th>\n      <th>QF<\/th>\n      <th>Selecao<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":10,"dom":"tip","autoWidth":true,"initComplete":"function(settings, json) {\n$(this.api().table().container()).css({'font-size': '12pt'});\n}","columnDefs":[{"className":"dt-right","targets":[1,2,4]},{"name":"Especie","targets":0},{"name":"DAP","targets":1},{"name":"H","targets":2},{"name":"Cipo","targets":3},{"name":"QF","targets":4},{"name":"Selecao","targets":5}],"order":[],"orderClasses":false}},"evals":["options.initComplete"],"jsHooks":[]}</script>
 
 ]
 
@@ -978,72 +1304,6 @@ data$Selecao == "Explorar" &amp; data$QF == 1
 ##  [1] FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE
 ```
 
----
-name: FunsMat
-## Um pouco mais sobre o R
-&lt;br&gt;
-
-### Funções matemáticas usuais
-
-A linguagem R dispõe de funções matemáticas usualmente encontradas em calculadoras científicas.
-&lt;br&gt;&lt;br&gt;
-
-
-| Função                 | Descrição                        |
-|------------------------|----------------------------------|
-| sqrt()                 | Raiz quadrada                    |
-| abs()                  | Valor absoluto                   |
-| sin(); cos(); tan()    | Funções trigonométricas          |
-| asin(); acos(); atan() | Funções trigonométricas inversas |
-| exp()                  | Exponencial                      |
-| log10()                | Logarítmo na base 10             |
-| log()                  | Logarítmo natural                |
-| factorial              | Fatorial                         |
-
----
-
-## Um pouco mais sobre o R
-&lt;br&gt;
-
-### Alguns comandos básicos
-&lt;br&gt;
-
-.font80[
-| **Comando**                             | **Ação**                                      |
-| :-------------------------------------: | :-------------------------------------------: |
-| q()                                     | Fechar o programa                             |
-| rm(nome do objeto)                      | Remover um objeto qualquer                    |
-| ls()                                    | Listar os objetos na janela de trabalho atual |
-| help(nome da função) ou ?nome da função | Solicitar ajuda sobre o uso de uma função     |
-| save.image()                            | Salvar                                        |
-| Ctrl + L                                | Limpar a tela do R console                    |
-| history(max.show, nrow = 3)             | Listar os últimos 3 comandos executados       |
-| getwd()                                 | Mostrar o diretório de trabalho               |
-| setwd("diretório desejado")             | Mudar o diretório de trabalho                 |
-| install.packages("nome do pacote")      | Instalar um pacote específico                 |
-]
-
----
-
-## Um pouco mais sobre o R
-&lt;br&gt;
-
-### Alguns comandos básicos (cont.)
-&lt;br&gt;
-
-.font80[
-| **Comando**               | **Ação**                                       |
-| :-----------------------: | :--------------------------------------------: |
-| library("nome do pacote") | Carregar um pacote específico                  |
-| dir()                     | Lista os arquivos existentes no diretório      |
-| getOption("OutDec")       | Verificar o separador decimal definido         |
-| options("OutDec=")        | Mudar o separador decimal para vírgula         |
-| round(5.9845, digits=2)  | Função para arredondamento de casas decimais   |
-| data()                    | Lista de conjuntos de dados disponíveis no R             |
-| ?nomedodataset            | Obter informações detalhadas sobre um conjunto de dado |
-| class(nome do objeto)     | Verifica a classe de um objeto específico      |
-| search()                  | Lista todos os pacotes carregados              |
-]
 
 
 &lt;!--Slide XX --&gt;

@@ -139,22 +139,38 @@ Ao final do **Módulo 1 - Introdução ao R-base** espera-se que os discentes po
 
 ## Conteúdo
 
-.pull-left-4[
-**Parte 1 - Conhecendo o R e o IDE Rstudio**
+<br>
 
-[1- A linguagem R](#R)
+### Parte 1 — Conhecendo o R e o RStudio
 
-[2 - Por que usar a linguagem R?](#pqR)
+[1- A linguagem R: Origem](#R)
 
-[3 - RGui - Download, instalação e interface](#RGui)
+[2 - A linguagem R: multiplas facetas](#pqR)
 
-[4 - IDE RStudio - Download, instalação e interface](#Rstudio)
+[3 - Por que utilizar o R?](#pqR)
 
-]
+[4 - RGui: download, instalação e interface](#RGui)
+
+[5 - RStudio: download, instalação e interface](#Rstudio)
+
+--
 
 .pull-right-4[
 .pull-down[
-**Parte 2 - Sintaxe da linguagem R**
+
+### Parte 2 — Sintaxe da Linguagem R
+
+[1 - R é uma Linguagem de Expressão](#expressao)
+
+[2 - R é Case Sensitive](#casesensitive)
+
+[3 - Operador de Atribuição](#atribuicao)
+
+[4 - Comentários](#comentarios)
+
+[5 - Funções](#funcoes)
+
+[6 - Ajuda e Documentação](#ajuda)
 
 ]
 ]
@@ -164,8 +180,7 @@ Ao final do **Módulo 1 - Introdução ao R-base** espera-se que os discentes po
 ## Conteúdo
 
 .pull-left-4[
-**Parte 3 - Criando Projetos em R**
-
+### Parte 3 - Criando Projetos em R
 
 ]
 
@@ -190,34 +205,46 @@ background-size: cover
 layout: true
 class: with-logo logo-ufpa
 <div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional (PPGBC0030)</div3>/ <div2>Módulo 1 - Introdução ao R-base</div2> </div>
+<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional Com R</div3>/ <div2>Módulo 1 - Introdução ao R-base</div2> </div>
 
 ---
 name: R
-## Linguagem R
+## Linguagem de Programação R - Origem
+<br><br>
 
-.pull-left-4[
 .font90[
-- É uma linguagem de programação de computadores de código aberto e gratuita;
-- Criada em 1993: Ross Ihaka e por Robert Gentleman;
-- Departamento de Estatística da Universidade de Auckland, Nova Zelândia;
-- O R foi desenvolvido a partir da Linguagem S.
+.alert[
+- Linguagem de programação **livre**, **gratuita** e de **código aberto**;
+- Desenvolvida em 1993 por **Ross Ihaka** e **Robert Gentleman**;
+- Criada na Universidade de **Auckland** (Nova Zelândia);
+- Baseada na **linguagem S**; e
+- Amplamente usada em estatística, ciência de dados e pesquisa científica.
 ]
 ]
 
-.pull-right-4[
+---
+
+name: R
+## Linguagem de Programação R - Múltiplas Facetas
+<br><br>
+
 .font90[
-**Possui múltiplas facetas:**
+.alert[
+📊 **Análise estatística**
 
-- Pacotes para implementação de métodos estatísticos;
-- Pacotes para manipulação de dados;
-- Pacotes para visualização gráfica elegantes;
-- Pacotes para criação de aplicações web, Dashboard;
-- Pacote para geração de relatórios dinâmicos;
-- Pacotes para criação de apresentações elegantes.
+🗂️ **Manipulação de dados**
+
+📈 **Visualização gráfica**
+
+🌐 **Aplicações web e dashboards**
+
+📝 **Relatórios dinâmicos**
+
+🎓 **Apresentações profissionais**
 ]
 ]
 
+<br>
 
 .pull-left-7[
 ```{r echo=FALSE, out.width='30%', fig.align='center', fig.cap='', dpi=600}
@@ -315,53 +342,66 @@ name: RGui
 ## RGui - Interface
 <br>
 
-Ao inicializar o **R Development Core Team** pela primeira vez aparecerá a seguinte imagem:
+.pull-left-13[
+- Ao iniciar o RGui, é exibido o .red[R Console].
+- O símbolo .red[>] representa o prompt de comando.
 
-```{r, echo=FALSE, out.width='40%', fig.align='center', fig.cap='R Console'}
+.alert[
+#### Experimente:
+
+<span class="code-pill">getwd()</span>
+<span class="code-pill">help()</span>
+<span class="code-pill">q()</span>
+]
+]
+
+.pull-right-13[
+```{r, echo=FALSE, out.width='80%', fig.align='center', fig.cap='R Console'}
 knitr::include_graphics('fig/part1/Rgui.png')
 ```
+]
 
 ---
 
-## RGui - Interface
+## RGui - R Editor
+<br>
 
-- No contato inicial do usuário com o RGui tem-se a visão do .green[R Console].
-- O sinal .red[>] é o prompt de comando.
-- Execute as funções .green[demo(), help(), help.start(), q()].
+.pull-left-13[
+- O RGui possui um .green[R Editor] para criação e edição de scripts.
+- Acesse: **Arquivo → Novo script** ou **Arquivo → Abrir script**.
+- O código é executado no .red[R Console] usando **Ctrl + R**.
+]
 
-```{r, echo=FALSE, out.width='50%', fig.align='center', fig.cap='R Console'}
-knitr::include_graphics('fig/part1/Rgui.png')
-```
 
----
-
-## RGui - R editor
-
-O RGui possui um .green[R editor] $\rightarrow$ Abrir script.
-
-```{r, echo=FALSE, out.width='50%', fig.align='center', fig.cap='R editor'}
+.pull-right-13[
+```{r, echo=FALSE, out.width='80%', fig.align='center', fig.cap='R editor'}
 knitr::include_graphics('fig/part1/Reditor.png')
 ```
+]
 
 ---
 name: Rstudio
 ## IDE RStudio - download e instalação
 <br>
 
-O .green[RStudio] é um ambiente de desenvolvimento integrado (*Integrated Development Environment - IDE*) de códigos em R mais comumente usado por usuários da linguagem.
+👉 O .green[RStudio] é um ambiente integrado de desenvolvimento (IDE) amplamente utilizado por usuários da linguagem R.
 
-**1⁰ Passo**: Acessar a página do projeto RStudio: https://www.rstudio.com;
+**1⁰ Passo**: Acessar o site oficial: https://www.rstudio.com;
 
 **2⁰ Passo**: Products $\rightarrow$ RStudio;
 
-**3⁰ Passo**: Selecionar a versão do RStudio para Desktop;
+**3⁰ Passo**: Selecionar **RStudio Desktop**;
 
-**4⁰ Passo**: Na edição Open source $\rightarrow$ Download Rstudio Desktop;
+**4⁰ Passo**: Escolher a versão **Open Source** e clicar em **Download RStudio Desktop**;
 
-**5⁰ Passo**: Por fim, basta usar o setup baixado para instalar o programa.
+**5⁰ Passo**: Executar o instalador baixado e concluir a instalação.
 <br><br>
 
-```{r, echo=FALSE, out.width='30%', fig.align='center', fig.cap=''}
+.alert[
+💡 O R deve estar instalado previamente para o funcionamento do RStudio.
+]
+
+```{r, echo=FALSE, out.width='20%', fig.align='center', fig.cap=''}
 knitr::include_graphics('fig/part1/RStudio.png')
 ```
 
@@ -372,7 +412,6 @@ knitr::include_graphics('fig/part1/RStudio.png')
 ```{r, echo=FALSE, out.width='80%', fig.align='center', fig.cap=''}
 knitr::include_graphics('fig/part1/RstudioIG.svg')
 ```
-<!-- http://material.curso-r.com/rbase/ -->
 
 ---
 
@@ -409,18 +448,300 @@ background-size: cover
 
 <br><br>
 
-.right[.font150[**.green[Parte 2] - Estrutura de dados na linguagem R**]]
+.right[.font150[**.green[Parte 2] - Sintaxe da linguagem R**]]
 
 ---
 
 layout: true
 class: with-logo logo-ufpa
 <div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional (PPGBC0030)</div3>/ <div2>Módulo 1 - Introdução ao R-base</div2> </div>
+<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional Com R</div3>/ <div2>Módulo 1 - Introdução ao R-base</div2> </div>
+
+---
+name: expressao
+## R é uma Linguagem de Expressão
+<br>
+
+👉 Em R, toda instrução é avaliada para produzir um **valor** ou um **objeto**.
+
+- **Objetos:** armazenam dados, funções, modelos, gráficos e outros resultados.
+- **Avaliação:** cada comando é processado e retorna um resultado.
+- **Concisão:** Permite combinar operações de forma simples e eficiente.
+<br>
+
+.alert[
+💡 Um **objeto** é qualquer elemento armazenado na memória do R.
+]
+
+<br>
+
+.alert[
+**Exemplo**: `mean(c(10, 20, 30))` cria um vetor e retorna sua média.
+]
+
+---
+name: casesensitive
+## R é Case Sensitive
+
+.pull-left[
+
+### Conceito
+
+👉 Letras .blue[maiúsculas] e .blue[minúsculas] possuem significados diferentes.
+
+.alert[
+`a` ≠ `A`
+
+`altura` ≠ `Altura`
+]
+
+<br>
+
+⚠️ Diferenças de capitalização podem gerar erros do tipo *"object not found"*.
+
+]
+
+--
+
+.pull-right[
+
+### Recomendação
+
+💡 Adote o padrão .blue[snake_case]:
+
+- Apenas letras minúsculas;
+- Palavras separadas por `_`.
+
+<br>
+
+.alert[
+`altura_arvore`
+
+`volume_total`
+
+`media_dap`
+]
+]
+
+---
+name: atribuicao
+## Operador de Atribuição
+<br>
+
+.pull-left[
+
+👉 Em R, utiliza-se .blue[`<-`] para atribuição de valores.
+
+.alert[
+.blue[`<-`] → Atribuição
+
+.blue[`==`] → Comparação
+]
+]
+
+
+.pull-right[
+```{r, eval=FALSE}
+# atribuição (cria/modifica um objeto)
+dap <- 20    
+
+# comparação (retorna TRUE ou FALSE)
+dap == 20
+```
+]
+
+<br>
+
+.alert[
+💡 .blue[`<-`] atribui valores; .blue[`==`] faz perguntas.
+]
+
+---
+name: comentarios
+## Comentários
+
+<br>
+
+.pull-left[
+👉 Comentários servem para **documentar e explicar o código**.
+
+👉 O R ignora comentários durante a execução.
+
+<br>
+
+.alert[
+O símbolo .blue[`#`] indica um comentário.
+]
+]
+
+--
+
+.pull-right[
+```{r, eval=FALSE}
+# Armazena os DAPs das árvores
+dap <- c(12.5, 15.8, 18.2, 20.1)
+
+# Calcula a média
+mean(dap)
+```
+]
+
+<br>
+
+--
+
+.alert[
+💡 Um código bem comentado hoje economiza tempo no futuro!
+]
+
+---
+name: funcoes
+## Funções
+<br>
+
+.pull-left[
+👉 Grande parte das tarefas em R é realizada por meio de funções.
+
+👉 Funções executam tarefas específicas.
+
+.alert[
+**Estrutura geral**:
+`nome_da_funcao(argumentos)`
+]
+
+]
+
+--
+
+.pull-right[
+**Exemplo**
+<br>
+```{r}
+sqrt(25)
+sum(c(10, 20, 30))
+```
+
+]
+
+<br>
+
+.alert[
+💡 Funções recebem **argumentos** e retornam **resultados**.
+]
+
+---
+name: FunsMat
+## Funções - Alguns Exemplos
+<br>
+
+| Função                 | Descrição                        |
+|------------------------|----------------------------------|
+| sqrt()                 | Raiz quadrada                    |
+| abs()                  | Valor absoluto                   |
+| sin(); cos(); tan()    | Funções trigonométricas          |
+| asin(); acos(); atan() | Funções trigonométricas inversas |
+| exp()                  | Exponencial                      |
+| log10()                | Logarítmo na base 10             |
+| log()                  | Logarítmo natural                |
+| factorial              | Fatorial                         |
 
 ---
 
+## Funções - Alguns Exemplos
+<br>
 
+.font80[
+| **Funções**                             | **Ação**                                      |
+| :-------------------------------------: | :-------------------------------------------: |
+| q()                                     | Fechar o programa                             |
+| rm(nome do objeto)                      | Remover um objeto qualquer                    |
+| ls()                                    | Listar os objetos na janela de trabalho atual |
+| help(nome da função) ou ?nome da função | Solicitar ajuda sobre o uso de uma função     |
+| save.image()                            | Salvar                                        |
+| Ctrl + L                                | Limpar a tela do R console                    |
+| history(max.show, nrow = 3)             | Listar os últimos 3 comandos executados       |
+| getwd()                                 | Mostrar o diretório de trabalho               |
+| setwd("diretório desejado")             | Mudar o diretório de trabalho                 |
+| install.packages("nome do pacote")      | Instalar um pacote específico                 |
+]
+
+---
+
+## Funções - Alguns Exemplos
+<br>
+
+.font80[
+| **Funções**               | **Ação**                                       |
+| :-----------------------: | :--------------------------------------------: |
+| library("nome do pacote") | Carregar um pacote específico                  |
+| dir()                     | Lista os arquivos existentes no diretório      |
+| getOption("OutDec")       | Verificar o separador decimal definido         |
+| options("OutDec=")        | Mudar o separador decimal para vírgula         |
+| round(5.9845, digits=2)  | Função para arredondamento de casas decimais   |
+| data()                    | Lista de conjuntos de dados disponíveis no R             |
+| ?nomedodataset            | Obter informações detalhadas sobre um conjunto de dado |
+| class(nome do objeto)     | Verifica a classe de um objeto específico      |
+| search()                  | Lista todos os pacotes carregados              |
+]
+
+---
+name: ajuda
+## Ajuda e Documentação
+<br>
+
+.pull-left[
+
+👉 O R possui um sistema de ajuda integrado.
+
+.alert[
+**Comandos úteis:**
+
+`?funcao`
+
+`help(funcao)`
+
+`example(funcao)`
+]
+
+]
+
+--
+
+.pull-right[
+
+**Exemplos**
+
+```{r, eval=FALSE}
+?mean
+
+help(mean)
+
+example(mean)
+```
+]
+
+<br>
+
+.alert[
+💡 Consulte a documentação sempre que tiver dúvidas sobre uma função.
+]
+
+---
+
+## O que aprendemos?
+<br><br>
+
+✅ R é uma linguagem de expressão
+
+✅ R é case sensitive
+
+✅ Utilizamos `<-` para atribuição
+
+✅ Comentários iniciam com `#`
+
+✅ Funções seguem o padrão `funcao(argumentos)`
+
+✅ A documentação pode ser acessada com `?`
 
 ---
 
@@ -920,72 +1241,6 @@ data$Selecao == "Explorar" & data$QF == 1
 ```{r ref.label="operE3", echo=FALSE, eval=TRUE, collapse=T}
 ```
 
----
-name: FunsMat
-## Um pouco mais sobre o R
-<br>
-
-### Funções matemáticas usuais
-
-A linguagem R dispõe de funções matemáticas usualmente encontradas em calculadoras científicas.
-<br><br>
-
-
-| Função                 | Descrição                        |
-|------------------------|----------------------------------|
-| sqrt()                 | Raiz quadrada                    |
-| abs()                  | Valor absoluto                   |
-| sin(); cos(); tan()    | Funções trigonométricas          |
-| asin(); acos(); atan() | Funções trigonométricas inversas |
-| exp()                  | Exponencial                      |
-| log10()                | Logarítmo na base 10             |
-| log()                  | Logarítmo natural                |
-| factorial              | Fatorial                         |
-
----
-
-## Um pouco mais sobre o R
-<br>
-
-### Alguns comandos básicos
-<br>
-
-.font80[
-| **Comando**                             | **Ação**                                      |
-| :-------------------------------------: | :-------------------------------------------: |
-| q()                                     | Fechar o programa                             |
-| rm(nome do objeto)                      | Remover um objeto qualquer                    |
-| ls()                                    | Listar os objetos na janela de trabalho atual |
-| help(nome da função) ou ?nome da função | Solicitar ajuda sobre o uso de uma função     |
-| save.image()                            | Salvar                                        |
-| Ctrl + L                                | Limpar a tela do R console                    |
-| history(max.show, nrow = 3)             | Listar os últimos 3 comandos executados       |
-| getwd()                                 | Mostrar o diretório de trabalho               |
-| setwd("diretório desejado")             | Mudar o diretório de trabalho                 |
-| install.packages("nome do pacote")      | Instalar um pacote específico                 |
-]
-
----
-
-## Um pouco mais sobre o R
-<br>
-
-### Alguns comandos básicos (cont.)
-<br>
-
-.font80[
-| **Comando**               | **Ação**                                       |
-| :-----------------------: | :--------------------------------------------: |
-| library("nome do pacote") | Carregar um pacote específico                  |
-| dir()                     | Lista os arquivos existentes no diretório      |
-| getOption("OutDec")       | Verificar o separador decimal definido         |
-| options("OutDec=")        | Mudar o separador decimal para vírgula         |
-| round(5.9845, digits=2)  | Função para arredondamento de casas decimais   |
-| data()                    | Lista de conjuntos de dados disponíveis no R             |
-| ?nomedodataset            | Obter informações detalhadas sobre um conjunto de dado |
-| class(nome do objeto)     | Verifica a classe de um objeto específico      |
-| search()                  | Lista todos os pacotes carregados              |
-]
 
 
 <!--Slide XX -->
