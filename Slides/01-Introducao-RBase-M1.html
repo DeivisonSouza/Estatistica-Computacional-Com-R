@@ -17,7 +17,7 @@
     <script src="01-Introducao-RBase-M1_files/xaringanExtra-shareagain-0.2.6/shareagain.js"></script>
     <script src="01-Introducao-RBase-M1_files/xaringanExtra-progressBar-0.0.1/progress-bar.js"></script>
     <link href="01-Introducao-RBase-M1_files/xaringanExtra-extra-styles-0.2.6/xaringanExtra-extra-styles.css" rel="stylesheet" />
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"xe7a6b85c99b45689cd1254aa9a5b9a5","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x0a90124c15d474ea79ff8f6f69bd64a","expires":1}</script>
     <script src="01-Introducao-RBase-M1_files/himalaya-1.1.0/himalaya.js"></script>
     <script src="01-Introducao-RBase-M1_files/js-cookie-3.0.0/js.cookie.js"></script>
     <link href="01-Introducao-RBase-M1_files/editable-0.2.6/editable.css" rel="stylesheet" />
@@ -773,18 +773,149 @@ background-size: cover
 
 &lt;br&gt;&lt;br&gt;
 
-.right[.font150[**.green[Parte 3] - Criando Projetos**]]
+.right[.font150[**.green[Parte 1] - Criando Projetos em R**]]
 
 ---
 
 layout: true
 class: with-logo logo-ufpa
 &lt;div class="my-header"&gt;&lt;/div&gt;
-&lt;div class="my-footer"&gt;&lt;span&gt;Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp; &lt;div3&gt;Estatística Computacional Com R &lt;/div3&gt;/ &lt;div2&gt;Módulo 1 - Introdução ao R-base&lt;/div2&gt; &lt;/div&gt;
+&lt;div class="my-footer"&gt;&lt;span&gt;Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp; &lt;div3&gt;Estatística Computacional Com R&lt;/div3&gt;/ &lt;div2&gt;Módulo 1 - Introdução ao R-base&lt;/div2&gt; &lt;/div&gt;
+
+---
+name:
+## O que é um Projeto (.Rproj)?
+&lt;br&gt;
+
+👉 Um projeto reúne todos os arquivos de uma análise em um único local.
+
+.alert[
+Dados + Scripts + Resultados + Relatórios
+]
+&lt;br&gt;
+
+.pull-left[
+
+### Um projeto pode conter:
+.font80[
+- Dados;
+- Scripts em R;
+- Figuras;
+- Tabelas;
+- Relatórios;
+- Apresentações.
+]
+]
+
+.pull-right[
+
+```text
+📁 Projeto
+├── 📂 data
+├── 📂 script
+└── 📂 output
+    ├── 📂 figure
+    ├── 📂 table
+    └── 📂 reports
+```
+]
+
+
+---
+name:
+## Por que utilizar Projetos?
+&lt;br&gt;
+
+.pull-left[
+
+### Sem Projeto
+
+❌ Arquivos espalhados
+
+❌ Uso de caminhos absolutos (`setwd()`)
+
+❌ Código menos reproduzível
+
+❌ Maior dificuldade para compartilhar análises
+
+]
+
+.pull-right[
+
+### Com Projeto
+
+✅ Arquivos organizados
+
+✅ Uso de caminhos relativos
+
+✅ Diretório raiz definido pelo `.Rproj`
+
+✅ Código mais reproduzível
+
+✅ Compartilhamento facilitado
+
+]
+
+&lt;br&gt;
+
+.alert[
+💡 Projetos tornam as análises mais organizadas, reproduzíveis e fáceis de manter.
+]
 
 ---
 
+## Criando um Projeto no RStudio
+&lt;br&gt;
 
+### Passos
+
+1. **File** → **New Project**
+2. **New Directory**
+3. **New Project**
+4. Escolha o nome e a localização do projeto
+5. Clique em **Create Project**
+
+&lt;br&gt;
+
+.alert[
+💡 O RStudio criará automaticamente o arquivo `.Rproj`, que definirá o diretório raiz do projeto.
+]
+
+---
+
+## Estrutura Recomendada
+&lt;br&gt;
+
+👉 **Boa prática**: Mantenha dados, códigos e resultados em diretórios separados.
+&lt;br&gt;
+
+.pull-left[
+&lt;br&gt;
+
+```text
+📁 Projeto
+├── 📂 data
+├── 📂 script
+└── 📂 output
+    ├── 📂 figure
+    ├── 📂 table
+    └── 📂 reports
+```
+]
+
+--
+
+.pull-left[
+&lt;br&gt;
+
+| Pasta | Finalidade |
+|---------|---------|
+| `data` | Dados utilizados na análise |
+| `script` | Scripts em R |
+| `figure` | Figuras e gráficos |
+| `table` | Tabelas geradas |
+| `reports` | Relatórios e documentos finais |
+]
 
 
 &lt;!--Slide XX --&gt;

@@ -757,18 +757,149 @@ background-size: cover
 
 <br><br>
 
-.right[.font150[**.green[Parte 3] - Criando Projetos**]]
+.right[.font150[**.green[Parte 1] - Criando Projetos em R**]]
 
 ---
 
 layout: true
 class: with-logo logo-ufpa
 <div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional Com R </div3>/ <div2>Módulo 1 - Introdução ao R-base</div2> </div>
+<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional Com R</div3>/ <div2>Módulo 1 - Introdução ao R-base</div2> </div>
+
+---
+name:
+## O que é um Projeto (.Rproj)?
+<br>
+
+👉 Um projeto reúne todos os arquivos de uma análise em um único local.
+
+.alert[
+Dados + Scripts + Resultados + Relatórios
+]
+<br>
+
+.pull-left[
+
+### Um projeto pode conter:
+.font80[
+- Dados;
+- Scripts em R;
+- Figuras;
+- Tabelas;
+- Relatórios;
+- Apresentações.
+]
+]
+
+.pull-right[
+
+```text
+📁 Projeto
+├── 📂 data
+├── 📂 script
+└── 📂 output
+    ├── 📂 figure
+    ├── 📂 table
+    └── 📂 reports
+```
+]
+
+
+---
+name:
+## Por que utilizar Projetos?
+<br>
+
+.pull-left[
+
+### Sem Projeto
+
+❌ Arquivos espalhados
+
+❌ Uso de caminhos absolutos (`setwd()`)
+
+❌ Código menos reproduzível
+
+❌ Maior dificuldade para compartilhar análises
+
+]
+
+.pull-right[
+
+### Com Projeto
+
+✅ Arquivos organizados
+
+✅ Uso de caminhos relativos
+
+✅ Diretório raiz definido pelo `.Rproj`
+
+✅ Código mais reproduzível
+
+✅ Compartilhamento facilitado
+
+]
+
+<br>
+
+.alert[
+💡 Projetos tornam as análises mais organizadas, reproduzíveis e fáceis de manter.
+]
 
 ---
 
+## Criando um Projeto no RStudio
+<br>
 
+### Passos
+
+1. **File** → **New Project**
+2. **New Directory**
+3. **New Project**
+4. Escolha o nome e a localização do projeto
+5. Clique em **Create Project**
+
+<br>
+
+.alert[
+💡 O RStudio criará automaticamente o arquivo `.Rproj`, que definirá o diretório raiz do projeto.
+]
+
+---
+
+## Estrutura Recomendada
+<br>
+
+👉 **Boa prática**: Mantenha dados, códigos e resultados em diretórios separados.
+<br>
+
+.pull-left[
+<br>
+
+```text
+📁 Projeto
+├── 📂 data
+├── 📂 script
+└── 📂 output
+    ├── 📂 figure
+    ├── 📂 table
+    └── 📂 reports
+```
+]
+
+--
+
+.pull-left[
+<br>
+
+| Pasta | Finalidade |
+|---------|---------|
+| `data` | Dados utilizados na análise |
+| `script` | Scripts em R |
+| `figure` | Figuras e gráficos |
+| `table` | Tabelas geradas |
+| `reports` | Relatórios e documentos finais |
+]
 
 
 <!--Slide XX -->
