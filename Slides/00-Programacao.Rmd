@@ -49,6 +49,8 @@ knitr::opts_chunk$set(
 ```{r packages, include=FALSE}
 # remotes::install_github("dill/emoGG")
 # remotes::install_github("hadley/emo")
+# remotes::install_github("emitanaka/anicon")
+# remotes::install_github("mitchelloharawild/icons")
 library(ggplot2)
 library(dplyr)
 library(ggimage)
@@ -83,7 +85,6 @@ use_logo(
   width = "150px",
   height = "150px")
 
-
 use_scribble() # para escrever nos slides
 use_share_again()
 use_progress_bar()
@@ -93,9 +94,7 @@ use_extra_styles(
   hover_code_line = TRUE,         #<<
   mute_unhighlighted_code = TRUE  #<<
 )
-xaringanExtra::use_editable(expires = 1)
-#.can-edit[Você pode editar este título de slide]
-#.can-edit.key-firstSlideTitle[Change this title and then reload the page]
+use_editable(expires = 1)
 use_clipboard()
 ```
 

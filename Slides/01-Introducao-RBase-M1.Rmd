@@ -1,0 +1,997 @@
+---
+title: "Estatística Computacional com R"
+subtitle: "Introdução ao R-base"
+author: "Prof. Dr. Deivison Venicio Souza"
+institute: "Universidade Federal do Pará (UFPA)"
+date: 
+encoding: "UTF-8"
+header-includes: 
+   - \usepackage{xcolor}
+output:
+  xaringan::moon_reader:
+    css:
+      - default
+      - assets/sydney-fonts.css
+      - assets/slide-title/sydney-title.css
+    self_contained: false
+    seal: false
+    includes:
+      in_header: "assets/mathjax-equation-numbers.html"
+    nature:
+      beforeInit: ["assets/remark-zoom.js", "https://platform.twitter.com/widgets.js"]
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      highlightLanguage: ["r", "css", "yaml"]
+      ratio: '16:9'
+      navigation:
+        scroll: false
+---
+class: title-slide, center, middle
+background-image: url(fig/slide-title/ufpa.png), url(fig/slide-title/PPGBC.png), url(fig/slide-title/PPGCTIF.png), url(fig/slide-title/LMFTCA_TCB2.png), url(fig/slide-title/capa.png)
+background-position: 10% 10%, 90% 90%, 10% 90%, 90% 10%
+background-size: 150px, 180px, 150px, 150px, cover
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+	error = FALSE,
+	fig.align = "center",
+	fig.showtext = TRUE,
+	message = FALSE,
+	warning = FALSE,
+	cache = FALSE,
+	collapse = TRUE,
+	dpi = 600
+)
+```
+
+```{r packages, include=FALSE}
+# remotes::install_github("dill/emoGG")
+library(ggplot2)
+library(dplyr)
+library(ggimage)
+library(kableExtra)
+```
+
+```{css, echo=FALSE}
+.with-logo::before {
+	content: '';
+	width: 120px;
+	height: 120px;
+	position: absolute;
+	bottom: 1.3em;
+	right: -0.5em;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.logo-ufpa::before {
+	background-image: url(fig/slide-title/ufpa.png);
+}
+```
+
+```{r xaringan-logo, echo=FALSE}
+library(xaringanExtra)
+
+use_logo(
+  image_url = "fig/slide-title/LMFTCA_vert.png",
+  position = css_position(top = "1.3em", right = "-1.5em"),
+  width = "150px",
+  height = "150px")
+
+use_scribble() # para escrever nos slides
+use_share_again()
+use_progress_bar()
+#use_animate_all(style = c("slide_down"))
+
+use_extra_styles(
+  hover_code_line = TRUE,         #<<
+  mute_unhighlighted_code = TRUE  #<<
+)
+use_editable(expires = 1)
+use_clipboard()
+```
+
+```{r icon, echo=FALSE}
+#remotes::install_github("mitchelloharawild/icons")
+#remotes::install_github('emitanaka/anicon')
+#library(icons)
+#download_fontawesome()
+#download_simple_icons()
+```
+
+<!-- title-slide -->
+<!--# .font120[Inventário Florestal <br> (FL03039 - EF)] -->
+# Estatística Computacional com R <br> (PPGBC/UFPA e PPGCTIF/UFOPA)
+
+## ᨒ <br>   `r anicon::faa("pagelines", animate="horizontal", colour="green")` Introdução ao R-base `r anicon::faa("pagelines", animate="horizontal", colour="green")` <br> ᨒ
+
+##### 〰〰〰〰〰〰🌱〰〰〰〰〰〰
+##### ᨒ
+##### .font120[**Prof. Dr. Deivison Venicio Souza**]
+##### Universidade Federal do Pará (UFPA)
+##### Faculdade de Engenharia Florestal
+##### Laboratório de Manejo Florestal, Tecnologias e Comunidades Amazônicas
+##### E-mail: deivisonvs@ufpa.br
+<br>
+##### 1ª versão: 14/outubro/2022 <br> (Atualizado em: `r format(Sys.Date(),"%d/%B/%Y")`)
+
+---
+
+layout: true
+class: with-logo logo-ufpa
+<div class="my-header"></div>
+<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao R-base (Módulo 1)</div2> </div>
+
+---
+
+## Objetivos
+<br><br>
+Ao final do **Módulo 1 - Introdução ao R-base** espera-se que os discentes possam alcançar conhecimentos para...
+
+* Entender a importância e reconhecer a praticidade de uso de Linguagem de Programação;
+* Compreender e construir as principais estruturas de dados na Linguagem R;
+* Realizar indexação de diferentes estruturas de dados no R; e
+* Conhecer e aprender a usar operadores no R (aritméticos, relacionais, lógicos).
+<!--* .red[Compreender e desenvolver suas próprias funções no R.]-->
+
+---
+
+## Conteúdo
+
+.pull-left-4[
+**Parte 1 - Conhecendo o R e o IDE Rstudio**
+
+[1- A linguagem R](#R)
+
+[2 - Por que usar a linguagem R?](#pqR)
+
+[3 - RGui - Download, instalação e interface](#RGui)
+
+[4 - IDE RStudio - Download, instalação e interface](#Rstudio)
+
+]
+
+.pull-right-4[
+.pull-down[
+**Parte 2 - Sintaxe da linguagem R**
+
+]
+]
+
+---
+
+## Conteúdo
+
+.pull-left-4[
+**Parte 3 - Criando Projetos em R**
+
+
+]
+
+---
+
+layout: false
+name: conc
+class: inverse, top, right
+background-image: url(fig/slide-title/sec.png)
+background-size: cover
+
+<br><br><br>
+
+.right[.font150[**.green[Módulo 1] <br> Introdução ao R-Base**]]
+
+<br><br>
+
+.right[.font150[**.green[Parte 1] - Conhecendo o R e o IDE Rstudio**]]
+
+---
+
+layout: true
+class: with-logo logo-ufpa
+<div class="my-header"></div>
+<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional (PPGBC0030)</div3>/ <div2>Módulo 1 - Introdução ao R-base</div2> </div>
+
+---
+name: R
+## Linguagem R
+
+.pull-left-4[
+.font90[
+- É uma linguagem de programação de computadores de código aberto e gratuita;
+- Criada em 1993: Ross Ihaka e por Robert Gentleman;
+- Departamento de Estatística da Universidade de Auckland, Nova Zelândia;
+- O R foi desenvolvido a partir da Linguagem S.
+]
+]
+
+.pull-right-4[
+.font90[
+**Possui múltiplas facetas:**
+
+- Pacotes para implementação de métodos estatísticos;
+- Pacotes para manipulação de dados;
+- Pacotes para visualização gráfica elegantes;
+- Pacotes para criação de aplicações web, Dashboard;
+- Pacote para geração de relatórios dinâmicos;
+- Pacotes para criação de apresentações elegantes.
+]
+]
+
+
+.pull-left-7[
+```{r echo=FALSE, out.width='30%', fig.align='center', fig.cap='', dpi=600}
+knitr::include_graphics("https://tidyverse.tidyverse.org/articles/tidyverse-logo.png")
+```
+]
+
+.pull-left-7[
+```{r echo=FALSE, out.width='30%', fig.align='center', fig.cap='', dpi=600}
+knitr::include_graphics("https://ggplot2.tidyverse.org/logo.png")
+```
+]
+
+.pull-left-7[
+```{r echo=FALSE, out.width='30%', fig.align='center', fig.cap='', dpi=600}
+knitr::include_graphics("https://blog.efpsa.org/wp-content/uploads/2019/04/pic1.png")
+
+```
+
+]
+
+.pull-left-7[
+```{r echo=FALSE, out.width='30%', fig.align='center', fig.cap='', dpi=600}
+knitr::include_graphics("https://pkgs.rstudio.com/rmarkdown/reference/figures/logo.png")
+```
+]
+
+.pull-left-7[
+```{r echo=FALSE, out.width='30%', fig.align='center', fig.cap='', dpi=600}
+knitr::include_graphics("https://user-images.githubusercontent.com/163582/45438104-ea200600-b67b-11e8-80fa-d9f2a99a03b0.png")
+
+```
+]
+
+---
+name: pqR
+## Por que usar a linguagem R?
+
+```{r, echo=FALSE, out.width='50%', fig.align='center', fig.cap='', dpi=600}
+knitr::include_graphics('fig/part1/WhyR.png')
+```
+
+---
+name: RGui
+## RGui - Download e instalação
+<br>
+
+.pull-left[
+**1º Passo**: Acesse o site oficial do R:
+
+🔗 https://cloud.r-project.org/
+
+<br><br>
+
+💡 Seleciona automaticamente o melhor servidor para download.
+
+]
+
+<br>
+
+.pull-right[
+👉 **CRAN (Comprehensive R Archive Network)**
+<br>
+- Repositório oficial da linguagem R;
+- Disponibiliza instaladores para Windows, Linux e macOS;
+- Hospeda milhares de pacotes desenvolvidos pela comunidade;
+- Oferece documentação e materiais de apoio.
+]
+
+---
+
+## RGui - Download e instalação
+<br>
+
+**2⁰ Passo**: Na página inicial, selecione o sistema operacional do seu computador:
+
+1. Download R for Windows;
+2. Download R for Linux; ou
+3. Download R for MacOS.
+<br>
+
+**3º Passo**: Clique em .green[Install R for the first time].
+
+**4º Passo**: Faça o download da versão mais recente do R. (R-4.6.0 for Windows)
+
+**5º Passo**: Execute o arquivo baixado. Siga as etapas do instalador, mantendo as configurações padrão.
+<br><br>
+
+.center[
+✅ **Pronto! O R foi instalado com sucesso e está pronto para uso.**
+]
+
+---
+
+## RGui - Interface
+<br>
+
+Ao inicializar o **R Development Core Team** pela primeira vez aparecerá a seguinte imagem:
+
+```{r, echo=FALSE, out.width='40%', fig.align='center', fig.cap='R Console'}
+knitr::include_graphics('fig/part1/Rgui.png')
+```
+
+---
+
+## RGui - Interface
+
+- No contato inicial do usuário com o RGui tem-se a visão do .green[R Console].
+- O sinal .red[>] é o prompt de comando.
+- Execute as funções .green[demo(), help(), help.start(), q()].
+
+```{r, echo=FALSE, out.width='50%', fig.align='center', fig.cap='R Console'}
+knitr::include_graphics('fig/part1/Rgui.png')
+```
+
+---
+
+## RGui - R editor
+
+O RGui possui um .green[R editor] $\rightarrow$ Abrir script.
+
+```{r, echo=FALSE, out.width='50%', fig.align='center', fig.cap='R editor'}
+knitr::include_graphics('fig/part1/Reditor.png')
+```
+
+---
+name: Rstudio
+## IDE RStudio - download e instalação
+<br>
+
+O .green[RStudio] é um ambiente de desenvolvimento integrado (*Integrated Development Environment - IDE*) de códigos em R mais comumente usado por usuários da linguagem.
+
+**1⁰ Passo**: Acessar a página do projeto RStudio: https://www.rstudio.com;
+
+**2⁰ Passo**: Products $\rightarrow$ RStudio;
+
+**3⁰ Passo**: Selecionar a versão do RStudio para Desktop;
+
+**4⁰ Passo**: Na edição Open source $\rightarrow$ Download Rstudio Desktop;
+
+**5⁰ Passo**: Por fim, basta usar o setup baixado para instalar o programa.
+<br><br>
+
+```{r, echo=FALSE, out.width='30%', fig.align='center', fig.cap=''}
+knitr::include_graphics('fig/part1/RStudio.png')
+```
+
+---
+
+## IDE RStudio - Interface
+
+```{r, echo=FALSE, out.width='80%', fig.align='center', fig.cap=''}
+knitr::include_graphics('fig/part1/RstudioIG.svg')
+```
+<!-- http://material.curso-r.com/rbase/ -->
+
+---
+
+## IDE RStudio - Interface (Painéis)
+<br>
+
+**Editor**: Painel de desenvolvimento dos códigos R.
+
+**Environment**: Painel onde aparecerão todos os objetos criados no R.
+
+**Console**: Painel para rodar os códigos R e receber outputs.
+
+**Plots**: Painel de saída gráfica.
+
+**History**: Painel que mostra um histórico dos comandos executados na sessão corrente.
+
+**Help**: Painel que mostra a documentação de funções de pacotes, quando solicitada.
+
+**Files**: Painel para identificar arquivos no diretório de trabalho.
+
+**Packages**: Painel que mostra os pacotes instalados. É possível identificar os pacotes carregados na sessão corrente.
+
+---
+
+layout: false
+name: conc
+class: inverse, top, right
+background-image: url(fig/slide-title/sec.png)
+background-size: cover
+
+<br><br><br>
+
+.right[.font150[**.green[Módulo 1] <br> Introdução ao R-Base**]]
+
+<br><br>
+
+.right[.font150[**.green[Parte 2] - Estrutura de dados na linguagem R**]]
+
+---
+
+layout: true
+class: with-logo logo-ufpa
+<div class="my-header"></div>
+<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional (PPGBC0030)</div3>/ <div2>Módulo 1 - Introdução ao R-base</div2> </div>
+
+---
+
+
+
+---
+
+layout: false
+name: conc
+class: inverse, top, right
+background-image: url(fig/slide-title/sec.png)
+background-size: cover
+
+<br><br><br>
+
+.right[.font150[**.green[Módulo 1] <br> Introdução ao R-Base**]]
+
+<br><br>
+
+.right[.font150[**.green[Parte 5] - Um pouco mais sobre o R**]]
+
+---
+
+layout: true
+class: with-logo logo-ufpa
+<div class="my-header"></div>
+<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional (PPGBC0030)</div3>/ <div2>Módulo 1 - Introdução ao R-base</div2> </div>
+
+---
+name: Sint
+## Um pouco mais sobre o R
+<br>
+
+### Sintaxe da linguagem R
+
+.font90[
+- **Linguagem de expressão**: Tecnicamente, R é uma linguagem de expressão com uma sintaxe muito simples.
+- **Case sensitive**: A linguagem R é *case sensitive*. Isto é, diferencia .green[maiúscula] e .green[minúscula].
+]
+
+.pull-left[
+```{r r1, echo=TRUE, eval=FALSE}
+"a" == "A"
+"mogno" == "Mogno"
+
+# Cria um vetor de nomes
+esp <- c("Cedro", "Ipe", "Ipe", "Ipe", "Cedro",
+         "Ipe", "Ipe", "Cedro", "Ipe", "ipe")
+table(esp) # tabela de frequências
+```
+]
+
+.pull-right[
+```{r ref.label="r1", echo=FALSE, eval=TRUE, collapse=TRUE}
+```
+]
+
+<br>
+
+Fonte: [An Introduction to R](https://cran.r-project.org/doc/manuals/r-release/R-intro.html#:~:text=Contents%5D%5BIndex%5D-,1.8%20R%20commands%2C%20case%20sensitivity%2C%20etc.,would%20refer%20to%20different%20variables.)
+
+---
+
+## Um pouco mais sobre o R
+<br>
+
+### Sintaxe da linguagem R
+.font90[
+- **Comandos elementares no R**: consistem em .green[expressões] ou .green[atribuições].
+<br>
+
+Se uma expressão é um comando, então o R: .blue[avalia], .blue[imprime] (a menos que seja especificado ao contrário) e o resultado é ".blue[perdido]".
+
+Se uma atribuições é um comando, então o R: .blue[avalia], .blue[atribui] o resultado para uma variável e .blue[suprime] a impressão automática do resultado".
+]
+
+.pull-left[
+```{r r2, echo=TRUE, eval=FALSE}
+# Atribuição: Avalia, atribui e suprime
+DAP <- c(49, 56, 44, 46, 56, 
+         87, 45, 98, 100, 120)
+
+# Expressão: Avalia, imprime e perde o resultado
+mean(DAP)
+```
+]
+
+.pull-right[
+```{r ref.label="r2", echo=FALSE, eval=TRUE, collapse=TRUE}
+```
+]
+
+.font70[
+Fonte: [An Introduction to R](https://cran.r-project.org/doc/manuals/r-release/R-intro.html#:~:text=Contents%5D%5BIndex%5D-,1.8%20R%20commands%2C%20case%20sensitivity%2C%20etc.,would%20refer%20to%20different%20variables.)
+]
+
+---
+
+## Um pouco mais sobre o R
+<br>
+
+### Sintaxe da linguagem R
+
+- **Separação de comandos**: ponto e vírgula (.red[;]) ou por uma nova linha;
+- **Comentários**: precedidos pelo símbolo .red[\#] (tudo após .red[\#] não é executado);
+- **Comando incompleto**: se o comando R não estiver sintaticamente completo (em uma linha de código), o prompt aparecerá com o símbolo: .red[+]. Esse símbolo indica continuação do comando inicial.
+<br><br><br><br><br><br>
+
+Fonte: [An Introduction to R](https://cran.r-project.org/doc/manuals/r-release/R-intro.html#:~:text=Contents%5D%5BIndex%5D-,1.8%20R%20commands%2C%20case%20sensitivity%2C%20etc.,would%20refer%20to%20different%20variables.)
+
+---
+name: Oper
+## Um pouco mais sobre o R
+<br>
+
+### Operadores no R
+
+- Na linguagem R existe três tipos de operadores
+- Os operadores lógicos e relacionais operam com duas respostas possíveis: `TRUE` (verdadeiro) ou `FALSE` (falso).
+
+```{r echo=FALSE, out.width='60%', fig.align='center', fig.cap='', dpi=600}
+knitr::include_graphics("fig/part1/OpR.png")
+```
+
+---
+
+## Um pouco mais sobre o R
+<br>
+
+### Tipos de operadores
+<br>
+
+.font80[
+.pull-left-8[
+.center[**Operadores Aritméticos**]
+
+| Símbolo | Descrição                |
+|---------|--------------------------|
+| +       | Adição                   |
+| -       | Subtração                |
+| *       | Multiplicação            |
+| /       | Divisão                  |
+| ^ ou ** | Potenciação              |
+| %%      | Resto da divisão         |
+| %/%     | Parte inteira da divisão |
+]
+
+
+.pull-left-8[
+.center[**Operadores Lógicos**]
+
+| Símbolo | Descrição                       |
+|---------|---------------------------------|
+| &       | E (and) - versão vetorizada     |
+| &&      | E (and) - versão não-vetorizada |
+| ⎮       | Ou (or) - versão vetorizada     |
+| ⎮⎮      | Ou (or) - versão não-vetorizada |
+| !       | Não...                          |
+| xor     | Ou exclusivo...                 |
+
+]
+
+.pull-left-8[
+.center[**Operadores Relacionais**]
+
+| Símbolo | Descrição                |
+|---------|--------------------------|
+| <       | Menor do que...          |
+| >       | Maior do que...          |
+| <=      | Menor ou igual do que... |
+| >=      | Maior ou igual do que... |
+| ==      | Igual a...               |
+| !=      | Diferente de...          |
+| %in%    | Contém                   |
+
+]
+]
+
+---
+name: arit
+## Um pouco mais sobre o R
+<br>
+
+### Operadores aritméticos - Expressões básicas
+
+- Operadores usuais para realizar operações matemáticas.
+
+.pull-left[
+.font80[
+```{r refname, echo=TRUE, eval=FALSE}
+2+3             # adição
+4*9             # multiplicação
+20/5            # divisão
+32-10           # subtração
+5^3             # potenciação (exponenciação)
+10%%3           # resto da divisão
+10%/%3          # Parte inteira da divisão
+```
+
+```{r refname3, echo=TRUE, eval=FALSE}
+(x <- c(2,4,6,8))
+(y <- c(1,5,9,0))
+```
+
+```{r refname4, echo=TRUE, eval=FALSE}
+x + y
+y/x+2
+```
+]
+]
+
+.pull-right[
+.font80[
+```{r ref.label="refname", echo=FALSE, eval=TRUE, collapse=TRUE}
+```
+
+```{r ref.label="refname3", echo=FALSE, eval=TRUE, collapse=TRUE}
+```
+
+```{r ref.label="refname4", echo=FALSE, eval=TRUE, collapse=TRUE}
+```
+]
+]
+
+Acesse o script: [01-R-Operadores](https://deivisonsouza.github.io/FL03034-EF/Slides/R/01-R-Operadores.R)
+
+---
+
+## Um pouco mais sobre o R
+<br>
+
+### Operadores aritméticos - Expressões mais complexas
+
+- Regra **PEMDAS** (**P**arênteses, **E**xponenciação, **M**ultiplicação, **D**ivisão, **A**dição e **S**ubtração).
+
+.pull-left[
+```{r refname2, echo=TRUE, eval=FALSE}
+(2+3)*10
+4*3**3
+5+8-4*9/3
+5+(8-4)*9/3
+2^3*4+6/2
+2^3*(4+6)/2
+```
+]
+
+.pull-right[
+```{r ref.label="refname2", echo=FALSE, eval=TRUE, collapse=TRUE}
+```
+]
+
+---
+name: relac
+## Um pouco mais sobre o R
+<br>
+
+### Operadores relacionais (ou comparação)
+
+- Operadores relacionais são usados para realizar comparações de valores.
+
+.pull-left-9[
+.font80[
+```{r logVar, echo=TRUE, eval=FALSE}
+# vetor com um elemento
+(x <- 20)
+(y <- 10)
+(v <- 1)
+
+# vetor com mais de um elemento
+(z <- c(1:5))
+(w <- c(5:1))
+```
+
+```{r logname, echo=TRUE, eval=FALSE}
+x > y        # x é maior do que y?
+x < y        # x é menor do que y?
+x != y       # x é diferente de y?
+y <= x       # y é menor ou igual a x?
+y >= x       # y é maior ou igual a x?
+z == w       # elementos de z são iguais aos de w?
+z != w       # elementos de z são dif. aos de w?
+x >= w       # x é >= aos elementos de w?
+w %in% v     # w contém v?
+```
+]
+]
+
+.pull-right-9[
+.font80[
+```{r ref.label="logVar", echo=FALSE, eval=TRUE, collapse=T}
+```
+<br>
+
+```{r ref.label="logname", echo=FALSE, eval=TRUE, collapse=T}
+```
+]
+]
+
+---
+
+## Um pouco mais sobre o R
+<br>
+
+### Operadores relacionais (ou comparação) - .black[operador %in%]
+
+.font80[
+É um operador binário que retorna um vetor booleano (TRUE ou FALSE) de tamanho sempre igual ao vetor esquerdo.
+
+Considere um vetor de nomes de espécies florestais...
+]
+
+.pull-left-9[
+.font80[
+```{r IN, echo=TRUE, eval=FALSE}
+especie <- 
+   c("Vouacapoua-americana", "Cedrela-odorata",
+     "Bertholletia-excelsa", "Dinizia-excelsa Ducke",
+     "Bertholletia-excelsa", "Manilkara-huberi",
+     "Couratari-guianensis")
+
+"Bertholletia-excelsa" %in% especie
+"Swietenia-macrophylla" %in% especie
+```
+]
+]
+
+.pull-right-9[
+.font80[
+Agora, você deseja descobrir se esse vetor contém *Bertholletia excelsa* e *Swietenia macrophylla*?
+<br><br>
+
+Essas espécies estão classificadas na categoria Vulnerável (VU), conforme a [Portaria MMA 443, de 17 de dezembro de 2014](http://dados.gov.br/dataset/portaria_443). Portanto, sofrem as restrições estabelecidas no art. 2º, incluindo a proibição de manejo.
+]
+]
+
+.pull-left[
+.font80[
+```{r ref.label="IN", echo=FALSE, eval=TRUE, collapse=T}
+"Bertholletia-excelsa" %in% especie
+"Swietenia-macrophylla" %in% especie
+```
+]
+]
+
+---
+
+## Um pouco mais sobre o R
+<br>
+
+### Operadores relacionais (ou comparação)
+
+.pull-left-9[
+```{r IN2, echo=TRUE, eval=FALSE}
+especie <- 
+   c("Vouacapoua-americana", "Cedrela-odorata",
+     "Bertholletia-excelsa", "Dinizia-excelsa Ducke",
+     "Bertholletia-excelsa", "Manilkara-huberi",
+     "Couratari-guianensis")
+
+ameacadas <- 
+  c("Vouacapoua-americana", "Bertholletia-excelsa",
+    "Cedrela-odorata", "Swietenia-macrophylla")
+
+especie %in% ameacadas
+#unique(especie[which(especie %in% ameacadas)])
+```
+]
+
+.pull-right-9[
+**A pergunta feita é:**
+
+.font90[
+- As espécies do vetor "ameacadas" estão contidas no vetor "especie"?
+- O comando .green[**%in%**] avalia cada elemento do vetor "especie" e retorna uma resposta booleana (TRUE ou FALSE) de comprimento igual ao vetor esquerdo ("especie").
+]
+]
+
+.pull-down[
+```{r ref.label="IN2", echo=FALSE, eval=TRUE, collapse=T}
+```
+]
+
+---
+name: log
+## Um pouco mais sobre o R
+<br>
+
+### Operadores lógicos
+
+.pull-left-5[
+.font80[
+- Em programação, estes operadores são usados para realizar **operações lógicas**, cuja saída é uma **resposta booleana**.
+- Uma resposta booleana indica se algo é Verdadeiro (`TRUE`) ou Falso (`FALSE`).
+<br><br>
+
+**Mogno brasileiro** = *Swietenia macrophylla*
+
+**Angelim pedra** = *Hymenolobium petraeum*
+]
+]
+
+.pull-right-5[
+```{r , echo=FALSE, eval=TRUE}
+
+data <- data.frame(
+  Especie = c("Swietenia macrophylla", "Swietenia macrophylla", "Swietenia macrophylla", "Hymenolobium petraeum","Hymenolobium petraeum", "Hymenolobium petraeum", "Hymenolobium petraeum","Hymenolobium petraeum", "Swietenia macrophylla", "Swietenia macrophylla"),
+              DAP = c(33.6, 42.6, 52.1, 80.3, 90.8,
+                      49.4, 70.5, 100.5, 60.7, 27.1),
+              H = c(9.1, 13.2, 15.4, 18.6, 19.5,
+                    16.8, 17.9, 22.4, 15.3, 8.7),
+              Cipo = c("Sim", "Não", "Sim", "Não", "Sim",
+                         "Não", "Sim", "Não", "Sim", "Sim"),
+              QF = c(2, 1, 3, 1, 2, 1, 2, 3, 1, 3),
+              Selecao = c("Protegida", "Protegida", "Protegida", "Explorar", "Explorar",
+                          "Remanescente", "Explorar", "Remanescente","Protegida", "Protegida"),
+  stringsAsFactors = T)
+
+data %>% 
+   DT::datatable(editable = 'cell', 
+                 rownames = FALSE, style = "default",
+                 class = "display", width = '1000px',
+                 caption = 'Dados fictícios para 10 árvores de duas espécies florestais.',
+     options=list(pageLength = 10, dom = 'tip',
+                  autoWidth = T,
+       initComplete = htmlwidgets::JS(
+          "function(settings, json) {",
+          paste0("$(this.api().table().container()).css({'font-size': '", "12pt", "'});"),
+          "}")
+       ) 
+     )
+```
+
+]
+
+---
+
+## Um pouco mais sobre o R
+<br>
+
+### Operadores lógicos
+
+#### Operador `&` - versão vetorizada
+
+Use o operador lógico `&` para responder as questões a seguir:
+
+`r anicon::faa("hand-point-right", animate="horizontal")` Quais árvores possuem **DAP maior ou igual a 50cm** .red[e] **Qualidade de Fuste (QF) igual a 1**❓
+
+--
+
+```{r operE, echo=TRUE, eval=FALSE}
+data$DAP >= 50 & data$QF == 1
+#data[data$DAP >= 50 & data$QF == 1, ]
+```
+
+--
+
+```{r ref.label="operE", echo=FALSE, eval=TRUE, collapse=T}
+```
+
+--
+<br>
+🌳**Legislação florestal!**🌳
+
+.font80[
+A [Resolução CONAMA nº 406 de 02/02/2009](http://www2.mma.gov.br/port/conama/legiabre.cfm?codlegi=597) (Publicada no DOU nº 26, de 06/02/2009, pág. 100) estabelece em seu art. 6º um <bdi style="font-weight:bold">Diâmetro Mínimo de Corte (DMC) de 50 cm</bdi> para todas as espécies, para as quais ainda não se estabeleceu o DMC específico.
+]
+
+---
+
+## Um pouco mais sobre o R
+<br>
+
+### Operadores lógicos
+
+#### Operador `&` - versão vetorizada (cont.)
+
+`r anicon::faa("hand-point-right", animate="horizontal")` Quais árvores possuem **cipós ausentes**, **QF igual a 1** .red[e] **DAP maior ou igual a 50cm**❓
+
+--
+
+```{r operE2, echo=TRUE, eval=FALSE}
+data$Cipo == "Não" & data$QF == 1 & data$DAP >= 50
+#data[data$Cipo == "Não" & data$QF == 1 & data$DAP >= 50,]
+```
+
+--
+
+```{r ref.label="operE2", echo=FALSE, eval=TRUE, collapse=T}
+```
+
+--
+`r anicon::faa("hand-point-right", animate="horizontal")` Quais árvores estão selecionadas para **explorar** .red[e] **QF igual a 1**❓
+
+--
+```{r operE3, echo=TRUE, eval=FALSE}
+data$Selecao == "Explorar" & data$QF == 1
+#data[data$Selecao == "Explorar" & data$QF == 1, ]
+```
+
+--
+```{r ref.label="operE3", echo=FALSE, eval=TRUE, collapse=T}
+```
+
+---
+name: FunsMat
+## Um pouco mais sobre o R
+<br>
+
+### Funções matemáticas usuais
+
+A linguagem R dispõe de funções matemáticas usualmente encontradas em calculadoras científicas.
+<br><br>
+
+
+| Função                 | Descrição                        |
+|------------------------|----------------------------------|
+| sqrt()                 | Raiz quadrada                    |
+| abs()                  | Valor absoluto                   |
+| sin(); cos(); tan()    | Funções trigonométricas          |
+| asin(); acos(); atan() | Funções trigonométricas inversas |
+| exp()                  | Exponencial                      |
+| log10()                | Logarítmo na base 10             |
+| log()                  | Logarítmo natural                |
+| factorial              | Fatorial                         |
+
+---
+
+## Um pouco mais sobre o R
+<br>
+
+### Alguns comandos básicos
+<br>
+
+.font80[
+| **Comando**                             | **Ação**                                      |
+| :-------------------------------------: | :-------------------------------------------: |
+| q()                                     | Fechar o programa                             |
+| rm(nome do objeto)                      | Remover um objeto qualquer                    |
+| ls()                                    | Listar os objetos na janela de trabalho atual |
+| help(nome da função) ou ?nome da função | Solicitar ajuda sobre o uso de uma função     |
+| save.image()                            | Salvar                                        |
+| Ctrl + L                                | Limpar a tela do R console                    |
+| history(max.show, nrow = 3)             | Listar os últimos 3 comandos executados       |
+| getwd()                                 | Mostrar o diretório de trabalho               |
+| setwd("diretório desejado")             | Mudar o diretório de trabalho                 |
+| install.packages("nome do pacote")      | Instalar um pacote específico                 |
+]
+
+---
+
+## Um pouco mais sobre o R
+<br>
+
+### Alguns comandos básicos (cont.)
+<br>
+
+.font80[
+| **Comando**               | **Ação**                                       |
+| :-----------------------: | :--------------------------------------------: |
+| library("nome do pacote") | Carregar um pacote específico                  |
+| dir()                     | Lista os arquivos existentes no diretório      |
+| getOption("OutDec")       | Verificar o separador decimal definido         |
+| options("OutDec=")        | Mudar o separador decimal para vírgula         |
+| round(5.9845, digits=2)  | Função para arredondamento de casas decimais   |
+| data()                    | Lista de conjuntos de dados disponíveis no R             |
+| ?nomedodataset            | Obter informações detalhadas sobre um conjunto de dado |
+| class(nome do objeto)     | Verifica a classe de um objeto específico      |
+| search()                  | Lista todos os pacotes carregados              |
+]
+
+
+<!--Slide XX -->
+---
+layout: false
+class: inverse, top, right
+background-image: url(fig/slide-title/sec.png)
+background-size: cover
+

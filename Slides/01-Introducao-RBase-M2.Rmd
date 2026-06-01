@@ -1,6 +1,6 @@
 ---
-title: "Estatística Computacional (PPGBC0030)"
-subtitle: "Parte 1 - Introdução à Linguagem R"
+title: "Estatística Computacional com R"
+subtitle: "Introdução ao R-base"
 author: "Prof. Dr. Deivison Venicio Souza"
 institute: "Universidade Federal do Pará (UFPA)"
 date: 
@@ -28,20 +28,21 @@ output:
         scroll: false
 ---
 class: title-slide, center, middle
-background-image: url(fig/slide-title/LMFTCA.png), url(fig/slide-title/ppgbc3.png), url(fig/slide-title/capa.png)
-background-position: 90% 90%, 10% 90%
-background-size: 150px, 300px, cover
+background-image: url(fig/slide-title/ufpa.png), url(fig/slide-title/PPGBC.png), url(fig/slide-title/PPGCTIF.png), url(fig/slide-title/LMFTCA_TCB2.png), url(fig/slide-title/capa.png)
+background-position: 10% 10%, 90% 90%, 10% 90%, 90% 10%
+background-size: 150px, 180px, 150px, 150px, cover
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(
-  fig.showtext = TRUE,
-  fig.align = "center", 
-  cache = FALSE,
-  error = FALSE,
-  message = FALSE, 
-  warning = FALSE, 
-  collapse = TRUE ,
-  dpi = 600)
+	error = FALSE,
+	fig.align = "center",
+	fig.showtext = TRUE,
+	message = FALSE,
+	warning = FALSE,
+	cache = FALSE,
+	collapse = TRUE,
+	dpi = 600
+)
 ```
 
 ```{css, echo=FALSE}
@@ -83,11 +84,13 @@ library(kableExtra)
 
 ```{r xaringan-logo, echo=FALSE}
 library(xaringanExtra)
+
 use_logo(
-  image_url = "fig/slide-title/LMFTCA.png",
-  position = css_position(top = "1em", right = ".5em"),
-  width = "130px",
-  height = "130px")
+  image_url = "fig/slide-title/LMFTCA_vert.png",
+  position = css_position(top = "1.3em", right = "-1.5em"),
+  width = "150px",
+  height = "150px")
+
 
 use_scribble() # para escrever nos slides
 use_share_again()
@@ -113,14 +116,17 @@ use_clipboard()
 ```
 
 <!-- title-slide -->
-# .font120[Estatística Computacional <br> (PPGBC0030)]
+<!--# .font120[Inventário Florestal <br> (FL03039 - EF)] -->
+# Estatística Computacional com R <br> (PPGBC/UFPA e PPGCTIF/UFOPA)
 
-## `r anicon::faa("pagelines", animate="horizontal", colour="green")` Introdução ao R-base `r anicon::faa("pagelines", animate="horizontal", colour="green")`
-<br>
+## ᨒ <br>   `r anicon::faa("pagelines", animate="horizontal", colour="green")` Introdução ao R-base `r anicon::faa("pagelines", animate="horizontal", colour="green")` <br> ᨒ
 
-#### **Prof. Dr. Deivison Venicio Souza**
-##### Universidade Federal do Pará (UFPA) 
+##### 〰〰〰〰〰〰🌱〰〰〰〰〰〰
+##### ᨒ
+##### .font120[**Prof. Dr. Deivison Venicio Souza**]
+##### Universidade Federal do Pará (UFPA)
 ##### Faculdade de Engenharia Florestal
+##### Laboratório de Manejo Florestal, Tecnologias e Comunidades Amazônicas
 ##### E-mail: deivisonvs@ufpa.br
 <br>
 ##### 1ª versão: 14/outubro/2022 <br> (Atualizado em: `r format(Sys.Date(),"%d/%B/%Y")`)
@@ -130,7 +136,7 @@ use_clipboard()
 layout: true
 class: with-logo logo-ufpa
 <div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional (PPGBC0030)</div3>/ <div2>Módulo 1 - Introdução ao R-base</div2> </div>
+<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao R-base (Módulo 1)</div2> </div>
 
 ---
 
