@@ -180,7 +180,18 @@ Ao final do **Módulo 1 - Introdução ao R-base** espera-se que os discentes po
 ## Conteúdo
 
 .pull-left-4[
-### Parte 3 - Criando Projetos em R
+
+### Parte 3 — Projetos no RStudio
+
+[1 - O que é um Projeto (.Rproj)?](#projeto)
+
+[2 - Por que utilizar Projetos?](#pqprojeto)
+
+[3 - Criando um Projeto no RStudio](#criando)
+
+[4 - Estrutura Recomendada](#estrutura)
+
+[5 - Boas Práticas](#boaspraticas)
 
 ]
 
@@ -757,7 +768,7 @@ background-size: cover
 
 <br><br>
 
-.right[.font150[**.green[Parte 1] - Criando Projetos em R**]]
+.right[.font150[**.green[Parte 3] - Projetos no RStudio**]]
 
 ---
 
@@ -790,20 +801,6 @@ Dados + Scripts + Resultados + Relatórios
 - Apresentações.
 ]
 ]
-
-.pull-right[
-
-```text
-📁 Projeto
-├── 📂 data
-├── 📂 script
-└── 📂 output
-    ├── 📂 figure
-    ├── 📂 table
-    └── 📂 reports
-```
-]
-
 
 ---
 name:
