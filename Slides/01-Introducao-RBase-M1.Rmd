@@ -126,14 +126,16 @@ class: with-logo logo-ufpa
 ---
 
 ## Objetivos
-<br><br>
+<br>
 Ao final do **Módulo 1 - Introdução ao R-base** espera-se que os discentes possam alcançar conhecimentos para...
 
-* Entender a importância e reconhecer a praticidade de uso de Linguagem de Programação;
-* Compreender e construir as principais estruturas de dados na Linguagem R;
-* Realizar indexação de diferentes estruturas de dados no R; e
-* Conhecer e aprender a usar operadores no R (aritméticos, relacionais, lógicos).
-<!--* .red[Compreender e desenvolver suas próprias funções no R.]-->
+* Compreender a importância da linguagem R e do RStudio;
+* Conhecer a sintaxe básica da linguagem R;
+* Criar objetos, usar atribuição, comentários e funções;
+* Utilizar a documentação integrada do R;
+* Organizar análises por meio de Projetos no RStudio;
+* Compreender documentação e reprodutibilidade; e
+* Aplicar boas práticas em projetos R.
 
 ---
 
@@ -1220,6 +1222,25 @@ renv.lock
 .alert[
 💡 Um projeto bem estruturado deve ser **compreendido**, **executado** e **reproduzido** por qualquer pessoa.
 ]
+
+---
+layout: false
+name: etim
+class: inverse, middle, center
+background-image: url(fig/slide-title/sec.png)
+background-size: cover
+
+## Dúvidas?
+
+<br>
+
+## 🚀 .black[Próximo passo]
+
+Criar seu primeiro Projeto no RStudio e começar a explorar a linguagem R.
+
+<br>
+
+💬 Perguntas, comentários ou sugestões?
 
 
 <!--Slide XX -->
