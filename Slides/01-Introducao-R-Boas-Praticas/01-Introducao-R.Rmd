@@ -3,34 +3,43 @@ title: "Estatística Computacional com R"
 subtitle: "Introdução ao R-base"
 author: "Prof. Dr. Deivison Venicio Souza"
 institute: "Universidade Federal do Pará (UFPA)"
-date: 
+date: ""
 encoding: "UTF-8"
-header-includes: 
-   - \usepackage{xcolor}
+
 output:
   xaringan::moon_reader:
     css:
       - default
-      - assets/sydney-fonts.css
-      - assets/slide-title/sydney-title.css
-    self_contained: false
+      - "../assets/sydney-fonts.css"
+      - "../assets/sydney-title.css"
+    self_contained: true
     seal: false
     includes:
-      in_header: "assets/mathjax-equation-numbers.html"
+      in_header: "../assets/mathjax-equation-numbers.html"
     nature:
-      beforeInit: ["assets/remark-zoom.js", "https://platform.twitter.com/widgets.js"]
+      beforeInit: "../assets/remark-zoom.js"
       highlightStyle: github
       highlightLines: true
+      highlightSpans: true
+      highlightLanguage:
+        - r
+        - css
+        - yaml
       countIncrementalSlides: false
-      highlightLanguage: ["r", "css", "yaml"]
-      ratio: '16:9'
+      ratio: "16:9"
       navigation:
         scroll: false
 ---
 class: title-slide, center, middle
-background-image: url(fig/slide-title/ufpa.png), url(fig/slide-title/PPGBC.png), url(fig/slide-title/PPGCTIF.png), url(fig/slide-title/LMFTCA_TCB2.png), url(fig/slide-title/capa.png)
-background-position: 10% 10%, 90% 90%, 10% 90%, 90% 10%
-background-size: 150px, 180px, 150px, 150px, cover
+background-image: url(fig/capa.png)
+background-position: center
+background-size: cover
+background-repeat: no-repeat
+
+<img src="fig/ufpa.png" style="position:absolute; top:25px; left:25px; width:150px; z-index:10;">
+<img src="fig/LMFTCA.png" style="position:absolute; top:25px; right:25px; width:150px; z-index:10;">
+<img src="fig/PPGCTIF.png" style="position:absolute; bottom:25px; left:25px; width:150px; z-index:10;">
+<img src="fig/PPGBC.png" style="position:absolute; bottom:25px; right:25px; width:180px; z-index:10;">
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(
@@ -303,7 +312,7 @@ name: pqR
 ## Por que usar a linguagem R?
 
 ```{r, echo=FALSE, out.width='50%', fig.align='center', fig.cap='', dpi=600}
-knitr::include_graphics('fig/part1/WhyR.png')
+knitr::include_graphics('fig/WhyR.png')
 ```
 
 ---
@@ -376,7 +385,7 @@ name: RGui
 
 .pull-right-13[
 ```{r, echo=FALSE, out.width='80%', fig.align='center', fig.cap='R Console'}
-knitr::include_graphics('fig/part1/Rgui.png')
+knitr::include_graphics('fig/Rgui.png')
 ```
 ]
 
@@ -394,7 +403,7 @@ knitr::include_graphics('fig/part1/Rgui.png')
 
 .pull-right-13[
 ```{r, echo=FALSE, out.width='80%', fig.align='center', fig.cap='R editor'}
-knitr::include_graphics('fig/part1/Reditor.png')
+knitr::include_graphics('fig/Reditor.png')
 ```
 ]
 
@@ -421,7 +430,7 @@ name: Rstudio
 ]
 
 ```{r, echo=FALSE, out.width='20%', fig.align='center', fig.cap=''}
-knitr::include_graphics('fig/part1/RStudio.png')
+knitr::include_graphics('fig/RStudio.png')
 ```
 
 ---
@@ -429,7 +438,7 @@ knitr::include_graphics('fig/part1/RStudio.png')
 ## IDE RStudio - Interface
 
 ```{r, echo=FALSE, out.width='80%', fig.align='center', fig.cap=''}
-knitr::include_graphics('fig/part1/RstudioIG.svg')
+knitr::include_graphics('fig/RstudioIG.svg')
 ```
 
 ---
@@ -1028,7 +1037,7 @@ data/biomassa.csv
 .pull-right[
 <br><br>
 ```{r echo=FALSE, out.width='90%', fig.align='center'}
-knitr::include_graphics("fig/part1/readme.png")
+knitr::include_graphics("fig/readme.png")
 ```
 
 ]

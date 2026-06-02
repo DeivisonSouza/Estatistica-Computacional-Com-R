@@ -2,6 +2,83 @@
  Slide margins and spacings
  ************/
 
+.with-logo::before {
+  content: "";
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  top: 20px;
+  right: -20px;
+  background-image: url('../assets/logos/ufpa.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 9999;
+}
+
+.logo-lmftca-fixed::after {
+  content: "";
+  position: absolute;
+  bottom: 1.3em;
+  right: -40px;
+  width: 150px;
+  height: 150px;
+  background-image: url("logos/LMFTCA_vert.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 9999;
+}
+
+/* UFPA */
+.title-slide::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 150px;
+  height: 150px;
+  background-image: url("logos/ufpa.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 9999;
+}
+
+/* LMFTCA */
+.title-slide .logo-lmftca {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 150px;
+  height: 150px;
+  background-image: url("logos/LMFTCA.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* PPGCTIF */
+.title-slide .logo-ppgctif {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 150px;
+  height: 150px;
+  background-image: url("logos/PPGCTIF.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* PPGBC */
+.title-slide .logo-ppgbc {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 180px;
+  height: 150px;
+  background-image: url("logos/PPGBC.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+
 .alert{
   background:#fff8e1;
   border-left:6px solid #ffb300;

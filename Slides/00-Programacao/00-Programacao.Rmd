@@ -31,15 +31,14 @@ output:
         scroll: false
 ---
 class: title-slide, center, middle
-background-image: url(fig/capa.png)
+background-image: url(../assets/capa/capa.png)
 background-position: center
 background-size: cover
 background-repeat: no-repeat
 
-<img src="fig/ufpa.png" style="position:absolute; top:25px; left:25px; width:150px; z-index:10;">
-<img src="fig/LMFTCA.png" style="position:absolute; top:25px; right:25px; width:150px; z-index:10;">
-<img src="fig/PPGCTIF.png" style="position:absolute; bottom:25px; left:25px; width:150px; z-index:10;">
-<img src="fig/PPGBC.png" style="position:absolute; bottom:25px; right:25px; width:180px; z-index:10;">
+<div class="logo-lmftca"></div>
+<div class="logo-ppgctif"></div>
+<div class="logo-ppgbc"></div>
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(
@@ -67,48 +66,23 @@ library(readr)
 #library(emo)
 ```
 
-```{css, echo=FALSE}
-.with-logo::before {
-	content: '';
-	width: 120px;
-	height: 120px;
-	position: absolute;
-	bottom: 1.3em;
-	right: -0.5em;
-	background-size: contain;
-	background-repeat: no-repeat;
-}
-
-.logo-ufpa::before {
-	background-image: url(fig/ufpa.png);
-}
-```
-
 ```{r xaringan-logo, echo=FALSE}
 library(xaringanExtra)
-
-use_logo(
-  image_url = "fig/LMFTCA_vert.png",
-  position = css_position(top = "1.3em", right = "-1.5em"),
-  width = "150px",
-  height = "150px")
 
 use_scribble()
 use_share_again()
 use_progress_bar()
-#use_animate_all(style = c("slide_down"))
 
 use_extra_styles(
-  hover_code_line = TRUE,         #<<
-  mute_unhighlighted_code = TRUE  #<<
+  hover_code_line = TRUE,
+  mute_unhighlighted_code = TRUE
 )
+
 use_editable(expires = 1)
 use_clipboard()
 ```
 
-
 <!-- title-slide -->
-<!--# .font120[Inventário Florestal <br> (FL03039 - EF)] -->
 # Estatística Computacional com R <br> (PPGBC/UFPA e PPGCTIF/UFOPA)
 
 ## ᨒ <br>   `r anicon::faa("pagelines", animate="horizontal", colour="green")` Programação da Disciplina `r anicon::faa("pagelines", animate="horizontal", colour="green")` <br> ᨒ
@@ -126,7 +100,7 @@ use_clipboard()
 ---
 
 layout: true
-class: with-logo logo-ufpa
+class: with-logo logo-lmftca-fixed
 <div class="my-header"></div>
 <div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Programação da disciplina</div2> </div>
 
@@ -466,13 +440,13 @@ O plano de ensino da disciplina pode ser acessado em:
 layout: false
 name: etim
 class: inverse, middle, center
-background-image: url(fig/sec.png)
+background-image: url(../assets/capa/sec.png)
 background-size: cover
 
 ## .font200[Obrigado!]
 
 ```{r, echo=FALSE, out.width='20%', fig.align='center', fig.cap='', dpi=600}
-knitr::include_graphics('fig/LMFTCA.png')
+knitr::include_graphics('../assets/logos/LMFTCA.png')
 ```
 
 👨🏻‍👩🏻‍👦🏻‍👦🏻 [@lmftca_ufpa](https://www.instagram.com/lmftca_ufpa/)
