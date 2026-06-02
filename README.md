@@ -1,17 +1,13 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file. -->
 
-<!-- badges: start -->
-
-<!-- badges: end -->
-
-<!-- Emprestei a função list_github_files() da Curso-R. (https://github.com/curso-r). A ideia desse readme emprestei da Curso-R. Achei excelente!-->
-
 # Seja bem vindo(a)! :deciduous_tree: :smiley: :grin:
 
-:calendar: Junho: 3, 5, 10, 11, 12, 17, 18, 19, 24, 25, 26
+:calendar: Junho: 3, 10, 11, 12, 24, 25, 26 e 30
 
-:alarm_clock: **07h30min - 12h50min**
+:calendar: Julho: 1 e 2
+
+:alarm_clock: **14h00min - 18h00min**
 
 <div>
 
@@ -58,6 +54,7 @@ R** estão disponibilizados a seguir.
 | Slide | Link |
 |:---|:---|
 | Slides/00-Programacao.html | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/00-Programacao.html> |
+| Slides/01-Introducao-RBase-M1.html | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/01-Introducao-RBase-M1.html> |
 | Slides/01-Introducao-RBase.html | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/01-Introducao-RBase.html> |
 | Slides/02-Importacao-Dados.html | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/02-Importacao-Dados.html> |
 | Slides/03-Manipulacao-Dados.html | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/03-Manipulacao-Dados.html> |
