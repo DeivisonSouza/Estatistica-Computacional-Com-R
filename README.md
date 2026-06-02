@@ -11,8 +11,8 @@
 
 <div>
 
-<img src="Slides/fig/slide-title/ufpa.png" width="100" align="middle" class="center">
-<img src="Slides/fig/slide-title/LMFTCA_hor.png" width="300" align="middle" class="center">
+<img src="Slides/00-Programacao/fig/ufpa.png" width="100" align="middle" class="center">
+<img src="Slides/00-Programacao/fig/LMFTCA_hor.png" width="300" align="middle" class="center">
 
 <div>
 
@@ -53,16 +53,7 @@ R** estão disponibilizados a seguir.
 
 | Slide | Link |
 |:---|:---|
-| Slides/00-Programacao.html | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/00-Programacao.html> |
-| Slides/01-Introducao-RBase-M1.html | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/01-Introducao-RBase-M1.html> |
-| Slides/01-Introducao-RBase.html | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/01-Introducao-RBase.html> |
-| Slides/02-Importacao-Dados.html | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/02-Importacao-Dados.html> |
-| Slides/03-Manipulacao-Dados.html | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/03-Manipulacao-Dados.html> |
-| Slides/04-Visualizacao-Dados.html | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/04-Visualizacao-Dados.html> |
-| Slides/05-AED.html | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/05-AED.html> |
-| Slides/06-Analise-Experimentos-com-R.html | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/06-Analise-Experimentos-com-R.html> |
-| Slides/07-Rmarkdown.html | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/07-Rmarkdown.html> |
-| Slides/Iris-Flower.html | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/Iris-Flower.html> |
+| Slides/00-Programacao/00-Programacao.html | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/00-Programacao/00-Programacao.html> |
 
 # Conjunto de dados
 
@@ -100,7 +91,7 @@ as aplicações em bases de dados.
 
 <div>
 
-<img src="Slides/fig/slide-title/foto.jpg" width="150" align="middle" class="center">
+<img src="Slides/00-Programacao/fig/foto.jpg" width="150" align="middle" class="center">
 
 <div>
 
