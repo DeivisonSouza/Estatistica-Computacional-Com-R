@@ -193,7 +193,9 @@ Ao final do **Módulo 1 - Introdução ao R-base** espera-se que os discentes po
 
 [5 - Documentando um projeto (README.md)](#documentando)
 
-[6 - Boas Práticas](#boaspraticas)
+[6 - Reprodutibilidade](#reprodutibilidade)
+
+[7 - Boas Práticas](#boaspraticas)
 
 ]
 
@@ -1019,7 +1021,6 @@ data/biomassa.csv
 
 ]
 
-
 .pull-right[
 <br><br>
 ```{r echo=FALSE, out.width='90%', fig.align='center'}
@@ -1029,23 +1030,89 @@ knitr::include_graphics("fig/part1/readme.png")
 ]
 
 ---
+name: reprodutibilidade
+## Reprodutibilidade
 
-## Boas Práticas
-<br>
+.pull-left[
 
-✅ Crie um projeto para cada análise.
+### Componentes
 
-✅ Mantenha dados, scripts e resultados separados.
+```text
+📊 Dados
+     +
+💻 Código
+     +
+📖 Documentação
+     +
+⚙️ Ambiente
+Computacional
+     =
+🔬 Resultados
+Reproduzíveis
+```
 
-✅ Utilize caminhos relativos.
+]
 
-✅ Evite o uso frequente de `setwd()`.
+.pull-right[
+
+### Boas Práticas
+
+✅ Utilizar Projetos (`.Rproj`)
+
+✅ Utilizar caminhos relativos
+
+✅ Manter os dados brutos intactos
+
+✅ Criar um `README.md`
+
+✅ Registrar versões dos pacotes
+
+]
 
 <br>
 
 .alert[
-💡 Um projeto bem organizado facilita a análise, a colaboração e a reprodução dos resultados.
+💡 Uma análise é **reproduzível** quando produz os **mesmos resultados** a partir dos **mesmos dados e procedimentos**.
 ]
+
+---
+
+## Boas Práticas
+
+.pull-left[
+
+### 📁 Organização
+
+✅ Um projeto para cada análise (.Rproj)
+
+✅ Dados, scripts e resultados separados
+
+✅ Utilizar caminhos relativos
+
+✅ Evitar o uso de `setwd()`
+
+]
+
+.pull-right[
+
+### 🔬 Reprodutibilidade
+
+✅ Documentar o projeto com `README.md`
+
+✅ Preservar os dados brutos
+
+✅ Registrar o ambiente computacional
+
+✅ Compartilhar dados e scripts
+
+]
+
+<br>
+
+.alert[
+💡 Um projeto bem estruturado deve ser **compreendido**, **executado** e **reproduzido** por qualquer pessoa.
+]
+
 
 <!--Slide XX -->
 ---

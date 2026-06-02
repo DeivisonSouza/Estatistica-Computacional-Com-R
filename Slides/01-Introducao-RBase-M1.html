@@ -17,7 +17,7 @@
     <script src="01-Introducao-RBase-M1_files/xaringanExtra-shareagain-0.2.6/shareagain.js"></script>
     <script src="01-Introducao-RBase-M1_files/xaringanExtra-progressBar-0.0.1/progress-bar.js"></script>
     <link href="01-Introducao-RBase-M1_files/xaringanExtra-extra-styles-0.2.6/xaringanExtra-extra-styles.css" rel="stylesheet" />
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x94e544cd0774254acdde0eee4533d79","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"xa86fd8a9d0c4a6dafde4b3c4f4071c8","expires":1}</script>
     <script src="01-Introducao-RBase-M1_files/himalaya-1.1.0/himalaya.js"></script>
     <script src="01-Introducao-RBase-M1_files/js-cookie-3.0.0/js.cookie.js"></script>
     <link href="01-Introducao-RBase-M1_files/editable-0.2.6/editable.css" rel="stylesheet" />
@@ -219,7 +219,9 @@ Ao final do **Módulo 1 - Introdução ao R-base** espera-se que os discentes po
 
 [5 - Documentando um projeto (README.md)](#documentando)
 
-[6 - Boas Práticas](#boaspraticas)
+[6 - Reprodutibilidade](#reprodutibilidade)
+
+[7 - Boas Práticas](#boaspraticas)
 
 ]
 
@@ -1035,7 +1037,6 @@ data/biomassa.csv
 
 ]
 
-
 .pull-right[
 &lt;br&gt;&lt;br&gt;
 &lt;img src="fig/part1/readme.png" alt="" width="90%" style="display: block; margin: auto;" /&gt;
@@ -1043,23 +1044,89 @@ data/biomassa.csv
 ]
 
 ---
+name: reprodutibilidade
+## Reprodutibilidade
 
-## Boas Práticas
-&lt;br&gt;
+.pull-left[
 
-✅ Crie um projeto para cada análise.
+### Componentes
 
-✅ Mantenha dados, scripts e resultados separados.
+```text
+📊 Dados
+     +
+💻 Código
+     +
+📖 Documentação
+     +
+⚙️ Ambiente
+Computacional
+     =
+🔬 Resultados
+Reproduzíveis
+```
 
-✅ Utilize caminhos relativos.
+]
 
-✅ Evite o uso frequente de `setwd()`.
+.pull-right[
+
+### Boas Práticas
+
+✅ Utilizar Projetos (`.Rproj`)
+
+✅ Utilizar caminhos relativos
+
+✅ Manter os dados brutos intactos
+
+✅ Criar um `README.md`
+
+✅ Registrar versões dos pacotes
+
+]
 
 &lt;br&gt;
 
 .alert[
-💡 Um projeto bem organizado facilita a análise, a colaboração e a reprodução dos resultados.
+💡 Uma análise é **reproduzível** quando produz os **mesmos resultados** a partir dos **mesmos dados e procedimentos**.
 ]
+
+---
+
+## Boas Práticas
+
+.pull-left[
+
+### 📁 Organização
+
+✅ Um projeto para cada análise (.Rproj)
+
+✅ Dados, scripts e resultados separados
+
+✅ Utilizar caminhos relativos
+
+✅ Evitar o uso de `setwd()`
+
+]
+
+.pull-right[
+
+### 🔬 Reprodutibilidade
+
+✅ Documentar o projeto com `README.md`
+
+✅ Preservar os dados brutos
+
+✅ Registrar o ambiente computacional
+
+✅ Compartilhar dados e scripts
+
+]
+
+&lt;br&gt;
+
+.alert[
+💡 Um projeto bem estruturado deve ser **compreendido**, **executado** e **reproduzido** por qualquer pessoa.
+]
+
 
 &lt;!--Slide XX --&gt;
 ---
