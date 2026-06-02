@@ -195,7 +195,9 @@ Ao final do **Módulo 1 - Introdução ao R-base** espera-se que os discentes po
 
 [6 - Reprodutibilidade](#reprodutibilidade)
 
-[7 - Boas Práticas](#boaspraticas)
+[7 - Registrando o Ambiente Computacional](#registrando)
+
+[8 - Boas Práticas](#boaspraticas)
 
 ]
 
@@ -1074,6 +1076,112 @@ Reproduzíveis
 .alert[
 💡 Uma análise é **reproduzível** quando produz os **mesmos resultados** a partir dos **mesmos dados e procedimentos**.
 ]
+
+---
+name: registrando
+## Registrando o Ambiente Computacional
+
+.pull-left[
+
+### O que é?
+
+👉 O pacote **renv** permite registrar o ambiente computacional usado em um projeto.
+
+<br>
+
+### O que é registrado?
+
+✅ Versão do R
+
+✅ Pacotes e versões
+
+✅ Dependências do projeto
+
+]
+
+--
+
+.pull-right[
+
+### Por que é importante?
+
+👉 O mesmo código pode produzir resultados diferentes em computadores distintos.
+
+<br>
+
+.pull-left[
+```text
+💻 Computador A
+R 4.6.0
+dplyr 1.1.4
+```
+]
+
+.pull-right[
+```text
+💻 Computador B
+R 5.0.0
+dplyr 2.0.0
+```
+]
+]
+
+.alert[
+💡 Diferenças nas versões do R e dos pacotes podem afetar a reprodutibilidade das análises.
+]
+
+
+---
+
+## Utilizando o renv
+
+.pull-left[
+
+### Como criar?
+
+1. Instalar o pacote:
+
+```r
+install.packages("renv")
+```
+
+2. Inicializar o projeto:
+
+```r
+renv::init()
+```
+
+O arquivo criado será:
+
+```text
+renv.lock
+```
+
+]
+
+.pull-right[
+
+### Onde salvar?
+
+```text
+📁 Projeto
+├── 📄 README.md
+├── 📄 renv.lock
+├── 📂 data
+├── 📂 script
+├── 📂 output
+│   ├── 📂 figure
+│   ├── 📂 table
+│   └── 📂 reports
+└── Ⓡ Projeto.Rproj
+```
+
+]
+
+.alert[
+💡 O arquivo `renv.lock` registra o ambiente computacional do projeto, aumentando sua reprodutibilidade.
+]
+
 
 ---
 
