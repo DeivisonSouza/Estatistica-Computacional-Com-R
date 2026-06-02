@@ -17,7 +17,7 @@
     <script src="01-Introducao-RBase-M1_files/xaringanExtra-shareagain-0.2.6/shareagain.js"></script>
     <script src="01-Introducao-RBase-M1_files/xaringanExtra-progressBar-0.0.1/progress-bar.js"></script>
     <link href="01-Introducao-RBase-M1_files/xaringanExtra-extra-styles-0.2.6/xaringanExtra-extra-styles.css" rel="stylesheet" />
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"b342a3e4ffdd4f0386a9a1ca21d7824a","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x94e544cd0774254acdde0eee4533d79","expires":1}</script>
     <script src="01-Introducao-RBase-M1_files/himalaya-1.1.0/himalaya.js"></script>
     <script src="01-Introducao-RBase-M1_files/js-cookie-3.0.0/js.cookie.js"></script>
     <link href="01-Introducao-RBase-M1_files/editable-0.2.6/editable.css" rel="stylesheet" />
@@ -140,7 +140,7 @@ top:1.3em;right:-1.5em;
 ##### Laboratório de Manejo Florestal, Tecnologias e Comunidades Amazônicas
 ##### E-mail: deivisonvs@ufpa.br
 &lt;br&gt;
-##### 1ª versão: 14/outubro/2022 &lt;br&gt; (Atualizado em: 01/junho/2026)
+##### 1ª versão: 14/outubro/2022 &lt;br&gt; (Atualizado em: 02/junho/2026)
 
 ---
 
@@ -217,7 +217,9 @@ Ao final do **Módulo 1 - Introdução ao R-base** espera-se que os discentes po
 
 [4 - Estrutura Recomendada](#estrutura)
 
-[5 - Boas Práticas](#boaspraticas)
+[5 - Documentando um projeto (README.md)](#documentando)
+
+[6 - Boas Práticas](#boaspraticas)
 
 ]
 
@@ -794,7 +796,7 @@ class: with-logo logo-ufpa
 &lt;div class="my-footer"&gt;&lt;span&gt;Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp; &lt;div3&gt;Estatística Computacional Com R&lt;/div3&gt;/ &lt;div2&gt;Módulo 1 - Introdução ao R-base&lt;/div2&gt; &lt;/div&gt;
 
 ---
-name:
+name: projeto
 ## O que é um Projeto (.Rproj)?
 &lt;br&gt;
 
@@ -819,7 +821,7 @@ Dados + Scripts + Resultados + Relatórios
 ]
 
 ---
-name:
+name: pqprojeto
 ## Por que utilizar Projetos?
 &lt;br&gt;
 
@@ -860,7 +862,7 @@ name:
 ]
 
 ---
-
+name: criando
 ## Criando um Projeto no RStudio
 &lt;br&gt;
 
@@ -869,8 +871,9 @@ name:
 1. **File** → **New Project**
 2. **New Directory**
 3. **New Project**
-4. Escolha o nome e a localização do projeto
-5. Clique em **Create Project**
+4. **Directory name**: Forneça um nome
+5. **Browser**: Escolha o local
+6. Clique em **Create Project**
 
 &lt;br&gt;
 
@@ -879,11 +882,11 @@ name:
 ]
 
 ---
-
+name: estrutura
 ## Estrutura Recomendada
 &lt;br&gt;
 
-👉 **Boa prática**: Mantenha dados, códigos e resultados em diretórios separados.
+👉 **Boa prática**: .blue[Seja organizado!] Mantenha os dados, códigos e resultados em diretórios separados.
 &lt;br&gt;
 
 .pull-left[
@@ -893,10 +896,11 @@ name:
 📁 Projeto
 ├── 📂 data
 ├── 📂 script
-└── 📂 output
-    ├── 📂 figure
-    ├── 📂 table
-    └── 📂 reports
+├── 📂 output
+│   ├── 📂 figure
+│   ├── 📂 table
+│   └── 📂 reports
+└── Ⓡ Projeto.Rproj (diretório raiz)
 ```
 ]
 
@@ -905,7 +909,7 @@ name:
 .pull-left[
 &lt;br&gt;
 
-| Pasta | Finalidade |
+| Diretório | Finalidade |
 |---------|---------|
 | `data` | Dados utilizados na análise |
 | `script` | Scripts em R |
@@ -914,6 +918,129 @@ name:
 | `reports` | Relatórios e documentos finais |
 ]
 
+---
+name: documentando
+## Documentando o Projeto: README.md
+
+&lt;br&gt;
+
+👉 **README.md**: arquivo de documentação que descreve o projeto e orienta sua utilização.
+
+.pull-left[
+```text
+📁 Projeto
+├── 📄 README.md
+├── 📂 data
+├── 📂 script
+├── 📂 output
+│   ├── 📂 figure
+│   ├── 📂 table
+│   └── 📂 reports
+└── Ⓡ Projeto.Rproj (diretório raiz)
+```
+]
+
+.pull-right[
+.font90[
+#### Informações básicas
+
+- Título do projeto;
+- Objetivo(s);
+- Autor(es);
+- Estrutura de diretórios;
+- Dados utilizados;
+- Principais scripts; e
+- Data da última atualização.
+]
+]
+
+.alert[
+💡 Não basta organizar o projeto com **.Rproj**, é importante documentá-lo com **README.md**.
+]
+
+---
+
+## Criando um README.md
+
+.pull-left[
+
+### Como criar?
+
+1. **File → New File → Text File**
+
+ou
+
+2. **File → New File → R Markdown**
+
+&lt;br&gt;
+
+Salvar como:
+
+```text
+README.md
+ou
+README.Rmd
+```
+
+]
+
+.pull-right[
+
+### Onde salvar?
+
+```text
+📁 Projeto
+├── 📄 README.md
+├── 📂 data
+├── 📂 script
+├── 📂 output
+│   ├── 📂 figure
+│   ├── 📂 table
+│   └── 📂 reports
+└── Ⓡ Projeto.Rproj
+```
+
+]
+
+.alert[
+💡 O **README.md** é o primeiro arquivo que deve ser lido para compreender o projeto.
+]
+
+---
+
+## Exemplo de README.md
+
+.pull-left[
+
+```markdown
+# Biomassa de Cacau
+
+## 🎯 Objetivo
+Ajustar modelos para estimativa
+de biomassa de cacaueiros.
+
+## 👤 Autor
+Deivison Souza
+
+## 📊 Dados
+data/biomassa.csv
+
+## 📜 Scripts
+01_importacao.R
+02_analise.R
+
+## 🕒 Atualização
+02/06/2026
+```
+
+]
+
+
+.pull-right[
+&lt;br&gt;&lt;br&gt;
+&lt;img src="fig/part1/readme.png" alt="" width="90%" style="display: block; margin: auto;" /&gt;
+
+]
 
 ---
 

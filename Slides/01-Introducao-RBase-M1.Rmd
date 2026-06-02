@@ -191,7 +191,9 @@ Ao final do **Módulo 1 - Introdução ao R-base** espera-se que os discentes po
 
 [4 - Estrutura Recomendada](#estrutura)
 
-[5 - Boas Práticas](#boaspraticas)
+[5 - Documentando um projeto (README.md)](#documentando)
+
+[6 - Boas Práticas](#boaspraticas)
 
 ]
 
@@ -778,7 +780,7 @@ class: with-logo logo-ufpa
 <div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional Com R</div3>/ <div2>Módulo 1 - Introdução ao R-base</div2> </div>
 
 ---
-name:
+name: projeto
 ## O que é um Projeto (.Rproj)?
 <br>
 
@@ -803,7 +805,7 @@ Dados + Scripts + Resultados + Relatórios
 ]
 
 ---
-name:
+name: pqprojeto
 ## Por que utilizar Projetos?
 <br>
 
@@ -844,7 +846,7 @@ name:
 ]
 
 ---
-
+name: criando
 ## Criando um Projeto no RStudio
 <br>
 
@@ -853,8 +855,9 @@ name:
 1. **File** → **New Project**
 2. **New Directory**
 3. **New Project**
-4. Escolha o nome e a localização do projeto
-5. Clique em **Create Project**
+4. **Directory name**: Forneça um nome
+5. **Browser**: Escolha o local
+6. Clique em **Create Project**
 
 <br>
 
@@ -863,11 +866,11 @@ name:
 ]
 
 ---
-
+name: estrutura
 ## Estrutura Recomendada
 <br>
 
-👉 **Boa prática**: Mantenha dados, códigos e resultados em diretórios separados.
+👉 **Boa prática**: .blue[Seja organizado!] Mantenha os dados, códigos e resultados em diretórios separados.
 <br>
 
 .pull-left[
@@ -877,10 +880,11 @@ name:
 📁 Projeto
 ├── 📂 data
 ├── 📂 script
-└── 📂 output
-    ├── 📂 figure
-    ├── 📂 table
-    └── 📂 reports
+├── 📂 output
+│   ├── 📂 figure
+│   ├── 📂 table
+│   └── 📂 reports
+└── Ⓡ Projeto.Rproj (diretório raiz)
 ```
 ]
 
@@ -889,7 +893,7 @@ name:
 .pull-left[
 <br>
 
-| Pasta | Finalidade |
+| Diretório | Finalidade |
 |---------|---------|
 | `data` | Dados utilizados na análise |
 | `script` | Scripts em R |
@@ -898,6 +902,131 @@ name:
 | `reports` | Relatórios e documentos finais |
 ]
 
+---
+name: documentando
+## Documentando o Projeto: README.md
+
+<br>
+
+👉 **README.md**: arquivo de documentação que descreve o projeto e orienta sua utilização.
+
+.pull-left[
+```text
+📁 Projeto
+├── 📄 README.md
+├── 📂 data
+├── 📂 script
+├── 📂 output
+│   ├── 📂 figure
+│   ├── 📂 table
+│   └── 📂 reports
+└── Ⓡ Projeto.Rproj (diretório raiz)
+```
+]
+
+.pull-right[
+.font90[
+#### Informações básicas
+
+- Título do projeto;
+- Objetivo(s);
+- Autor(es);
+- Estrutura de diretórios;
+- Dados utilizados;
+- Principais scripts; e
+- Data da última atualização.
+]
+]
+
+.alert[
+💡 Não basta organizar o projeto com **.Rproj**, é importante documentá-lo com **README.md**.
+]
+
+---
+
+## Criando um README.md
+
+.pull-left[
+
+### Como criar?
+
+1. **File → New File → Text File**
+
+ou
+
+2. **File → New File → R Markdown**
+
+<br>
+
+Salvar como:
+
+```text
+README.md
+ou
+README.Rmd
+```
+
+]
+
+.pull-right[
+
+### Onde salvar?
+
+```text
+📁 Projeto
+├── 📄 README.md
+├── 📂 data
+├── 📂 script
+├── 📂 output
+│   ├── 📂 figure
+│   ├── 📂 table
+│   └── 📂 reports
+└── Ⓡ Projeto.Rproj
+```
+
+]
+
+.alert[
+💡 O **README.md** é o primeiro arquivo que deve ser lido para compreender o projeto.
+]
+
+---
+
+## Exemplo de README.md
+
+.pull-left[
+
+```markdown
+# Biomassa de Cacau
+
+## 🎯 Objetivo
+Ajustar modelos para estimativa
+de biomassa de cacaueiros.
+
+## 👤 Autor
+Deivison Souza
+
+## 📊 Dados
+data/biomassa.csv
+
+## 📜 Scripts
+01_importacao.R
+02_analise.R
+
+## 🕒 Atualização
+02/06/2026
+```
+
+]
+
+
+.pull-right[
+<br><br>
+```{r echo=FALSE, out.width='90%', fig.align='center'}
+knitr::include_graphics("fig/part1/readme.png")
+```
+
+]
 
 ---
 
