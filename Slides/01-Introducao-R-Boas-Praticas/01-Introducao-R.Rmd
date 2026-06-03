@@ -198,7 +198,7 @@ background-size: cover
 
 <br><br><br>
 
-.right[.font150[**.green[Módulo 1] <br> Introdução ao R-Base**]]
+.right[.font150[**.green[Módulo 1] <br> Introdução ao R básico**]]
 
 <br><br>
 
