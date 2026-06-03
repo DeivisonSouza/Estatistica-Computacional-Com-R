@@ -58,12 +58,6 @@ knitr::opts_chunk$set(
 # remotes::install_github("hadley/emo")
 # remotes::install_github("emitanaka/anicon")
 # remotes::install_github("mitchelloharawild/icons")
-library(ggplot2)
-library(dplyr)
-library(ggimage)
-library(kableExtra)
-library(readr)
-#library(emo)
 ```
 
 ```{r xaringan-logo, echo=FALSE}

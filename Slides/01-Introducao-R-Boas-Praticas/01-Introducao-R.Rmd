@@ -31,15 +31,14 @@ output:
         scroll: false
 ---
 class: title-slide, center, middle
-background-image: url(fig/capa.png)
+background-image: url(../assets/capa/capa.png)
 background-position: center
 background-size: cover
 background-repeat: no-repeat
 
-<img src="fig/ufpa.png" style="position:absolute; top:25px; left:25px; width:150px; z-index:10;">
-<img src="fig/LMFTCA.png" style="position:absolute; top:25px; right:25px; width:150px; z-index:10;">
-<img src="fig/PPGCTIF.png" style="position:absolute; bottom:25px; left:25px; width:150px; z-index:10;">
-<img src="fig/PPGBC.png" style="position:absolute; bottom:25px; right:25px; width:180px; z-index:10;">
+<div class="logo-lmftca"></div>
+<div class="logo-ppgctif"></div>
+<div class="logo-ppgbc"></div>
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(
@@ -62,41 +61,18 @@ library(ggimage)
 library(kableExtra)
 ```
 
-```{css, echo=FALSE}
-.with-logo::before {
-	content: '';
-	width: 120px;
-	height: 120px;
-	position: absolute;
-	bottom: 1.3em;
-	right: -0.5em;
-	background-size: contain;
-	background-repeat: no-repeat;
-}
-
-.logo-ufpa::before {
-	background-image: url(fig/slide-title/ufpa.png);
-}
-```
-
 ```{r xaringan-logo, echo=FALSE}
 library(xaringanExtra)
 
-use_logo(
-  image_url = "fig/slide-title/LMFTCA_vert.png",
-  position = css_position(top = "1.3em", right = "-1.5em"),
-  width = "150px",
-  height = "150px")
-
-use_scribble() # para escrever nos slides
+use_scribble()
 use_share_again()
 use_progress_bar()
-#use_animate_all(style = c("slide_down"))
 
 use_extra_styles(
-  hover_code_line = TRUE,         #<<
-  mute_unhighlighted_code = TRUE  #<<
+  hover_code_line = TRUE,
+  mute_unhighlighted_code = TRUE
 )
+
 use_editable(expires = 1)
 use_clipboard()
 ```
@@ -217,7 +193,7 @@ Ao final do **Módulo 1 - Introdução ao R-base** espera-se que os discentes po
 layout: false
 name: conc
 class: inverse, top, right
-background-image: url(fig/slide-title/sec.png)
+background-image: url(../assets/capa/sec.png)
 background-size: cover
 
 <br><br><br>
@@ -467,7 +443,7 @@ knitr::include_graphics('fig/RstudioIG.svg')
 layout: false
 name: conc
 class: inverse, top, right
-background-image: url(fig/slide-title/sec.png)
+background-image: url(../assets/capa/sec.png)
 background-size: cover
 
 <br><br><br>
@@ -776,7 +752,7 @@ example(mean)
 layout: false
 name: conc
 class: inverse, top, right
-background-image: url(fig/slide-title/sec.png)
+background-image: url(../assets/capa/sec.png)
 background-size: cover
 
 <br><br><br>
@@ -1236,7 +1212,7 @@ renv.lock
 layout: false
 name: etim
 class: inverse, middle, center
-background-image: url(fig/slide-title/sec.png)
+background-image: url(../assets/capa/sec.png)
 background-size: cover
 
 ## Dúvidas?
@@ -1257,13 +1233,13 @@ Criar seu primeiro Projeto no RStudio e começar a explorar a linguagem R.
 layout: false
 name: etim
 class: inverse, middle, center
-background-image: url(fig/slide-title/sec.png)
+background-image: url(../assets/capa/sec.png)
 background-size: cover
 
 ## .font200[Obrigado!]
 
 ```{r, echo=FALSE, out.width='20%', fig.align='center', fig.cap='', dpi=600}
-knitr::include_graphics('fig/slide-title/LMFTCA_TCB2.png')
+knitr::include_graphics('../assets/logos/LMFTCA.png')
 ```
 
 👨🏻‍👩🏻‍👦🏻‍👦🏻 [@lmftca_ufpa](https://www.instagram.com/lmftca_ufpa/)
