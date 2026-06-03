@@ -104,7 +104,7 @@ use_clipboard()
 ---
 
 layout: true
-class: with-logo logo-ufpa
+class: with-logo logo-lmftca-fixed
 <div class="my-header"></div>
 <div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao R-base (Módulo 1)</div2> </div>
 
@@ -207,7 +207,7 @@ background-size: cover
 ---
 
 layout: true
-class: with-logo logo-ufpa
+class: with-logo logo-lmftca-fixed
 <div class="my-header"></div>
 <div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional Com R</div3>/ <div2>Módulo 1 - Introdução ao R-base</div2> </div>
 
@@ -457,7 +457,7 @@ background-size: cover
 ---
 
 layout: true
-class: with-logo logo-ufpa
+class: with-logo logo-lmftca-fixed
 <div class="my-header"></div>
 <div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional Com R</div3>/ <div2>Módulo 1 - Introdução ao R-base</div2> </div>
 
@@ -766,7 +766,7 @@ background-size: cover
 ---
 
 layout: true
-class: with-logo logo-ufpa
+class: with-logo logo-lmftca-fixed
 <div class="my-header"></div>
 <div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional Com R</div3>/ <div2>Módulo 1 - Introdução ao R-base</div2> </div>
 
