@@ -1,5 +1,5 @@
 
-<!-- README.md is generated from README.Rmd. Please edit that file. -->
+<!-- README.md is generated from README.Rmd. Please edit that file.. -->
 
 # Seja bem vindo(a)! :deciduous_tree: :smiley: :grin:
 
@@ -11,8 +11,8 @@
 
 <div>
 
-<img src="Slides/00-Programacao/fig/ufpa.png" width="100" align="middle" class="center">
-<img src="Slides/00-Programacao/fig/LMFTCA_hor.png" width="300" align="middle" class="center">
+<img src="Slides/assets/logos/ufpa.png" width="100" align="middle" class="center">
+<img src="Slides/assets/logos/LMFTCA_hor.png" width="300" align="middle" class="center">
 
 <div>
 
@@ -54,6 +54,8 @@ R** estão disponibilizados a seguir.
 | Slide | Link |
 |:---|:---|
 | Slides/00-Programacao/00-Programacao.html | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/00-Programacao/00-Programacao.html> |
+| Slides/01-Introducao-R-Boas-Praticas/01-Introducao-R.html | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/01-Introducao-R-Boas-Praticas/01-Introducao-R.html> |
+| Slides/02-Introducao-R-Estrutura/02-Introducao-R-Estrutura.html | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/02-Introducao-R-Estrutura/02-Introducao-R-Estrutura.html> |
 
 # Conjunto de dados
 
