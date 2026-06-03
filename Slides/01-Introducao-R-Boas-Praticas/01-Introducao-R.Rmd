@@ -1210,20 +1210,26 @@ renv.lock
 
 ---
 layout: false
-name: etim
+name: duvidas
 class: inverse, middle, center
 background-image: url(../assets/capa/sec.png)
 background-size: cover
 
-## Dúvidas?
+# .black[Dúvidas?]
 
 <br>
 
-## 🚀 .black[Próximo passo]
+## 💡 .black[Mensagem]
 
-Criar seu primeiro Projeto no RStudio e começar a explorar a linguagem R.
+Entender como os dados são armazenados em R é fundamental para aprender a acessá-los, organizá-los e manipulá-los de forma eficiente.
 
 <br>
+
+## 🎯 .black[Próximo passo]
+
+Aprender técnicas de indexação e operadores para acessar e manipular dados em R.
+
+<br><br>
 
 💬 Perguntas, comentários ou sugestões?
 
