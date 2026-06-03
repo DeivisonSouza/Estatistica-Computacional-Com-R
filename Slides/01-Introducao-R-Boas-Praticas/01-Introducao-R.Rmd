@@ -1221,13 +1221,13 @@ background-size: cover
 
 ## 💡 .black[Mensagem]
 
-Entender como os dados são armazenados em R é fundamental para aprender a acessá-los, organizá-los e manipulá-los de forma eficiente.
+Dominar a **sintaxe do R** e utilizar **Projetos no RStudio** são passos fundamentais para criar análises **organizadas** e **reproduzíveis**.
 
 <br>
 
 ## 🎯 .black[Próximo passo]
 
-Aprender técnicas de indexação e operadores para acessar e manipular dados em R.
+Explorar as principais **estruturas de dados** em R e aprender como armazenar informações de forma eficiente.
 
 <br><br>
 
