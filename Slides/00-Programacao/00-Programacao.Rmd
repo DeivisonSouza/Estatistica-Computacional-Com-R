@@ -310,40 +310,29 @@ Email: deivisonvs@ufpa.br
 
 &nbsp;&nbsp;&nbsp;&nbsp; 3.2 - Pacotes em R para Estatística Descritiva; e
 
-&nbsp;&nbsp;&nbsp;&nbsp; 3.3 - Estudos de Caso: Iris Flower e Milsa
+&nbsp;&nbsp;&nbsp;&nbsp; 3.3 - Estudos de Caso: Iris Flower
 ]
 ]
 
 <br>
 
-.pull-bottom[
-<div style="display:flex; align-items:center; justify-content:space-around;">
+.pull-left[
+```{r, echo = FALSE, out.width='70%', fig.align='center', fig.cap='', dpi=600}
+knitr::include_graphics("fig/iris.png")
+```
+]
 
-<div style="width:30%; text-align:center;">
-<img src="fig/part5/atributos.png" width="250">
-<br>
-<small><b>Iris Flower</b></small>
-</div>
-
-<div style="width:85%; text-align:center;">
-
-<span style="font-size:22px; font-weight:bold;">DataExplorer</span>
-&nbsp;&nbsp;&nbsp;
-<span style="font-size:22px; font-weight:bold;">GGally</span>
-
-<br><br>
-
-<span style="font-size:22px; font-weight:bold;">SmartEDA</span>
-&nbsp;&nbsp;&nbsp;
-<span style="font-size:22px; font-weight:bold;">psych</span>
-
-<br><br>
-
-<span style="font-size:22px; font-weight:bold;">summarytools</span>
-
-</div>
-
-</div>
+.pull-right[
+.alert[
+### Pacotes
+.font90[
+- DataExplorer
+- GGally
+- SmartEDA
+- psych
+- summarytools
+]
+]
 ]
 
 ---

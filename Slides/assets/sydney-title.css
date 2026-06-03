@@ -70,7 +70,7 @@
 .title-slide .logo-ppgbc {
   position: absolute;
   bottom: 20px;
-  right: 20px;
+  right: -15px;
   width: 180px;
   height: 150px;
   background-image: url("logos/PPGBC.png");
