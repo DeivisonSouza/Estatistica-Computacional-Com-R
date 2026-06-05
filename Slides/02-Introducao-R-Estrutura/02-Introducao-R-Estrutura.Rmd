@@ -473,7 +473,7 @@ class(diametro)
 <br>
 
 .alert[
-💡 Vetores **integer** armazenam números inteiros, enquanto vetores **numeric** armazenam números reais.
+💡 Vetores **integer** armazenam números inteiros. Vetores **numeric** armazenam números reais.
 ]
 
 ---
@@ -520,19 +520,17 @@ FALSE → Ausência de cipó
 ### Factor: níveis não ordenados
 
 .pull-left[
-
 Em vetores da classe **factor**, os níveis (*levels*) são, por padrão, organizados em **ordem alfabética**.
-
 ]
 
 .pull-right[
-### Exemplo: níveis de risco de queda de árvores
+👉 **Níveis de risco de queda de árvores**
 
-```{r eval=TRUE}
+```{r eval=TRUE, collapse=FALSE}
 risco <- factor(
-  c("Critico",
-    "Baixo",
-    "Moderado")
+  x = c("Critico",
+        "Baixo",
+        "Moderado")
 )
 
 levels(risco)
@@ -554,7 +552,7 @@ levels(risco)
 
 .pull-left[
 
-A ordem dos níveis pode ser definida usando o argumento `levels`.
+A **ordem dos níveis** pode ser definida usando o argumento `levels`.
 
 <br>
 
@@ -567,10 +565,11 @@ Baixo < Moderado < Critico
 ]
 
 .pull-right[
+👉 **Níveis de risco de queda de árvores**
 
-```{r eval=TRUE}
+```{r eval=TRUE, collapse=FALSE}
 risco <- factor(
-  risco,
+  x = risco,
   levels = c("Baixo",
              "Moderado",
              "Critico"),
@@ -585,7 +584,7 @@ levels(risco)
 <br>
 
 .alert[
-💡 O argumento `levels` permite definir a ordem das categorias em um fator.
+💡 O argumento `levels` permite definir a **ordem das categorias** em um fator.
 ]
 
 ---
@@ -596,20 +595,20 @@ levels(risco)
 ### Vetores - .black[Função seq() (sequence)]
 <br>
 
-.blockquote[
+.alert[
 .center[.blue[seq(]**from** = ?, **to** = ?, **by** = ?, **length.out** = ?, **along.with** = ?.blue[)]]
 <br>
 
 .font90[
-**from** = define um valor inicial (start) para a sequência.
+**from** = valor inicial da sequência.
 
-**to** = define um valor máximo para a sequência.
+**to** = valor final da sequência.
 
-**by** = define um valor incremental para a sequência.
+**by** = valor incremental da sequência.
 
-**length.out** = define o comprimento da sequência dentro de um intervalo.
+**length.out** = quantidade de elementos da sequência.
 
-**along.with** = define uma sequência de inteiros do tamanho do argumento repassado.
+**along.with** = cria uma sequência com o mesmo comprimento de um vetor.
 ]
 ]
 
@@ -620,34 +619,78 @@ levels(risco)
 
 ### Vetores - .black[Função seq() (sequence)]
 
-.pull-top[
-.pull-left-4[
-```{r seq1, echo=T, eval=F}
-# 1 a 10, com intervalo 1.
+.pull-left[
+
+```{r seq1, echo=TRUE, eval=FALSE}
+# Sequência de 1 a 10
 seq(10)
 
-# Sequência de 1 a 10, com intervalo 1.
+# Sequência de 1 a 10
 seq(1:10)
 
-# Sequência de 1 a 10, com intervalo 1.
+# Sequência de 1 a 10, com incremento 1
 seq(from = 1, to = 10, by = 1)
 
-# Sequência de -2 a 10, com intervalo 2.
+# Sequência de -2 a 10, com incremento 2
 seq(from = -2, to = 10, by = 2)
+```
 
-# Sequência de 11 números entre 0 e 1.
-seq(from=0, to=1, length.out = 5)
+]
 
-# Sequência do tamanho do vetor-espécie.
+.pull-right[
+
+```{r, echo=FALSE, collapse=FALSE}
+seq(10)
+seq(1:10)
+seq(from = 1, to = 10, by = 1)
+seq(from = -2, to = 10, by = 2)
+```
+
+]
+
+<br>
+
+.alert[
+💡 O argumento `by` controla o incremento entre os elementos da sequência.
+]
+
+---
+
+## Estrutura de dados em R
+<br>
+
+### Vetores - .black[Função seq() (sequence)]
+
+.pull-left[
+
+```{r seq2, echo=TRUE, eval=FALSE}
+# Sequência de 5 números entre 0 e 1
+seq(from = 0, to = 1, length.out = 5)
+
+# Sequência do tamanho do vetor
 especie <- c("Acapu", "Mogno", "Cedro", "Ipe")
+
 seq(along.with = especie)
 ```
+
 ]
 
-.pull-right-4[
-```{r ref.label="seq1", echo=FALSE, eval=TRUE, collapse=TRUE}
+.pull-right[
+
+```{r, echo=FALSE, collapse=FALSE}
+seq(from = 0, to = 1, length.out = 5)
+
+especie <- c("Acapu", "Mogno", "Cedro", "Ipe")
+
+seq(along.with = especie)
 ```
+
 ]
+
+<br>
+
+.alert[
+💡 Use `length.out` para definir a quantidade de elementos e `along.with` para gerar uma sequência do tamanho do vetor.
 ]
 
 ---
@@ -658,7 +701,7 @@ seq(along.with = especie)
 ### Vetores - .black[Função rep() (replicate)]
 <br>
 
-.blockquote[
+.alert[
 .center[.blue[rep(]**x** = ?, **times** = ?, **each** = ?.blue[)]]
 <br>
 
