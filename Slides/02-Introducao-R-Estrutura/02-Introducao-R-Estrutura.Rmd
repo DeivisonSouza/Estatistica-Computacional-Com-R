@@ -158,7 +158,7 @@ background-size: cover
 layout: true
 class: with-logo logo-ufpa
 <div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional (PPGBC0030)</div3>/ <div2>Módulo 1 - Introdução ao R-base</div2> </div>
+<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Módulo 1 - Introdução ao R-base</div2> </div>
 
 ---
 
@@ -167,8 +167,28 @@ class: with-logo logo-ufpa
 - O R pode armazenar dados em diferentes estruturas, cada uma adequada para uma finalidade específica.
 
 ```{r echo=FALSE, out.width='40%', fig.align='center', fig.cap='', dpi=600}
-knitr::include_graphics("fig/EstrDados.png")
+knitr::include_graphics("fig/EstrDados.svg")
 ```
+
+---
+name: comparando
+## Comparando as estruturas de dados
+
+<br>
+
+| Estrutura | Dimensão | Tipo de dados | Exemplo |
+|:--|:--:|:--:|:--|
+| **Vetor** | 1D | Homogêneo | DAP de árvores |
+| **Matriz** | 2D | Homogêneo | Imagem em escala de cinza |
+| **Array** | 3D ou mais | Homogêneo | Imagem RGB |
+| **Data Frame** | 2D | Heterogêneo | Inventário florestal |
+| **Lista** | Flexível | Heterogêneo | Resultado de análises |
+
+<br>
+
+.alert[
+💡 Em R, cada estrutura possui uma forma específica de armazenar e organizar os dados.
+]
 
 ---
 name: vet
@@ -178,18 +198,18 @@ name: vet
 ### Vetores
 
 .pull-left-4[
-- É a forma mais simples de armazenar dados no R;
-- São caracterizados por possuírem somente uma dimensão;
-- Todos os seus elementos constituintes devem ter, obrigatoriamente, a mesma natureza (classe).
+- São a estrutura de dados mais básica do R;
+- Possuem apenas uma dimensão (1D);
+- Todos os elementos devem pertencer à mesma classe;
+- Servem de base para a construção de estruturas mais complexas.
 ]
 
+--
 
 .pull-right-4[
 .center[**Principais classes de vetores**]
-<br>
-
 ```{r echo=FALSE, out.width='75%', fig.align='center', fig.cap='', dpi=600}
-knitr::include_graphics("fig/Clv.png")
+knitr::include_graphics("fig/CV.svg")
 ```
 ]
 
@@ -198,30 +218,127 @@ knitr::include_graphics("fig/Clv.png")
 ## Estrutura de dados em R
 <br>
 
-### Vetores - Principais funções do R-base para criar vetores...
+### Classes de Vetores
+
+| Classe | Tipo de armazenamento | Exemplo | Aplicação |
+|:---|:---|:---|:---|
+| **integer** | integer | `c(1L, 2L, 3L)` | Quantidade de árvores |
+| **numeric** | double | `c(12.5, 15.8, 20.1)` | DAP, altura, volume |
+| **character** | character | `c("Ipê", "Mogno")` | Nome das espécies |
+| **logical** | logical | `c(TRUE, FALSE)` | Sim/Não |
+| **factor** | integer | `factor(c("Alta","Baixa"))` | Classes ou categorias |
+
 <br>
 
-.pull-left-4[
-**1. Função .black[c() (concatenate)]**
-
-Função genérica que permite concatenar (combinar) argumentos para formar um vetor.
-<br><br>
-
-**2. Função .black[seq() (sequence)]**
-
-Função genérica usada para gerar sequências de números em intervalos pré-definidos.
+.alert[
+💡 Além da classe do objeto, é importante compreender o tipo de armazenamento dos dados.
 ]
 
+---
+name: id
+## Integer × Double
 
-.pull-right-4[
-**3. Função .black[rep() (replicate)]**
+.pull-left[
 
-Função genérica usada para replicar um elemento “x”.
-<br><br>
+### Integer (.blue[Números inteiros])
 
-**4. Função .black[scan()]**
+```{r eval=FALSE}
+x <- c(1L, 2L, 3L)
 
-Usada para criar vetores diretamente no R Console.
+class(x)    # Classe
+typeof(x)   # Tipo interno
+```
+
+```text
+[1] "integer"
+[1] "integer"
+```
+
+]
+
+.pull-right[
+
+### Double (.blue[Números reais])
+
+```{r eval=FALSE}
+y <- c(12.5, 15.8, 20.1)
+
+class(y)    # Classe
+typeof(y)   # Tipo interno
+```
+
+```text
+[1] "numeric"
+[1] "double"
+```
+
+]
+
+<br>
+
+.alert[
+💡 Em R, números são armazenados como **double** por padrão. Use **L** para criar valores **integer**.
+]
+
+---
+
+## Factor: Como o R armazena categorias?
+
+.pull-left[
+
+```{r eval=FALSE}
+especie <- factor(c("Mogno",
+                    "Teca",
+                    "Ipê"))
+
+class(especie)
+typeof(especie)
+```
+
+```text
+[1] "factor"
+[1] "integer"
+```
+
+]
+
+.pull-right[
+
+.pull-left[
+
+### O usuário vê:
+
+```text
+Mogno
+Teca
+Ipê
+```
+
+]
+
+.pull-right[
+
+### O R armazena:
+
+```text
+2  
+3 
+1
+```
+
+]
+]
+
+<br>
+
+.alert[
+💡 Fatores representam categorias, mas são armazenados internamente como números inteiros.
+]
+
+<br>
+
+.alert[
+💡 Por padrão, o R atribui códigos inteiros aos níveis do fator em ordem alfabética.
 ]
 
 ---
@@ -229,68 +346,83 @@ Usada para criar vetores diretamente no R Console.
 ## Estrutura de dados em R
 <br>
 
-### Vetores - .black[Função c() (concatenate)]
+### Como criar vetores?
 
-.pull-top[
-.pull-left-4[
+Existem diversas formas de criar vetores na linguagem R.
+
+.pull-left[
+
+### Mais utilizadas
+
+- `c()` (*concatenação*)
+- `seq()` (*sequência*)
+- `rep()` (*replicação*)
+
+]
+
+.pull-right[
+
+### Entrada manual
+
+- `scan()`
+
+]
+
+<br>
+
+.alert[
+💡 A função `c()` é a forma mais utilizada de criar vetores no R.
+]
+
+---
+
+## Estrutura de dados em R
+<br>
+
+### Vetores - .black[Função c()]
+
+.pull-left[
+
 **Classe "character"**
-```{r, echo=T, eval=F}
-# Cria um vetor
-c("Acapu", "Araucaria", "Mogno", "Cedro")
+
+```{r eval=FALSE}
+especie <- c("Acapu",
+             "Mogno",
+             "Cedro",
+             "Ipê")
+
+class(especie)
 ```
 
-```{r, echo=T, eval=F}
-# Cria um vetor e faz atribuição
-especie <- c("Acapu", "Mogno", "Cedro", "Ipe")
-#class(especie)
+```text
+[1] "character"
 ```
+
 ]
 
-.pull-right-4[
-**Classe "numeric"**
-```{r, echo=T, eval=F}
-# Cria um vetor
-c(23.0, 27.0, 33.6, 42.6, 52.1)
-```
+.pull-right[
 
-```{r, echo=T, eval=F}
-# Cria um vetor e faz atribuição
-diametro <- c(23.0, 27.0, 33.6, 42.6, 52.1)
-#class(diametro)
-```
-]
-]
-
----
-
-## Estrutura de dados em R
-<br>
-
-### Vetores - .black[Função c() (concatenate)]
-
-.pull-left-10[
 **Classe "factor"**
-.font90[
-- Por padrão, ao concatenar **strings** cria-se um vetor de classe **character**.
-- Se desejável, pode-se codificar um vetor de classe **character** para a classe **factor**.
-- O R-base possui duas funções: .green[factor()] e .green[as.factor()].
-- Motivos: modelos estatísticos e gráficos
-]
-]
 
-.pull-right-10[
-```{r, echo=T, eval=T}
-# Cria um vetor - Fitofisionomia
-(Fito <- c("FOM", "FOA", "FOM", "FOM", "FOM", "FOA"))
-class(Fito)
+```{r eval=FALSE}
+especie <- factor(c("Mogno",
+                    "Teca",
+                    "Ipê",
+                    "Mogno"))
+
+class(especie)
 ```
 
-```{r, echo=T, eval=T}
-# Codifica para "factor"
-Fito <- c("FOM", "FOA", "FOM", "FOM", "FOM", "FOA")
-(Fito <- factor(Fito))
-class(Fito)
+```text
+[1] "factor"
 ```
+
+]
+
+<br>
+
+.alert[
+💡 **Factor** informa ao R que os valores representam **categorias**, e não textos livres (**character**).
 ]
 
 ---
@@ -298,37 +430,162 @@ class(Fito)
 ## Estrutura de dados em R
 <br>
 
-### Vetores - .black[Função c() (concatenate)]
+### Vetores - .black[Função c()]
 
-.pull-left-10[
-**Classe "factor" - declarando hierarquia**
-.font90[
-- Por padrão, os níveis (levels) de um vetor de classe **factor** ficam dispostos em ordem alfabética.
-- Em algumas situações, pode ser desejável estabelecer uma hierarquia entre esses níveis.
-- Por exemplo, imagine a variável mês de coleta. É evidente que existe hierarquia entre os meses.
-]
-]
+.pull-left[
 
-.pull-right-10[
-.font90[
-**Níveis do mês não ordenados**
-```{r}
-(mes <- factor(
-  c("Janeiro", "Abril", "Julho", "Outubro")
-  ))
+**Classe "integer"**
+
+```{r eval=FALSE}
+idade <- c(5L,
+           8L,
+           12L,
+           15L)
+
+class(idade)
 ```
 
-**Níveis do mês ordenados**
-
-```{r size=3}
-(mes <- 
-   factor(x = mes,
-          levels = c("Janeiro", "Abril", 
-                     "Julho", "Outubro"),
-               ordered = TRUE))
+```text
+[1] "integer"
 ```
 
 ]
+
+.pull-right[
+
+**Classe "numeric"**
+
+```{r eval=FALSE}
+diametro <- c(23.0,
+              27.0,
+              33.6,
+              42.6)
+
+class(diametro)
+```
+
+```text
+[1] "numeric"
+```
+
+]
+
+<br>
+
+.alert[
+💡 Vetores **integer** armazenam números inteiros, enquanto vetores **numeric** armazenam números reais.
+]
+
+---
+
+## Estrutura de dados em R
+<br>
+
+### Vetores - .black[Classe "logical"]
+
+```{r eval=FALSE}
+cipo <- c(TRUE,
+          FALSE,
+          FALSE,
+          TRUE)
+
+class(cipo)
+```
+
+```text
+[1] "logical"
+```
+
+<br>
+
+Exemplo:
+
+```text
+TRUE  → Presença de cipó
+
+FALSE → Ausência de cipó
+```
+
+<br>
+
+.alert[
+💡 Vetores da classe **logical** representam condições do tipo "sim" ou "não".
+]
+
+---
+
+## Estrutura de dados em R
+<br>
+
+### Factor: níveis não ordenados
+
+.pull-left[
+
+Em vetores da classe **factor**, os níveis (*levels*) são, por padrão, organizados em **ordem alfabética**.
+
+]
+
+.pull-right[
+### Exemplo: níveis de risco de queda de árvores
+
+```{r eval=TRUE}
+risco <- factor(
+  c("Critico",
+    "Baixo",
+    "Moderado")
+)
+
+levels(risco)
+```
+]
+
+<br>
+
+.alert[
+💡 A ordem alfabética nem sempre representa a hierarquia real das categorias.
+]
+
+---
+
+## Estrutura de dados em R
+<br>
+
+### Factor: níveis ordenados
+
+.pull-left[
+
+A ordem dos níveis pode ser definida usando o argumento `levels`.
+
+<br>
+
+Hierarquia desejada:
+
+```text
+Baixo < Moderado < Critico
+```
+
+]
+
+.pull-right[
+
+```{r eval=TRUE}
+risco <- factor(
+  risco,
+  levels = c("Baixo",
+             "Moderado",
+             "Critico"),
+  ordered = TRUE
+)
+
+levels(risco)
+```
+
+]
+
+<br>
+
+.alert[
+💡 O argumento `levels` permite definir a ordem das categorias em um fator.
 ]
 
 ---
