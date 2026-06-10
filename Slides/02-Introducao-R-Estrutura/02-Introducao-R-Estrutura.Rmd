@@ -1023,12 +1023,12 @@ matrix(
 ## Estrutura de dados em R
 <br>
 
-### Matrizes - .black[Imagens digitais (escala de cinza)]
+### Matrizes - .black[Imagem digital - (escala de cinza)]
 
 .pull-left[
 
 ```{r echo=FALSE, out.width='70%'}
-knitr::include_graphics("fig/leaf_1024x1024.png")
+knitr::include_graphics("fig/leaf_gray.png")
 ```
 
 .center[
@@ -1039,47 +1039,10 @@ Imagem original (1024 × 1024 pixels)
 
 .pull-right[
 
-```{r echo=FALSE, out.width='60%'}
-knitr::include_graphics("fig/leaf_50x50.png")
-```
-
-.center[
-Imagem reduzida (50 × 50 pixels)
-]
-
-]
-
-<br>
-
-.alert[
-💡 Em escala de cinza, cada pixel é armazenado em uma matriz.
-]
-
----
-
-## Estrutura de dados em R
-<br>
-
-### Matrizes - .black[Imagem digital]
-
-.pull-left[
-
-```{r echo=FALSE, out.width='70%'}
-knitr::include_graphics("fig/leaf_50x50.png")
-```
-
-.center[
-Imagem reduzida (50 × 50 pixels)
-]
-
-]
-
-.pull-right[
-
 ```{r eval=FALSE}
 library(png)
 
-mat <- readPNG("fig/leaf_50x50.png")
+mat <- readPNG("fig/leaf_gray.png")
 
 dim(mat)
 
@@ -1166,7 +1129,6 @@ array(
 .alert[
 💡 Por padrão, os elementos são distribuídos por colunas em cada camada do array.
 ]
-
 ]
 
 .pull-right[
@@ -1185,90 +1147,72 @@ array(
 ## Estrutura de dados em R
 <br>
 
-### Arrays - .black[Função array()]
-
-.pull-top[
-.pull-left-4[
-.font90[
-```{r array2, echo=T, eval=F}
-# Cria um array com elementos
-(ar2 <- array(data = 1:12, dim = c(3, 2, 2)))
-```
-<br>
-
-- Veja que os valores do vetor .blue[1:12] foram distribuídos nas 2 matrizes na ordem dos elementos e por colunas das matrizes.
-
-
-]
-]
-]
-
-.pull-right-4[
-```{r ref.label="array2", echo=FALSE, eval=TRUE, collapse=F}
-```
-]
-
----
-
-## Estrutura de dados em R
-<br>
-
-### Arrays - .black[Função array()]
-
-.pull-top[
-.pull-left-4[
-.font90[
-```{r array3, echo=T, eval=F}
-# Cria um array a partir de vetores de 
-# tamanhos diferentes
-vect1 <- c(3, 6, 1)
-vect2 <- c(15, 18, 13, 11, 17, 16)
-
-(ar3 <- array(c(vect1, vect2), dim = c(3, 3, 2)))
-```
-<br>
-
-]
-]
-]
-
-.pull-right-4[
-```{r ref.label="array3", echo=FALSE, eval=TRUE, collapse=F}
-```
-]
-
----
-
-## Estrutura de dados em R
-<br>
-
 ### Arrays - .black[Função array()] - Nomeando dimensões
 
-.pull-top[
 .pull-left-4[
 .font90[
 ```{r array4, echo=T, eval=F}
-# Nomeando linhas, colunas e matrizes do array
-array(c(vect1, vect2),
-      dim = c(3, 3, 2),
-      dimnames = list(c("L1", "L2", "L3"),
-                      c("C1", "C2", "C3"),
-                      c("M1", "M2")))
+array(
+  data = 1:18,
+  dim = c(3, 3, 2),
+  dimnames = list(
+    c("L1", "L2", "L3"),
+    c("C1", "C2", "C3"),
+    c("M1", "M2")
+  )
+)
 ```
-<br>
 
-- Use o argumento **dimnames** para nomear as linhas, colunas e
-matrizes do array.
-
+.alert[
+💡 O argumento `dimnames` permite nomear as dimensões do array.
 ]
+
 ]
 ]
 
 .pull-right-4[
-```{r ref.label="array4", echo=FALSE, eval=TRUE, collapse=F}
+```{r ref.label="array4", echo=FALSE, eval=TRUE, collapse=FALSE}
 ```
 ]
 
+---
+
+## Estrutura de dados em R
+<br>
+
+### Arrays - .black[Imagem digital - RGB]
+
+.pull-left[
+
+```{r echo=FALSE, out.width='70%'}
+knitr::include_graphics("fig/leaf.png")
+```
+
+.center[
+Imagem colorida (RGB)
+]
+
+]
+
+.pull-right[
+
+```{r eval=FALSE}
+library(png)
+
+arr <- readPNG("fig/leaf.png")
+
+dim(arr)
+
+View(arr)
+```
+
+<br>
+
+.alert[
+💡 Imagens coloridas são armazenadas como arrays: linhas × colunas × canais RGB.
+]
+
+]
 
 ---
 name: df
