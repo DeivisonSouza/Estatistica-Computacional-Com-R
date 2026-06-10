@@ -1151,27 +1151,34 @@ name: arrays
 
 ### Arrays - .black[Função array()]
 
-.pull-top[
-.pull-left-4[
-.font90[
-```{r array, echo=T, eval=F}
-# Cria um array sem elementos
-(ar1 <- array(dim = c(3, 2, 2)))
+.pull-left[
 
-# 3: número de linhas
-# 2: número de colunas
-# 2: número de matrizes
+```{r array, echo=TRUE, eval=FALSE}
+# Cria um array 3 × 2 × 2
+array(
+  data = 1:12,
+  dim = c(3, 2, 2)
+)
+```
+
+<br>
+
+.alert[
+💡 Por padrão, os elementos são distribuídos por colunas em cada camada do array.
+]
+
+]
+
+.pull-right[
+
+```{r echo=FALSE}
+array(
+  data = 1:12,
+  dim = c(3, 2, 2)
+)
 ```
 
 ]
-]
-]
-
-.pull-right-4[
-```{r ref.label="array", echo=FALSE, eval=TRUE, collapse=TRUE}
-```
-]
-
 
 ---
 
