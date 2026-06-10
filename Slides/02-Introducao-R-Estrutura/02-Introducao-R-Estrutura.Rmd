@@ -699,18 +699,24 @@ seq(along.with = especie)
 <br>
 
 ### Vetores - .black[Função rep() (replicate)]
+
 <br>
 
 .alert[
-.center[.blue[rep(]**x** = ?, **times** = ?, **each** = ?.blue[)]]
+.center[
+.blue[rep(]**x**, **times** = 1, **length.out** = NA, **each** = 1.blue[)]
+]
+
 <br>
 
 .font90[
-**x** = escalar, vetor ou uma lista, entre outros.
+**x** = O objeto (vetor, lista, número) que você deseja repetir.
 
-**times** = um vetor de inteiro (não negativo) indicando quantas vezes repetir cada elemento.
+**times** = Quantidade de repetições da sequência inteira.
 
-**each** = cada elemento de x é repetido n vezes.
+**each** = Quantidade de repetições de cada elemento individual em sequência.
+
+**length.out** = Define o tamanho total final desejado para o vetor.
 ]
 ]
 
@@ -719,40 +725,100 @@ seq(along.with = especie)
 ## Estrutura de dados em R
 <br>
 
-### Vetores - .black[Função rep() (replicate)]
+### Vetores - .black[Função rep() - Argumento: `times`]
+
+.pull-left[
+
+```{r rep1, echo=TRUE, eval=FALSE, collapse=FALSE}
+# Repete o vetor 2 vezes
+rep(x = c("Mogno", "Ipê"), times = 2)
+
+# Repete o vetor 3 vezes
+rep(x = c("Mogno", "Ipê"), times = 3)
+```
+
+]
+
+.pull-right[
+
+```{r, echo=FALSE, collapse=FALSE}
+rep(x = c("Mogno", "Ipê"), times = 2)
+
+rep(x = c("Mogno", "Ipê"), times = 3)
+```
+
+]
+
+<br>
+
+.alert[
+💡 O argumento `times` repete o vetor inteiro.
+]
+
+---
+
+## Estrutura de dados em R
+<br>
+
+### Vetores - .black[Função rep() - Argumentos: `each` e `times`]
 
 .pull-top[
-.pull-left-4[
-.font90[
-```{r rep1, echo=T, eval=F}
-# Repete a sequência de 1 a 4 (2x).
-rep(x = 1:4, 2)
+```{r rep2, echo=TRUE, eval=FALSE}
+# Repete cada espécie 2x
+rep(x = c("Mogno", "Ipê"), each = 2)
 
-# Repete a sequência de 1 a 4 (3x).
-rep(x = 1:4, times = 3)
-
-# Repete cada valor em "x" (2x).
-rep(x = 1:4, each = 2)
-
-# Repete cada valor em "x" (2x).
-rep(x = 1:4, c(2,2,2,2))
-
-# Repete cada valor em "x", com base em c().
-rep(1:4, c(2,1,2,1))
-
-# Repete cada valor em "x", até 4 números.
-rep(1:4, each = 2, len = 4)
-
-# Repete cada valor em "x" (2x), por 3x.
-rep(1:2, each = 2, times = 3)
+# Repete cada espécie 2x, vetor 3x
+rep(x = c("Mogno", "Ipê"), each = 2, times = 3)
 ```
 ]
-]
 
-.pull-right-4[
-```{r ref.label="rep1", echo=FALSE, eval=TRUE, collapse=TRUE}
+.pull-bottom[
+```{r, echo=FALSE, collapse=FALSE}
+rep(x = c("Mogno", "Ipê"), each = 2)
+
+rep(x = c("Mogno", "Ipê"), each = 2, times = 3)
 ```
 ]
+
+<br>
+
+.alert[
+💡 O argumento `each` repete cada elemento, enquanto `times` repete o vetor.
+]
+
+---
+
+## Estrutura de dados em R
+<br>
+
+### Vetores - .black[Função rep() - Argumento: `length.out`]
+
+.pull-left[
+
+```{r rep3, echo=TRUE, eval=FALSE}
+# Repete até obter 3 elementos
+rep(x = c("Mogno", "Ipê"), length.out = 3)
+
+# Repete até obter 5 elementos
+rep(x = 1:2, length.out = 5)
+```
+
+]
+
+.pull-right[
+
+```{r, echo=FALSE, collapse=FALSE}
+rep(x = c("Mogno", "Ipê"), length.out = 3)
+
+rep(x = 1:2, length.out = 5)
+```
+
+]
+
+<br>
+
+.alert[
+💡 O argumento `length.out` define o comprimento final do vetor.
 ]
 
 ---
@@ -762,36 +828,65 @@ rep(1:2, each = 2, times = 3)
 
 ### Vetores - .black[Função scan()]
 
-.pull-left-4[
-.font90[
-**Procedimento**
+.pull-left[
 
-**Passo 1⁰**: digitar no R console, por exemplo: y <- scan()
+A função `scan()` permite inserir dados manualmente pelo R Console.
 
-**Passo 2⁰**: Digitar o primeiro dado e apertar $<ENTER>$. Seguir esse passo até o último dado.
+<br>
 
-**Passo 3⁰**: Para encerrar a entrada de dados basta apertar $<ENTER>$ duas vezes.
+**Procedimento:**
+
+1. Digite o comando `scan()`.
+
+2. Digite um valor por linha e pressione **ENTER**.
+
+3. Para finalizar, pressione **ENTER** duas vezes.
+
 ]
+
+.pull-right[
+
+```{r eval=FALSE}
+y <- scan()
+```
+
+<br>
+
+.alert[
+💡 A função `scan()` cria vetores a partir de dados digitados pelo usuário.
 ]
 
-.pull-right-4[
+]
+
+---
+
+## Estrutura de dados em R
+<br>
+
+### Vetores - .black[Função scan()]
+
+<br>
+
 .font90[
 **Atividade para** `r anicon::faa("home", animate="horizontal")`
 
-Use a função .blue[scan()] para criar vetores para as variáveis da tabela a seguir diretamente no R console:
-<br>
+Utilize a função `scan()` para criar vetores para as variáveis da tabela abaixo:
+]
 
-```{r echo=F, eval=T}
-data.frame(especie = c("Acapu", "Araucaria", 
-                       "Mogno", "Cedro", "Ipe"),
-           diametro = c(23.0, 27.0, 33.6, 42.6, 52.1),
-           altura = c(8.5, 9.2, 10.5, 13.4, 15.8))
+```{r echo=FALSE}
+data.frame(
+  especie = c("Acapu", "Araucaria", "Mogno"),
+  diametro = c(23.0, 27.0, 33.6),
+  altura = c(8.5, 9.2, 10.5)
+)
 ```
 
-**Obs.**: Para vetores da class **character** especifique o argumento **what = character()**. 
+<br>
 
-y <- scan(what = character())
-]
+.alert[
+💡 Para criar vetores da classe **character**, utilize:
+
+`scan(what = character())`
 ]
 
 ---
@@ -803,30 +898,38 @@ name: mat
 
 .pull-left-4[
 .font90[
-- São caracterizadas por possuírem duas dimensões (linhas e colunas) - bidimensional.
-- Todos os seus elementos possuem a mesma classe (numeric, character ou logical).
-- O R-base possui 3 funções principais: .green[cbind()], .green[rbind()], .green[matrix()].
-- A função .green[matrix()] é considerada mais eficiente.
+- São uma extensão dos vetores para duas dimensões (linhas e colunas).
+- Possuem duas dimensões: linhas e colunas.
+- Todos os elementos devem pertencer à mesma classe.
+- Podem ser criadas com `matrix()`, `cbind()` ou `rbind()`.
+- A função `matrix()` é a forma mais utilizada.
 ]
 ]
-
 
 .pull-right-4[
-
-.blockquote[
+.alert[
 .font90[
-.center[.blue[matrix(]**data** = NA, **nrow** = 1, **ncol** = 1, **byrow** = FALSE, **dimnames** = NULL.blue[)]]
+.center[
+.blue[matrix(]
+**data** = NA,
+**nrow** = 1,
+**ncol** = 1,
+**byrow** = FALSE,
+**dimnames** = NULL
+.blue[)]
+]
+
 <br>
 
-**data** = um vetor de dados (opcional).
+**data** = vetor de dados.
 
-**nrow** = número de linhas da matriz.
+**nrow** = número de linhas.
 
-**ncol** = número de colunas da matriz.
+**ncol** = número de colunas.
 
-**byrow** = argumento lógico. Se **FALSE** (padrão), a matriz é preenchida por colunas. Se **TRUE**, a matriz é preenchida por linhas.
+**byrow** = preenchimento por linhas (`TRUE`) ou colunas (`FALSE`).
 
-**dimnames** = Insere os rótulos das linhas e colunas da matriz com a função .green[list()].
+**dimnames** = nomes das linhas e colunas.
 ]
 ]
 ]
@@ -838,35 +941,35 @@ name: mat
 
 ### Matrizes - .black[Função matrix()]
 
-.pull-top[
-.pull-left-4[
-.font90[
-```{r mat, echo=T, eval=F}
-# Cria uma matriz de 1 a 6, com 2 linhas e 3 colunas
-(mat1 <- matrix(data=1:6, nrow=2, ncol=3))
+.pull-left[
+
+```{r, echo=TRUE, eval=FALSE}
+# Cria uma matriz 2 x 3
+matrix(
+  data = c(23, 27, 31, 25, 29, 34),
+  nrow = 2,
+  ncol = 3
+)
 ```
 
-```{r mat2, echo=T, eval=F}
-# Atribui nomes às linhas e colunas
-rownames(mat1) <- c("L1","L2"); print(mat1)
+]
 
-colnames(mat1) <- c("C1","C2","C3"); print(mat1)
+.pull-right[
+
+```{r, echo=FALSE, collapse=FALSE}
+matrix(
+  data = c(23, 27, 31, 25, 29, 34),
+  nrow = 2,
+  ncol = 3
+)
 ```
+
+]
+
 <br>
 
-- Se desejável, pode-se usar as funções .green[rownames()] e .green[colnames()] para atribuir nomes às linhas e colunas da matriz.
-
-]
-]
-]
-
-.pull-right-4[
-```{r ref.label="mat", echo=FALSE, eval=TRUE, collapse=TRUE}
-```
-
-```{r ref.label="mat2", echo=FALSE, eval=TRUE, collapse=F}
-```
-
+.alert[
+💡 Por padrão, a função `matrix()` preenche a matriz por colunas.
 ]
 
 ---
@@ -874,41 +977,126 @@ colnames(mat1) <- c("C1","C2","C3"); print(mat1)
 ## Estrutura de dados em R
 <br>
 
-### Matrizes - .black[Função matrix()]
+### Matrizes - .black[Argumento: dimnames]
 
-- Outra forma de atribuir nomes às linhas e colunas é usar o parâmetro **dimnames** da própria função .blue[matrix()].
+.pull-left[
 
-
-.pull-left-4[
-```{r mat3, echo=T, eval=F}
-(mat2 <- 
-   matrix(data=1:6, nrow=2, 
-          ncol=3, byrow=TRUE,
-          dimnames=list(c("L1", "L2"),
-                        c("C1", "C2", "C3"))))
+```{r, echo=TRUE, eval=FALSE}
+# Cria uma matriz 2 x 3, nomeada
+matrix(
+  data = c(23, 27, 31, 25, 29, 34),
+  nrow = 2,
+  ncol = 3,
+  dimnames = list(
+    c("Arv1", "Arv2"),
+    c("Parc1", "Parc2", "Parc3")
+  )
+)
 ```
+
 ]
 
-.pull-right-4[
-```{r ref.label="mat3", echo=FALSE, eval=TRUE, collapse=F}
+.pull-right[
+
+```{r, echo=FALSE, collapse=FALSE}
+matrix(
+  data = c(23, 27, 31, 25, 29, 34),
+  nrow = 2,
+  ncol = 3,
+  dimnames = list(
+    c("Arv1", "Arv2"),
+    c("Parc1", "Parc2", "Parc3")
+  )
+)
 ```
+
 ]
 
+<br>
+
+.alert[
+💡 O argumento `dimnames` permite atribuir nomes às linhas e colunas da matriz.
+]
 
 ---
 
 ## Estrutura de dados em R
 <br>
 
-### Matrizes - .black[Situações especiais]
+### Matrizes - .black[Imagens digitais (escala de cinza)]
+
+.pull-left[
+
+```{r echo=FALSE, out.width='70%'}
+knitr::include_graphics("fig/leaf_1024x1024.png")
+```
+
+.center[
+Imagem original (1024 × 1024 pixels)
+]
+
+]
+
+.pull-right[
+
+```{r echo=FALSE, out.width='60%'}
+knitr::include_graphics("fig/leaf_50x50.png")
+```
+
+.center[
+Imagem reduzida (50 × 50 pixels)
+]
+
+]
+
 <br>
 
-- Ao criar-se matrizes atentar-se para duas situações:
+.alert[
+💡 Em escala de cinza, cada pixel é armazenado em uma matriz.
+]
+
+---
+
+## Estrutura de dados em R
 <br>
 
-1 - **Descarte de elementos**: Quando a quantidade de elementos (n) for maior que a quantidade de linhas e colunas (ncol x nrow).
+### Matrizes - .black[Imagem digital]
 
-2 - **Regra da Reciclagem**: Quando a quantidade de linhas e colunas (ncol x nrow) for maior do que a quantidade de elementos (n).
+.pull-left[
+
+```{r echo=FALSE, out.width='70%'}
+knitr::include_graphics("fig/leaf_50x50.png")
+```
+
+.center[
+Imagem reduzida (50 × 50 pixels)
+]
+
+]
+
+.pull-right[
+
+```{r eval=FALSE}
+library(png)
+
+mat <- readPNG("fig/leaf_50x50.png")
+
+dim(mat)
+
+View(mat)
+```
+
+.center[
+Matriz de pixels
+]
+
+]
+
+<br>
+
+.alert[
+💡 Imagens em escala de cinza são armazenadas como matrizes.
+]
 
 ---
 name: arrays
