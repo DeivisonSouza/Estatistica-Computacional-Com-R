@@ -1107,31 +1107,39 @@ name: arrays
 
 .pull-left-4[
 .font80[
-- Os arrays generalizam a noção de matriz. Veja que:
+- São uma generalização das matrizes.
+- **Matrizes** possuem duas dimensões (linhas e colunas).
+- **Arrays** podem possuir duas ou mais dimensões.
+- Todos os elementos devem pertencer à mesma classe.
+- Podem ser criados com a função `array()`.
 
-**Matrizes**: Os elementos são organizados em duas dimensões (linhas e colunas).
 
-**Array**: Os elementos podem ser armazenados em mais de duas dimensões.
-
-- No R-base, um array pode ser criando com a função .green[array()].
-- Os arrays podem armazenar apenas um tipo de dados.
+<br>
+.alert[
+💡 Vetores, matrizes e arrays diferem principalmente pelo número de dimensões.
 ]
 ]
-
---
+]
 
 .pull-right-4[
 
-.blockquote[
+.alert[
 .font80[
-.center[.blue[array(]**data** = NA, **dim** = length(data), **dimnames** = NULL.blue[)]]
+.center[
+.blue[array(]
+**data** = NA,
+**dim** = length(data),
+**dimnames** = NULL
+.blue[)]
+]
+
 <br>
 
-**data** = um vetor (incluindo uma lista) que fornecerá dados para preencher a matriz.
+**data** = vetor de dados.
 
-**dim** = um vetor de inteiros indicando as dimensões máximas do array.
+**dim** = vetor que define as dimensões do array.
 
-**dimnames** = Insere rótulos para as dimensões do array. Deve ser uma lista com nomes para as dimensões. Padrão é NULL.
+**dimnames** = nomes das dimensões.
 ]
 ]
 ]
