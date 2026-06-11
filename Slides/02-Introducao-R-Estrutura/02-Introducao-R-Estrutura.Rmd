@@ -110,14 +110,16 @@ class: with-logo logo-lmftca-fixed
 ---
 
 ## Objetivos
-<br><br>
-Ao final deste primeiro módulo (**Introdução ao R-base**) espera-se que os discentes possam alcançar conhecimentos para...
 
-* Entender a importância e reconhecer a praticidade de uso de Linguagem de Programação;
-* Compreender e construir as principais estruturas de dados na Linguagem R;
-* Realizar indexação de diferentes estruturas de dados no R; e
-* Conhecer e aprender a usar operadores no R (aritméticos, relacionais, lógicos).
-<!--* .red[Compreender e desenvolver suas próprias funções no R.]-->
+<br><br>
+
+Ao final desta aula, espera-se que os discentes sejam capazes de:
+
+* Compreender o papel das estruturas de dados na linguagem R;
+* Criar e manipular vetores, matrizes, arrays, listas e data frames;
+* Reconhecer as características e aplicações de cada estrutura;
+* Utilizar funções básicas para construção de estruturas de dados; e
+* Relacionar estruturas de dados a problemas práticos de análise de dados.
 
 ---
 
@@ -179,7 +181,6 @@ Ao final deste primeiro módulo (**Introdução ao R-base**) espera-se que os di
 - Propriedades
 - Função `data.frame()`
 ]
-
 
 ---
 
