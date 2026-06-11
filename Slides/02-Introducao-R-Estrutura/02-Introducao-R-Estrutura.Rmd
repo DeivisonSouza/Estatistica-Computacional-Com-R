@@ -1260,6 +1260,7 @@ View(arr)
 ]
 
 ---
+
 name: df
 ## Estrutura de dados em R
 <br>
@@ -1268,11 +1269,11 @@ name: df
 
 .pull-left-4[
 .font90[
-- São caracterizados por possuírem duas dimensões (linhas e colunas) - bidimensional.
--  Pode-se reunir vetores de diferentes classes, com a condição de possuírem igual comprimento.
+- São estruturas **bidimensionais** organizadas em linhas e colunas.
+- Permitem combinar vetores de diferentes classes, desde que possuam o mesmo comprimento.
 - O R-base possui a função .green[data.frame()].
-- A edição de um data.frame pode ser feita usando a função .green[edit()].
-- Em geral, dados importados (.csv e .txt) são armazenados como data.frame.
+- Seus elementos podem ser acessados e modificados por indexação.
+- Em geral, tabelas importadas de arquivos (.csv, .txt e .xlsx) são armazenadas como data frames.
 ]
 ]
 
@@ -1281,15 +1282,16 @@ name: df
 .pull-right-4[
 **Atividade para** `r anicon::faa("home", animate="horizontal")`
 
-Use o comando x <- edit(data.frame()) e crie a tabela a seguir:
+Use o comando `x <- edit(data.frame())` e crie a tabela a seguir:
 
-```{r echo=F, eval=T}
-data.frame(especie = c("Acapu", "Araucaria", 
-                       "Mogno", "Cedro", "Ipe"),
-           diametro = c(23.0, 27.0, 33.6, 42.6, 52.1),
-           altura = c(8.5, 9.2, 10.5, 13.4, 15.8))
+```{r echo=FALSE}
+data.frame(
+  especie = c("Acapu", "Araucaria",
+              "Mogno", "Cedro", "Ipe"),
+  diametro = c(23.0, 27.0, 33.6, 42.6, 52.1),
+  altura = c(8.5, 9.2, 10.5, 13.4, 15.8)
+)
 ```
-
 ]
 
 ---
@@ -1299,44 +1301,113 @@ data.frame(especie = c("Acapu", "Araucaria",
 
 ### Data Frames - .black[Função data.frame()]
 
-.pull-left-4[
+.pull-left[
 .font90[
 **Cria um data frame a partir de vetores existentes**
-```{r df1, echo=T, eval=F}
+
+```{r df1, echo=TRUE, eval=FALSE}
 especie <- c("Acapu", "Araucaria", "Cedro", "Tauari")
 diametro <- c(23.0, 27.0, 33.6, 52.6)
 altura <- c(8.4, 8.7, 9.1, 18.2)
-cortar <- c("Não", "Não", "Não", "Sim")
+cortar <- c(FALSE, FALSE, FALSE, TRUE)
 
-(invFlor1 <- 
-  data.frame(especie, diametro, altura, cortar,
-             stringsAsFactors = TRUE))
-```
-
-```{r ref.label="df1", echo=FALSE, eval=TRUE, collapse=F}
+data.frame(especie, diametro, altura, cortar)
 ```
 ]
 ]
 
---
-
-.pull-right-4[
+.pull-right[
 .font90[
-**Cria um data frame com apenas um comando**
-```{r df2, echo=T, eval=F}
-(invFlor2 <- 
+**Resultado**
+
+```{r ref.label="df1", echo=FALSE, eval=TRUE, collapse=FALSE}
+```
+]
+]
+
+<br>
+
+.alert[
+💡 Um data frame pode ser criado pela combinação de vetores com o mesmo comprimento.
+]
+
+---
+
+## Estrutura de dados em R
+<br>
+
+### Data Frames - .black[Função data.frame()]
+
+.pull-left[
+.font90[
+**Usando diretamente a função `data.frame()`**
+
+```{r df2, echo=TRUE, eval=FALSE}
+(invFlor <-
   data.frame(
-    especie=c("Acapu", "Araucaria", "Cedro", "Tauari"),
-    diametro=c(23.0, 27.0, 33.6, 52.6),
-    altura=c(8.4, 8.7, 9.1, 18.2),
-    cortar=c("Não", "Não", "Não", "Sim"),
-    stringsAsFactors=FALSE))
+    especie = c("Acapu", "Araucaria", "Cedro", "Tauari"),
+    diametro = c(23.0, 27.0, 33.6, 52.6),
+    altura = c(8.4, 8.7, 9.1, 18.2),
+    cortar = c(FALSE, FALSE, FALSE, TRUE)
+  ))
+```
+]
+]
+
+.pull-right[
+.font90[
+**Resultado**
+
+```{r ref.label="df2", echo=FALSE, eval=TRUE, collapse=FALSE}
+```
+]
+]
+
+<br>
+
+.alert[
+💡 A função `data.frame()` permite criar tabelas diretamente a partir dos valores das variáveis.
+]
+
+---
+
+## Estrutura de dados em R
+<br>
+
+### Data Frames - .black[Explorando a estrutura]
+
+.pull-left[
+.font90[
+**Explorando um data frame**
+
+```{r, echo=TRUE, eval=FALSE}
+# Número de linhas e colunas
+dim(invFlor)
+
+# Estrutura do objeto
+str(invFlor)
+```
+]
+]
+
+.pull-right[
+.font90[
+**Resultado**
+
+```{r echo=FALSE}
+dim(invFlor)
 ```
 
-```{r ref.label="df2", echo=FALSE, eval=TRUE, collapse=F}
+```{r echo=FALSE}
+str(invFlor)
 ```
-**Explore as funções dim() e str().**
 ]
+]
+
+<br>
+
+.alert[
+💡 A função `str()` permite visualizar a estrutura e as classes das colunas de um data frame.
 ]
 
 ---
