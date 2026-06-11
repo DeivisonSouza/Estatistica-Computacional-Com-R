@@ -127,15 +127,59 @@ Ao final deste primeiro módulo (**Introdução ao R-base**) espera-se que os di
 
 ### Parte 4 — Estrutura de dados
 
-[1 - Vetores](#vet)
+<br>
 
-[2 - Matrizes](#mat)
+.pull-left[
+**[1. Vetores](#vet)**
 
-[3 - Arrays](#arrays)
+- Classes
+- Criação de vetores
+- `c()`, `seq()`, `rep()` e `scan()`
+- Factors e níveis
+]
 
-[4 - Data Frames](#df)
+.pull-right[
+**[2. Matrizes](#mat)**
 
-[5 - Listas](#list)
+- Propriedades
+- Função `matrix()`
+- Nomeando dimensões
+- Imagens em escala de cinza
+]
+
+---
+
+## Conteúdo
+
+<br>
+
+### Parte 4 — Estrutura de dados
+
+<br>
+
+.pull-left-17[
+**[3. Arrays](#arrays)**
+
+- Propriedades
+- Função `array()`
+- Nomeando dimensões
+- Imagens RGB
+]
+
+.pull-center-17[
+**[4. Listas](#list)**
+
+- Propriedades
+- Função `list()`
+]
+
+.pull-right-17[
+**[5. Data frames](#df)**
+
+- Propriedades
+- Função `data.frame()`
+]
+
 
 ---
 
