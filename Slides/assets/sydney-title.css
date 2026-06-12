@@ -898,9 +898,9 @@ h4 {
 
 /* H6 fonts */
 .title-slide h6 {
-  color: orange !important;
+  color: #4B2E83 !important;
   font-size: 25px;
-  font-weight: normal;
+  font-weight: bold;
   padding-top: 0px;
   padding-left: 0px;
   padding-bottom: 0px;

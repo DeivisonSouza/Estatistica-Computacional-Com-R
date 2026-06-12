@@ -86,10 +86,10 @@ use_clipboard()
 ```
 
 <!-- title-slide -->
-<!--# .font120[Inventário Florestal <br> (FL03039 - EF)] -->
 # Estatística Computacional com R <br> (PPGBC/UFPA e PPGCTIF/UFOPA)
 
-## ᨒ <br>   `r anicon::faa("pagelines", animate="horizontal", colour="green")` Introdução ao R-base `r anicon::faa("pagelines", animate="horizontal", colour="green")` <br> ᨒ
+## ᨒ <br> `r anicon::faa("pagelines", animate="horizontal", colour="green")` Introdução ao R `r anicon::faa("pagelines", animate="horizontal", colour="green")`
+###### (Instalação, Sintaxe e Projetos)
 
 ##### 〰〰〰〰〰〰🌱〰〰〰〰〰〰
 ##### ᨒ
