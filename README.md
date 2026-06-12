@@ -56,6 +56,7 @@ R** estão disponibilizados a seguir.
 | Slides/00-Programacao/00-Programacao.html | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/00-Programacao/00-Programacao.html> |
 | Slides/01-Introducao-R-Boas-Praticas/01-Introducao-R.html | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/01-Introducao-R-Boas-Praticas/01-Introducao-R.html> |
 | Slides/02-Introducao-R-Estrutura/02-Introducao-R-Estrutura.html | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/02-Introducao-R-Estrutura/02-Introducao-R-Estrutura.html> |
+| Slides/03-Introducao-R-Indexacao/03-Introducao-R-Indexacao.html | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/03-Introducao-R-Indexacao/03-Introducao-R-Indexacao.html> |
 
 # Conjunto de dados
 
@@ -88,6 +89,7 @@ as aplicações em bases de dados.
 | R/03-Visualizacao-Dados.R | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/R/03-Visualizacao-Dados.R> |
 | R/04-AED-IF100.R | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/R/04-AED-IF100.R> |
 | R/05-RL.R | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/R/05-RL.R> |
+| R/Operadores2.R | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/R/Operadores2.R> |
 
 # Facilitador :deciduous_tree:
 
