@@ -886,43 +886,104 @@ mat
 ]
 
 ---
-name: iae
+
 ## Indexação no R
+
+<br>
+
+### Como funciona a indexação em arrays?
+
+.pull-left[
+
+```text
+Matriz 1
+
+      C1  C2
+L1     1   2
+L2     3   4
+
+
+Matriz 2
+
+      C1  C2
+L1     5   6
+L2     7   8
+```
+
+]
+
+.pull-right[
+
+```{r, eval=FALSE}
+array[2,1,2]
+```
+
+```text
+[1] 7
+```
+
+]
+
+<br>
+
+.alert[
+💡 Em arrays tridimensionais, informamos: **linha**, **coluna** e **matriz**.
+]
+
+---
+
+## Indexação no R
+
 <br>
 
 ### Indexação de arrays
 
-- A ideia de indexação de **arrays** é **similar** ao aprendido para **matrizes**.
-- No caso de arrays, deve-se apenas considerar que existe mais dimensões.
-- Portanto, a indexação pode ser realizada usando o comando [ $i$, $j$, $z$ ].
-- Então: $i$ = linha, $j$ = coluna, $z$ = matriz.
-- Se o número da linha, coluna e matriz não é informado [ , , ]: o array é acessado por completo.
+.font90[
+- A indexação de arrays segue a mesma lógica utilizada em matrizes.
+- Como arrays possuem mais de duas dimensões, é necessário informar um índice para cada dimensão.
+- Em um array tridimensional, a indexação pode ser realizada utilizando .red[[ i , j , z ]].
+- Os índices $i$, $j$ e $z$ representam, respectivamente, linha, coluna e matriz.
+- Quando nenhum índice é informado .red[[ , , ]], todo o array é retornado.
+]
+
+<br>
+
+.alert[
+💡 Arrays podem ser vistos como um conjunto de matrizes organizadas em múltiplas dimensões.
+]
 
 ---
 
 ## Indexação no R
+
 <br>
 
-### Indexação de arrays - Extração
+### Arrays - Extração (Um elemento)
 
 .pull-left-4[
 .font90[
-**Extração por indexação positiva**
-```{r arext, echo=T, eval=F}
+```{r arext1, echo=TRUE, eval=FALSE}
 # Cria um array
-arr <- array(1:18,
-      dim = c(3, 3, 2),
-      dimnames = list(c("L1", "L2", "L3"),
-                      c("C1", "C2", "C3"),
-                      c("M1", "M2")))
+arr <- array(
+  1:18,
+  dim = c(3, 3, 2),
+  dimnames = list(
+    c("L1", "L2", "L3"),
+    c("C1", "C2", "C3"),
+    c("M1", "M2")
+  )
+)
 
+arr
 
-# extrai a matriz "M1" do array
-arr[ , , 1]
-
-# extrai a matriz "M2" do array
-arr[ , , 2] 
+# Linha 2, coluna 3, matriz 1
+arr[2, 3, 1]
 ```
+
+.alert[
+💡 Informar linha, coluna e matriz: [i, j, z].
+]
+
 ]
 ]
 
@@ -930,7 +991,7 @@ arr[ , , 2]
 
 .pull-right-4[
 .font90[
-```{r ref.label="arext", echo=FALSE, eval=TRUE, collapse=F}
+```{r ref.label="arext1", echo=FALSE, eval=TRUE, collapse=FALSE}
 ```
 ]
 ]
@@ -938,27 +999,27 @@ arr[ , , 2]
 ---
 
 ## Indexação no R
+
 <br>
 
-### Indexação de arrays - Extração
+### Arrays - Extração (Matriz do array)
 
 .pull-left-4[
 .font90[
-**Extração por indexação positiva**
-```{r arext2, echo=T, eval=F}
+```{r arext2, echo=TRUE, eval=FALSE}
+# Extrai a Matriz M1
+arr[, , 1]
 
-# extrai 1ª linha da matriz "M1"
-arr[1, , 1]
-
-# extrai 2ª coluna da matriz "M2"
-arr[ , 2, 2]
-
-# extrai 1ª linha das duas matrizes
-arr[1, , ]
-
-# extrai elemento da 1ª linha e 2ª coluna de "M1"
-arr[1, 2, 1]
+# Extrai a Matriz M2
+arr[, , 2]
 ```
+
+<br>
+
+.alert[
+💡 Ao omitir linha e coluna, todos os elementos da matriz selecionada são retornados.
+]
+
 ]
 ]
 
@@ -966,7 +1027,7 @@ arr[1, 2, 1]
 
 .pull-right-4[
 .font90[
-```{r ref.label="arext2", echo=FALSE, eval=TRUE, collapse=F}
+```{r ref.label="arext2", echo=FALSE, eval=TRUE, collapse=FALSE}
 ```
 ]
 ]
