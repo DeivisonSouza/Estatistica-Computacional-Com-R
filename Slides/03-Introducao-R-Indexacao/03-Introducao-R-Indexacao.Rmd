@@ -375,31 +375,27 @@ diametro[seq(from = 1, to = 4, by = 1)]
 
 ---
 
-# PAREI AQUI
-
----
-
 ## Indexação no R
+
 <br>
 
-### Indexação de vetores - Extração
+### Vetores - Extração por indexação negativa
 
 .pull-left-4[
 .font90[
-**Extração por indexação negativa**
-```{r VextN, echo=T, eval=F}
+```{r VextN, echo=TRUE, eval=FALSE}
 # cria os vetores
 especie <- c("Acapu", "Mogno", "Cedro", "Ipe")
 diametro <- c(23.0, 27.0, 33.6, 42.6)
 
-# Um elemento.
+# Um elemento
 especie[-2]
 
-# Múltiplos elementos (sequenciais).
+# Múltiplos elementos (sequenciais)
 diametro[-(1:3)]
 
-# Múltiplos elementos (alternados).
-especie[-c(1,3,5)]
+# Múltiplos elementos (alternados)
+especie[-c(1,3)]
 ```
 ]
 ]
@@ -408,29 +404,52 @@ especie[-c(1,3,5)]
 
 .pull-right-4[
 <br><br>
-```{r ref.label="VextN", echo=FALSE, eval=TRUE, collapse=F}
+
+```{r ref.label="VextN", echo=FALSE, eval=TRUE, collapse=FALSE}
 ```
+
 ]
 
 ---
 
 ## Indexação no R
+
 <br>
 
-### Indexação de vetores - Extração
+### Vetores - Extração por indexação lógica
+
+.font90[
+- A seleção dos elementos é realizada com base em condições lógicas.
+- Apenas os elementos que satisfazem a condição são retornados.
+]
+
+<br>
+
+.alert[
+💡 O resultado da condição é um vetor lógico contendo valores TRUE e FALSE.
+]
+
+---
+
+## Indexação no R
+
+<br>
+
+### Vetores - Extração por indexação lógica
 
 .pull-left-4[
 .font90[
-**Extração por indexação lógica**
-```{r VextL, echo=T, eval=F}
-Especie <- c("Mogno", "Cedro", "Ipe", "Tauari")
-Diametro <- c(23.0, 27.0, 33.6, 42.6, 52.1)
+```{r VextL, echo=TRUE, eval=FALSE}
+# cria os vetores
+especie <- c("Mogno", "Cedro", "Ipe", "Tauari")
 
-# Extrai árvores que não sejam Tauari
-Especie[Especie != "Tauari"]
+diametro <- c(23.0, 27.0, 33.6, 42.6)
 
-# Diâmetros >= 50cm.
-Diametro[Diametro >= 50]
+# Espécies diferentes de Tauari
+especie[especie != "Tauari"]
+
+# Árvores com DAP ≥ 30 cm
+diametro[diametro >= 30]
 ```
 ]
 ]
@@ -439,58 +458,78 @@ Diametro[Diametro >= 50]
 
 .pull-right-4[
 <br><br>
-```{r ref.label="VextL", echo=FALSE, eval=TRUE, collapse=F}
+
+```{r ref.label="VextL", echo=FALSE, eval=TRUE, collapse=FALSE}
 ```
 ]
 
 ---
 
 ## Indexação no R
+
 <br>
 
-### Indexação de vetores - Substituição
+### Vetores - Substituição de elementos
 
 .pull-left-4[
 .font90[
+```{r Vsub1, echo=TRUE, eval=FALSE}
+diametro <- c(23.0, 27.0, 33.6, 42.6, 52.1)
 
-```{r Vsub, echo=T, eval=F}
-Especie <- c("Mogno", "Cedro", "Ipe", NA, NA)
-Diametro <- c(23.0, 27.0, 33.6, 42.6, 52.1)
+# Altera a posição 3
+diametro[3] <- 33.5
+diametro
 
-# Substitui os NAs
-Especie[is.na(Especie)] <- "NI"
-print(Especie)
-
-# Altera posição 3, e atribui 33.5.
-Diametro[3] <- 33.5; print(Diametro)
-
-# Altera posições 4 e 5, e atribui 55.3 e 63.4
-Diametro[c(4, 5)] <- c(55.3, 63.4); print(Diametro)
+# Altera as posições 4 e 5
+diametro[c(4,5)] <- c(55.3, 63.4)
+diametro
 ```
+
+<br>
+
+.alert[
+💡 Substituições podem ser realizadas em uma ou mais posições simultaneamente.
+]
 ]
 ]
 
 --
 
 .pull-right-4[
-<br><br>
-```{r ref.label="Vsub", echo=FALSE, eval=TRUE, collapse=F}
+<br>
+```{r ref.label="Vsub1", echo=FALSE, eval=TRUE}
 ```
 ]
 
-
 ---
-name: IndM
+
 ## Indexação no R
+
 <br>
 
 ### Indexação de matrizes
 
-- Para **extrair**, **excluir** ou **substituir** elementos de uma matriz usa-se o comando [ $i$, $j$ ]. 
-- O índice $i$ indica as linhas e o índice $j$ indica as colunas da matriz.
-- Se o argumento for do tipo [ $i$, ] ter-se-á acesso a todos os elementos da linha $i$ especificada.
-- Se o argumento for do tipo [ , $j$ ] ter-se-á acesso a todos os elementos da coluna $j$ especificada.
-- Se nem o número da linha e nem o número da coluna é informado [ , ]: a matriz é acessada por completa.
+.font90[
+- Em matrizes, a indexação é realizada utilizando colchetes .red[[ i , j ]].
+- O índice .red[i] indica as linhas e o índice .red[j] indica as colunas.
+]
+
+<br>
+
+.center[
+| Sintaxe | Resultado |
+|:---------|:---------|
+| .red[[ i , j ]] | Elemento da linha .red[*i*] e coluna .red[*j*] |
+| .red[[ i , ]] | Todas as colunas da linha .red[*i*] |
+| .red[[ , j ]] | Todas as linhas da coluna .red[*j*] |
+| .red[[ , ]] | Matriz completa |
+]
+
+<br>
+
+.alert[
+💡 Matrizes possuem duas dimensões: linhas e colunas.
+]
 
 ---
 
