@@ -752,11 +752,26 @@ mat[c(1,2), c(2,3)] # Linhas 1 e 2, colunas 2 e 3
 
 <br>
 
-### Matrizes - Substituição
+### Matrizes - Substituição (Um elemento)
 
 .pull-left-4[
 .font90[
 <br>
+```{r , echo=FALSE, eval=TRUE}
+# Cria uma matriz
+mat <-
+  matrix(
+    1:6,
+    nrow = 2,
+    ncol = 3,
+    byrow = TRUE,
+    dimnames = list(
+      c("L1", "L2"),
+      c("C1", "C2", "C3")
+      )
+    )
+```
+
 ```{r Msub, echo=TRUE, eval=FALSE}
 mat             # Imprime a matriz completa
 mat[1,1] <- 0   # Substitui o elemento da linha 1 e coluna 1
@@ -788,11 +803,27 @@ mat
 
 <br>
 
-### Matrizes - Substituição
+### Matrizes - Substituição (Todos os elementos da coluna)
 
 .pull-left-4[
 .font90[
 <br>
+
+```{r , echo=FALSE, eval=TRUE}
+# Cria uma matriz
+mat <-
+  matrix(
+    1:6,
+    nrow = 2,
+    ncol = 3,
+    byrow = TRUE,
+    dimnames = list(
+      c("L1", "L2"),
+      c("C1", "C2", "C3")
+      )
+    )
+```
+
 ```{r Msub1, echo=TRUE, eval=FALSE}
 mat
 mat[,3] <- 0  # Substitui todos os elementos da coluna 3
@@ -813,7 +844,46 @@ mat
 
 ---
 
+## Indexação no R
 
+<br>
+
+### Matrizes - Substituição (Uma submatriz)
+
+.pull-left-4[
+.font90[
+<br>
+```{r , echo=FALSE, eval=TRUE}
+# Cria uma matriz
+mat <-
+  matrix(
+    1:6,
+    nrow = 2,
+    ncol = 3,
+    byrow = TRUE,
+    dimnames = list(
+      c("L1", "L2"),
+      c("C1", "C2", "C3")
+      )
+    )
+```
+
+```{r Msub2, echo=TRUE, eval=FALSE}
+mat                       # imprime a matriz completa
+mat[c(1,2), c(2,3)] <- 0  # Substitui uma submatriz
+mat
+```
+]
+]
+
+--
+
+.pull-right-4[
+.font90[
+```{r ref.label="Msub2", echo=FALSE, eval=TRUE, collapse=FALSE}
+```
+]
+]
 
 ---
 name: iae
