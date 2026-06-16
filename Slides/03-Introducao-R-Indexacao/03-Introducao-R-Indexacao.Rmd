@@ -1154,20 +1154,75 @@ arr
 ]
 
 ---
-## PAREI AQUI
 
----
-name: IndDF
 ## Indexação no R
+
 <br>
 
 ### Indexação de data frames
 
-- A **extração**, **inclusão** ou **substituição** de vetores em um data frame pode ser feita usando os comandos: .red[[ .black[*i*, *j*] ]] e .red[$].
-- O comando .red[$] é usual para colunas nomeadas.
-- O comando .red[[ .black[*i*, *j*] ]] segue a lógica de matrizes. Em que, *i* = linhas e *j* = colunas.
-- Operadores **lógicos** (.red[&, |, !]) e de **comparação** (.red[<, >, >=, <=, !=, ==, %in%]) podem ser usados para extrair informações específicas do data frame.
-- As funções .blue[attach()] (attachment) e .blue[with()] também podem ser usadas para facilitar o acesso à colunas de data frames.
+.font90[
+- Data frames podem ser indexados utilizando os operadores .red[[ i , j ]] e .red[$].
+- O operador .red[$] é utilizado para acessar colunas nomeadas.
+- O operador .red[[ i , j ]] segue a mesma lógica das matrizes:
+  - $i$ = linhas;
+  - $j$ = colunas.
+]
+
+<br>
+
+.alert[
+💡 Data frames podem conter colunas de diferentes classes.
+]
+
+---
+
+## Indexação no R
+
+<br>
+
+### Indexação de data frames (Operadores lógicos)
+
+.font90[
+- .red[&] (E): retorna **TRUE** quando todas as condições são verdadeiras.
+- .red[|] (OU): retorna **TRUE** quando pelo menos uma condição é verdadeira.
+- .red[!] (Não): retorna os elementos que não satisfazem uma condição.
+]
+
+<br>
+
+.alert[
+💡 Operadores lógicos são utilizados para combinar ou modificar condições.
+]
+
+---
+
+## Indexação no R
+
+<br>
+
+### Indexação de data frames (Operadores de comparação)
+
+.font90[
+- `==` : avalia se dois elementos são iguais.
+- `!=` : avalia se dois elementos são diferentes.
+- `>` : avalia se um valor é maior do que outro.
+- `>=` : avalia se um valor é maior ou igual a outro.
+- `<` : avalia se um valor é menor do que outro.
+- `<=` : avalia se um valor é menor ou igual a outro.
+- `%in%` : avalia se um elemento pertence a um conjunto de valores.
+]
+
+<br>
+
+.alert[
+💡 Operadores de comparação retornam valores lógicos (TRUE ou FALSE).
+]
+
+
+---
+
+## PAREI AQUI
 
 ---
 
