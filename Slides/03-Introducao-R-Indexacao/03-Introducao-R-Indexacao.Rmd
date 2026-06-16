@@ -891,6 +891,28 @@ mat
 
 <br>
 
+### Indexação de arrays
+
+.font90[
+- A indexação de arrays segue a mesma lógica utilizada em matrizes.
+- Como arrays possuem mais de duas dimensões, é necessário informar um índice para cada dimensão.
+- Em um array tridimensional, a indexação pode ser realizada utilizando .red[[ i , j , z ]].
+- Os índices $i$, $j$ e $z$ representam, respectivamente, linha, coluna e matriz.
+- Quando nenhum índice é informado .red[[ , , ]], todo o array é retornado.
+]
+
+<br>
+
+.alert[
+💡 Arrays podem ser vistos como um conjunto de matrizes organizadas em múltiplas dimensões.
+]
+
+---
+
+## Indexação no R
+
+<br>
+
 ### Como funciona a indexação em arrays?
 
 .pull-left[
@@ -928,28 +950,6 @@ array[2,1,2]
 
 .alert[
 💡 Em arrays tridimensionais, informamos: **linha**, **coluna** e **matriz**.
-]
-
----
-
-## Indexação no R
-
-<br>
-
-### Indexação de arrays
-
-.font90[
-- A indexação de arrays segue a mesma lógica utilizada em matrizes.
-- Como arrays possuem mais de duas dimensões, é necessário informar um índice para cada dimensão.
-- Em um array tridimensional, a indexação pode ser realizada utilizando .red[[ i , j , z ]].
-- Os índices $i$, $j$ e $z$ representam, respectivamente, linha, coluna e matriz.
-- Quando nenhum índice é informado .red[[ , , ]], todo o array é retornado.
-]
-
-<br>
-
-.alert[
-💡 Arrays podem ser vistos como um conjunto de matrizes organizadas em múltiplas dimensões.
 ]
 
 ---
