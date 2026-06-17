@@ -106,7 +106,7 @@ use_clipboard()
 layout: true
 class: with-logo logo-lmftca-fixed
 <div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao R-base (Módulo 1)</div2> </div>
+<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao R (Módulo 1)</div2> </div>
 
 ---
 
@@ -186,25 +186,41 @@ Ao final desta aula, espera-se que os discentes sejam capazes de:
 ---
 
 layout: false
-name: conc
 class: inverse, top, right
 background-image: url(../assets/capa/sec.png)
 background-size: cover
 
-<br><br><br>
+<br>
 
-.right[.font150[**.green[Módulo 1] <br> Introdução ao R básico**]]
+.right[
+.font100[
+**.green[Módulo 1]** - Introdução ao R
+]
+]
 
 <br><br>
 
-.right[.font150[**.green[Parte 4] - Estrutura de dados em R**]]
+.right[
+.font150[
+**.green[Parte 4]** <br>
+Estrutura de Dados em R
+]
+]
+
+<br><br>
+
+.right[
+.font180[
+**Vetores**
+]
+]
 
 ---
 
 layout: true
 class: with-logo logo-ufpa
 <div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Módulo 1 - Introdução ao R-base</div2> </div>
+<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao R (Módulo 1)</div2> </div>
 
 ---
 
@@ -936,6 +952,45 @@ data.frame(
 ]
 
 ---
+
+layout: false
+class: inverse, top, right
+background-image: url(../assets/capa/sec.png)
+background-size: cover
+
+<br>
+
+.right[
+.font100[
+**.green[Módulo 1]** - Introdução ao R
+]
+]
+
+<br><br>
+
+.right[
+.font150[
+**.green[Parte 4]** <br>
+Estrutura de Dados em R
+]
+]
+
+<br><br>
+
+.right[
+.font180[
+**Matrizes**
+]
+]
+
+---
+
+layout: true
+class: with-logo logo-ufpa
+<div class="my-header"></div>
+<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao R (Módulo 1)</div2> </div>
+
+---
 name: mat
 ## Estrutura de dados em R
 <br>
@@ -1108,6 +1163,45 @@ Matriz de pixels
 ]
 
 ---
+
+layout: false
+class: inverse, top, right
+background-image: url(../assets/capa/sec.png)
+background-size: cover
+
+<br>
+
+.right[
+.font100[
+**.green[Módulo 1]** - Introdução ao R
+]
+]
+
+<br><br>
+
+.right[
+.font150[
+**.green[Parte 4]** <br>
+Estrutura de Dados em R
+]
+]
+
+<br><br>
+
+.right[
+.font180[
+**Arrays**
+]
+]
+
+---
+
+layout: true
+class: with-logo logo-ufpa
+<div class="my-header"></div>
+<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao R (Módulo 1)</div2> </div>
+
+---
 name: arrays
 ## Estrutura de dados em R
 <br>
@@ -1262,6 +1356,45 @@ View(arr)
 
 ---
 
+layout: false
+class: inverse, top, right
+background-image: url(../assets/capa/sec.png)
+background-size: cover
+
+<br>
+
+.right[
+.font100[
+**.green[Módulo 1]** - Introdução ao R
+]
+]
+
+<br><br>
+
+.right[
+.font150[
+**.green[Parte 4]** <br>
+Estrutura de Dados em R
+]
+]
+
+<br><br>
+
+.right[
+.font180[
+**Data Frames**
+]
+]
+
+---
+
+layout: true
+class: with-logo logo-ufpa
+<div class="my-header"></div>
+<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao R (Módulo 1)</div2> </div>
+
+---
+
 name: df
 ## Estrutura de dados em R
 <br>
@@ -1410,6 +1543,45 @@ str(invFlor)
 .alert[
 💡 A função `str()` permite visualizar a estrutura e as classes das colunas de um data frame.
 ]
+
+---
+
+layout: false
+class: inverse, top, right
+background-image: url(../assets/capa/sec.png)
+background-size: cover
+
+<br>
+
+.right[
+.font100[
+**.green[Módulo 1]** - Introdução ao R
+]
+]
+
+<br><br>
+
+.right[
+.font150[
+**.green[Parte 4]** <br>
+Estrutura de Dados em R
+]
+]
+
+<br><br>
+
+.right[
+.font180[
+**Listas**
+]
+]
+
+---
+
+layout: true
+class: with-logo logo-ufpa
+<div class="my-header"></div>
+<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao R (Módulo 1)</div2> </div>
 
 ---
 name: list
