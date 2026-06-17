@@ -122,21 +122,76 @@ Ao final deste primeiro módulo (**Introdução ao R-base**) espera-se que os di
 ---
 
 ## Conteúdo
+
 <br>
 
-**Parte 5 - Mecanismos de Indexação no R**
+.pull-left-4[
+.font90[
+[**1. Introdução à indexação**](#Ind)
+  - Conceito de indexação;
+  - Operadores de indexação; e
+  - Como funciona a indexação no R.
 
-[1 - Como fazer indexação no R?](#Ind)
+[**2. Indexação de vetores**](#IndV)
+  - Estrutura de indexação [i];
+  - Extração por indexação positiva;
+  - Extração por indexação negativa;
+  - Extração por indexação lógica; e
+  - Substituição de elementos.
 
-[2 - Indexação de vetores](#IndV)
+]
+]
 
-[3 - Indexação de matrizes](#IndM)
+--
 
-[4 - Indexação de arrays](#iae)
+.pull-right-4[
+.font90[
+[**3. Indexação de matrizes**](#IndM)
+  - Estrutura de indexação [i, j];
+  - Extração de elementos; e
+  - Substituição de elementos.
+  
+[**4. Indexação de arrays**](#IndA)
+  - Estrutura de indexação [i, j, z];
+  - Extração de elementos; e
+  - Substituição de elementos.
+]
+]
 
-[5 - Indexação de data frames](#IndDF)
+---
 
-[6 - Indexação de listas](#IndL)
+## Conteúdo
+
+<br>
+
+.pull-left-4[
+.font90[
+[**5. Indexação de data frames**](#IndDF)
+  - Estrutura de indexação [i, j];
+  - Operadores lógicos;
+  - Operadores de comparação;
+  - Extração de elementos;
+  - Acesso a colunas com $;
+  - Extração por indexação lógica;
+  - Seleção de linhas e colunas;
+  - Substituição de elementos; e
+  - Adição de linhas e colunas.
+]
+]
+
+--
+
+.pull-right-4[
+.font90[
+[**6. Indexação de listas**](#IndL)
+  - Estrutura de listas;
+  - Operadores [ ], [[ ]] e $;
+  - Extração de elementos;
+  - Extração de componentes;
+  - Substituição de elementos; e
+  - Adição de componentes.
+]
+]
 
 ---
 
@@ -1669,6 +1724,10 @@ invFlor
 
 ]
 ]
+
+---
+
+## PAREI AQUI
 
 ---
 name: IndL
