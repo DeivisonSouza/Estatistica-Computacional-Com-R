@@ -1726,50 +1726,67 @@ invFlor
 ]
 
 ---
-
-## PAREI AQUI
-
----
 name: IndL
 ## Indexação no R
+
 <br>
 
 ### Indexação de listas
 
-- A indexação de lista pode ser feita com uso dos comandos .red[ [[ ]] ] e .red[ $ ].
-- Para acessar subíndices dos componentes da lista pode-se fazer: .red[ [[ ]][ ] ].
-- O comando .red[ $ ] poderá ser usado quando a lista tiver seus componentes nomeados.
+.font90[
+- Listas são estruturas capazes de armazenar objetos de diferentes classes.
+- A indexação pode ser realizada utilizando os operadores .red[[ ]], .red[[[ ]]] e .red[$].
+- O operador .red[[ ]] extrai componentes da lista preservando a estrutura de lista.
+- O operador .red[[[ ]]] extrai o conteúdo armazenado em um componente.
+- O operador .red[$] permite acessar componentes nomeados.
+]
+
+<br>
+
+.alert[
+💡 A principal diferença entre .red[[ ]] e .red[[[ ]]] é que o primeiro retorna uma lista e o segundo retorna o conteúdo do componente.
+]
 
 ---
 
 ## Indexação no R
+
 <br>
 
-### Indexação de listas - .black[Níveis superiores não nomeados]
+### Indexação de listas - Componentes não nomeados
 
 .pull-left-4[
 .font90[
-**Lista com níveis superiores não nomeados**
-```{r IndL, echo=T, eval=F}
+
+```{r IndL1, echo=TRUE, eval=FALSE}
 diametro <- c(23.0, 27.0, 33.6, 52.6)
 
-invFlor <- 
+invFlor <-
   data.frame(
-    especie=c("Acapu", "Mogno", "Cedro", "Tauari"),
-    cortar=c("Não", "Não", "Não", "Sim"),
-    stringsAsFactors=FALSE)
+    especie = c("Acapu", "Mogno", "Cedro", "Tauari"),
+    cortar = c(FALSE, FALSE, FALSE, TRUE),
+    stringsAsFactors = FALSE
+  )
 
-# Criando lista não nomeada
-(list <- list(diametro, invFlor))
+# Cria uma lista
+lista <- list(diametro, invFlor)
 
-# extrai o componente 1
-list[[1]]
+# Visualiza a estrutura da lista
+lista
 
-# extrai a posição 1 do componente 2
-list[[2]][1]
-#list[[2]]["especie"]
-list[[2]]$especie
+# Extrai o componente 1
+lista[[1]]
+
+# Extrai o componente 2
+lista[[2]]
 ```
+
+<br>
+
+.alert[
+💡 Em listas não nomeadas, os componentes são acessados por sua posição utilizando o operador .red[[[ ]]].
+]
+
 ]
 ]
 
@@ -1777,8 +1794,9 @@ list[[2]]$especie
 
 .pull-right-4[
 <br>
+
 .font70[
-```{r ref.label="IndL", echo=FALSE, eval=TRUE, collapse=F}
+```{r ref.label="IndL1", echo=FALSE, eval=TRUE, collapse=FALSE}
 ```
 ]
 ]
@@ -1786,32 +1804,34 @@ list[[2]]$especie
 ---
 
 ## Indexação no R
+
 <br>
 
-### Indexação de listas - .black[Níveis superiores nomeados]
+### Indexação de listas - Navegação entre componentes
 
 .pull-left-4[
 .font90[
-**Lista com níveis superiores nomeados**
-```{r IndL1, echo=T, eval=F}
-diametro <- c(23.0, 27.0, 33.6, 52.6)
 
-invFlor <- 
-  data.frame(
-    especie=c("Acapu", "Mogno", "Cedro", "Tauari"),
-    cortar=c("Não", "Não", "Não", "Sim"),
-    stringsAsFactors=FALSE)
+```{r IndL2, echo=TRUE, eval=FALSE}
+# Visualiza a estrutura da lista
+lista
 
-# Criando lista não nomeada
-(list <- list(DAP = diametro, Inventario = invFlor))
+# Extrai o vetor "especie"
+lista[[2]]$especie
 
-# extrai o componente da posição 1
-list$DAP
+# Extrai o 3º elemento da vetor "especie"
+lista[[2]]$especie[3]
 
-# extrai a coluna espécie do componente 2
-list$Inventario$especie
-
+# Extrai o 4º elemento do vetor "diametro"
+lista[[1]][4]
 ```
+
+<br>
+
+.alert[
+💡 A indexação pode ser combinada para acessar elementos internos da lista.
+]
+
 ]
 ]
 
@@ -1819,13 +1839,18 @@ list$Inventario$especie
 
 .pull-right-4[
 <br>
+
 .font70[
-```{r ref.label="IndL1", echo=FALSE, eval=TRUE, collapse=F}
+```{r ref.label="IndL2", echo=FALSE, eval=TRUE, collapse=FALSE}
 ```
 ]
 ]
 
-<!--Slide XX -->
+
+---
+
+## PAREI AQUI
+
 ---
 layout: false
 name: etim
