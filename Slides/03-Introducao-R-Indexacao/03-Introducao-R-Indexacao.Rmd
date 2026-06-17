@@ -186,10 +186,9 @@ Ao final deste primeiro módulo (**Introdução ao R-base**) espera-se que os di
 [**6. Indexação de listas**](#IndL)
   - Estrutura de listas;
   - Operadores [ ], [[ ]] e $;
-  - Extração de elementos;
-  - Extração de componentes;
-  - Substituição de elementos; e
-  - Adição de componentes.
+  - Componentes não nomeados;
+  - Navegação entre componentes; e
+  - Componentes nomeados.
 ]
 ]
 
@@ -1736,8 +1735,8 @@ name: IndL
 .font90[
 - Listas são estruturas capazes de armazenar objetos de diferentes classes.
 - A indexação pode ser realizada utilizando os operadores .red[[ ]], .red[[[ ]]] e .red[$].
-- O operador .red[[ ]] extrai componentes da lista preservando a estrutura de lista.
-- O operador .red[[[ ]]] extrai o conteúdo armazenado em um componente.
+- O operador .red[[ ]] retorna componentes da lista preservando sua estrutura.
+- O operador .red[[[ ]]] retorna o conteúdo armazenado em um componente.
 - O operador .red[$] permite acessar componentes nomeados.
 ]
 
@@ -1819,7 +1818,7 @@ lista
 # Extrai o vetor "especie"
 lista[[2]]$especie
 
-# Extrai o 3º elemento da vetor "especie"
+# Extrai o 3º elemento do vetor "especie"
 lista[[2]]$especie[3]
 
 # Extrai o 4º elemento do vetor "diametro"
@@ -1849,7 +1848,72 @@ lista[[1]][4]
 
 ---
 
-## PAREI AQUI
+## Indexação no R
+
+<br>
+
+### Indexação de listas - Componentes nomeados
+
+.pull-left-4[
+.font90[
+
+```{r IndL3, echo=TRUE, eval=FALSE}
+lista2 <- list(
+  diametro = diametro,
+  inventario = invFlor
+)
+
+# Extrai o componente diametro
+lista2$diametro
+
+# Extrai o componente inventario
+lista2$inventario
+```
+
+<br>
+
+.alert[
+💡 O operador .red[$] permite acessar componentes nomeados de uma lista.
+]
+
+]
+]
+
+--
+
+.pull-right-4[
+<br>
+
+.font70[
+```{r ref.label="IndL3", echo=FALSE, eval=TRUE, collapse=FALSE}
+```
+]
+]
+
+---
+layout: false
+name: duvidas
+class: inverse, middle, center
+background-image: url(../assets/capa/sec.png)
+background-size: cover
+
+# .black[Dúvidas?]
+
+<br>
+
+## 💡 .black[Mensagem]
+
+A indexação é uma habilidade fundamental para acessar, selecionar e modificar informações em diferentes estruturas de dados do R.
+
+<br>
+
+## 🎯 .black[Próximo passo]
+
+Aprender a **importar e exportar dados** utilizando o pacote **readr** para análise e manipulação no R.
+
+<br><br>
+
+💬 Perguntas, comentários ou sugestões?
 
 ---
 layout: false
