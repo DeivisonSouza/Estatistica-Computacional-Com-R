@@ -201,7 +201,15 @@ class: inverse, top, right
 background-image: url(../assets/capa/sec.png)
 background-size: cover
 
-<br><br><br>
+<br>
+
+.right[
+.font100[
+**.green[Módulo 1]** - Introdução ao R
+]
+]
+
+<br><br>
 
 .right[
 .font150[
@@ -223,7 +231,7 @@ Mecanismos de Indexação no R
 layout: true
 class: with-logo logo-ufpa
 <div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Módulo 1 - Introdução ao R</div2> </div>
+<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao R-base (Módulo 1)</div2> </div>
 
 ---
 
@@ -277,12 +285,21 @@ especie[3]
 ]
 
 ---
+
 layout: false
 class: inverse, top, right
 background-image: url(../assets/capa/sec.png)
 background-size: cover
 
-<br><br><br>
+<br>
+
+.right[
+.font100[
+**.green[Módulo 1]** - Introdução ao R
+]
+]
+
+<br><br>
 
 .right[
 .font150[
@@ -304,7 +321,7 @@ Mecanismos de Indexação no R
 layout: true
 class: with-logo logo-ufpa
 <div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Módulo 1 - Introdução ao R</div2> </div>
+<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao R-base (Módulo 1)</div2> </div>
 
 ---
 
@@ -602,7 +619,15 @@ class: inverse, top, right
 background-image: url(../assets/capa/sec.png)
 background-size: cover
 
-<br><br><br>
+<br>
+
+.right[
+.font100[
+**.green[Módulo 1]** - Introdução ao R
+]
+]
+
+<br><br>
 
 .right[
 .font150[
@@ -624,7 +649,7 @@ Mecanismos de Indexação no R
 layout: true
 class: with-logo logo-ufpa
 <div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Módulo 1 - Introdução ao R</div2> </div>
+<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao R (Módulo 1)</div2> </div>
 
 ---
 
@@ -1011,12 +1036,21 @@ mat
 ]
 
 ---
+
 layout: false
 class: inverse, top, right
 background-image: url(../assets/capa/sec.png)
 background-size: cover
 
-<br><br><br>
+<br>
+
+.right[
+.font100[
+**.green[Módulo 1]** - Introdução ao R
+]
+]
+
+<br><br>
 
 .right[
 .font150[
@@ -1038,7 +1072,7 @@ Mecanismos de Indexação no R
 layout: true
 class: with-logo logo-ufpa
 <div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Módulo 1 - Introdução ao R</div2> </div>
+<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao R (Módulo 1)</div2> </div>
 
 ---
 
@@ -1309,12 +1343,21 @@ arr
 ]
 
 ---
+
 layout: false
 class: inverse, top, right
 background-image: url(../assets/capa/sec.png)
 background-size: cover
 
-<br><br><br>
+<br>
+
+.right[
+.font100[
+**.green[Módulo 1]** - Introdução ao R
+]
+]
+
+<br><br>
 
 .right[
 .font150[
@@ -1336,7 +1379,7 @@ Mecanismos de Indexação no R
 layout: true
 class: with-logo logo-ufpa
 <div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Módulo 1 - Introdução ao R</div2> </div>
+<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao R (Módulo 1)</div2> </div>
 
 ---
 
@@ -1862,7 +1905,15 @@ class: inverse, top, right
 background-image: url(../assets/capa/sec.png)
 background-size: cover
 
-<br><br><br>
+<br>
+
+.right[
+.font100[
+**.green[Módulo 1]** - Introdução ao R
+]
+]
+
+<br><br>
 
 .right[
 .font150[
@@ -1875,7 +1926,7 @@ Mecanismos de Indexação no R
 
 .right[
 .font180[
-**Indexação de Listas**
+**Listas**
 ]
 ]
 
@@ -1884,7 +1935,7 @@ Mecanismos de Indexação no R
 layout: true
 class: with-logo logo-ufpa
 <div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Módulo 1 - Introdução ao R</div2> </div>
+<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao R (Módulo 1)</div2> </div>
 
 ---
 name: IndL
