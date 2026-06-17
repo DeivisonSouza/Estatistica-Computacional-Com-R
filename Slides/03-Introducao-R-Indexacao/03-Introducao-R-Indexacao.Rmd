@@ -1618,6 +1618,58 @@ invFlor
 ]
 
 ---
+
+## Indexação no R
+
+<br>
+
+### Data frames - Adição de linhas
+
+.pull-left-4[
+.font80[
+```{r DF10, echo=TRUE, eval=FALSE}
+
+# Data frame original
+invFlor
+
+# Nova observação
+nova_linha <-
+  data.frame(
+    especie = "Jatoba",
+    diametro = 62.3,
+    altura = 18.5,
+    cortar = FALSE
+  )
+
+# Adiciona a nova linha
+invFlor <- rbind(
+  invFlor,
+  nova_linha
+)
+
+invFlor
+```
+
+]
+]
+
+--
+
+.pull-right-4[
+.font70[
+```{r ref.label="DF10", echo=FALSE, eval=TRUE, collapse=FALSE}
+```
+
+<br>
+
+.alert[
+💡 Novas linhas podem ser adicionadas utilizando a função `rbind()`.
+]
+
+]
+]
+
+---
 name: IndL
 ## Indexação no R
 <br>
