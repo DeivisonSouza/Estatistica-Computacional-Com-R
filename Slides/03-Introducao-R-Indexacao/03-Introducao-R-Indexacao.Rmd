@@ -111,13 +111,15 @@ class: with-logo logo-lmftca-fixed
 ---
 
 ## Objetivos
-<br><br>
-Ao final deste primeiro módulo (**Introdução ao R-base**) espera-se que os discentes possam alcançar conhecimentos para...
 
-* Entender a importância e reconhecer a praticidade de uso de Linguagem de Programação;
-* Compreender e construir as principais estruturas de dados na Linguagem R;
-* Realizar indexação de diferentes estruturas de dados no R; e
-* Conhecer e aprender a usar operadores no R (aritméticos, relacionais, lógicos).
+<br><br>
+
+Ao final desta aula, espera-se que os discentes sejam capazes de...
+
+* Compreender os mecanismos de indexação da linguagem R;
+* Extrair, excluir e substituir elementos em diferentes estruturas de dados;
+* Aplicar indexação em vetores, matrizes, arrays, data frames e listas; e
+* Utilizar operadores lógicos e de comparação para selecionar e manipular informações.
 
 ---
 
@@ -273,6 +275,36 @@ especie[3]
 .alert[
 💡 Em vetores, o número dentro dos colchetes indica a posição do elemento que desejamos acessar.
 ]
+
+---
+layout: false
+class: inverse, top, right
+background-image: url(../assets/capa/sec.png)
+background-size: cover
+
+<br><br><br>
+
+.right[
+.font150[
+**.green[Parte 5]** <br>
+Mecanismos de Indexação no R
+]
+]
+
+<br><br>
+
+.right[
+.font180[
+**Indexação de Vetores**
+]
+]
+
+---
+
+layout: true
+class: with-logo logo-ufpa
+<div class="my-header"></div>
+<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Módulo 1 - Introdução ao R</div2> </div>
 
 ---
 
@@ -562,6 +594,37 @@ diametro
 ```{r ref.label="Vsub1", echo=FALSE, eval=TRUE}
 ```
 ]
+
+---
+
+layout: false
+class: inverse, top, right
+background-image: url(../assets/capa/sec.png)
+background-size: cover
+
+<br><br><br>
+
+.right[
+.font150[
+**.green[Parte 5]** <br>
+Mecanismos de Indexação no R
+]
+]
+
+<br><br>
+
+.right[
+.font180[
+**Indexação de Matrizes**
+]
+]
+
+---
+
+layout: true
+class: with-logo logo-ufpa
+<div class="my-header"></div>
+<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Módulo 1 - Introdução ao R</div2> </div>
 
 ---
 
@@ -948,6 +1011,36 @@ mat
 ]
 
 ---
+layout: false
+class: inverse, top, right
+background-image: url(../assets/capa/sec.png)
+background-size: cover
+
+<br><br><br>
+
+.right[
+.font150[
+**.green[Parte 5]** <br>
+Mecanismos de Indexação no R
+]
+]
+
+<br><br>
+
+.right[
+.font180[
+**Indexação de Arrays**
+]
+]
+
+---
+
+layout: true
+class: with-logo logo-ufpa
+<div class="my-header"></div>
+<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Módulo 1 - Introdução ao R</div2> </div>
+
+---
 
 ## Indexação no R
 
@@ -1214,6 +1307,36 @@ arr
 ```
 ]
 ]
+
+---
+layout: false
+class: inverse, top, right
+background-image: url(../assets/capa/sec.png)
+background-size: cover
+
+<br><br><br>
+
+.right[
+.font150[
+**.green[Parte 5]** <br>
+Mecanismos de Indexação no R
+]
+]
+
+<br><br>
+
+.right[
+.font180[
+**Indexação de Data Frames**
+]
+]
+
+---
+
+layout: true
+class: with-logo logo-ufpa
+<div class="my-header"></div>
+<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Módulo 1 - Introdução ao R</div2> </div>
 
 ---
 
@@ -1731,6 +1854,37 @@ invFlor
 
 ]
 ]
+
+---
+
+layout: false
+class: inverse, top, right
+background-image: url(../assets/capa/sec.png)
+background-size: cover
+
+<br><br><br>
+
+.right[
+.font150[
+**.green[Parte 5]** <br>
+Mecanismos de Indexação no R
+]
+]
+
+<br><br>
+
+.right[
+.font180[
+**Indexação de Listas**
+]
+]
+
+---
+
+layout: true
+class: with-logo logo-ufpa
+<div class="my-header"></div>
+<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Módulo 1 - Introdução ao R</div2> </div>
 
 ---
 name: IndL
