@@ -58,6 +58,17 @@ R** estão disponibilizados a seguir.
 | Slides/02-Introducao-R-Estrutura/02-Introducao-R-Estrutura.html | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/02-Introducao-R-Estrutura/02-Introducao-R-Estrutura.html> |
 | Slides/03-Introducao-R-Indexacao/03-Introducao-R-Indexacao.html | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/03-Introducao-R-Indexacao/03-Introducao-R-Indexacao.html> |
 
+# Desafios
+
+| Slide | Link |
+|:---|:---|
+| Slides/11-Desafios/01-criando_projetos.R | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/11-Desafios/01-criando_projetos.R> |
+| Slides/11-Desafios/02-criacao_inspecao_vetores.R | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/11-Desafios/02-criacao_inspecao_vetores.R> |
+| Slides/11-Desafios/03-criacao_inspecao_matrizes.R | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/11-Desafios/03-criacao_inspecao_matrizes.R> |
+| Slides/11-Desafios/04-criacao_inspecao_arrays.R | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/11-Desafios/04-criacao_inspecao_arrays.R> |
+| Slides/11-Desafios/05-criacao_inspecao_dataframes.R | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/11-Desafios/05-criacao_inspecao_dataframes.R> |
+| Slides/11-Desafios/06-criacao_inspecao_listas.R | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/11-Desafios/06-criacao_inspecao_listas.R> |
+
 # Conjunto de dados
 
 Serão usados os seguintes conjuntos na disciplina:

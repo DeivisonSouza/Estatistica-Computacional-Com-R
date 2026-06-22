@@ -91,6 +91,19 @@ knitr::kable(
 )
 ```
 
+# Desafios
+
+```{r, echo = FALSE}
+knitr::kable(
+  tibble::tibble(
+    Slide = list_github_files(repo=repo, "Slides/11-Desafios/", "R"),
+    Link = paste0("https://deivisonsouza.github.io/", repo, "/", Slide)
+  ) %>% 
+    dplyr::filter(!stringr::str_detect(Slide,
+                                       "_files/|_cache/|assets"))
+)
+```
+
 # Conjunto de dados
 
 Serão usados os seguintes conjuntos na disciplina:
