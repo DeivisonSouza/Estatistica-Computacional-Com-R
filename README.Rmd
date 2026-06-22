@@ -76,7 +76,7 @@ list_github_files <- function(repo, dir = NULL, ext = NULL) {
 
 Este repositório guarda os slides em .html, códigos R, arquivos .Rmd, figuras, conjunto de dados (e outros) utilizados na disciplina de **Estatística Computacional Com R** ministrada pelo **Prof. Deivison Venicio Souza** (Laboratório de Manejo Florestal, Tecnologias e Comunidades Amazônicas) no **Programa de Pós-Graduação em Biodiversidade e Conservação (PPGBC)/UFPA** e **Programa de Pós-Graduação em Ciência, Tecnologia e Inovação Florestal (PPGCTIF)/UFOPA**. A disciplina tem sido ofertada na modalidade de Ensino Presencial na UFPA e Online na UFOPA.
 
-# Slides da disciplina
+# Slides
 
 A programação e os slides da disciplina **Estatística Computacional Com R** estão disponibilizados a seguir.
 
@@ -94,13 +94,40 @@ knitr::kable(
 # Desafios
 
 ```{r, echo = FALSE}
+desafios <- c(
+  "Criação e organização de projetos no RStudio",
+  "Criação e inspeção de vetores",
+  "Criação e inspeção de matrizes",
+  "Criação e inspeção de arrays",
+  "Criação e inspeção de data frames",
+  "Criação e inspeção de listas"
+)
+
 knitr::kable(
   tibble::tibble(
-    Slide = list_github_files(repo=repo, "Slides/11-Desafios/", "R"),
-    Link = paste0("https://deivisonsouza.github.io/", repo, "/", Slide)
+    Slide = list_github_files(
+      repo = repo,
+      "Slides/11-Desafios/",
+      "R"
+    )
   ) %>% 
-    dplyr::filter(!stringr::str_detect(Slide,
-                                       "_files/|_cache/|assets"))
+    dplyr::filter(
+      !stringr::str_detect(
+        Slide,
+        "_files/|_cache/|assets"
+      )
+    ) %>% 
+    dplyr::mutate(
+      Arquivo = basename(Slide),
+      Desafios = desafios,
+      Link = paste0(
+        "https://deivisonsouza.github.io/",
+        repo,
+        "/",
+        Slide
+      )
+    ) %>% 
+    dplyr::select(Arquivo, Desafios, Link)
 )
 ```
 

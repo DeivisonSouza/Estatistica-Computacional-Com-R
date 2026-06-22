@@ -46,7 +46,7 @@ e Conservação (PPGBC)/UFPA** e **Programa de Pós-Graduação em Ciência,
 Tecnologia e Inovação Florestal (PPGCTIF)/UFOPA**. A disciplina tem sido
 ofertada na modalidade de Ensino Presencial na UFPA e Online na UFOPA.
 
-# Slides da disciplina
+# Slides
 
 A programação e os slides da disciplina **Estatística Computacional Com
 R** estão disponibilizados a seguir.
@@ -60,14 +60,14 @@ R** estão disponibilizados a seguir.
 
 # Desafios
 
-| Slide | Link |
-|:---|:---|
-| Slides/11-Desafios/01-criando_projetos.R | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/11-Desafios/01-criando_projetos.R> |
-| Slides/11-Desafios/02-criacao_inspecao_vetores.R | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/11-Desafios/02-criacao_inspecao_vetores.R> |
-| Slides/11-Desafios/03-criacao_inspecao_matrizes.R | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/11-Desafios/03-criacao_inspecao_matrizes.R> |
-| Slides/11-Desafios/04-criacao_inspecao_arrays.R | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/11-Desafios/04-criacao_inspecao_arrays.R> |
-| Slides/11-Desafios/05-criacao_inspecao_dataframes.R | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/11-Desafios/05-criacao_inspecao_dataframes.R> |
-| Slides/11-Desafios/06-criacao_inspecao_listas.R | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/11-Desafios/06-criacao_inspecao_listas.R> |
+| Arquivo | Desafios | Link |
+|:---|:---|:---|
+| 01-criando_projetos.R | Criação e organização de projetos no RStudio | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/11-Desafios/01-criando_projetos.R> |
+| 02-criacao_inspecao_vetores.R | Criação e inspeção de vetores | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/11-Desafios/02-criacao_inspecao_vetores.R> |
+| 03-criacao_inspecao_matrizes.R | Criação e inspeção de matrizes | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/11-Desafios/03-criacao_inspecao_matrizes.R> |
+| 04-criacao_inspecao_arrays.R | Criação e inspeção de arrays | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/11-Desafios/04-criacao_inspecao_arrays.R> |
+| 05-criacao_inspecao_dataframes.R | Criação e inspeção de data frames | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/11-Desafios/05-criacao_inspecao_dataframes.R> |
+| 06-criacao_inspecao_listas.R | Criação e inspeção de listas | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/11-Desafios/06-criacao_inspecao_listas.R> |
 
 # Conjunto de dados
 
