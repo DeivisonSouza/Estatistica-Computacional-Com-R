@@ -1,6 +1,6 @@
 ---
 title: "Estatística Computacional com R"
-subtitle: "Introdução ao R - Estrutura de Dados"
+subtitle: "Importação e Exportação de Dados"
 author: "Prof. Dr. Deivison Venicio Souza"
 institute: "Universidade Federal do Pará (UFPA)"
 date: ""
@@ -85,8 +85,8 @@ use_clipboard()
 <!-- title-slide -->
 # Estatística Computacional com R <br> (PPGBC/UFPA e PPGCTIF/UFOPA)
 
-## ᨒ <br> `r anicon::faa("pagelines", animate="horizontal", colour="green")` Introdução ao R `r anicon::faa("pagelines", animate="horizontal", colour="green")`
-###### (Estrutura de Dados)
+## ᨒ <br> `r anicon::faa("pagelines", animate="horizontal", colour="green")` .font90[Importação e Exportação de Dados]`r anicon::faa("pagelines", animate="horizontal", colour="green")`
+###### (Pacote readr)
 
 ##### 〰〰〰〰〰〰🌱〰〰〰〰〰〰
 ##### ᨒ
@@ -103,7 +103,7 @@ use_clipboard()
 layout: true
 class: with-logo logo-lmftca-fixed
 <div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao R (Módulo 1)</div2> </div>
+<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao Tidyverse (Módulo 2)</div2> </div>
 
 ---
 
@@ -159,29 +159,41 @@ knitr::include_graphics("https://readr.tidyverse.org/logo.png")
 ---
 
 layout: false
-name: conc
 class: inverse, top, right
-background-image: url(fig/slide-title/secao.png)
+background-image: url(../assets/capa/sec.png)
 background-size: cover
 
-<br><br><br>
+<br>
 
-.right[.font150[**.green[Módulo 2] <br> Introdução ao Tidyverse**]]
+.right[
+.font100[
+**.green[Módulo 2]** - Introdução ao Tidyverse
+]
+]
 
 <br><br>
 
-.right[.font150[**.green[Parte 1] - Importação e exportação de dados: <br> Pacote .orange[readr]**]]
+.right[
+.font150[
+**.green[Parte 1]** <br>
+Importação e Exportação de Dados
+]
+]
 
-```{r echo=FALSE, out.width='10%', fig.align='center', fig.cap='', dpi=600}
-knitr::include_graphics("https://readr.tidyverse.org/logo.png")
-```
+<br><br>
+
+.right[
+.font180[
+**Pacote .orange[readr]**
+]
+]
 
 ---
 
 layout: true
 class: with-logo logo-ufpa
 <div class="my-header"></div>
-<!-- <div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R (PPGBC0030)</div3>/ <div2>Módulo 2 - Introdução ao Tidyverse</div2> </div> -->
+<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao Tidyverse (Módulo 2)</div2> </div>
 
 ---
 name: import
@@ -646,9 +658,19 @@ name: importdata
 
 ]
 
-<!--Slide XX -->
 ---
 layout: false
-class: inverse, top, right
-background-image: url(fig/slide-title/end.png)
+name: etim
+class: inverse, middle, center
+background-image: url(../assets/capa/sec.png)
 background-size: cover
+
+## .font200[Obrigado!]
+
+```{r, echo=FALSE, out.width='20%', fig.align='center', fig.cap='', dpi=600}
+knitr::include_graphics('../assets/logos/LMFTCA.png')
+```
+
+👨🏻‍👩🏻‍👦🏻‍👦🏻 [@lmftca_ufpa](https://www.instagram.com/lmftca_ufpa/)
+
+🌎 [https://www.lmftca.com.br/](https://www.lmftca.com.br/)
