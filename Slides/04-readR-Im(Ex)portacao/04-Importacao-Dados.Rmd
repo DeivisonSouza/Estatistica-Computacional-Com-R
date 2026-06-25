@@ -167,7 +167,7 @@ background-size: cover
 
 .right[
 .font100[
-**.green[Módulo 2]** - Introdução ao Tidyverse
+**.green[Módulo 2]** – Introdução ao Tidyverse
 ]
 ]
 
@@ -184,7 +184,7 @@ Importação e Exportação de Dados
 
 .right[
 .font180[
-**Pacote .orange[readr]**
+**Conhecendo o Tidyverse**
 ]
 ]
 
@@ -196,31 +196,214 @@ class: with-logo logo-ufpa
 <div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao Tidyverse (Módulo 2)</div2> </div>
 
 ---
-name: import
-## Importação de dados no R
+
+## Módulo 2 — Introdução ao Tidyverse
+
 <br>
 
-.font90[
-- A etapa de importação de dados para o R precede a análise de dados.
-- Os dados podem ser exportados: i) diretamente para a memória (RAM); ou ii) acessados remotamente.
-- O mecanismo de importação depende do formato dos dados.
-- Por exemplo, é possível exportar dados nos formatos: .txt, .csv, .xlsx, .ods, SAS, SPSS, etc.
-- O R-base possui funções para importação de dados: .green[**read.csv()**] e .green[**read.table()**] (Pacote .orange[**utils**]).
-- O tidyverse incorpora o pacote .orange[**readr**], que possui várias funções para importação de dados.
-]
-<br><br>
+Após aprendermos os fundamentos da linguagem R, iniciaremos o estudo do ecossistema .orange[**Tidyverse**].
 
-.center[**O pacote .orange[**readr**] será o nosso objeto de estudo!**]
+<br>
+
+.center[
+.font120[
+**Uma coleção de pacotes para ciência de dados em R**
+]
+]
+
+<br>
+
+O Tidyverse fornece ferramentas para:
+
+- 📥 Importação de dados;
+- 🔧 Manipulação e transformação de dados;
+- 📊 Visualização de dados;
+- 📝 Comunicação de resultados; e
+- ⚙️ Programação funcional.
 
 ---
-name: tidyverse
+
 ## Tidyverse: coleção de pacotes R
 <br>
 
-```{r echo=FALSE, out.width='90%', fig.align='center', fig.cap='', dpi=600}
-knitr::include_graphics("https://www.storybench.org/wp-content/uploads/2017/05/tidyverse.png")
+```{r echo=FALSE, out.width='60%', fig.align='center', fig.cap='', dpi=600}
+knitr::include_graphics("fig/tidy.png")
 ```
-.font70[Fonte: https://www.storybench.org/getting-started-with-tidyverse-in-r/]
+
+.center[
+.font65[
+**Fonte**: Elaborado com auxílio do ChatGPT (OpenAI), com base na documentação oficial do Tidyverse.
+]
+]
+
+---
+name: import
+## Importação de Dados no R
+
+<br>
+
+.font100[
+- A importação de dados é uma das primeiras etapas de qualquer fluxo de análise.
+- Os dados podem estar armazenados em:
+  - arquivos locais;
+  - servidores remotos;
+  - bancos de dados; ou
+  - serviços web.
+- O método de importação depende da origem e do formato dos dados.
+]
+
+<br>
+
+.center[
+.font110[
+**Exemplos de formatos:** .csv, .txt, .tsv, .xlsx, .ods, SAS e SPSS.
+]
+]
+
+---
+
+## Importação de Dados: R Base × Tidyverse
+
+<br>
+
+.font95[
+O R-base disponibiliza funções do Pacote .orange[**utils**] como:
+
+- .green[**read.csv()**]
+- .green[**read.delim()**]
+- .green[**read.table()**]
+
+]
+
+<br>
+
+.font95[
+O ecossistema .orange[**tidyverse**] incorpora o pacote
+.orange[**readr**], que oferece:
+
+- maior velocidade de leitura;
+- mensagens mais informativas;
+- melhor integração com os demais pacotes do Tidyverse.
+]
+
+---
+name: readr
+## O pacote readr
+
+<br>
+
+.font95[
+- O pacote .orange[**readr**] faz parte do ecossistema .orange[**tidyverse**].
+- Foi desenvolvido para facilitar a **leitura** e a **escrita** de **arquivos tabulares**.
+- Possui funções específicas para diferentes formatos de dados.
+]
+
+<br>
+
+.center[
+.font120[
+.alert2[**Importar**] → Manipular → Visualizar → Comunicar
+]
+]
+
+<br>
+
+.center[
+.font110[
+Nesta aula utilizaremos o pacote .orange[**readr**] para .blue[importação] e .blue[exportação] de dados.
+]
+]
+
+---
+name: install
+## Instalando e carregando pacotes
+
+<br>
+
+Os pacotes do .orange[**Tidyverse**] podem ser instalados de duas formas:
+
+<br>
+
+.pull-left-4[
+
+### Instalar todo o Tidyverse
+
+.font90[
+
+```{r, eval=FALSE}
+# Instala todos os pacote do "tidyverse"
+install.packages("tidyverse")
+
+# Carrega todos os pacote do "tidyverse"
+library(tidyverse)
+```
+
+<br>
+
+.alert[
+💡 Instale o pacote apenas uma vez. Em cada nova sessão do R, utilize .green[library()] para carregá-lo.
+]
+
+]
+]
+
+.pull-right-4[
+
+### Instalar pacotes específicos
+
+.font90[
+```{r, eval=FALSE}
+# Instala o "readr" e "tibble"
+install.packages(c("readr", "tibble"))
+
+# Carrega o "readr" e "tibble"
+library(readr)
+library(tibble)
+```
+
+]
+]
+
+---
+
+layout: false
+class: inverse, top, right
+background-image: url(../assets/capa/sec.png)
+background-size: cover
+
+<br>
+
+.right[
+.font100[
+**.green[Módulo 2]** – Introdução ao Tidyverse
+]
+]
+
+<br><br>
+
+.right[
+.font150[
+**.green[Parte 1]** <br>
+Importação e Exportação de Dados
+]
+]
+
+<br><br>
+
+.right[
+.font180[
+**Conhecendo o readr**: <br>
+.green[Exportação de Dados]
+]
+]
+
+---
+
+layout: true
+class: with-logo logo-ufpa
+<div class="my-header"></div>
+<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao Tidyverse (Módulo 2)</div2> </div>
+
 ---
 name: fie
 ## Pacote readr (tidyverse)
@@ -229,8 +412,7 @@ name: fie
 ### Funções de importação e exportação
 
 .font80[
-- O pacote .blue[readr] está incorporado no tidyverse.
-- Possui diversas funções para importação e exportação de dados.
+- O pacote .orange[**readr**] disponibiliza diversas funções para .blue[importação] e .blue[exportação] de dados.
 ]
 <br>
 
@@ -255,27 +437,447 @@ ls("package:readr") |>
 ]
 
 ---
-name: idur
-## Pacote readr (tidyverse)
+name: export
+## Exportação de Dados
+
 <br>
 
-### Importação de dados usando o readr
+.center[
+.font130[
+.alert2[**Objetos do R** → .blue[**Arquivos**]]
+]
+]
 
-- Vamos estudar apenas algumas das principais funções de importação...
+<br>
+
+.font95[
+A **exportação** consiste em **gravar um objeto do R** em um **arquivo armazenado no disco**.
+
+Após a exportação, esse arquivo poderá ser utilizado para:
+
+- Compartilhar dados com outros usuários;
+- Abrir os dados em diferentes softwares; ou
+- Importar os dados novamente para o R.
+]
+
+<br>
+
+.alert[
+💡 Nesta aula, criaremos arquivos na pasta .blue[data/] utilizando as funções .green[write_*()].
+]
+
+---
+name: write_csv
+## Função write_csv()
+
+<br>
+
+### Arquivos separados por vírgula .black[(].blue[,].black[)]
+
+.pull-left-4[
+
+<br>
+
+.font90[
+- A função .green[**write_csv()**] é utilizada para exportar objetos do R no formato .blue[CSV].
+- CSV significa *Comma-Separated Values*.
+- Nesse formato, os campos são separados por .blue[vírgulas (,)].
+]
+
+<br>
+
+.alert[
+💡 O arquivo será gravado na pasta .blue[data/] do projeto.
+]
+
+]
+
+.pull-right-4[
+
+```{r echo=FALSE, out.width='70%', fig.align='center',fig.cap='', dpi=600}
+knitr::include_graphics("fig/file1.png")
+```
+
+]
+
+---
+name: write_csv_ex
+## Exportando um arquivo CSV
+
+<br>
+
+.pull-left-4[
+
+.font90[
+A função .green[**write_csv()**] do pacote .orange[**readr**] possui dois argumentos principais:
+
+- .blue[x]: objeto do R a ser exportado;
+- .blue[file]: caminho do arquivo a ser criado.
+]
+
+<br>
+
+.font75[
+
+```{r echo=TRUE, eval=FALSE}
+library(tibble)
+library(readr)
+
+arvores <- tibble(
+  Nome = c("Angelim", "Mogno"),
+  DAP  = c(100.5, 80.2),
+  H    = c(30.8, 20.4)
+)
+
+write_csv(
+  x    = arvores,
+  file = "data/arvores.csv"
+)
+```
+
+]
+]
+
+.pull-right-4[
+
+```{r echo=FALSE, out.width='50%', fig.align='center',fig.cap='', dpi=600}
+knitr::include_graphics("fig/file1.png")
+```
+
+<br>
+
+.alert[
+💡 Uma **tibble** é uma versão **moderna** do **data frame** utilizada pelo Tidyverse.
+]
+
+]
+
+---
+name: write_csv2
+## Função write_csv2()
+
+<br>
+
+### Arquivos separados por ponto e vírgula .black[(].blue[;].black[)]
+
+.pull-left-4[
+
+<br>
+
+.font90[
+- A função .green[**write_csv2()**] é utilizada para exportar objetos do R no formato .blue[CSV europeu].
+- Nesse formato, os campos são separados por .blue[ponto e vírgula (;)].
+- Os valores decimais utilizam .blue[vírgula (,)].
+]
+
+<br>
+
+.alert[
+💡 Formato amplamente usado em países que utilizam a vírgula como separador decimal.
+]
+
+]
+
+.pull-right-4[
+
+```{r echo=FALSE, out.width='65%', fig.align='center',fig.cap='', dpi=600}
+knitr::include_graphics("fig/file2.png")
+```
+
+]
+
+---
+name: write_csv2_ex
+## Exportando um arquivo CSV europeu
+
+<br>
+
+.pull-left-4[
+
+.font90[
+A função .green[**write_csv2()**] possui os mesmos argumentos da função .green[**write_csv()**]:
+
+- .blue[x]: objeto do R a ser exportado;
+- .blue[file]: caminho do arquivo a ser criado.
+]
+
+<br>
+
+.font75[
+
+```{r echo=TRUE, eval=FALSE}
+
+arvores <- tibble(
+  Nome = c("Angelim", "Mogno"),
+  DAP  = c(100.5, 80.2),
+  H    = c(30.8, 20.4)
+)
+
+write_csv2(
+  x    = arvores,
+  file = "data/arvores2.csv"
+)
+```
+
+]
+]
+
+
+.pull-right-4[
+
+```{r echo=FALSE, out.width='50%', fig.align='center',fig.cap='', dpi=600}
+knitr::include_graphics("fig/file2.png")
+```
+
+<br>
+
+.alert[
+💡 No Brasil, é comum utilizar .blue[vírgula (,)] como separador decimal. Por isso, arquivos CSV nesse padrão usam .blue[ponto e vírgula (;)] como delimitador.
+]
+
+]
+
+---
+name: write_tsv
+## Exportando um arquivo TSV
+
+<br>
+
+.pull-left-4[
+
+.font90[
+A função .green[**write_tsv()**] do pacote .orange[**readr**] possui os mesmos argumentos das funções anteriores:
+
+- .blue[x]: objeto do R a ser exportado;
+- .blue[file]: caminho do arquivo a ser criado.
+]
+
+<br>
+
+.font75[
+
+```{r echo=TRUE, eval=FALSE}
+arvores <- tibble(
+  Nome = c("Angelim", "Mogno"),
+  DAP  = c(100.5, 80.2),
+  H    = c(30.8, 20.4)
+)
+
+write_tsv(
+  x    = arvores,
+  file = "data/arvores3.tsv"
+)
+```
+
+]
+]
+
+
+.pull-right-4[
+
+```{r echo=FALSE, out.width='50%', fig.align='center', fig.cap='', dpi=600}
+knitr::include_graphics("fig/file3.png")
+```
+<br>
+
+.alert[
+💡 Nos arquivos .blue[TSV], os campos são separados pelo caractere de .blue[tabulação (TAB)].
+]
+
+]
+
+---
+name: compare_write
+## Comparando os formatos de exportação
+
+<br>
+
+.font95[
+Até o momento, estudamos três funções para exportação de dados utilizando o pacote .orange[**readr**].
+]
+
+<br>
+
+| Função | Extensão | Delimitador | Decimal |
+|:--------|:--------:|:-----------:|:--------:|
+| .green[**write_csv()**]  | .blue[.csv] | **`,`** | **`.`** |
+| .green[**write_csv2()**] | .blue[.csv] | **`;`** | **`,`** |
+| .green[**write_tsv()**]  | .blue[.tsv] | **TAB** | **`.`** |
+
+<br>
+
+.alert[
+💡 A principal diferença está no **delimitador** e no **separador decimal**.
+]
+
+---
+name: write_delim
+## Exportando um arquivo com delimitador personalizado
+
+<br>
+
+.pull-left-4[
+
+.font90[
+A função .green[**write_delim()**] permite exportar arquivos utilizando um **delimitador definido pelo usuário**.
+
+Além dos argumentos .blue[x] e .blue[file], essa função possui o argumento:
+
+- .blue[delim]: caractere utilizado para separar os campos.
+]
+
+<br>
+
+.font75[
+
+```{r echo=TRUE, eval=FALSE}
+arvores <- tibble(
+  Nome = c("Angelim", "Mogno"),
+  DAP  = c(100.5, 80.2),
+  H    = c(30.8, 20.4)
+)
+
+write_delim(
+  x     = arvores,
+  file  = "data/arvores4.txt",
+  delim = "|"
+)
+```
+
+]
+]
+
+.pull-right-4[
+
+```{r echo=FALSE, out.width='50%', fig.align='center', fig.cap='', dpi=600}
+knitr::include_graphics("fig/file4.png")
+```
+
+<br>
+
+.alert[
+💡 A função .green[write_delim()] permite utilizar qualquer caractere como delimitador.
+]
+]
+
+---
+
+layout: false
+class: inverse, top, right
+background-image: url(../assets/capa/sec.png)
+background-size: cover
+
+<br>
+
+.right[
+.font100[
+**.green[Módulo 2]** – Introdução ao Tidyverse
+]
+]
+
 <br><br>
 
-.left[
-.font80[
-**read_csv()** - Importar um arquivo de valores separados por .blue[vírgula] (*Comma-Separated Values*)
-
-**read_csv2()** - Importar um arquivo de valores separados por .blue[ponto e vírgula] (*Semicolon-Separated Values*)
-
-**read_tsv()** - Importar um arquivo de valores separados por .blue[tabulação] (*Tab-Separated Values*)
-
-**read_delim()** - Importar um arquivo de valores separados por um .blue[delimitador incomum]
-
+.right[
+.font150[
+**.green[Parte 1]** <br>
+Importação e Exportação de Dados
 ]
 ]
+
+<br><br>
+
+.right[
+.font180[
+**Conhecendo o readr**: <br>
+.green[Importação de Dados]
+]
+]
+
+---
+
+layout: true
+class: with-logo logo-ufpa
+<div class="my-header"></div>
+<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao Tidyverse (Módulo 2)</div2> </div>
+
+---
+name: idur
+## Principais funções de importação
+
+<br>
+
+.font95[
+Nesta aula estudaremos apenas algumas das principais funções do pacote .orange[**readr**].
+]
+
+<br>
+
+| Função | Significado | Uso |
+|---------|---------|---------|
+| .green[**read_csv()**] | *Comma-Separated Values* | Arquivos separados por .blue[vírgula (,)] |
+| .green[**read_csv2()**] | *Semicolon-Separated Values* | Arquivos separados por .blue[ponto e vírgula (;)] |
+| .green[**read_tsv()**] | *Tab-Separated Values* | Arquivos separados por .blue[tabulação (TAB)] |
+| .green[**read_delim()**] | *Delimited File* | Arquivos separados por um .blue[delimitador personalizado] |
+
+---
+name: csv
+## Função read_csv()
+
+<br>
+
+### Arquivos separados por vírgula .black[(].blue[,].black[)]
+
+.pull-left-4[
+
+<br>
+
+.font90[
+- A função .green[**read_csv()**] é utilizada para importar arquivos no formato .blue[CSV].
+- CSV significa *Comma-Separated Values*.
+- Nesse formato, os campos são separados por .blue[vírgulas (,)].
+]
+
+<br>
+
+.alert[
+💡 Arquivos CSV são amplamente utilizados para armazenar e compartilhar dados tabulares.
+]
+]
+
+.pull-right-4[
+
+```{r echo=FALSE, out.width='70%', fig.align='center', fig.cap='', dpi=600}
+knitr::include_graphics("fig/file1.png")
+```
+]
+
+---
+name: csv-import
+## Importando arquivos CSV
+
+### Função .green[read_csv()]
+
+.pull-left-4[
+
+.font90[
+Primeiro, vamos criar o arquivo .blue[file1.csv] e salvá-lo na pasta .blue[data/].
+]
+
+.font75[
+```{r echo=TRUE, eval=FALSE}
+readr::write_file(x = "Nome,DAP,H\nAngelim,100,30\nMogno,80,20",
+                  file = "data/file1.csv")
+```
+]
+
+<br>
+
+.alert[
+💡 Em aplicações reais, os arquivos geralmente já existem e são produzidos por planilhas, bancos de dados ou sistemas externos.
+]
+
+]
+
 
 ---
 name: csv
