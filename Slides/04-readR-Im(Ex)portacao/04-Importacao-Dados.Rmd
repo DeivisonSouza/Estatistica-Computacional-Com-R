@@ -1116,6 +1116,49 @@ knitr::include_graphics("fig/file4.png")
 ]
 
 ---
+name: read_excel
+## Importando uma planilha Excel
+
+<br>
+
+.pull-left-4[
+
+.font90[
+Arquivos do Microsoft Excel (`.xlsx`) podem ser importados usando a função .green[**read_excel()**] do pacote .orange[**readxl**].
+
+O principal argumento é:
+
+- .blue[path]: caminho da planilha a ser importada.
+]
+
+<br>
+
+```{r echo=TRUE, eval=FALSE}
+library(readxl)
+
+arvores <- read_excel(
+  path = "data/arvores.xlsx"
+)
+
+```
+
+]
+
+.pull-right-4[
+
+```{r echo=FALSE, out.width='90%', fig.align='center', fig.cap='', dpi=600}
+knitr::include_graphics("fig/file5.png")
+```
+
+<br>
+
+.alert[
+💡 Utilize .green[read_excel()] para importar planilhas do Microsoft Excel (.blue[.xlsx]).
+]
+
+]
+
+---
 name: idur
 ## Principais funções de importação
 
