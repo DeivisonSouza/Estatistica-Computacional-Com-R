@@ -123,20 +123,6 @@ Ao final desta aula, espera-se que os participantes sejam capazes de:
 - Exportar objetos do R para planilhas do Microsoft Excel utilizando o pacote .orange[**writexl**]; e
 - Selecionar o pacote e a função mais adequados para cada formato de arquivo.
 
-
----
-
-## Pacotes abordados
-
-<br><br>
-
-<div style="display:flex; justify-content:center; align-items:center; gap:35px; margin-top:40px;">
-  <img src="fig/tidyverse.png" style="height:150px;">
-  <img src="fig/readr.png" style="height:150px;">
-  <img src="fig/readxl.png" style="height:150px;">
-  <img src="fig/writexl.png" style="height:150px;">
-</div>
-
 ---
 
 ## Conteúdo
@@ -206,6 +192,56 @@ class: with-logo logo-ufpa
 <div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao Tidyverse (Módulo 2)</div2> </div>
 
 ---
+name: workflow
+## Fluxo de trabalho em Ciência de Dados com R
+
+<br>
+
+.center[
+```{r echo=FALSE, out.width='70%', fig.align='center', fig.cap='', dpi=600}
+knitr::include_graphics("fig/workflow.png")
+```
+]
+
+<br>
+
+.center[
+.font110[
+**Esta aula aborda a primeira etapa desse fluxo:**
+]
+]
+
+.center[
+.font120[
+.alert2[
+**Im(Ex)portar dados**
+]
+]
+]
+
+<br>
+
+.center[
+.font95[
+.orange[**readr**] • .orange[**readxl**] • .orange[**writexl**]
+]
+]
+
+---
+
+## Pacotes abordados
+
+<br><br>
+
+<div style="display:flex; justify-content:center; align-items:center; gap:35px; margin-top:40px;">
+  <img src="fig/tidyverse.png" style="height:150px;">
+  <img src="fig/readr.png" style="height:150px;">
+  <img src="fig/readxl.png" style="height:150px;">
+  <img src="fig/writexl.png" style="height:150px;">
+</div>
+
+---
+
 
 ## Módulo 2 — Introdução ao Tidyverse
 
