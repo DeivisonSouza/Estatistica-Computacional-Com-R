@@ -701,7 +701,7 @@ arvores <- tibble(
 
 write_tsv(
   x    = arvores,
-  file = "data/arvores3.tsv"
+  file = "data/arvores.tsv"
 )
 ```
 
@@ -775,7 +775,7 @@ arvores <- tibble(
 
 write_delim(
   x     = arvores,
-  file  = "data/arvores4.txt",
+  file  = "data/arvores.txt",
   delim = "|"
 )
 ```
