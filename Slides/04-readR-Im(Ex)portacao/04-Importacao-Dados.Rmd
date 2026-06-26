@@ -235,7 +235,7 @@ knitr::include_graphics("fig/workflow.png")
 
 .center[
 .font120[
-**Uma coleção de pacotes para ciência de dados em R**
+**Uma coleção integrada de pacotes para ciência de dados em R**
 ]
 ]
 
@@ -251,7 +251,7 @@ O Tidyverse fornece ferramentas para:
 
 ---
 
-## Tidyverse: coleção de pacotes R
+## Tidyverse: Pacotes integrados
 <br>
 
 ```{r echo=FALSE, out.width='60%', fig.align='center', fig.cap='', dpi=600}
@@ -350,8 +350,6 @@ name: install
 
 Os pacotes do .orange[**Tidyverse**] podem ser instalados de duas formas:
 
-<br>
-
 .pull-left-4[
 
 ### Instalar todo o Tidyverse
@@ -380,13 +378,23 @@ library(tidyverse)
 ### Instalar pacotes específicos
 
 .font90[
-```{r, eval=FALSE}
-# Instala o "readr" e "tibble"
-install.packages(c("readr", "tibble"))
 
-# Carrega o "readr" e "tibble"
+```{r, eval=FALSE}
+# Instala os pacotes
+install.packages(
+  c(
+    "readr",
+    "tibble",
+    "readxl",
+    "writexl"
+  )
+)
+
+# Carrega os pacotes
 library(readr)
 library(tibble)
+library(readxl)
+library(writexl)
 ```
 
 ]
@@ -421,7 +429,7 @@ Importação e Exportação de Dados
 .right[
 .font180[
 **Conhecendo o readr**: <br>
-.green[Exportação de Dados]
+.green[Exportação de Dados - **Funções write_()**]
 ]
 ]
 
