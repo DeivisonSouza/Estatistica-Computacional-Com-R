@@ -85,8 +85,8 @@ use_clipboard()
 <!-- title-slide -->
 # Estatística Computacional com R <br> (PPGBC/UFPA e PPGCTIF/UFOPA)
 
-## ᨒ <br> `r anicon::faa("pagelines", animate="horizontal", colour="green")` .font90[Importação e Exportação de Dados]`r anicon::faa("pagelines", animate="horizontal", colour="green")`
-###### (Pacote readr)
+## ᨒ <br> `r anicon::faa("pagelines", animate="horizontal", colour="green")` .font80[Importação e Exportação de Dados]`r anicon::faa("pagelines", animate="horizontal", colour="green")`
+###### (Pacotes: readr, readxl e writexl)
 
 ##### 〰〰〰〰〰〰🌱〰〰〰〰〰〰
 ##### ᨒ
@@ -111,7 +111,7 @@ class: with-logo logo-lmftca-fixed
 
 <br>
 
-Esta aula (.blue[**Introdução ao Tidyverse: readr**]) constitui a primeira parte do **Módulo 2**, dedicado ao estudo de alguns dos principais pacotes do ecossistema **Tidyverse**.
+Esta aula (.blue[**Importação e Exportação de Dados**]) constitui a primeira parte do **Módulo 2**, dedicado ao estudo de alguns dos principais pacotes do ecossistema **Tidyverse**. 
 
 <br>
 
@@ -127,29 +127,25 @@ Ao final desta aula, espera-se que os participantes sejam capazes de:
 
 ## Conteúdo
 
-.pull-left-9[
+<br>
+
+.green[**Parte 1 - Importação e Exportação de Dados**]
+
 .font90[
-**Parte 1 - Importação e exportação de dados com .orange[readr]**
+1. **Conhecendo o ecossistema Tidyverse**
+   - Pacotes e fluxo de trabalho em ciência de dados.
 
-[1 - Importação de dados no R](#import)
+2. **Exportação de dados**
+   - Pacotes **readr** e **writexl**;
+   - Funções `write_csv()`, `write_csv2()`, `write_tsv()`, `write_delim()` e `write_xlsx()`.
 
-[2 - O pacote readr](#fie)
+3. **Importação de dados**
+   - Pacotes **readr** e **readxl**;
+   - Funções `read_csv()`, `read_csv2()`, `read_tsv()`, `read_delim()` e `read_excel()`.
 
-&nbsp;&nbsp;&nbsp;&nbsp;[2.1 - Funções de importação e exportação](#fie)
+4. **Inspeção dos dados importados**
+   - Funções `class()`, `str()`, `glimpse()` e `View()`.
 
-[3 - Importação de dados usando o readr](#idur)
-
-&nbsp;&nbsp;&nbsp;&nbsp;[3.1 - Arquivo de valores separados por vírgula](#csv)
-
-&nbsp;&nbsp;&nbsp;&nbsp;[3.2 - Arquivo de valores separados por ponto e vírgula](#csv2)
-
-&nbsp;&nbsp;&nbsp;&nbsp;[3.3 - Arquivo de valores separados por tabulação](#tsv)
-
-&nbsp;&nbsp;&nbsp;&nbsp;[3.4 - Arquivo de valores separados por um delimitador incomum](#delim)
-
-[4 - Importação de dados usando a GUI do Rstudio](#importdata)
-
-]
 ]
 
 ---
@@ -229,25 +225,11 @@ knitr::include_graphics("fig/workflow.png")
 
 ---
 
-## Pacotes abordados
-
-<br><br>
-
-<div style="display:flex; justify-content:center; align-items:center; gap:35px; margin-top:40px;">
-  <img src="fig/tidyverse.png" style="height:150px;">
-  <img src="fig/readr.png" style="height:150px;">
-  <img src="fig/readxl.png" style="height:150px;">
-  <img src="fig/writexl.png" style="height:150px;">
-</div>
-
----
-
-
-## Módulo 2 — Introdução ao Tidyverse
+## Ecossistema Tidyverse
 
 <br>
 
-Após aprendermos os fundamentos da linguagem R, iniciaremos o estudo do ecossistema .orange[**Tidyverse**].
+- **Família de pacotes** que foram desenvolvidos para funcionar de maneira **integrada**, compartilhando a mesma **filosofia**, **sintaxe** e **estruturas de dados**.
 
 <br>
 
@@ -265,7 +247,7 @@ O Tidyverse fornece ferramentas para:
 - 🔧 Manipulação e transformação de dados;
 - 📊 Visualização de dados;
 - 📝 Comunicação de resultados; e
-- ⚙️ Programação funcional.
+- ⚙️ Automação de tarefas.
 
 ---
 
@@ -1262,16 +1244,47 @@ View(arvores)
 
 ---
 name: importdata
-## Usando **Import Dataset** do RStudio
+## Usando o **Import Dataset** do RStudio
+
+<br>
+
+.font90[
+- O RStudio disponibiliza uma **interface gráfica (GUI)** para importar dados sem escrever código.
+- Acesse: **Environment** → .blue[**Import Dataset**] → **From Text (readr)**.
+- Também é possível importar planilhas do Microsoft Excel por meio da opção **From Excel (readxl)**.
+]
+
+<br>
+
+.alert[
+💡 O **Import Dataset** gera automaticamente o código R correspondente à importação, facilitando o aprendizado das funções .green[read_*()].
+]
+
+---
+
+layout: false
+name: duvidas
+class: inverse, middle, center
+background-image: url(../assets/capa/sec.png)
+background-size: cover
+
+# .black[Dúvidas?]
+
+<br>
+
+## 💡 .black[Mensagem]
+
+A importação e a exportação de dados constituem a primeira etapa de qualquer fluxo de análise no R. Dominar essas operações permite integrar o R a diferentes formatos de arquivos e torna o processo de análise mais organizado, eficiente e reprodutível.
+
+<br>
+
+## 🎯 .black[Próximo passo]
+
+Aprender a **manipular e transformar dados** utilizando o pacote **dplyr**.
 
 <br><br>
 
-.font90[
-- Use a Interface Gráfica do Usuário (*Graphical User Interface* - GUI) para importar dados rapidamente.
-- RStudio IDE $\rightarrow$ Environment $\rightarrow$ .blue[Import Dataset] $\rightarrow$ From Text (readr).
-- É possível também usar funções do R-base e de outros pacotes, como **readxl** (para ler arquivos .blue[.xlsx]).
-
-]
+💬 Perguntas, comentários ou sugestões?
 
 ---
 layout: false
