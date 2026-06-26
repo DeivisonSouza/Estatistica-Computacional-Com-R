@@ -1176,6 +1176,224 @@ Até o momento, estudamos as principais funções para importação de dados em 
 ]
 
 ---
+
+layout: false
+class: inverse, top, right
+background-image: url(../assets/capa/sec.png)
+background-size: cover
+
+<br>
+
+.right[
+.font100[
+**.green[Módulo 2]** – Introdução ao Tidyverse
+]
+]
+
+<br><br>
+
+.right[
+.font150[
+**.green[Parte 1]** <br>
+Importação e Exportação de Dados
+]
+]
+
+<br><br>
+
+.right[
+.font180[
+**Conhecendo o readr**: <br>
+.green[Argumentos das funções read_()]
+]
+]
+
+---
+
+layout: true
+class: with-logo logo-ufpa
+<div class="my-header"></div>
+<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao Tidyverse (Módulo 2)</div2> </div>
+
+---
+name: col_select
+## Argumento `col_select`
+
+<br>
+
+.pull-left-4[
+
+.font90[
+O argumento .blue[**col_select**] permite importar apenas as colunas de interesse.
+
+É útil quando o arquivo possui muitas variáveis.
+]
+
+<br>
+
+```{r echo=TRUE, eval=FALSE}
+arvores <- read_csv(
+  file = "data/arvores.csv",
+  col_select = c(
+    Nome,
+    DAP
+  )
+)
+```
+
+]
+
+.pull-right-4[
+
+<br>
+
+.alert[
+💡 Utilize .blue[col_select] para reduzir a quantidade de colunas importadas.
+]
+
+]
+
+---
+name: col_types
+## Argumento `col_types`
+
+<br>
+
+.pull-left-4[
+
+.font90[
+O argumento .blue[**col_types**] permite definir a classe de cada variável durante a importação dos dados.
+]
+
+<br>
+
+```{r echo=TRUE, eval=FALSE}
+arvores <- read_csv(
+  file = "data/arvores.csv",
+  col_types = cols(
+    Nome = col_character(),
+    DAP  = col_double(),
+    H    = col_double()
+  )
+)
+```
+
+]
+
+.pull-right-4[
+
+.font90[
+
+**Principais tipos**
+
+- `col_character()`
+- `col_factor()`
+- `col_double()`
+- `col_integer()`
+- `col_logical()`
+- `col_date()`
+
+]
+
+<br>
+
+.alert[
+💡 Utilize .blue[**col_types**] quando desejar controlar a classe das variáveis durante a importação dos dados.
+]
+
+]
+
+---
+name: col_types_short
+## Argumento `col_types`: forma abreviada
+
+<br>
+
+.pull-left-4[
+
+.font90[
+Além da sintaxe completa, o argumento .blue[**col_types**] pode ser especificado utilizando uma sequência de caracteres.
+
+Cada letra representa a classe de uma variável, na mesma ordem em que as colunas aparecem no arquivo.
+]
+
+<br>
+
+```{r echo=TRUE, eval=FALSE}
+arvores <- read_csv(
+  file = "data/arvores.csv",
+  col_types = "cdd"
+)
+```
+
+]
+
+.pull-right-4[
+
+.font90[
+
+**Principais abreviações**
+
+| Código | Classe |
+|:------:|:--------|
+| `c` | Character |
+| `d` | Double |
+| `i` | Integer |
+| `l` | Logical |
+| `f` | Factor |
+| `D` | Date |
+
+]
+
+<br>
+
+.alert[
+💡 No exemplo, `"cdd"` indica que as três colunas serão importadas como **character**, **double** e **double**, respectivamente.
+]
+
+]
+
+---
+
+layout: false
+class: inverse, top, right
+background-image: url(../assets/capa/sec.png)
+background-size: cover
+
+<br>
+
+.right[
+.font100[
+**.green[Módulo 2]** – Introdução ao Tidyverse
+]
+]
+
+<br><br>
+
+.right[
+.font150[
+**.green[Parte 1]** <br>
+Importação e Exportação de Dados
+]
+]
+
+<br><br>
+
+.right[
+.font180[
+**Após a importação**: <br>
+.green[Inspeção dos dados]
+]
+]
+
+---
+
+layout: true
+class: with-logo logo-ufpa
+<div class="my-header"></div>
+<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao Tidyverse (Módulo 2)</div2> </div>
+
+---
 name: tibble
 ## O resultado da importação
 
