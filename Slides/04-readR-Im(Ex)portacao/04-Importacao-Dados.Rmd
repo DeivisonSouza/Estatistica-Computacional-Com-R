@@ -914,7 +914,7 @@ Importação e Exportação de Dados
 .right[
 .font180[
 **Conhecendo o readr**: <br>
-.green[Importação de Dados]
+.green[Importação de Dados - **Funções read_()**]
 ]
 ]
 
@@ -924,6 +924,196 @@ layout: true
 class: with-logo logo-ufpa
 <div class="my-header"></div>
 <div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao Tidyverse (Módulo 2)</div2> </div>
+
+---
+name: read_intro
+## Importando dados para o R
+
+<br>
+
+.font95[
+As funções .green[read_*()] do pacote .orange[**readr**] permitem importar dados de diferentes formatos para a memória do R.
+
+Nesta seção, utilizaremos os arquivos criados anteriormente na pasta .blue[data/].
+]
+
+<br>
+
+.center[
+.font120[
+.alert2[
+**Arquivos** → **Objetos do R**
+]
+]
+]
+
+<br>
+
+.alert[
+💡 As funções .green[read_()] fazem o caminho inverso das funções .green[write_()].
+]
+
+---
+name: read_csv
+## Importando um arquivo CSV
+
+<br>
+
+.pull-left-4[
+
+.font90[
+A função .green[**read_csv()**] importa arquivos no formato .blue[CSV] para a memória do R.
+
+O principal argumento é:
+
+- .blue[file]: caminho do arquivo a ser importado.
+]
+
+<br>
+
+```{r echo=TRUE, eval=FALSE}
+arvores <- read_csv(
+  file = "data/arvores.csv"
+)
+```
+
+]
+
+.pull-right-4[
+
+```{r echo=FALSE, out.width='50%', fig.align='center', fig.cap='', dpi=600}
+knitr::include_graphics("fig/file1.png")
+```
+
+<br>
+
+.alert[
+💡 Utilize .green[read_csv()] para importar arquivos separados por .blue[vírgula (,)] e que usam .blue[ponto (.)] como separador decimal.
+]
+
+]
+
+---
+name: read_csv2
+## Importando um arquivo CSV europeu
+
+<br>
+
+.pull-left-4[
+
+.font90[
+A função .green[**read_csv2()**] importa arquivos .blue[CSV] cujos campos são separados por .blue[ponto e vírgula (;)].
+
+O principal argumento é:
+
+- .blue[file]: caminho do arquivo a ser importado.
+]
+
+<br>
+
+```{r echo=TRUE, eval=FALSE}
+arvores <- read_csv2(
+  file = "data/arvores2.csv"
+)
+```
+
+]
+
+.pull-right-4[
+
+```{r echo=FALSE, out.width='50%', fig.align='center', fig.cap='', dpi=600}
+knitr::include_graphics("fig/file2.png")
+```
+
+<br>
+
+.alert[
+💡 Utilize .green[read_csv2()] para importar arquivos separados por .blue[ponto e vírgula (;)] e que usam .blue[vírgula (,)] como separador decimal.
+]
+
+]
+
+---
+name: read_tsv
+## Importando um arquivo TSV
+
+<br>
+
+.pull-left-4[
+
+.font90[
+A função .green[**read_tsv()**] importa arquivos .blue[TSV] cujos campos são separados por .blue[tabulação (TAB)].
+
+O principal argumento é:
+
+- .blue[file]: caminho do arquivo a ser importado.
+]
+
+<br>
+
+```{r echo=TRUE, eval=FALSE}
+arvores <- read_tsv(
+  file = "data/arvores3.tsv"
+)
+```
+
+]
+
+.pull-right-4[
+
+```{r echo=FALSE, out.width='50%', fig.align='center', fig.cap='', dpi=600}
+knitr::include_graphics("fig/file3.png")
+```
+
+<br>
+
+.alert[
+💡 Utilize .green[read_tsv()] para importar arquivos separados por .blue[tabulação (TAB)].
+]
+
+]
+
+---
+name: read_delim
+## Importando um arquivo com delimitador personalizado
+
+<br>
+
+.pull-left-4[
+
+.font90[
+A função .green[**read_delim()**] importa arquivos separados por um **delimitador personalizado**.
+
+Os principais argumentos são:
+
+- .blue[file]: caminho do arquivo a ser importado;
+- .blue[delim]: caractere utilizado como delimitador.
+]
+
+<br>
+
+```{r echo=TRUE, eval=FALSE}
+arvores <- read_delim(
+  file  = "data/arvores.txt",
+  delim = "|"
+)
+```
+
+]
+
+.pull-right-4[
+
+```{r echo=FALSE, out.width='50%', fig.align='center', fig.cap='', dpi=600}
+knitr::include_graphics("fig/file4.png")
+```
+
+<br>
+
+.alert[
+💡 Utilize .green[read_delim()] para importar arquivos separados por um .blue[delimitador personalizado].
+]
+
+]
 
 ---
 name: idur
