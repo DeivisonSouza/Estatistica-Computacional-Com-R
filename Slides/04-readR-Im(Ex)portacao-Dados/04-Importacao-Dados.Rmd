@@ -227,8 +227,6 @@ knitr::include_graphics("fig/workflow.png")
 
 ## Ecossistema Tidyverse
 
-<br>
-
 - **Família de pacotes** que foram desenvolvidos para funcionar de maneira **integrada**, compartilhando a mesma **filosofia**, **sintaxe** e **estruturas de dados**.
 
 <br>
