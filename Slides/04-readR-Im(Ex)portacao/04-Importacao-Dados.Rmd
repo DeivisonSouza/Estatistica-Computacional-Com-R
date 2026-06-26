@@ -108,24 +108,34 @@ class: with-logo logo-lmftca-fixed
 ---
 
 ## Objetivos
+
 <br>
-Esta aula (.blue[Introdução ao Tidyverse: readr]) constitui a primeira parte do módulo 2 destinado ao aprendizado de alguns pacotes da coleção Tidyverse. Ao final desta aula espera-se que os participantes possam alcançar conhecimentos para...
+
+Esta aula (.blue[**Introdução ao Tidyverse: readr**]) constitui a primeira parte do **Módulo 2**, dedicado ao estudo de alguns dos principais pacotes do ecossistema **Tidyverse**.
+
+<br>
+
+Ao final desta aula, espera-se que os participantes sejam capazes de:
+
+- Compreender a organização do ecossistema **Tidyverse**;
+- Utilizar o pacote .orange[**readr**] para importar e exportar arquivos de texto;
+- Importar planilhas do Microsoft Excel utilizando o pacote .orange[**readxl**];
+- Exportar objetos do R para planilhas do Microsoft Excel utilizando o pacote .orange[**writexl**]; e
+- Selecionar o pacote e a função mais adequados para cada formato de arquivo.
+
+
+---
+
+## Pacotes abordados
+
 <br><br>
 
-* Importar e exportar dados no R usando funções do pacote **readr**.
-<br><br>
-
-.pull-left-7[
-```{r echo=FALSE, out.width='70%', fig.align='center', fig.cap='', dpi=600}
-knitr::include_graphics("https://tidyverse.tidyverse.org/articles/tidyverse-logo.png")
-```
-]
-
-.pull-left-7[
-```{r echo=FALSE, out.width='70%', fig.align='center', fig.cap='', dpi=600}
-knitr::include_graphics("https://readr.tidyverse.org/logo.png")
-```
-]
+<div style="display:flex; justify-content:center; align-items:center; gap:35px; margin-top:40px;">
+  <img src="fig/tidyverse.png" style="height:150px;">
+  <img src="fig/readr.png" style="height:150px;">
+  <img src="fig/readxl.png" style="height:150px;">
+  <img src="fig/writexl.png" style="height:150px;">
+</div>
 
 ---
 
@@ -758,6 +768,85 @@ knitr::include_graphics("fig/file4.png")
 .alert[
 💡 A função .green[write_delim()] permite utilizar qualquer caractere como delimitador.
 ]
+]
+
+---
+name: write_xlsx
+## Exportando uma planilha Excel
+
+<br>
+
+.pull-left-4[
+
+.font90[
+💡 Planilhas do Microsoft Excel (.xlsx) podem ser exportadas com a função .green[write_xlsx()] do pacote .orange[writexl].
+
+A função possui dois argumentos principais:
+
+- .blue[x]: objeto do R a ser exportado;
+- .blue[path]: caminho da planilha a ser criada.
+]
+
+.font75[
+
+```{r echo=TRUE, eval=FALSE}
+library(tibble)
+library(writexl)
+
+arvores <- tibble(
+  Nome = c("Angelim", "Mogno"),
+  DAP  = c(100.5, 80.2),
+  H    = c(30.8, 20.4)
+)
+
+write_xlsx(
+  x    = arvores,
+  path = "data/arvores.xlsx"
+)
+```
+
+]
+
+]
+
+.pull-right-4[
+
+```{r echo=FALSE, out.width='90%', fig.align='center', fig.cap='', dpi=600}
+knitr::include_graphics("fig/file5.png")
+```
+
+<br>
+
+.alert[
+💡 A exportação para arquivos .blue[.xlsx] é realizada pelo pacote .orange[**writexl**].
+]
+
+]
+
+---
+name: export_summary
+## Resumo das funções de exportação
+
+<br>
+
+.font95[
+Até o momento, estudamos as principais funções para exportação de dados em R.
+]
+
+<br>
+
+| Função | Tipo de arquivo | Extensão | Pacote |
+|:--------|:---------------:|:--------:|:-------:|
+| .green[**write_csv()**] | Texto | .blue[.csv] | .orange[readr] |
+| .green[**write_csv2()**] | Texto | .blue[.csv] | .orange[readr] |
+| .green[**write_tsv()**] | Texto | .blue[.tsv] | .orange[readr] |
+| .green[**write_delim()**] | Texto | .blue[.txt] | .orange[readr] |
+| .green[**write_xlsx()**] | Planilha Excel | .blue[.xlsx] | .orange[writexl] |
+
+<br>
+
+.alert[
+💡 Para arquivos de texto use .orange[**readr**]. Planilhas Excel use .orange[**writexl**].
 ]
 
 ---
