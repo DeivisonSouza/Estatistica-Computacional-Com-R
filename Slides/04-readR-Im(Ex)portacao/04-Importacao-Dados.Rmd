@@ -1159,456 +1159,111 @@ knitr::include_graphics("fig/file5.png")
 ]
 
 ---
-name: idur
-## Principais funções de importação
+
+name: import_summary
+## Resumo das funções de importação
 
 <br>
 
 .font95[
-Nesta aula estudaremos apenas algumas das principais funções do pacote .orange[**readr**].
+Até o momento, estudamos as principais funções para importação de dados em R.
 ]
 
 <br>
 
-| Função | Significado | Uso |
-|---------|---------|---------|
-| .green[**read_csv()**] | *Comma-Separated Values* | Arquivos separados por .blue[vírgula (,)] |
-| .green[**read_csv2()**] | *Semicolon-Separated Values* | Arquivos separados por .blue[ponto e vírgula (;)] |
-| .green[**read_tsv()**] | *Tab-Separated Values* | Arquivos separados por .blue[tabulação (TAB)] |
-| .green[**read_delim()**] | *Delimited File* | Arquivos separados por um .blue[delimitador personalizado] |
+| Função | Tipo de arquivo | Extensão | Pacote |
+|:--------|:---------------:|:--------:|:-------:|
+| .green[**read_csv()**] | Texto | .blue[.csv] | .orange[readr] |
+| .green[**read_csv2()**] | Texto | .blue[.csv] | .orange[readr] |
+| .green[**read_tsv()**] | Texto | .blue[.tsv] | .orange[readr] |
+| .green[**read_delim()**] | Texto | .blue[.txt] | .orange[readr] |
+| .green[**read_excel()**] | Planilha Excel | .blue[.xlsx] | .orange[readxl] |
+
+<br>
+
+.alert[
+💡 A escolha da função depende do formato do arquivo a ser importado.
+]
 
 ---
-name: csv
-## Função read_csv()
+name: tibble
+## O resultado da importação
 
 <br>
 
-### Arquivos separados por vírgula .black[(].blue[,].black[)]
-
-.pull-left-4[
+.font95[
+As funções de importação dos pacotes .orange[**readr**] e .orange[**readxl**] retornam um objeto da classe .blue[**tibble**].
+]
 
 <br>
 
-.font90[
-- A função .green[**read_csv()**] é utilizada para importar arquivos no formato .blue[CSV].
-- CSV significa *Comma-Separated Values*.
-- Nesse formato, os campos são separados por .blue[vírgulas (,)].
+.center[
+.font120[
+.alert2[
+**Arquivo** → **Tibble**
+]
+]
+]
+
+<br>
+
+.font95[
+Uma **tibble** é uma versão **moderna** do **data.frame**, desenvolvida para facilitar a manipulação e a visualização de dados no ecossistema .orange[**Tidyverse**].
 ]
 
 <br>
 
 .alert[
-💡 Arquivos CSV são amplamente utilizados para armazenar e compartilhar dados tabulares.
-]
-]
-
-.pull-right-4[
-
-```{r echo=FALSE, out.width='70%', fig.align='center', fig.cap='', dpi=600}
-knitr::include_graphics("fig/file1.png")
-```
+💡 A **tibble** será a principal estrutura de dados utilizada ao longo deste curso.
 ]
 
 ---
-name: csv-import
-## Importando arquivos CSV
+name: inspect
+## Inspecionando os dados importados
 
-### Função .green[read_csv()]
+<br>
+
+.font95[
+Após importar um conjunto de dados é importante verificar se a leitura ocorreu corretamente.
+]
+
+<br>
 
 .pull-left-4[
 
-.font90[
-Primeiro, vamos criar o arquivo .blue[file1.csv] e salvá-lo na pasta .blue[data/].
-]
-
-.font75[
 ```{r echo=TRUE, eval=FALSE}
-readr::write_file(x = "Nome,DAP,H\nAngelim,100,30\nMogno,80,20",
-                  file = "data/file1.csv")
+class(arvores)
+
+str(arvores)
+
+glimpse(arvores)
+
+View(arvores)
 ```
-]
 
 <br>
 
 .alert[
-💡 Em aplicações reais, os arquivos geralmente já existem e são produzidos por planilhas, bancos de dados ou sistemas externos.
+💡 Essas funções auxiliam na conferência dos dados logo após a importação.
 ]
 
-]
-
-
----
-name: csv
-## Pacote readr (tidyverse)
-<br>
-
-### Arquivo de valores separados por vírgula .black[(].blue[,].black[)]
-
-- **Função .black[read_csv()]** - Importar arquivos .csv
-
-.pull-left-9[
-
-```{r echo=FALSE, out.width='30%', fig.align='center', fig.cap='', dpi=600}
-knitr::include_graphics("fig/file1.png")
-```
-
-.font80[
-```{r echo=T, eval=F}
-# Cria o arquivo "file1.csv" e salva em "data"
-readr::write_file(x = "Nome,DAP,H\nAngelim,100,30\nMogno,80,20",
-                  path = "data/file1.csv")
-```
-]
-]
-
---
-
-.pull-right-9[
-.font80[
-**O único argumento obrigatório (file) é o caminho para o arquivo.**
-
-```{r file1, echo=T, eval=F}
-# Importa o arquivo "file1"
-(file1 <- readr::read_csv(file="data/file1.csv"))
-```
-
-```{r ref.label="file1", echo=F, eval=T, collapse=T}
-```
-]
-
-]
-
----
-
-## Pacote readr (tidyverse)
-<br>
-
-.pull-left-4[
-.font80[
-### Arquivo de valores separados por vírgula .black[(].blue[,].black[)]
-
-- **Função .black[read_csv()]** - Importar arquivos .csv
-
-A função possui inúmeros argumentos que podem ser especificados.
-
-Execute o comando: **args(**read_csv**)**
-]
-]
-
-
-.pull-right-4[
-```{r echo=FALSE, out.width='55%', fig.align='center', fig.cap='', dpi=600}
-knitr::include_graphics("fig/readcsv.png")
-```
-]
-
----
-
-## Pacote readr (tidyverse)
-<br>
-
-### Arquivo de valores separados por vírgula .black[(].blue[,].black[)]
-
-- **Função .black[read_csv()]** - Importar arquivos .csv
-.font80[
-Vamos explorar outros argumentos da função read_csv()...(.green[**col_types**])
-]
-
-.pull-left-4[
-.font80[
-```{r file5, echo=T, eval=F}
-# Importa o arquivo "file1"
-(file1 <- readr::read_csv(file="data/file1.csv"))
-```
-
-```{r ref.label="file5", echo=F, eval=T, collapse=T}
-```
-
-**col_types** = É possível usar strings compactas em que cada caractere representa uma coluna.
-
-**c** = character; **i** = integer; **n** = number; **d** = double; **l** = logical; **f** = factor; **D** = date
-
-]
-]
-
-
---
-
-.pull-right-4[
-.font80[
-```{r file6, echo=T, eval=F}
-# Importa o arquivo "file1"
-(file1.mod2 <- readr::read_csv(file="data/file1.csv", 
-                          col_types = "fdi")
- )
-```
-
-```{r ref.label="file6", echo=F, eval=T, collapse=T}
-```
-]
-]
-
-
----
-
-## Pacote readr (tidyverse)
-<br>
-
-### Arquivo de valores separados por vírgula .black[(].blue[,].black[)]
-
-- **Função .black[read_csv()]** - Importar arquivos .csv
-.font80[
-Vamos explorar outros argumentos da função read_csv()...(.green[**col_select**])
-]
-
-.pull-left-4[
-.font80[
-```{r file7, echo=T, eval=F}
-# Importa o arquivo "file1"
-(file1 <- readr::read_csv(file="data/file1.csv"))
-```
-
-```{r ref.label="file7", echo=F, eval=T, collapse=T}
-```
-]
-]
-
---
-
-.pull-right-4[
-.font80[
-```{r file8, echo=T, eval=F}
-# Importa o arquivo "file1"
-(file1.mod3 <- readr::read_csv(
-  file = "data/file1.csv", 
-  col_select = c(Nome, DAP)
-  )
- )
-```
-```{r ref.label="file8", echo=F, eval=T, collapse=T}
-```
-]
-]
-
----
-name: csv2
-## Pacote readr (tidyverse)
-<br>
-
-### Arquivo de valores separados por ponto e vírgula .black[(].blue[;].black[)]
-
-- **Função .black[read_csv2()]**
-.font80[
-Os arquivo separados por ponto e vírgula também têm a extensão .blue[.csv].
-]
-
-.pull-left-9[
-
-```{r echo=FALSE, out.width='30%', fig.align='center', fig.cap='', dpi=600}
-knitr::include_graphics("fig/file2.png")
-```
-
-.font80[
-```{r echo=T, eval=F}
-# Cria o arquivo "file2.csv" e salva em "data"
-readr::write_file(x = "Nome;DAP;H\nAngelim;100;30\nMogno;80;20",
-                  path = "data/file2.csv")
-```
-]
-]
-
---
-
-.pull-right-9[
-.font80[
-**O único argumento obrigatório (file) é o caminho para o arquivo.**
-
-```{r filecsv2, echo=T, eval=F}
-# Importa o arquivo "file2"
-(file2 <- readr::read_csv2(file="data/file2.csv"))
-```
-
-```{r ref.label="filecsv2", echo=F, eval=T, collapse=T}
-```
-]
-
-]
-
----
-
-## Pacote readr (tidyverse)
-
-.pull-left-4[
-.font80[
-### Arquivo de valores separados por ponto e vírgula .black[(].blue[;].black[)]
-<br><br>
-
-- **Função .black[read_csv2()]**
-
-A função possui inúmeros argumentos que podem ser especificados.
-
-Execute o comando: **args(**read_csv2**)**
-<br><br>
-
-`r anicon::faa("hand-point-right", animate="horizontal")` **Explore os demais argumentos!** `r anicon::faa("home", animate="horizontal")`
-
-]
 ]
 
 .pull-right-4[
-```{r echo=FALSE, out.width='55%', fig.align='center', fig.cap='', dpi=600}
-knitr::include_graphics("fig/readcsv2.png")
-```
-]
 
-
----
-name: tsv
-## Pacote readr (tidyverse)
-<br>
-
-### Arquivo de valores separados por tabulação .black[(].blue[\t].black[)]
-
-- **Função .black[read_tsv()]** - Importar arquivos (.tsv, .txt)
-
-.pull-left-9[
-
-```{r echo=FALSE, out.width='30%', fig.align='center', fig.cap='', dpi=600}
-knitr::include_graphics("fig/file3.png")
-```
-
-.font80[
-```{r echo=T, eval=F}
-# Cria o arquivo "file3.tsv" e salva em "data"
-readr::write_file(x = "Nome\tDAP\tH\nAngelim\t100\t30\nMogno\t80\t20",
-                  path = "data/file3.txt")
-```
-]
-]
-
---
-
-.pull-right-9[
-.font80[
-**O único argumento obrigatório (file) é o caminho para o arquivo.**
-
-```{r filetsv, echo=T, eval=F}
-# Importa o arquivo "file3"
-(file3 <- readr::read_tsv(file="data/file3.txt"))
-```
-
-```{r ref.label="filetsv", echo=F, eval=T, collapse=T}
-```
-]
+| Função | Finalidade |
+|:--------|:-----------|
+| .green[**class()**] | Identifica a classe do objeto |
+| .green[**str()**] | Exibe a estrutura do objeto |
+| .green[**glimpse()**] | Resume a estrutura da tibble |
+| .green[**View()**] | Visualiza os dados em formato de planilha |
 
 ]
-
----
-
-## Pacote readr (tidyverse)
-
-.pull-left-4[
-.font80[
-### Arquivo de valores separados por tabulação .black[(].blue[\t].black[)]
-<br><br>
-
-- **Função .black[read_tsv()]** - Importar arquivos (.tsv, .txt)
-
-A função possui inúmeros argumentos que podem ser especificados.
-
-Execute o comando: **args(**read_tsv**)**
-<br><br>
-
-`r anicon::faa("hand-point-right", animate="horizontal")` **Explore os demais argumentos!** `r anicon::faa("home", animate="horizontal")`
-
-]
-]
-
-.pull-right-4[
-```{r echo=FALSE, out.width='55%', fig.align='center', fig.cap='', dpi=600}
-knitr::include_graphics("fig/readtsv.png")
-```
-]
-
-
----
-name: delim
-## Pacote readr (tidyverse)
-<br>
-
-### Arquivo de valores separados por um delimitador incomum
-
-- **Função .black[read_delim()]** - Importar arquivos com delimitator de valores específicos
-
-.pull-left-9[
-
-```{r echo=FALSE, out.width='30%', fig.align='center', fig.cap='', dpi=600}
-knitr::include_graphics("fig/file4.png")
-```
-
-.font80[
-```{r echo=T, eval=F}
-# Cria o arquivo "file4.txt" e salva em "data"
-readr::write_file(x = "Nome|DAP|H\nAngelim|100|30\nMogno|80|20",
-                  path = "data/file4.txt")
-```
-]
-]
-
---
-
-.pull-right-9[
-.font80[
-**O único argumento obrigatório (file) é o caminho para o arquivo.**
-
-```{r filedelim, echo=T, eval=F}
-# Importa o arquivo "file4"
-(file4 <- readr::read_delim(
-  file="data/file4.txt", 
-  delim = "|")
- )
-```
-
-```{r ref.label="filedelim", echo=F, eval=T, collapse=T}
-```
-]
-
-]
-
----
-
-## Pacote readr (tidyverse)
-
-.pull-left-4[
-.font80[
-### Arquivo de valores separados por um delimitador incomum
-<br><br>
-
-- **Função .black[read_delim()]** - Importar arquivos com delimitator de valores específicos
-
-A função possui inúmeros argumentos que podem ser especificados.
-
-Execute o comando: **args(**read_delim**)**
-<br><br>
-
-`r anicon::faa("hand-point-right", animate="horizontal")` **Explore os demais argumentos!** `r anicon::faa("home", animate="horizontal")`
-
-]
-]
-
-.pull-right-4[
-```{r echo=FALSE, out.width='55%', fig.align='center', fig.cap='', dpi=600}
-knitr::include_graphics("fig/readdelim.png")
-```
-]
-
 
 ---
 name: importdata
-## Pacote readr (tidyverse)
-<br>
+## Usando **Import Dataset** do RStudio
 
-### Importação de dados usando a GUI do RStudio
 <br><br>
 
 .font90[
