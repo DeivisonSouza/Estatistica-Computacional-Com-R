@@ -5,7 +5,7 @@
 
 :calendar: Junho: 3, 10, 11, 12, 24, 25, 26 e 30
 
-:calendar: Julho: 1 e 2
+:calendar: Julho: 1, 2 e 3
 
 :alarm_clock: **14h00min - 18h00min**
 
@@ -57,7 +57,7 @@ R** estão disponibilizados a seguir.
 | Slides/01-Introducao-R-Boas-Praticas/01-Introducao-R.html | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/01-Introducao-R-Boas-Praticas/01-Introducao-R.html> |
 | Slides/02-Introducao-R-Estrutura/02-Introducao-R-Estrutura.html | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/02-Introducao-R-Estrutura/02-Introducao-R-Estrutura.html> |
 | Slides/03-Introducao-R-Indexacao/03-Introducao-R-Indexacao.html | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/03-Introducao-R-Indexacao/03-Introducao-R-Indexacao.html> |
-| Slides/04-readR-Im(Ex)portacao/04-Importacao-Dados.html | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/04-readR-Im(Ex)portacao/04-Importacao-Dados.html> |
+| Slides/04-readR-Im(Ex)portacao-Dados/04-Importacao-Dados.html | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/04-readR-Im(Ex)portacao-Dados/04-Importacao-Dados.html> |
 
 # Desafios
 
