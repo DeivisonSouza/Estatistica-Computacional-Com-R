@@ -298,8 +298,6 @@ Atualmente são `r length(ls("package:dplyr"))` funções projetadas para manipu
 
 ```{r tibble, echo=T, eval=F}
 data <- readr::read_csv("data/data.csv")
-
-data |> CustomDT
 ```
 
 .font90[
@@ -313,7 +311,10 @@ Para aprender a intuição de algumas funções .orange[**dplyr**] usaremos uma 
 
 .pull-right-9[
 <br>
-```{r ref.label="tibble", echo=FALSE, eval=TRUE, collapse=T}
+```{r, echo=F, eval=T}
+data <- readr::read_csv("data/data.csv")
+
+data |> CustomDT()
 ```
 ]
 
@@ -354,7 +355,7 @@ class: with-logo logo-ufpa
 
 .pull-left-10[
 ```{r echo=F, eval=T}
-data |> CustomDT
+data %>% CustomDT()
 ```
 ]
 
@@ -378,7 +379,7 @@ data |>
 ]
 
 ```{r sel, echo=F, eval=F}
-select(data, Nome_Especie) |> CustomDT
+select(data, Nome_Especie) |> CustomDT()
 ```
 ]
 
@@ -397,7 +398,7 @@ select(data, Nome_Especie) |> CustomDT
 
 .pull-left-10[
 ```{r echo=F, eval=T}
-data |> CustomDT
+data |> CustomDT()
 ```
 ]
 
@@ -431,7 +432,7 @@ data |>
 ]
 
 ```{r sel2, echo=F, eval=F}
-select(data, CAP, HC, QF) |> CustomDT
+select(data, CAP, HC, QF) |> CustomDT()
 ```
 ]
 
@@ -450,7 +451,7 @@ name: startwith
 
 .pull-left-10[
 ```{r echo=F, eval=T}
-data |> CustomDT
+data |> CustomDT()
 ```
 ]
 
@@ -478,7 +479,7 @@ select(
 ]
 
 ```{r sel3, echo=F, eval=F}
-select(data, starts_with("N")) |> CustomDT
+select(data, starts_with("N")) |> CustomDT()
 ```
 ]
 
@@ -498,7 +499,7 @@ name: endswith
 
 .pull-left-10[
 ```{r echo=F, eval=T}
-data |> CustomDT
+data |> CustomDT()
 ```
 ]
 
@@ -526,7 +527,7 @@ select(
 ]
 
 ```{r sel4, echo=F, eval=F}
-select(data, ends_with("e")) |> CustomDT
+select(data, ends_with("e")) |> CustomDT()
 ```
 ]
 
@@ -545,7 +546,7 @@ name: contains
 
 .pull-left-10[
 ```{r echo=F, eval=T}
-data |> CustomDT
+data |> CustomDT()
 ```
 ]
 
@@ -573,7 +574,7 @@ select(
 ]
 
 ```{r sel5, echo=F, eval=F}
-select(data, contains("e")) |> CustomDT
+select(data, contains("e")) |> CustomDT()
 ```
 ]
 
@@ -592,7 +593,7 @@ name: matches
 
 .pull-left-10[
 ```{r echo=F, eval=T}
-data |> CustomDT
+data |> CustomDT()
 ```
 ]
 
@@ -620,7 +621,7 @@ select(
 ]
 
 ```{r sel6, echo=F, eval=F}
-select(data, matches('No|cao|F')) |> CustomDT
+select(data, matches('No|cao|F')) |> CustomDT()
 ```
 ]
 
@@ -639,7 +640,7 @@ name: everything
 
 .pull-left-10[
 ```{r echo=F, eval=T}
-data |> CustomDT
+data |> CustomDT()
 ```
 ]
 
@@ -673,7 +674,7 @@ data |>
   select(Nome_Especie,
          Selecao,
          everything()) |>
-  CustomDT
+  CustomDT()
 ```
 ]
 
@@ -692,7 +693,7 @@ name: where
 
 .pull-left-10[
 ```{r echo=F, eval=T}
-data |> CustomDT
+data |> CustomDT()
 ```
 ]
 
@@ -721,7 +722,7 @@ data |>
 ```{r sel12, echo=F, eval=F}
 data |>
   select(where(is.character)) |>
-  CustomDT
+  CustomDT()
 ```
 ]
 
@@ -740,7 +741,7 @@ data |>
 
 .pull-left-10[
 ```{r echo=F, eval=T}
-data |> CustomDT
+data |> CustomDT()
 ```
 ]
 
@@ -777,7 +778,7 @@ data |>
   select(
     starts_with("N") &
       !ends_with("Arvore")) |>
-  CustomDT
+  CustomDT()
 ```
 ]
 
@@ -796,7 +797,7 @@ data |>
 
 .pull-left-10[
 ```{r echo=F, eval=T}
-data |> CustomDT
+data |> CustomDT()
 ```
 ]
 
@@ -827,7 +828,7 @@ data |>
 ```{r sel9, echo=F, eval=F}
 data |>
   select(-c(CAP:Selecao)) |>
-  CustomDT
+  CustomDT()
 ```
 ]
 
@@ -846,7 +847,7 @@ data |>
 
 .pull-left-10[
 ```{r echo=F, eval=T}
-data |> CustomDT
+data |> CustomDT()
 ```
 ]
 
@@ -870,7 +871,7 @@ data |>
 ```{r sel10, echo=F, eval=F}
 data |>
   select(Nome_Especie, Selecao, CAP, QF, HC) |>
-  CustomDT
+  CustomDT()
 ```
 ]
 
@@ -915,7 +916,7 @@ class: with-logo logo-ufpa
 
 .pull-left-10[
 ```{r echo=F, eval=T}
-data |> CustomDT
+data |> CustomDT()
 ```
 ]
 
@@ -936,7 +937,7 @@ data |>
 ```{r arr1, echo=F, eval=F}
 data |>
   arrange(HC) |>
-  CustomDT
+  CustomDT()
 ```
 ]
 
@@ -955,7 +956,7 @@ data |>
 
 .pull-left-10[
 ```{r echo=F, eval=T}
-data |> CustomDT
+data |> CustomDT()
 ```
 ]
 
@@ -978,7 +979,7 @@ data |>
 ```{r arr2, echo=F, eval=F}
 data |>
   arrange(desc(HC)) |>
-  CustomDT
+  CustomDT()
 ```
 ]
 
@@ -997,7 +998,7 @@ data |>
 
 .pull-left-10[
 ```{r echo=F, eval=T}
-data |> CustomDT
+data |> CustomDT()
 ```
 ]
 
@@ -1020,7 +1021,7 @@ data |>
 ```{r arr3, echo=F, eval=F}
 data |>
   arrange(CAP, HC) |>
-  CustomDT
+  CustomDT()
 ```
 ]
 
@@ -1065,7 +1066,7 @@ class: with-logo logo-ufpa
 
 .pull-left-10[
 ```{r echo=F, eval=T}
-data |> CustomDT
+data |> CustomDT()
 ```
 ]
 
@@ -1086,7 +1087,7 @@ data |>
 ```{r fil1, echo=F, eval=F}
 data |>
   filter(HC > 15) |>
-  CustomDT
+  CustomDT()
 ```
 ]
 
@@ -1106,7 +1107,7 @@ data |>
 
 .pull-left-10[
 ```{r echo=F, eval=T}
-data |> CustomDT
+data |> CustomDT()
 ```
 ]
 
@@ -1127,7 +1128,7 @@ data |>
 ```{r fil2, echo=F, eval=F}
 data |>
   filter(HC > 10 & HC <= 15) |>
-  CustomDT
+  CustomDT()
 ```
 ]
 
@@ -1147,7 +1148,7 @@ data |>
 
 .pull-left-10[
 ```{r echo=F, eval=T}
-data |> CustomDT
+data |> CustomDT()
 ```
 ]
 
@@ -1168,7 +1169,7 @@ data |>
 ```{r fil3, echo=F, eval=F}
 data |>
   filter(HC > 10, Selecao == "Explorar") |>
-  CustomDT
+  CustomDT()
 ```
 ]
 
@@ -1188,7 +1189,7 @@ data |>
 
 .pull-left-10[
 ```{r echo=F, eval=T}
-data |> CustomDT
+data |> CustomDT()
 ```
 ]
 
@@ -1210,7 +1211,7 @@ data |>
 ```{r fil4, echo=F, eval=F}
 data |>
   filter(Nome_Especie %in% c('Acapu', 'Tauari')) |>
-  CustomDT
+  CustomDT()
 ```
 ]
 
@@ -1230,7 +1231,7 @@ data |>
 
 .pull-left-10[
 ```{r echo=F, eval=T}
-data |> CustomDT
+data |> CustomDT()
 ```
 ]
 
@@ -1254,7 +1255,7 @@ data |>
 data |>
   filter(Nome_Especie %in% c('Acapu', 'Tauari'),
          HC >= 12, QF == 1) |>
-  CustomDT
+  CustomDT()
 ```
 ]
 
@@ -1304,7 +1305,7 @@ class: with-logo logo-ufpa
 ```{r echo=F, eval=T}
 data |>
   select(-c(N_Arvore, QF, Selecao)) |>
-  CustomDT
+  CustomDT()
 ```
 ]
 
@@ -1333,7 +1334,7 @@ data |>
 data |>
   select(-c(N_Arvore, QF, Selecao)) |>
   mutate(DAP = CAP/pi) |>
-  CustomDT
+  CustomDT()
 ```
 ]
 
@@ -1354,7 +1355,7 @@ data |>
 ```{r echo=F, eval=T}
 data |>
   select(-c(N_Arvore, QF, Selecao)) |>
-  CustomDT
+  CustomDT()
 ```
 ]
 
@@ -1383,7 +1384,7 @@ data |>
 data |>
   select(-c(N_Arvore, QF, Selecao)) |>
   mutate(CAP = CAP/100) |>
-  CustomDT
+  CustomDT()
 ```
 ]
 
@@ -1404,7 +1405,7 @@ data |>
 ```{r echo=F, eval=T}
 data |>
   select(-c(N_Arvore, QF, Selecao)) |>
-  CustomDT
+  CustomDT()
 ```
 ]
 
@@ -1440,7 +1441,7 @@ data |>
   mutate(DAP = CAP/pi,
          CAP = CAP/100,
          gi = (DAP^2*pi)/40000) |>
-  CustomDT
+  CustomDT()
 ```
 ]
 
@@ -1461,7 +1462,7 @@ name: ifelse
 ```{r echo=F, eval=T}
 data |>
   select(-c(N_Arvore, QF, Selecao)) |>
-  CustomDT
+  CustomDT()
 ```
 ]
 
@@ -1490,7 +1491,7 @@ data |>
   select(-c(N_Arvore, QF, Selecao)) |>
   mutate(Selecao = if_else(
     CAP >= 600, "Matriz", "Não Matriz")) |>
-  CustomDT
+  CustomDT()
 ```
 ]
 
@@ -1512,7 +1513,7 @@ name: casewhen
 ```{r echo=F, eval=T}
 data |>
   select(-c(N_Arvore, QF, Selecao)) |>
-  CustomDT
+  CustomDT()
 ```
 ]
 
@@ -1553,7 +1554,7 @@ data |>
              (Nome_Especie == "Acapu") ~ "Protegida",
              (CAP >= 158 & Nome_Especie != "Acapu") ~ "Explorar",
     )) |>
-  CustomDT
+  CustomDT()
 ```
 ]
 
@@ -1574,7 +1575,7 @@ name: acrossmut
 ```{r echo=F, eval=T}
 data |>
   select(-c(N_Arvore, QF, Selecao)) |>
-  CustomDT
+  CustomDT()
 ```
 ]
 
@@ -1610,7 +1611,7 @@ data |>
                 scientific = T
                 )
          ) |>
-  CustomDT
+  CustomDT()
 ```
 ]
 
@@ -1658,7 +1659,7 @@ class: with-logo logo-ufpa
 .pull-left-10[
 ```{r echo=F, eval=T}
 data |>
-  CustomDT
+  CustomDT()
 ```
 ]
 
@@ -1677,7 +1678,7 @@ data |>
 ```{r sumr1, echo=F, eval=F}
 data |>
   summarise(media_HC = mean(HC, na.rm = TRUE)) |>
-  CustomDT
+  CustomDT()
 ```
 
 ```{r ref.label="sumr1", echo=FALSE, eval=TRUE, collapse=T}
@@ -1703,7 +1704,7 @@ data |>
             sd_HC = mean(HC, na.rm = TRUE),
             min_HC = min(HC, na.rm = TRUE),
             max_HC = max(HC, na.rm = TRUE)) |>
-  CustomDT
+  CustomDT()
 ```
 
 ```{r ref.label="sumr2", echo=FALSE, eval=TRUE, collapse=T}
@@ -1723,7 +1724,7 @@ data |>
 .pull-left-10[
 ```{r echo=F, eval=T}
 data |>
-  CustomDT
+  CustomDT()
 ```
 ]
 
@@ -1748,7 +1749,7 @@ data |>
           sd_HC = sd(HC, na.rm = TRUE),
           media_CAP = mean(CAP, na.rm = TRUE),
           sd_CAP = sd(CAP, na.rm = TRUE)) |>
-CustomDT
+CustomDT()
 ```
 
 ```{r ref.label="sumr3", echo=FALSE, eval=TRUE, collapse=T}
@@ -1768,7 +1769,7 @@ name: across
 .pull-left-10[
 ```{r echo=F, eval=T}
 data |>
-  CustomDT
+  CustomDT()
 ```
 ]
 
@@ -1807,7 +1808,7 @@ data |>
     na.rm = TRUE,
     .names = "mean_{.col}"
   )) |>
-  CustomDT
+  CustomDT()
 ```
 
 ```{r ref.label="sumr4", echo=FALSE, eval=TRUE, collapse=T}
@@ -1827,7 +1828,7 @@ data |>
 .pull-left-10[
 ```{r echo=F, eval=T}
 data |>
-  CustomDT
+  CustomDT()
 ```
 ]
 
@@ -1860,7 +1861,7 @@ data |>
                    .names = "{.col}.{.fn}"
                    )
             ) |>
-  CustomDT
+  CustomDT()
 ```
 
 ```{r ref.label="sumr5", echo=FALSE, eval=TRUE, collapse=T}
@@ -1908,7 +1909,7 @@ class: with-logo logo-ufpa
 .pull-left-10[
 ```{r echo=F, eval=T}
 data |>
-  CustomDT
+  CustomDT()
 ```
 ]
 
@@ -1932,7 +1933,7 @@ data |>
 data |>
   group_by(Nome_Especie) |>
   summarise(n = n()) |>
-  CustomDT
+  CustomDT()
 ```
 
 ```{r ref.label="gby", echo=FALSE, eval=TRUE, collapse=T}
@@ -1952,7 +1953,7 @@ data |>
 .pull-left-10[
 ```{r echo=F, eval=T}
 data |>
-  CustomDT
+  CustomDT()
 ```
 ]
 
@@ -1976,7 +1977,7 @@ data |>
 data |>
   group_by(Nome_Especie, Selecao) |>
   summarise(n = n()) |>
-  CustomDT
+  CustomDT()
 ```
 
 ```{r ref.label="gby2", echo=FALSE, eval=TRUE, collapse=T}
@@ -1995,7 +1996,7 @@ data |>
 .pull-left-10[
 ```{r echo=F, eval=T}
 data |>
-  CustomDT
+  CustomDT()
 ```
 ]
 
@@ -2031,7 +2032,7 @@ data |>
                    ),
             n = n()
             ) |>
-  CustomDT
+  CustomDT()
 ```
 
 ```{r ref.label="gby3", echo=FALSE, eval=TRUE, collapse=T}
