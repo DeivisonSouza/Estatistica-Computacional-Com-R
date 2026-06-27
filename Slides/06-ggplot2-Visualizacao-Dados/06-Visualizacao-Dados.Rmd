@@ -1,117 +1,97 @@
 ---
-title: "Estatística Computacional com R (PPGBC0030)"
-subtitle: "Introdução ao Tidyverse: .orange[ggplot2]"
+title: "Estatística Computacional com R"
+subtitle: "Visualização de Dados com R (ggplot2)"
 author: "Prof. Dr. Deivison Venicio Souza"
 institute: "Universidade Federal do Pará (UFPA)"
-date: 
+date: ""
 encoding: "UTF-8"
-header-includes: 
-   - \usepackage{xcolor}
+
 output:
   xaringan::moon_reader:
     css:
       - default
-      - assets/sydney-fonts.css
-      - assets/slide-title/sydney-title.css
-    self_contained: false
+      - "../assets/sydney-fonts.css"
+      - "../assets/sydney-title.css"
+    self_contained: true
     seal: false
     includes:
-      in_header: "assets/mathjax-equation-numbers.html"
+      in_header: "../assets/mathjax-equation-numbers.html"
     nature:
-      beforeInit: ["assets/remark-zoom.js", "https://platform.twitter.com/widgets.js"]
+      beforeInit: "../assets/remark-zoom.js"
       highlightStyle: github
       highlightLines: true
       highlightSpans: true
+      highlightLanguage:
+        - r
+        - css
+        - yaml
       countIncrementalSlides: false
-      highlightLanguage: ["r", "css", "yaml"]
-      ratio: '16:9'
+      ratio: "16:9"
       navigation:
         scroll: false
 ---
 class: title-slide, center, middle
-background-image: url(fig/slide-title/LMFTCA.png), url(fig/slide-title/ppgbc3.png), url(fig/slide-title/capa.png)
-background-position: 90% 90%, 10% 90%
-background-size: 150px, 300px, cover
+background-image: url(../assets/capa/capa.png)
+background-position: center
+background-size: cover
+background-repeat: no-repeat
+
+<div class="logo-lmftca"></div>
+<div class="logo-ppgctif"></div>
+<div class="logo-ppgbc"></div>
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(
-  fig.showtext = TRUE,
-  fig.align = "center", 
-  cache = FALSE,
-  error = FALSE,
-  message = FALSE, 
-  warning = FALSE, 
-  collapse = TRUE ,
-  dpi = 600)
+	error = FALSE,
+	fig.align = "center",
+	fig.showtext = TRUE,
+	message = FALSE,
+	warning = FALSE,
+	cache = FALSE,
+	collapse = TRUE,
+	dpi = 600
+)
 ```
-
-```{css, echo=FALSE}
-.with-logo::before {
-	content: '';
-	width: 120px;
-	height: 120px;
-	position: absolute;
-	bottom: 1.3em;
-	right: -0.5em;
-	background-size: contain;
-	background-repeat: no-repeat;
-}
-
-.logo-ufpa::before {
-	background-image: url(fig/slide-title/ufpa.png);
-}
-
-.logo-dplyr::before {
-	background-image: url(https://github.com/rstudio/hex-stickers/raw/master/PNG/dplyr.png);
-}
-
-.logo-purrr::before {
-	background-image: url(https://github.com/rstudio/hex-stickers/raw/master/PNG/purrr.png);
-}
-
-.logo-plumber::before {
-	background-image: url(https://github.com/rstudio/hex-stickers/raw/master/PNG/plumber.png);
-}
-```
-
 
 ```{r packages, include=FALSE}
-# remotes::install_github("dill/emoGG")
-library(tidyverse)
-library(ggimage)
-library(kableExtra)
+library(readr)
+library(dplyr)
+library(ggplot2)
+library(readxl)
 ```
 
 ```{r xaringan-logo, echo=FALSE}
 library(xaringanExtra)
-use_logo(
-  image_url = "fig/slide-title/LMFTCA.png",
-  position = css_position(top = "1em", right = ".5em"),
-  width = "130px",
-  height = "130px")
 
-use_scribble() # para escrever nos slides
+use_scribble()
 use_share_again()
 use_progress_bar()
-#use_animate_all(style = c("slide_down"))
 
 use_extra_styles(
-  hover_code_line = TRUE,         #<<
-  mute_unhighlighted_code = TRUE  #<<
+  hover_code_line = TRUE,
+  mute_unhighlighted_code = TRUE
 )
-xaringanExtra::use_editable(expires = 1)
-#.can-edit[Você pode editar este título de slide]
-#.can-edit.key-firstSlideTitle[Change this title and then reload the page]
+
+use_editable(expires = 1)
 use_clipboard()
+```
+
+```{r icon, echo=FALSE}
+# remotes::install_github("dill/emoGG")
+# remotes::install_github("mitchelloharawild/icons")
+# remotes::install_github('emitanaka/anicon')
+# (icons)
+# download_fontawesome()
+# download_simple_icons()
 ```
 
 ```{r customDT, echo=F}
 CustomDT <- function(data){
-  data %>% DT::datatable(editable = 'cell', rownames = FALSE,
+  data |> DT::datatable(editable = 'cell', rownames = FALSE,
                          style = "default",
                          class = "display", width = '180px',
                          caption = '',
-     options=list(pageLength = 10, dom = 'tip', autoWidth = F,
+     options=list(pageLength = 20, dom = 't', autoWidth = F,
        initComplete = htmlwidgets::JS(
           "function(settings, json) {",
           paste0("$(this.api().table().container()).css({'font-size': '", "9pt", "'});"),
@@ -121,26 +101,28 @@ CustomDT <- function(data){
 }
 ```
 
-
 <!-- title-slide -->
-# .font120[Estatística Computacional com R<br> (PPGBC0030)]
+# Estatística Computacional com R <br> (PPGBC/UFPA e PPGCTIF/UFOPA)
 
-## `r anicon::faa("pagelines", animate="horizontal", colour="green")` Introdução ao Tidyverse: .orange[ggplot2]`r anicon::faa("pagelines", animate="horizontal", colour="green")`
-<br>
+## ᨒ <br> `r anicon::faa("pagelines", animate="horizontal", colour="green")` .font80[Visualização de Dados]`r anicon::faa("pagelines", animate="horizontal", colour="green")`
+###### (Pacote: ggplot2)
 
-#### **Prof. Dr. Deivison Venicio Souza**
-##### Universidade Federal do Pará (UFPA) 
+##### 〰〰〰〰〰〰🌱〰〰〰〰〰〰
+##### ᨒ
+##### .font120[**Prof. Dr. Deivison Venicio Souza**]
+##### Universidade Federal do Pará (UFPA)
 ##### Faculdade de Engenharia Florestal
+##### Laboratório de Manejo Florestal, Tecnologias e Comunidades Amazônicas
 ##### E-mail: deivisonvs@ufpa.br
 <br>
-##### 1ª versão: 22/setembro/2021 <br> (Atualizado em: `r format(Sys.Date(),"%d/%B/%Y")`)
+##### 1ª versão: 14/outubro/2022 <br> (Atualizado em: `r format(Sys.Date(),"%d/%B/%Y")`)
 
 ---
 
 layout: true
-class: with-logo logo-ufpa
+class: with-logo logo-lmftca-fixed
 <div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional (PPGBC0030)</div3>/ <div2>Módulo 2 - Introdução ao Tidyverse</div2> </div>
+<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao Tidyverse (Módulo 2)</div2> </div>
 
 ---
 
@@ -307,9 +289,8 @@ knitr::include_graphics("https://patchwork.data-imaginist.com/reference/figures/
 ---
 
 layout: false
-name: conc
 class: inverse, top, right
-background-image: url(fig/slide-title/secao.png)
+background-image: url(../assets/capa/sec.png)
 background-size: cover
 
 <br><br><br>
@@ -327,9 +308,9 @@ knitr::include_graphics("https://ggplot2.tidyverse.org/logo.png")
 ---
 
 layout: true
-class: with-logo logo-ufpa
+class: with-logo logo-lmftca-fixed
 <div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional (PPGBC0030)</div3>/ <div2>Módulo 2 - Introdução ao Tidyverse</div2> </div>
+<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao Tidyverse (Módulo 2)</div2> </div>
 
 ---
 name: mot
@@ -374,7 +355,7 @@ name: gramatica
 <br>
 
 ```{r echo=FALSE, out.width='55%', fig.align='center', fig.cap='', dpi=600}
-knitr::include_graphics("fig/part4/ggplot.png")
+knitr::include_graphics("fig/ggplot.png")
 ```
 .center[.font70[**Fonte**: https://r.qcbs.ca/workshop03/pres-en/workshop03-pres-en.html#113]]
 
@@ -389,22 +370,29 @@ name: data
 
 .font80[
 .pull-left-4[
-```{r data, echo=T, eval=F}
-data <- readr::read_csv(file="data/UPA07DVS.csv") %>%
-  mutate(DAP = round(CAP/pi, 2), 
-         V = round(((DAP^2*pi)/40000)*HC*0.7, 4))
-
-set.seed(1000)
-
-data_sample <- data %>% 
-  select(Nome_Especie, DAP, CAP, HC, QF, Selecao, V) %>% 
-  filter(Nome_Especie %in% c('Acapu', 'Andiroba', 
-                             'Maçaranduba', 'Goiabão')) %>% 
-  group_by(Nome_Especie) %>% 
-  sample_n(50, replace = F)
-
-data_sample %>% CustomDT # apenas p/ uma saída elegante da tabela
+```{r, echo=F, eval=F}
+# data <- readxl::read_excel(path = "data/IF100.xlsx")
+# 
+# set.seed(1000)
+# 
+# data_sample <- data %>% 
+#   select(Nome_Especie, DAP, CAP, HC, QF, Selecao, V) %>% 
+#   filter(Nome_Especie %in% c('Acapu', 'Andiroba', 
+#                              'Macaranduba', 'Goiabao')) %>% 
+#   group_by(Nome_Especie) %>% 
+#   sample_n(50, replace = F)
+#
+# data_sample2 <- data %>% 
+#   filter(Nome_Especie %in% c("Acapu", "Casca seca", "Timborana"))
+# 
+# writexl::write_xlsx(x = data_sample, "data/sample.xlsx")
+# writexl::write_xlsx(x = data_sample2, "data/sample2.xlsx")
 ```
+
+```{r data, echo=T, eval=F}
+data_sample <- readxl::read_excel(path = "data/sample.xlsx")
+```
+
 <br>
 
 **Vamos usar uma amostra de 4 espécies florestais de um IF100% para construir os gráficos...**
@@ -562,7 +550,7 @@ ggplot(data = data_sample,
 ```
 <br>
 
-`r emo::ji("point_right")` **2ª camada**:
+👉 **2ª camada**:
 
 - A função .green[geom_point()] foi usada para adicionar uma camada de pontos no gráfico. Tem-se um gráfico de dispersão.
 - **Importante**: Para adicionar camadas usa-se o operador .red[**+**].
@@ -597,7 +585,7 @@ ggplot(data = data_sample,
 ```
 <br>
 
-`r emo::ji("point_right")` **3ª camada**:
+👉 **3ª camada**:
 
 - A função .green[geom_smooth()] foi usada para adicionar uma linha de regressão linear (y~x = V~DAP).
 ]
@@ -632,7 +620,7 @@ ggplot(data = data_sample,
 ```
 <br>
 
-`r emo::ji("point_right")` **4ª camada**:
+👉 **4ª camada**:
 
 - A função .green[geom_smooth()] foi usada para adicionar outra linha de regressão, porém de um polinômio de segundo grau (y~x<sup>2</sup> = V~DAP<sup>2</sup>).
 ]
@@ -665,7 +653,7 @@ ggplot(data = data_sample,
 ```
 <br>
 
-`r emo::ji("point_right")` **2ª camada**:
+👉 **2ª camada**:
 - A função .green[geom_point()] também possui argumentos para customização de atributos estéticos. (?geom_point).
 - mapping: pode receber argumentos por meio da função .green[aes()]:
 
@@ -702,7 +690,7 @@ ggplot(data = data_sample,
 ```
 <br>
 
-`r emo::ji("point_right")` **2ª camada**:
+👉 **2ª camada**:
 
 - O argumento .magenta[**shape**] recebeu a coluna "Selecao" e mapeou diferentes formas para as categorias: Explorar e Remanescente.
 ]
@@ -729,14 +717,14 @@ name: mtp
 - **Bubblechart** (gráfico de bolhas): É um gráfico de dispersão, em que uma terceira dimensão é adicionada.
 
 ```{r point6, echo=T, eval=F}
-ggplot(data = data_sample %>% filter(Nome_Especie == 'Maçaranduba'), 
+ggplot(data = data_sample %>% filter(Nome_Especie == 'Macaranduba'), 
        mapping = aes(x = DAP, y = V)) +           # 1ª camada
   geom_point(mapping = aes(colour = Selecao,
                            size = HC))            # 2ª camada
 ```
 <br>
 
-`r emo::ji("point_right")` **2ª camada**:
+👉 **2ª camada**:
 
 - O argumento .magenta[**size**] (dentro de .green[aes()]) recebeu a coluna "HC" e mapeou tamanhos de pontos proporcionais aos valores de HC.
 - Portanto, a altura de cada árvore é representada pelo tamanho do círculo.
@@ -765,7 +753,7 @@ ggplot(data = data_sample %>% filter(Nome_Especie == 'Maçaranduba'),
 
 ```{r point7, echo=T, eval=F}
 ggplot(data = data_sample %>% 
-           filter(Nome_Especie %in% c('Acapu', 'Maçaranduba')), 
+           filter(Nome_Especie %in% c('Acapu', 'Macaranduba')), 
        mapping = aes(x = DAP, y = V)) +           # 1ª camada
   geom_point(mapping = aes(colour = Nome_Especie,
                            shape = Selecao),
@@ -773,7 +761,7 @@ ggplot(data = data_sample %>%
 ```
 <br>
 
-`r emo::ji("point_right")` **2ª camada**:
+👉 **2ª camada**:
 
 - Isso é feito com argumento .magenta[**size**], porém fora de .green[aes()].
 - Especifique um valor inteiro para o argumento.
@@ -800,7 +788,7 @@ name: pfcp
 .font70[
 ```{r point8, echo=T, eval=F}
 ggplot(data = data_sample %>% 
-           filter(Nome_Especie %in% c('Andiroba', 'Maçaranduba')), 
+           filter(Nome_Especie %in% c('Andiroba', 'Macaranduba')), 
        mapping = aes(x = DAP, y = V)) +               # 1ª camada
   geom_point(mapping = aes(colour = Nome_Especie,
                            shape = Selecao),
@@ -810,7 +798,7 @@ ggplot(data = data_sample %>%
 ```
 <br>
 
-`r emo::ji("point_right")` **3ª e 4ª camadas**:
+👉 **3ª e 4ª camadas**:
 
 - Use .green[scale_shape_manual()] e .green[scale_color_manual()] para definir a forma e cor desejada para os pontos (e muito mais), respectivamente.
 ]
@@ -861,7 +849,7 @@ name: ml
 .font70[
 ```{r point9, echo=T, eval=F}
 ggplot(data = data_sample %>% 
-           filter(Nome_Especie %in% c('Andiroba', 'Maçaranduba')), 
+           filter(Nome_Especie %in% c('Andiroba', 'Macaranduba')), 
        mapping = aes(x = DAP, y = V)) +                 # 1ª camada
   geom_point(mapping = aes(colour = Nome_Especie,
                            shape = Selecao),
@@ -877,7 +865,7 @@ ggplot(data = data_sample %>%
 ```
 <br>
 
-`r emo::ji("point_right")` **3ª e 4ª camadas**:
+👉 **3ª e 4ª camadas**:
 
 - Use .green[scale_shape_manual()] e .green[scale_color_manual()] para modificar as legendas atribuídas a partir das variáveis mapeadas em .blue[shape] e .blue[color] de .green[geom_point()], respectivamente.
 - Explore os argumentos .blue[labels] e .blue[name].
@@ -904,7 +892,7 @@ ggplot(data = data_sample %>%
 .font70[
 ```{r point10, echo=T, eval=F}
 ggplot(data = data_sample %>% 
-           filter(Nome_Especie %in% c('Andiroba', 'Maçaranduba')), 
+           filter(Nome_Especie %in% c('Andiroba', 'Macaranduba')), 
        mapping = aes(x = DAP, y = V)) +                 # 1ª camada
   geom_point(mapping = aes(colour = Nome_Especie,
                            shape = Selecao),
@@ -922,7 +910,7 @@ ggplot(data = data_sample %>%
                      breaks = seq(35, 115, 10))         # 5ª camada
 ```
 
-`r emo::ji("point_right")` **5ª camada**:
+👉 **5ª camada**:
 
 - Argumentos .blue[name], .blue[limits] e .blue[breaks] na camada de .green[scale_x_continuous()]. Experimente: .green[scale_y_continuous()].
 ]
@@ -949,7 +937,7 @@ ggplot(data = data_sample %>%
 
 ```{r point11, echo=T, eval=F}
 ggplot(data = data_sample %>% 
-           filter(Nome_Especie %in% c('Andiroba', 'Maçaranduba')), 
+           filter(Nome_Especie %in% c('Andiroba', 'Macaranduba')), 
        mapping = aes(x = DAP, y = V)) +                 # 1ª camada
   geom_point(mapping = aes(colour = Nome_Especie,
                            shape = Selecao),
@@ -968,7 +956,7 @@ ggplot(data = data_sample %>%
        y = "Volume (m³)")                               # 5ª camada
 ```
 
-`r emo::ji("point_right")` **5ª camada**:
+👉 **5ª camada**:
 
 - Experimente a função .green[labs()] para adicionar títulos.
 ]
@@ -995,7 +983,7 @@ ggplot(data = data_sample %>%
 
 ```{r point12, echo=T, eval=F}
 data_sample %>%
-  filter(Nome_Especie %in% 'Maçaranduba') %>%
+  filter(Nome_Especie %in% 'Macaranduba') %>%
   ggplot(mapping = aes(x = DAP, y = V)) +       # 1ª camada
   geom_point() +                                # 2ª camada
   geom_smooth(method='lm', formula=y~x, se=F) + # 3ª camada
@@ -1009,7 +997,7 @@ data_sample %>%
                         parse = TRUE)            # 4ª camada
 ```
 
-`r emo::ji("point_right")` **4ª camada**:
+👉 **4ª camada**:
 
 - Use a função .green[stat_poly_eq()] do pacote **ggpmisc** para adicionar informações de ajuste de um modelo linear.
 ]
@@ -1036,7 +1024,7 @@ data_sample %>%
 
 ```{r point13, echo=T, eval=F}
 data_sample %>%
-  filter(Nome_Especie %in% 'Maçaranduba') %>%
+  filter(Nome_Especie %in% 'Macaranduba') %>%
   ggplot(mapping = aes(x = DAP, y = V)) +       # 1ª camada
   geom_point() +                                # 2ª camada
   geom_smooth(method='lm', 
@@ -1051,7 +1039,7 @@ data_sample %>%
                         parse = TRUE)            # 4ª camada
 ```
 
-`r emo::ji("point_right")` **4ª camada**:
+👉 **4ª camada**:
 
 - Use a função .green[stat_poly_eq()] do pacote **ggpmisc** para adicionar informações de ajuste de um modelo linear.
 - Use .green[poly()] no argumento .brown[formula] para modificar o grau do polinômio.
@@ -1079,7 +1067,7 @@ data_sample %>%
 
 ```{r point14, echo=T, eval=F}
 data_sample %>%
-  filter(Nome_Especie %in% c('Andiroba', 'Maçaranduba')) %>%
+  filter(Nome_Especie %in% c('Andiroba', 'Macaranduba')) %>%
   ggplot(mapping =
            aes(x = DAP, y = V,
                linetype = Nome_Especie,
@@ -1097,7 +1085,7 @@ data_sample %>%
   scale_color_manual(values = c("red", "black"))    # 5ª camada
 ```
 
-`r emo::ji("point_right")` **4ª camada**:
+👉 **4ª camada**:
 
 - Especifique .brown[linetype] = .blue[Nome_Especie] para que linhas de ajustes para cada categoria de "Nome_Especie" sejam
 mapeadas.
@@ -1136,6 +1124,8 @@ name: gb
 **.blue[Tabela com todos os dados das 3 espécies mais frequentes...]**
 ```{r echo=T, eval=T}
 # Filtra os dados de 3 espécies mais frequentes
+data <- read_excel(path = "data/IF100.xlsx")
+
 data_sample2 <- data %>% 
   filter(Nome_Especie %in% c("Acapu", "Casca seca", "Timborana"))
 ```
@@ -1334,7 +1324,7 @@ ggplot(data = data_top) +                           # 1ª camada
 ```
 <br>
 
-`r emo::ji("point_right")` **2ª camada**:
+👉 **2ª camada**:
 
 - Em .green[geom_bar()] pode-se adicionar elementos estéticos.
 - Por exemplo, o argumento .brown[fill] recebeu a coluna "Nome_Especie" e mapeou diferentes cores para as categorias.
@@ -1424,7 +1414,7 @@ data_top %>%
 ```
 <br>
 
-`r emo::ji("point_right")` **3ª camada**:
+👉 **3ª camada**:
 
 - Use a função .green[geom_label()] para reordenar adicionar rótulos com os valores de contagem por espécie a cada barra..
 - **Importante**: perceba que para .green[geom_label()] mapeou-se novos pares de valores (x e y), que indicam a posição de impressão dos rótulos no gráfico. 
@@ -1465,7 +1455,7 @@ data_sample %>%
 ```
 <br>
 
-`r emo::ji("point_right")` **2ª camada**:
+👉 **2ª camada**:
 
 - O gráfico mostra a contagem de árvores remanescente e explorar por espécie.
 - Use .blue[fill] para mapear diferentes cores para as categorias de "Selecao".
@@ -1545,7 +1535,7 @@ data %>%
 ```
 <br>
 
-`r emo::ji("point_right")` **2ª camada**:
+👉 **2ª camada**:
 
 - Gráfico mostra a distribuição de frequência de uma única variável contínua (DAP).
 - Use .green[geom_histogram()] para criar histogramas.
@@ -1583,7 +1573,7 @@ data %>%
 ```
 <br>
 
-`r emo::ji("point_right")` **2ª camada**:
+👉 **2ª camada**:
 
 - Use .blue[binwidth] para controlar a largura das barras.
 - Explore .blue[binwidth] para encontrar a melhor representação dos dados.
@@ -1620,7 +1610,7 @@ data_sample2 %>%
 ```
 <br>
 
-`r emo::ji("point_right")` **2ª camada**:
+👉 **2ª camada**:
 
 - Use .green[geom_freqpoly()] para criar polígonos de frequências.
 - Esse tipo de gráfico é recomendado quando deseja-se comparar a distribuição entre os níveis de uma variável categórica.
@@ -1656,7 +1646,7 @@ data_sample2 %>%
 ```
 <br>
 
-`r emo::ji("point_right")` **2ª camada**:
+👉 **2ª camada**:
 
 - São adequados para comparar distribuições.
 - Use .green[geom_boxplot()] para criar BoxPlots.
@@ -1701,7 +1691,7 @@ data_sample2 %>%
 ```
 <br>
 
-`r emo::ji("point_right")` **2ª camada**:
+👉 **2ª camada**:
 
 - Use .green[fct_reorder()] do pacote **forcats** para reordenar os níveis de fator da variável "Nome_Especie".
 - Repasse o comando dentro da função .green[mutate()] do **dplyr**.
@@ -1744,7 +1734,7 @@ data_sample2 %>%
 ```
 <br>
 
-`r emo::ji("point_right")` **2ª camada**:
+👉 **2ª camada**:
 
 - Use .green[stat_summary()] para adicionar pontos representativos da média para cada categoria de "Nome_Especie".
 - Use .blue[fun] para informar a estatística desejada.
@@ -1781,7 +1771,7 @@ data_sample %>%
 ```
 <br>
 
-`r emo::ji("point_right")` **1ª camada**:
+👉 **1ª camada**:
 
 - Use .blue[color] = .brown[Selecao] para criar BoxPlots de cada categoria de "Selecao" para cada espécie.
 - Os BoxPlots das categorias serão diferenciados por cores.
@@ -1818,7 +1808,7 @@ data_sample %>%
 ```
 <br>
 
-`r emo::ji("point_right")` **3ª camada**:
+👉 **3ª camada**:
 
 - Use .green[geom_jitter()] para adicionar pontos representativos dos dados.
 - A .green[geom_jitter()] adiciona uma pequena variação aleatória à localização de cada ponto, evitando *overplotting* (dados sobrepostos).
@@ -1858,7 +1848,7 @@ data_sample %>%
 ```
 <br>
 
-`r emo::ji("point_right")` **3ª camada**:
+👉 **3ª camada**:
 
 - Use .blue[color] = .brown[Selecao] em .green[ggplot()] para mapear cores para os pontos representativos das categorias de "Selecao".
 - Use .blue[color] = .brown["black"] em .green[geom_boxplot].
@@ -2060,7 +2050,7 @@ name: mtrf
 
 labels1 <- c(Remanescente = "Rem.", Explorar = "Exp.")
 labels2 <- c(Acapu = "Vouacapoua", Andiroba = "Carapa",
-             `Goiabão` = "Pouteria", `Maçaranduba` = "Manilkara")
+             `Goiabao` = "Pouteria", `Macaranduba` = "Manilkara")
 
 data_sample %>%
   ggplot(aes(x = DAP, y = V)) +                 # 1ª camada   
@@ -2137,9 +2127,8 @@ ggsave("facet.png", path = "fig/part3",
 ---
 
 layout: false
-name: conc
 class: inverse, top, right
-background-image: url(fig/slide-title/secao.png)
+background-image: url(../assets/capa/sec.png)
 background-size: cover
 
 <br><br><br>
@@ -2157,9 +2146,9 @@ knitr::include_graphics("https://patchwork.data-imaginist.com/reference/figures/
 ---
 
 layout: true
-class: with-logo logo-ufpa
+class: with-logo logo-lmftca-fixed
 <div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional (PPGBC0030)</div3>/ <div2>Módulo 2 - Introdução ao Tidyverse</div2> </div>
+<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao Tidyverse (Módulo 2)</div2> </div>
 
 ---
 name: patchwork
@@ -2198,7 +2187,7 @@ knitr::include_graphics("https://patchwork.data-imaginist.com/reference/figures/
 .font80[
 ```{r g1, echo=T, eval=F,  out.width="50%"}
 (g1 <- data_sample %>%
-  filter(Nome_Especie %in% 'Maçaranduba') %>%
+  filter(Nome_Especie %in% 'Macaranduba') %>%
   ggplot(mapping = aes(x = DAP, y = V)) +       # 1ª camada
   geom_point() +                                # 2ª camada
   geom_smooth(method='lm', formula=y~x, se=F) + # 3ª camada
@@ -2802,14 +2791,25 @@ g3 + g1 +
 ---
 
 layout: true
-class: with-logo logo-ufpa
+class: with-logo logo-lmftca-fixed
 <div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Introdução ao R para Análise de Dados</div3>/ <div2>Parte 3 - Visualização de dados com ggplot2 e extensões</div2> </div>
+<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao Tidyverse (Módulo 2)</div2> </div>
 
 <!--Slide XX -->
 ---
 layout: false
-class: inverse, top, right
-background-image: url(fig/slide-title/end.png)
+name: etim
+class: inverse, middle, center
+background-image: url(../assets/capa/sec.png)
 background-size: cover
+
+## .font200[Obrigado!]
+
+```{r, echo=FALSE, out.width='20%', fig.align='center', fig.cap='', dpi=600}
+knitr::include_graphics('../assets/logos/LMFTCA.png')
+```
+
+👨🏻‍👩🏻‍👦🏻‍👦🏻 [@lmftca_ufpa](https://www.instagram.com/lmftca_ufpa/)
+
+🌎 [https://www.lmftca.com.br/](https://www.lmftca.com.br/)
 
