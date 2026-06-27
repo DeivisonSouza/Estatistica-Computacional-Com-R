@@ -58,6 +58,7 @@ R** estão disponibilizados a seguir.
 | Slides/02-Introducao-R-Estrutura/02-Introducao-R-Estrutura.html | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/02-Introducao-R-Estrutura/02-Introducao-R-Estrutura.html> |
 | Slides/03-Introducao-R-Indexacao/03-Introducao-R-Indexacao.html | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/03-Introducao-R-Indexacao/03-Introducao-R-Indexacao.html> |
 | Slides/04-readR-Im(Ex)portacao-Dados/04-Importacao-Dados.html | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/04-readR-Im(Ex)portacao-Dados/04-Importacao-Dados.html> |
+| Slides/05-dplyr-Manipulacao-Dados/05-Manipulacao-Dados.html | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/05-dplyr-Manipulacao-Dados/05-Manipulacao-Dados.html> |
 
 # Desafios
 
@@ -85,8 +86,6 @@ aleatória de IF100%.
 |:---|:---|
 | Slides/data/Cedrela.csv | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/data/Cedrela.csv> |
 | Slides/data/DIC_Ficticio2.csv | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/data/DIC_Ficticio2.csv> |
-| Slides/data/UPA07DVS.csv | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/data/UPA07DVS.csv> |
-| Slides/data/data.csv | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/data/data.csv> |
 | Slides/data/open/Iris.csv | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/data/open/Iris.csv> |
 
 # Arquivos .R com códigos dos slides
