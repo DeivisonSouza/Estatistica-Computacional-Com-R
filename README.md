@@ -59,6 +59,7 @@ R** estão disponibilizados a seguir.
 | Slides/03-Introducao-R-Indexacao/03-Introducao-R-Indexacao.html | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/03-Introducao-R-Indexacao/03-Introducao-R-Indexacao.html> |
 | Slides/04-readR-Im(Ex)portacao-Dados/04-Importacao-Dados.html | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/04-readR-Im(Ex)portacao-Dados/04-Importacao-Dados.html> |
 | Slides/05-dplyr-Manipulacao-Dados/05-Manipulacao-Dados.html | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/05-dplyr-Manipulacao-Dados/05-Manipulacao-Dados.html> |
+| Slides/06-ggplot2-Visualizacao-Dados/06-Visualizacao-Dados.html | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/06-ggplot2-Visualizacao-Dados/06-Visualizacao-Dados.html> |
 
 # Desafios
 
