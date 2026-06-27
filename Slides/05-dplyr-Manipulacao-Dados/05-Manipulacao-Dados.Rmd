@@ -1,121 +1,91 @@
 ---
-title: "Estatística Computacional com R (PPGBC0030)"
-subtitle: "Introdução ao Tidyverse: .orange[dplyr]"
+title: "Estatística Computacional com R"
+subtitle: "Importação e Exportação de Dados"
 author: "Prof. Dr. Deivison Venicio Souza"
 institute: "Universidade Federal do Pará (UFPA)"
-date: 
+date: ""
 encoding: "UTF-8"
-header-includes: 
-   - \usepackage{xcolor}
+
 output:
   xaringan::moon_reader:
     css:
       - default
-      - assets/sydney-fonts.css
-      - assets/slide-title/sydney-title.css
-    self_contained: false
+      - "../assets/sydney-fonts.css"
+      - "../assets/sydney-title.css"
+    self_contained: true
     seal: false
     includes:
-      in_header: "assets/mathjax-equation-numbers.html"
+      in_header: "../assets/mathjax-equation-numbers.html"
     nature:
-      beforeInit: ["assets/remark-zoom.js", "https://platform.twitter.com/widgets.js"]
+      beforeInit: "../assets/remark-zoom.js"
       highlightStyle: github
       highlightLines: true
       highlightSpans: true
+      highlightLanguage:
+        - r
+        - css
+        - yaml
       countIncrementalSlides: false
-      highlightLanguage: ["r", "css", "yaml"]
-      ratio: '16:9'
+      ratio: "16:9"
       navigation:
         scroll: false
 ---
 class: title-slide, center, middle
-background-image: url(fig/slide-title/LMFTCA.png), url(fig/slide-title/PPGBC2.png), url(fig/slide-title/capa.png)
-background-position: 90% 90%, 10% 90%
-background-size: 150px, 300px, cover
+background-image: url(../assets/capa/capa.png)
+background-position: center
+background-size: cover
+background-repeat: no-repeat
+
+<div class="logo-lmftca"></div>
+<div class="logo-ppgctif"></div>
+<div class="logo-ppgbc"></div>
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(
-  fig.showtext = TRUE,
-  fig.align = "center", 
-  cache = FALSE,
-  error = FALSE,
-  message = FALSE, 
-  warning = FALSE, 
-  collapse = TRUE ,
-  dpi = 600)
+	error = FALSE,
+	fig.align = "center",
+	fig.showtext = TRUE,
+	message = FALSE,
+	warning = FALSE,
+	cache = FALSE,
+	collapse = TRUE,
+	dpi = 600
+)
 ```
-
-```{css, echo=FALSE}
-.with-logo::before {
-	content: '';
-	width: 120px;
-	height: 120px;
-	position: absolute;
-	bottom: 1.3em;
-	right: -0.5em;
-	background-size: contain;
-	background-repeat: no-repeat;
-}
-
-.logo-ufpa::before {
-	background-image: url(fig/slide-title/ufpa.png);
-}
-
-.logo-dplyr::before {
-	background-image: url(https://github.com/rstudio/hex-stickers/raw/master/PNG/dplyr.png);
-}
-
-.logo-purrr::before {
-	background-image: url(https://github.com/rstudio/hex-stickers/raw/master/PNG/purrr.png);
-}
-
-.logo-plumber::before {
-	background-image: url(https://github.com/rstudio/hex-stickers/raw/master/PNG/plumber.png);
-}
-```
-
 
 ```{r packages, include=FALSE}
-# remotes::install_github("dill/emoGG")
-library(tidyverse)
-library(ggimage)
-library(kableExtra)
+library(readr)
+library(dplyr)
 ```
 
 ```{r xaringan-logo, echo=FALSE}
 library(xaringanExtra)
-use_logo(
-  image_url = "fig/slide-title/LMFTCA.png",
-  position = css_position(top = "1em", right = ".5em"),
-  width = "130px",
-  height = "130px")
 
-use_scribble() # para escrever nos slides
+use_scribble()
 use_share_again()
 use_progress_bar()
-#use_animate_all(style = c("slide_down"))
 
 use_extra_styles(
-  hover_code_line = TRUE,         #<<
-  mute_unhighlighted_code = TRUE  #<<
+  hover_code_line = TRUE,
+  mute_unhighlighted_code = TRUE
 )
-xaringanExtra::use_editable(expires = 1)
-#.can-edit[Você pode editar este título de slide]
-#.can-edit.key-firstSlideTitle[Change this title and then reload the page]
+
+use_editable(expires = 1)
 use_clipboard()
 ```
 
 ```{r icon, echo=FALSE}
-#remotes::install_github("mitchelloharawild/icons")
-#remotes::install_github('emitanaka/anicon')
-#library(icons)
-#download_fontawesome()
-#download_simple_icons()
+# remotes::install_github("dill/emoGG")
+# remotes::install_github("mitchelloharawild/icons")
+# remotes::install_github('emitanaka/anicon')
+# (icons)
+# download_fontawesome()
+# download_simple_icons()
 ```
 
 ```{r customDT, echo=F}
 CustomDT <- function(data){
-  data %>% DT::datatable(editable = 'cell', rownames = FALSE,
+  data |> DT::datatable(editable = 'cell', rownames = FALSE,
                          style = "default",
                          class = "display", width = '180px',
                          caption = '',
@@ -131,35 +101,44 @@ CustomDT <- function(data){
 
 
 <!-- title-slide -->
-# .font120[Estatística Computacional com R<br> (PPGBC0030)]
+# Estatística Computacional com R <br> (PPGBC/UFPA e PPGCTIF/UFOPA)
 
-## `r anicon::faa("pagelines", animate="horizontal", colour="green")` Introdução ao Tidyverse: .orange[dplyr]`r anicon::faa("pagelines", animate="horizontal", colour="green")`
-<br>
+## ᨒ <br> `r anicon::faa("pagelines", animate="horizontal", colour="green")` .font80[Manipulação de Dados]`r anicon::faa("pagelines", animate="horizontal", colour="green")`
+###### (Pacote: dplyr)
 
-#### **Prof. Dr. Deivison Venicio Souza**
-##### Universidade Federal do Pará (UFPA) 
+##### 〰〰〰〰〰〰🌱〰〰〰〰〰〰
+##### ᨒ
+##### .font120[**Prof. Dr. Deivison Venicio Souza**]
+##### Universidade Federal do Pará (UFPA)
 ##### Faculdade de Engenharia Florestal
+##### Laboratório de Manejo Florestal, Tecnologias e Comunidades Amazônicas
 ##### E-mail: deivisonvs@ufpa.br
 <br>
-##### 1ª versão: 04/novembro/2022 <br> (Atualizado em: `r format(Sys.Date(),"%d/%B/%Y")`)
+##### 1ª versão: 14/outubro/2022 <br> (Atualizado em: `r format(Sys.Date(),"%d/%B/%Y")`)
 
 ---
 
 layout: true
-class: with-logo logo-ufpa
+class: with-logo logo-lmftca-fixed
 <div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional (PPGBC0030)</div3>/ <div2>Módulo 2 - Introdução ao Tidyverse</div2> </div>
+<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao Tidyverse (Módulo 2)</div2> </div>
 
 ---
 
 ## Objetivos
+
 <br>
-Esta aula (.blue[Introdução ao Tidyverse: dplyr]) constitui a segunda parte do módulo 2 destinado ao aprendizado de alguns pacotes da coleção Tidyverse. Ao final desta aula espera-se que os participantes possam alcançar conhecimentos para...
-<br><br>
+
+Esta aula (.blue[**Manipulação de Dados**]) constitui a segunda parte do **Módulo 2**, dedicado ao estudo de alguns dos principais pacotes do ecossistema **Tidyverse**. 
+
+<br>
+
+Ao final desta aula, espera-se que os participantes sejam capazes de:
 
 * Manipular dados no R usando funções do pacote **dplyr**.
 <br><br>
 
+.center[
 .pull-left-7[
 ```{r echo=FALSE, out.width='70%', fig.align='center', fig.cap='', dpi=600}
 knitr::include_graphics("https://tidyverse.tidyverse.org/articles/tidyverse-logo.png")
@@ -171,14 +150,16 @@ knitr::include_graphics("https://tidyverse.tidyverse.org/articles/tidyverse-logo
 knitr::include_graphics("https://dplyr.tidyverse.org/logo.png")
 ```
 ]
+]
 
 ---
 
 ## Conteúdo
 
-.pull-left-10[
-.font90[
-**Parte 3 - Manipulação de dados com .orange[dplyr]**
+<br>
+
+.pull-left-4[
+**Parte 2 - Manipulação de dados com .orange[dplyr]**
 
 [1 - Função select() e suas auxiliares](#select)
 
@@ -199,10 +180,9 @@ knitr::include_graphics("https://dplyr.tidyverse.org/logo.png")
 [3 - Função filter()](#filter)
 
 ]
-]
 
-.pull-right-10[
-.font90[
+
+.pull-right-4[
 
 [4 - Função mutate() e suas auxiliares](#mutate)
 
@@ -218,14 +198,12 @@ knitr::include_graphics("https://dplyr.tidyverse.org/logo.png")
 
 [6 - Função group_by()](#groupby)
 ]
-]
 
 ---
 
 layout: false
-name: conc
 class: inverse, top, right
-background-image: url(fig/slide-title/secao.png)
+background-image: url(../assets/capa/sec.png)
 background-size: cover
 
 <br><br><br>
@@ -236,7 +214,8 @@ background-size: cover
 
 .right[.font150[**.green[Parte 2] - Manipulação de dados: <br> Pacote .orange[dplyr]**]]
 
-```{r echo=FALSE, out.width='10%', fig.align='center', fig.cap='', dpi=600}
+
+```{r echo=FALSE, out.width='15%', fig.align='center', fig.cap='', dpi=600}
 knitr::include_graphics("https://dplyr.tidyverse.org/logo.png")
 ```
 
@@ -245,7 +224,7 @@ knitr::include_graphics("https://dplyr.tidyverse.org/logo.png")
 layout: true
 class: with-logo logo-ufpa
 <div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional (PPGBC0030)</div3>/ <div2>Módulo 2 - Introdução ao Tidyverse</div2> </div>
+<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao Tidyverse (Módulo 2)</div2> </div>
 
 ---
 
@@ -258,15 +237,11 @@ class: with-logo logo-ufpa
 - Um dos principais pacotes do .orange[tidyverse].
 - O pacote .orange[**dplyr**] é essencialmente um conjunto consistente de funções projetadas para resolver os desafios mais comuns de **manipulação de dados**.
 - Foi projetado para ser simples, intuitivo, amigável e elegante.
-- O encadeamento de comandos é facilitado pelo emprego do operador **%>%** (pipe).
+- O encadeamento de comandos é facilitado pelo emprego do operador **|>** (pipe).
 - Códigos em R que fazem uso dos verbos .orange[**dplyr**] são mais elegantes, compeeensíveis e intuitivos.
 - **Cheatsheet do RStudio** (folhas de resumo): Help $\rightarrow$ Cheatsheets $\rightarrow$ Data Transformation with dplyr
 - No site da RStudio pode-se encontrar algumas Cheatsheet traduzidas: [cheatsheets-translations](https://www.rstudio.com/resources/cheatsheets/#translations)
 ]
-
-```{r echo=FALSE, out.width='10%', fig.align='center', fig.cap='', dpi=600}
-knitr::include_graphics("https://dplyr.tidyverse.org/logo.png")
-```
 
 ---
 
@@ -279,6 +254,7 @@ knitr::include_graphics("https://dplyr.tidyverse.org/logo.png")
 - O .orange[**dplyr**] possui diversos verbos (funções). A seguir são listadas algumas das mais usuais:
 
 .center[
+.alert2[
 mutate()
 
 select()
@@ -290,17 +266,17 @@ arrange()
 summarise()
 
 group_by()
-
+]
 ]
 ]
 
 .pull-right-4[
 Lista de funções do pacote .orange[**dplyr**]:
 
-```{r, echo=T, eval=F}
+```{r, echO = TRUE, eval = FALSE}
 ls("package:dplyr")
-#length(ls("package:dplyr"))
-#lsf.str("package:dplyr")
+length(ls("package:dplyr"))
+lsf.str("package:dplyr")
 ```
 
 Ou simplesmente digite .green[`dplyr::`].
@@ -312,29 +288,31 @@ Atualmente são `r length(ls("package:dplyr"))` funções projetadas para manipu
 ---
 
 ## Manipulação de dados com .orange[dplyr]
-<br>
-
-### Uma pequena amostra para praticar...
 
 .font90[
 .pull-left-9[
 
+### Uma pequena amostra para praticar...
+
+<br>
+
 ```{r tibble, echo=T, eval=F}
 data <- readr::read_csv("data/data.csv")
 
-data %>% CustomDT # Apenas para customizar a tabela
+data |> CustomDT
 ```
 
 .font90[
 Para aprender a intuição de algumas funções .orange[**dplyr**] usaremos uma pequena amostra de dados de IF100%.
 <br><br>
 
-**A base completa pode ser acessada em**: [IF100%](https://deivisonsouza.github.io/FL03034-EF/Slides/data/UPA07DVS.csv)
+**A base completa pode ser acessada em**: [IF100%](https://deivisonsouza.github.io/FL03034-EF/Slides/data/IF100.xlsx)
 ]
 ]
 ]
 
 .pull-right-9[
+<br>
 ```{r ref.label="tibble", echo=FALSE, eval=TRUE, collapse=T}
 ```
 ]
@@ -342,9 +320,8 @@ Para aprender a intuição de algumas funções .orange[**dplyr**] usaremos uma 
 ---
 
 layout: false
-name: select
 class: inverse, top, right
-background-image: url(fig/slide-title/secao.png)
+background-image: url(../assets/capa/sec.png)
 background-size: cover
 
 <br><br><br>
@@ -359,12 +336,14 @@ background-size: cover
 
 .center[.font200[**Função .brown[select()]**]]
 
+.center[Selecionar variáveis (colunas)]
+
 ---
 
 layout: true
 class: with-logo logo-ufpa
 <div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional (PPGBC0030)</div3>/ <div2>Módulo 2 - Introdução ao Tidyverse</div2> </div>
+<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao Tidyverse (Módulo 2)</div2> </div>
 
 ---
 
@@ -375,7 +354,7 @@ class: with-logo logo-ufpa
 
 .pull-left-10[
 ```{r echo=F, eval=T}
-data %>% CustomDT
+data |> CustomDT
 ```
 ]
 
@@ -393,13 +372,13 @@ select(data, Nome_Especie)
 
 **Alternativa 2**
 ```{r echo=TRUE, eval=FALSE}
-data %>%
+data |>
   select(Nome_Especie)
 ```
 ]
 
 ```{r sel, echo=F, eval=F}
-select(data, Nome_Especie) %>% CustomDT
+select(data, Nome_Especie) |> CustomDT
 ```
 ]
 
@@ -418,7 +397,7 @@ select(data, Nome_Especie) %>% CustomDT
 
 .pull-left-10[
 ```{r echo=F, eval=T}
-data %>% CustomDT
+data |> CustomDT
 ```
 ]
 
@@ -430,29 +409,29 @@ data %>% CustomDT
 .blue[**Seleção de várias coluna...**]
 <br><br>
 
-**Alternativa 1** (sem %>%)
+**Alternativa 1** (sem |>)
 ```{r echo=TRUE, eval=FALSE}
 select(
   data, CAP, HC, QF
   )
 ```
 
-**Alternativa 2** (com %>%)
+**Alternativa 2** (com |>)
 ```{r echo=TRUE, eval=FALSE}
-data %>%
+data |>
   select(CAP, HC, QF)
 ```
 
-**Alternativa 3** (%>% + :)
+**Alternativa 3** (|> + :)
 ```{r echo=TRUE, eval=FALSE}
-data %>%
+data |>
   select(CAP:QF)
 ```
 
 ]
 
 ```{r sel2, echo=F, eval=F}
-select(data, CAP, HC, QF) %>% CustomDT
+select(data, CAP, HC, QF) |> CustomDT
 ```
 ]
 
@@ -471,7 +450,7 @@ name: startwith
 
 .pull-left-10[
 ```{r echo=F, eval=T}
-data %>% CustomDT
+data |> CustomDT
 ```
 ]
 
@@ -499,7 +478,7 @@ select(
 ]
 
 ```{r sel3, echo=F, eval=F}
-select(data, starts_with("N")) %>% CustomDT
+select(data, starts_with("N")) |> CustomDT
 ```
 ]
 
@@ -519,7 +498,7 @@ name: endswith
 
 .pull-left-10[
 ```{r echo=F, eval=T}
-data %>% CustomDT
+data |> CustomDT
 ```
 ]
 
@@ -547,7 +526,7 @@ select(
 ]
 
 ```{r sel4, echo=F, eval=F}
-select(data, ends_with("e")) %>% CustomDT
+select(data, ends_with("e")) |> CustomDT
 ```
 ]
 
@@ -566,7 +545,7 @@ name: contains
 
 .pull-left-10[
 ```{r echo=F, eval=T}
-data %>% CustomDT
+data |> CustomDT
 ```
 ]
 
@@ -594,7 +573,7 @@ select(
 ]
 
 ```{r sel5, echo=F, eval=F}
-select(data, contains("e")) %>% CustomDT
+select(data, contains("e")) |> CustomDT
 ```
 ]
 
@@ -613,7 +592,7 @@ name: matches
 
 .pull-left-10[
 ```{r echo=F, eval=T}
-data %>% CustomDT
+data |> CustomDT
 ```
 ]
 
@@ -641,7 +620,7 @@ select(
 ]
 
 ```{r sel6, echo=F, eval=F}
-select(data, matches('No|cao|F')) %>% CustomDT
+select(data, matches('No|cao|F')) |> CustomDT
 ```
 ]
 
@@ -660,7 +639,7 @@ name: everything
 
 .pull-left-10[
 ```{r echo=F, eval=T}
-data %>% CustomDT
+data |> CustomDT
 ```
 ]
 
@@ -680,7 +659,7 @@ Seleciona todas as variáveis. É útil para reordenar algumas colunas, sem se i
 ]
 
 ```{r echo=TRUE, eval=FALSE}
-data %>%
+data |>
   select(
     Nome_Especie,
     Selecao,
@@ -690,10 +669,10 @@ data %>%
 ]
 
 ```{r sel11, echo=F, eval=F}
-data %>%
+data |>
   select(Nome_Especie,
          Selecao,
-         everything()) %>%
+         everything()) |>
   CustomDT
 ```
 ]
@@ -713,7 +692,7 @@ name: where
 
 .pull-left-10[
 ```{r echo=F, eval=T}
-data %>% CustomDT
+data |> CustomDT
 ```
 ]
 
@@ -733,15 +712,15 @@ Aplica uma função à todas as variáveis e seleciona aquelas para as quais a r
 ]
 
 ```{r echo=TRUE, eval=FALSE}
-data %>%
+data |>
   select(where(is.character))
 ```
 
 ]
 
 ```{r sel12, echo=F, eval=F}
-data %>%
-  select(where(is.character)) %>%
+data |>
+  select(where(is.character)) |>
   CustomDT
 ```
 ]
@@ -761,7 +740,7 @@ data %>%
 
 .pull-left-10[
 ```{r echo=F, eval=T}
-data %>% CustomDT
+data |> CustomDT
 ```
 ]
 
@@ -774,7 +753,7 @@ data %>% CustomDT
 <br><br>
 
 ```{r echo=TRUE, eval=FALSE}
-data %>%
+data |>
   select(
     starts_with("N") &
       !ends_with("Arvore"))
@@ -785,7 +764,7 @@ data %>%
 <br>
 
 ```{r echo=TRUE, eval=FALSE}
-data %>%
+data |>
   select(
     starts_with("N") |
       ends_with("Arvore"))
@@ -794,10 +773,10 @@ data %>%
 ]
 
 ```{r sel8, echo=F, eval=F}
-data %>%
+data |>
   select(
     starts_with("N") &
-      !ends_with("Arvore")) %>%
+      !ends_with("Arvore")) |>
   CustomDT
 ```
 ]
@@ -817,7 +796,7 @@ data %>%
 
 .pull-left-10[
 ```{r echo=F, eval=T}
-data %>% CustomDT
+data |> CustomDT
 ```
 ]
 
@@ -830,7 +809,7 @@ data %>% CustomDT
 <br><br>
 
 ```{r echo=TRUE, eval=FALSE}
-data %>%
+data |>
   select(-c(CAP:Selecao))
 ```
 
@@ -839,15 +818,15 @@ data %>%
 <br>
 
 ```{r echo=TRUE, eval=FALSE}
-data %>%
+data |>
   select(!(CAP:Selecao))
 ```
 
 ]
 
 ```{r sel9, echo=F, eval=F}
-data %>%
-  select(-c(CAP:Selecao)) %>%
+data |>
+  select(-c(CAP:Selecao)) |>
   CustomDT
 ```
 ]
@@ -867,7 +846,7 @@ data %>%
 
 .pull-left-10[
 ```{r echo=F, eval=T}
-data %>% CustomDT
+data |> CustomDT
 ```
 ]
 
@@ -880,7 +859,7 @@ data %>% CustomDT
 <br><br>
 
 ```{r echo=TRUE, eval=FALSE}
-data %>%
+data |>
   select(Nome_Especie,
          Selecao, CAP,
          QF, HC)
@@ -889,8 +868,8 @@ data %>%
 ]
 
 ```{r sel10, echo=F, eval=F}
-data %>%
-  select(Nome_Especie, Selecao, CAP, QF, HC) %>%
+data |>
+  select(Nome_Especie, Selecao, CAP, QF, HC) |>
   CustomDT
 ```
 ]
@@ -904,9 +883,8 @@ data %>%
 ---
 
 layout: false
-name: arrange
 class: inverse, top, right
-background-image: url(fig/slide-title/secao.png)
+background-image: url(../assets/capa/sec.png)
 background-size: cover
 
 <br><br><br>
@@ -926,7 +904,7 @@ background-size: cover
 layout: true
 class: with-logo logo-ufpa
 <div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional (PPGBC0030)</div3>/ <div2>Módulo 2 - Introdução ao Tidyverse</div2> </div>
+<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao Tidyverse (Módulo 2)</div2> </div>
 
 ---
 
@@ -937,7 +915,7 @@ class: with-logo logo-ufpa
 
 .pull-left-10[
 ```{r echo=F, eval=T}
-data %>% CustomDT
+data |> CustomDT
 ```
 ]
 
@@ -949,15 +927,15 @@ data %>% CustomDT
 **Ordem crescente de uma variável**
 
 ```{r echo=TRUE, eval=FALSE}
-data %>%
+data |>
   arrange(HC)
 ```
 
 ]
 
 ```{r arr1, echo=F, eval=F}
-data %>%
-  arrange(HC) %>%
+data |>
+  arrange(HC) |>
   CustomDT
 ```
 ]
@@ -977,7 +955,7 @@ data %>%
 
 .pull-left-10[
 ```{r echo=F, eval=T}
-data %>% CustomDT
+data |> CustomDT
 ```
 ]
 
@@ -989,7 +967,7 @@ data %>% CustomDT
 **Ordem decrescente de uma variável**
 
 ```{r echo=TRUE, eval=FALSE}
-data %>%
+data |>
   arrange(
     desc(HC)
     )
@@ -998,8 +976,8 @@ data %>%
 ]
 
 ```{r arr2, echo=F, eval=F}
-data %>%
-  arrange(desc(HC)) %>%
+data |>
+  arrange(desc(HC)) |>
   CustomDT
 ```
 ]
@@ -1019,7 +997,7 @@ data %>%
 
 .pull-left-10[
 ```{r echo=F, eval=T}
-data %>% CustomDT
+data |> CustomDT
 ```
 ]
 
@@ -1031,7 +1009,7 @@ data %>% CustomDT
 **Ordenar em função de duas ou mais variáveis**
 
 ```{r echo=TRUE, eval=FALSE}
-data %>%
+data |>
   arrange(
     CAP, HC
     )
@@ -1040,8 +1018,8 @@ data %>%
 ]
 
 ```{r arr3, echo=F, eval=F}
-data %>%
-  arrange(CAP, HC) %>%
+data |>
+  arrange(CAP, HC) |>
   CustomDT
 ```
 ]
@@ -1055,9 +1033,8 @@ data %>%
 ---
 
 layout: false
-name: filter
 class: inverse, top, right
-background-image: url(fig/slide-title/secao.png)
+background-image: url(../assets/capa/sec.png)
 background-size: cover
 
 <br><br><br>
@@ -1077,7 +1054,7 @@ background-size: cover
 layout: true
 class: with-logo logo-ufpa
 <div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional (PPGBC0030)</div3>/ <div2>Módulo 2 - Introdução ao Tidyverse</div2> </div>
+<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao Tidyverse (Módulo 2)</div2> </div>
 
 ---
 
@@ -1088,7 +1065,7 @@ class: with-logo logo-ufpa
 
 .pull-left-10[
 ```{r echo=F, eval=T}
-data %>% CustomDT
+data |> CustomDT
 ```
 ]
 
@@ -1100,15 +1077,15 @@ data %>% CustomDT
 **Filtrar linhas em função de alguma variável**
 
 ```{r echo=TRUE, eval=FALSE}
-data %>%
+data |>
   filter(HC > 15)
 ```
 
 ]
 
 ```{r fil1, echo=F, eval=F}
-data %>%
-  filter(HC > 15) %>%
+data |>
+  filter(HC > 15) |>
   CustomDT
 ```
 ]
@@ -1129,7 +1106,7 @@ data %>%
 
 .pull-left-10[
 ```{r echo=F, eval=T}
-data %>% CustomDT
+data |> CustomDT
 ```
 ]
 
@@ -1141,15 +1118,15 @@ data %>% CustomDT
 **Filtrar linhas para algum intervalo da variável**
 
 ```{r echo=TRUE, eval=FALSE}
-data %>%
+data |>
   filter(HC > 10 & HC <= 15)
 ```
 
 ]
 
 ```{r fil2, echo=F, eval=F}
-data %>%
-  filter(HC > 10 & HC <= 15) %>%
+data |>
+  filter(HC > 10 & HC <= 15) |>
   CustomDT
 ```
 ]
@@ -1170,7 +1147,7 @@ data %>%
 
 .pull-left-10[
 ```{r echo=F, eval=T}
-data %>% CustomDT
+data |> CustomDT
 ```
 ]
 
@@ -1182,15 +1159,15 @@ data %>% CustomDT
 **Filtrar linhas em função de duas ou mais variáveis**
 
 ```{r echo=TRUE, eval=FALSE}
-data %>%
+data |>
   filter(HC > 10, Selecao == "Explorar")
 ```
 
 ]
 
 ```{r fil3, echo=F, eval=F}
-data %>%
-  filter(HC > 10, Selecao == "Explorar") %>%
+data |>
+  filter(HC > 10, Selecao == "Explorar") |>
   CustomDT
 ```
 ]
@@ -1211,7 +1188,7 @@ data %>%
 
 .pull-left-10[
 ```{r echo=F, eval=T}
-data %>% CustomDT
+data |> CustomDT
 ```
 ]
 
@@ -1224,15 +1201,15 @@ data %>% CustomDT
 
 
 ```{r echo=TRUE, eval=FALSE}
-data %>%
+data |>
   filter(Nome_Especie %in% c('Acapu', 'Tauari'))
 ```
 
 ]
 
 ```{r fil4, echo=F, eval=F}
-data %>%
-  filter(Nome_Especie %in% c('Acapu', 'Tauari')) %>%
+data |>
+  filter(Nome_Especie %in% c('Acapu', 'Tauari')) |>
   CustomDT
 ```
 ]
@@ -1253,7 +1230,7 @@ data %>%
 
 .pull-left-10[
 ```{r echo=F, eval=T}
-data %>% CustomDT
+data |> CustomDT
 ```
 ]
 
@@ -1266,7 +1243,7 @@ data %>% CustomDT
 
 
 ```{r echo=TRUE, eval=FALSE}
-data %>%
+data |>
   filter(Nome_Especie %in% c('Acapu', 'Tauari'),
          HC >= 12, QF == 1)
 ```
@@ -1274,9 +1251,9 @@ data %>%
 ]
 
 ```{r fil5, echo=F, eval=F}
-data %>%
+data |>
   filter(Nome_Especie %in% c('Acapu', 'Tauari'),
-         HC >= 12, QF == 1) %>%
+         HC >= 12, QF == 1) |>
   CustomDT
 ```
 ]
@@ -1291,9 +1268,8 @@ data %>%
 ---
 
 layout: false
-name: mutate
 class: inverse, top, right
-background-image: url(fig/slide-title/secao.png)
+background-image: url(../assets/capa/sec.png)
 background-size: cover
 
 <br><br><br>
@@ -1315,7 +1291,7 @@ background-size: cover
 layout: true
 class: with-logo logo-ufpa
 <div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional (PPGBC0030)</div3>/ <div2>Módulo 2 - Introdução ao Tidyverse</div2> </div>
+<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao Tidyverse (Módulo 2)</div2> </div>
 
 ---
 
@@ -1326,8 +1302,8 @@ class: with-logo logo-ufpa
 
 .pull-left-12[
 ```{r echo=F, eval=T}
-data %>%
-  select(-c(N_Arvore, QF, Selecao)) %>%
+data |>
+  select(-c(N_Arvore, QF, Selecao)) |>
   CustomDT
 ```
 ]
@@ -1340,23 +1316,23 @@ data %>%
 **Criar uma nova variável e adicioná-la à tabela**
 
 ```{r echo=TRUE, eval=FALSE}
-data %>%
+data |>
   mutate(DAP = CAP/pi)
 ```
 <br><br>
 
 `r anicon::faa("hand-point-down", animate="vertical")` **Experimente o comando**
 ```{r echo=TRUE, eval=FALSE}
-data %>%
+data |>
   mutate(DAP = round(CAP/pi, 2))
 ```
 
 ]
 
 ```{r mut1, echo=F, eval=F}
-data %>%
-  select(-c(N_Arvore, QF, Selecao)) %>%
-  mutate(DAP = CAP/pi) %>%
+data |>
+  select(-c(N_Arvore, QF, Selecao)) |>
+  mutate(DAP = CAP/pi) |>
   CustomDT
 ```
 ]
@@ -1376,8 +1352,8 @@ data %>%
 
 .pull-left-12[
 ```{r echo=F, eval=T}
-data %>%
-  select(-c(N_Arvore, QF, Selecao)) %>%
+data |>
+  select(-c(N_Arvore, QF, Selecao)) |>
   CustomDT
 ```
 ]
@@ -1390,23 +1366,23 @@ data %>%
 **Modificar uma variável na tabela**
 
 ```{r echo=TRUE, eval=FALSE}
-data %>%
+data |>
   mutate(CAP = CAP/100)
 ```
 <br><br>
 
 `r anicon::faa("hand-point-down", animate="vertical")` **Experimente o comando**
 ```{r echo=TRUE, eval=FALSE}
-data %>%
+data |>
   mutate(CAP = round(CAP/100, 2))
 ```
 
 ]
 
 ```{r mut2, echo=F, eval=F}
-data %>%
-  select(-c(N_Arvore, QF, Selecao)) %>%
-  mutate(CAP = CAP/100) %>%
+data |>
+  select(-c(N_Arvore, QF, Selecao)) |>
+  mutate(CAP = CAP/100) |>
   CustomDT
 ```
 ]
@@ -1426,8 +1402,8 @@ data %>%
 
 .pull-left-12[
 ```{r echo=F, eval=T}
-data %>%
-  select(-c(N_Arvore, QF, Selecao)) %>%
+data |>
+  select(-c(N_Arvore, QF, Selecao)) |>
   CustomDT
 ```
 ]
@@ -1440,7 +1416,7 @@ data %>%
 **Modificar/criar múltiplas variáveis no mesmo mutate()**
 
 ```{r echo=TRUE, eval=FALSE}
-data %>%
+data |>
   mutate(DAP = CAP/pi,
          CAP = CAP/100,
          gi = (DAP^2*pi)/40000))
@@ -1449,7 +1425,7 @@ data %>%
 
 `r anicon::faa("hand-point-down", animate="vertical")` **Experimente o comando**
 ```{r echo=TRUE, eval=FALSE}
-data %>%
+data |>
   mutate(DAP = CAP/pi,
          CAP = CAP/100,
          gi = (DAP^2*pi)/40000,
@@ -1459,11 +1435,11 @@ data %>%
 ]
 
 ```{r mut3, echo=F, eval=F}
-data %>%
-  select(-c(N_Arvore, QF, Selecao)) %>%
+data |>
+  select(-c(N_Arvore, QF, Selecao)) |>
   mutate(DAP = CAP/pi,
          CAP = CAP/100,
-         gi = (DAP^2*pi)/40000) %>%
+         gi = (DAP^2*pi)/40000) |>
   CustomDT
 ```
 ]
@@ -1483,8 +1459,8 @@ name: ifelse
 
 .pull-left-12[
 ```{r echo=F, eval=T}
-data %>%
-  select(-c(N_Arvore, QF, Selecao)) %>%
+data |>
+  select(-c(N_Arvore, QF, Selecao)) |>
   CustomDT
 ```
 ]
@@ -1501,7 +1477,7 @@ data %>%
 <br>
 
 ```{r echo=TRUE, eval=FALSE}
-data %>%
+data |>
   mutate(Selecao = if_else(
     CAP >= 600, "Matriz", "Não Matriz"
     ))
@@ -1510,10 +1486,10 @@ data %>%
 ]
 
 ```{r mut4, echo=F, eval=F}
-data %>%
-  select(-c(N_Arvore, QF, Selecao)) %>%
+data |>
+  select(-c(N_Arvore, QF, Selecao)) |>
   mutate(Selecao = if_else(
-    CAP >= 600, "Matriz", "Não Matriz")) %>%
+    CAP >= 600, "Matriz", "Não Matriz")) |>
   CustomDT
 ```
 ]
@@ -1534,8 +1510,8 @@ name: casewhen
 
 .pull-left-12[
 ```{r echo=F, eval=T}
-data %>%
-  select(-c(N_Arvore, QF, Selecao)) %>%
+data |>
+  select(-c(N_Arvore, QF, Selecao)) |>
   CustomDT
 ```
 ]
@@ -1556,7 +1532,7 @@ Permite vetorizar várias instruções .green[if_else()]. É um equivalente R da
 Criar uma nova coluna por múltiplas condições mutuamente exclusivas.
 
 ```{r echo=TRUE, eval=FALSE}
-data %>%
+data |>
   mutate(
     Selecao =
       case_when(
@@ -1569,14 +1545,14 @@ data %>%
 ]
 
 ```{r mut5, echo=F, eval=F}
-data %>%
-  select(-c(N_Arvore, QF, Selecao)) %>%
+data |>
+  select(-c(N_Arvore, QF, Selecao)) |>
   mutate(Selecao =
            case_when(
              (CAP >= 600) ~ "Matriz",
              (Nome_Especie == "Acapu") ~ "Protegida",
              (CAP >= 158 & Nome_Especie != "Acapu") ~ "Explorar",
-    )) %>%
+    )) |>
   CustomDT
 ```
 ]
@@ -1596,8 +1572,8 @@ name: acrossmut
 
 .pull-left-12[
 ```{r echo=F, eval=T}
-data %>%
-  select(-c(N_Arvore, QF, Selecao)) %>%
+data |>
+  select(-c(N_Arvore, QF, Selecao)) |>
   CustomDT
 ```
 ]
@@ -1616,7 +1592,7 @@ data %>%
 Auxiliar a aplicar uma operação (função) em várias colunas.
 
 ```{r echo=TRUE, eval=FALSE}
-data %>%
+data |>
   mutate(across(.cols = where(is.numeric),
                 .fns = format,
                 scientific = T
@@ -1627,13 +1603,13 @@ data %>%
 ]
 
 ```{r mut6, echo=F, eval=F}
-data %>%
-  select(-c(N_Arvore, QF, Selecao)) %>%
+data |>
+  select(-c(N_Arvore, QF, Selecao)) |>
   mutate(across(.cols = where(is.numeric),
                 .fns = format,
                 scientific = T
                 )
-         ) %>%
+         ) |>
   CustomDT
 ```
 ]
@@ -1647,9 +1623,8 @@ data %>%
 ---
 
 layout: false
-name: summarise
 class: inverse, top, right
-background-image: url(fig/slide-title/secao.png)
+background-image: url(../assets/capa/sec.png)
 background-size: cover
 
 <br><br><br>
@@ -1671,7 +1646,7 @@ background-size: cover
 layout: true
 class: with-logo logo-ufpa
 <div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional (PPGBC0030)</div3>/ <div2>Módulo 2 - Introdução ao Tidyverse</div2> </div>
+<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao Tidyverse (Módulo 2)</div2> </div>
 
 ---
 
@@ -1682,7 +1657,7 @@ class: with-logo logo-ufpa
 
 .pull-left-10[
 ```{r echo=F, eval=T}
-data %>%
+data |>
   CustomDT
 ```
 ]
@@ -1695,13 +1670,13 @@ data %>%
 **.blue[Uma única estatística de sumarização...]**
 
 ```{r echo=TRUE, eval=FALSE}
-data %>%
+data |>
   summarise(media_HC = mean(HC, na.rm = TRUE))
 ```
 
 ```{r sumr1, echo=F, eval=F}
-data %>%
-  summarise(media_HC = mean(HC, na.rm = TRUE)) %>%
+data |>
+  summarise(media_HC = mean(HC, na.rm = TRUE)) |>
   CustomDT
 ```
 
@@ -1715,7 +1690,7 @@ data %>%
 .font80[
 **.blue[Várias estatísticas na mesma summarise()...]**
 ```{r echo=TRUE, eval=FALSE}
-data %>%
+data |>
   summarise(media_HC = mean(HC, na.rm = TRUE),
             sd_HC = mean(HC, na.rm = TRUE),
             min_HC = min(HC, na.rm = TRUE),
@@ -1723,11 +1698,11 @@ data %>%
 ```
 
 ```{r sumr2, echo=F, eval=F}
-data %>%
+data |>
   summarise(media_HC = mean(HC, na.rm = TRUE),
             sd_HC = mean(HC, na.rm = TRUE),
             min_HC = min(HC, na.rm = TRUE),
-            max_HC = max(HC, na.rm = TRUE)) %>%
+            max_HC = max(HC, na.rm = TRUE)) |>
   CustomDT
 ```
 
@@ -1747,7 +1722,7 @@ data %>%
 
 .pull-left-10[
 ```{r echo=F, eval=T}
-data %>%
+data |>
   CustomDT
 ```
 ]
@@ -1760,7 +1735,7 @@ data %>%
 **.blue[Sumarizando diversas variáveis...]**
 
 ```{r echo=TRUE, eval=FALSE}
-data %>%
+data |>
   summarise(media_HC = mean(HC, na.rm = TRUE),
             sd_HC = sd(HC, na.rm = TRUE),
             media_CAP = mean(CAP, na.rm = TRUE),
@@ -1768,11 +1743,11 @@ data %>%
 ```
 
 ```{r sumr3, echo=F, eval=F}
-data %>%
+data |>
   summarise(media_HC = mean(HC, na.rm = TRUE),
           sd_HC = sd(HC, na.rm = TRUE),
           media_CAP = mean(CAP, na.rm = TRUE),
-          sd_CAP = sd(CAP, na.rm = TRUE)) %>%
+          sd_CAP = sd(CAP, na.rm = TRUE)) |>
 CustomDT
 ```
 
@@ -1792,7 +1767,7 @@ name: across
 
 .pull-left-10[
 ```{r echo=F, eval=T}
-data %>%
+data |>
   CustomDT
 ```
 ]
@@ -1815,7 +1790,7 @@ A função .green[across()] substitui a família de verbos **summarise** com suf
 ]
 
 ```{r echo=TRUE, eval=FALSE}
-data %>%
+data |>
   summarise(across(
     .cols = c(HC, CAP),
     .fns = mean,
@@ -1825,13 +1800,13 @@ data %>%
 ```
 
 ```{r sumr4, echo=F, eval=F}
-data %>%
+data |>
   summarise(across(
     .cols = c(HC, CAP),
     .fns = mean,
     na.rm = TRUE,
     .names = "mean_{.col}"
-  )) %>%
+  )) |>
   CustomDT
 ```
 
@@ -1851,7 +1826,7 @@ data %>%
 
 .pull-left-10[
 ```{r echo=F, eval=T}
-data %>%
+data |>
   CustomDT
 ```
 ]
@@ -1868,7 +1843,7 @@ data %>%
 <br>
 
 ```{r echo=TRUE, eval=FALSE}
-data %>%
+data |>
   summarise(across(.cols = c(HC, CAP),
                    .fns = list(media=mean, desv=sd),
                    na.rm = TRUE,
@@ -1878,13 +1853,13 @@ data %>%
 ```
 
 ```{r sumr5, echo=F, eval=F}
-data %>%
+data |>
   summarise(across(.cols = c(HC, CAP),
                    .fns = list(media=mean, desv=sd),
                    na.rm = TRUE,
                    .names = "{.col}.{.fn}"
                    )
-            ) %>%
+            ) |>
   CustomDT
 ```
 
@@ -1898,9 +1873,8 @@ data %>%
 ---
 
 layout: false
-name: groupby
 class: inverse, top, right
-background-image: url(fig/slide-title/secao.png)
+background-image: url(../assets/capa/sec.png)
 background-size: cover
 
 <br><br><br>
@@ -1922,7 +1896,7 @@ background-size: cover
 layout: true
 class: with-logo logo-ufpa
 <div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional (PPGBC0030)</div3>/ <div2>Módulo 2 - Introdução ao Tidyverse</div2> </div>
+<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao Tidyverse (Módulo 2)</div2> </div>
 
 ---
 
@@ -1933,7 +1907,7 @@ class: with-logo logo-ufpa
 
 .pull-left-10[
 ```{r echo=F, eval=T}
-data %>%
+data |>
   CustomDT
 ```
 ]
@@ -1949,15 +1923,15 @@ data %>%
 .green[**Contagem por grupo**] - Uma variável
 
 ```{r echo=TRUE, eval=FALSE}
-data %>%
-  group_by(Nome_Especie) %>%
+data |>
+  group_by(Nome_Especie) |>
   summarise(n = n())
 ```
 
 ```{r gby, echo=F, eval=F}
-data %>%
-  group_by(Nome_Especie) %>%
-  summarise(n = n()) %>%
+data |>
+  group_by(Nome_Especie) |>
+  summarise(n = n()) |>
   CustomDT
 ```
 
@@ -1977,7 +1951,7 @@ data %>%
 
 .pull-left-10[
 ```{r echo=F, eval=T}
-data %>%
+data |>
   CustomDT
 ```
 ]
@@ -1993,15 +1967,15 @@ data %>%
 .green[**Contagem por grupo**] - Múltiplas variáveis
 
 ```{r echo=TRUE, eval=FALSE}
-data %>%
-  group_by(Nome_Especie, Selecao) %>%
+data |>
+  group_by(Nome_Especie, Selecao) |>
   summarise(n = n())
 ```
 
 ```{r gby2, echo=F, eval=F}
-data %>%
-  group_by(Nome_Especie, Selecao) %>%
-  summarise(n = n()) %>%
+data |>
+  group_by(Nome_Especie, Selecao) |>
+  summarise(n = n()) |>
   CustomDT
 ```
 
@@ -2020,7 +1994,7 @@ data %>%
 
 .pull-left-10[
 ```{r echo=F, eval=T}
-data %>%
+data |>
   CustomDT
 ```
 ]
@@ -2036,8 +2010,8 @@ data %>%
 .green[**Média e desvio padrão por grupo**] - Múltiplas variáveis 
 
 ```{r echo=TRUE, eval=FALSE}
-data %>%
-  group_by(Nome_Especie) %>%
+data |>
+  group_by(Nome_Especie) |>
   summarise(across(.cols = c(HC, CAP),
                    .fns = list(media=mean, desv=sd),
                    na.rm = TRUE,
@@ -2048,15 +2022,15 @@ data %>%
 ```
 
 ```{r gby3, echo=F, eval=F}
-data %>%
-  group_by(Nome_Especie) %>%
+data |>
+  group_by(Nome_Especie) |>
   summarise(across(.cols = c(HC, CAP),
                    .fns = list(media=mean, desv=sd),
                    na.rm = TRUE,
                    .names = "{.col}.{.fn}"
                    ),
             n = n()
-            ) %>%
+            ) |>
   CustomDT
 ```
 
@@ -2069,6 +2043,17 @@ data %>%
 <!--Slide XX -->
 ---
 layout: false
-class: inverse, top, right
-background-image: url(fig/slide-title/end.png)
+name: etim
+class: inverse, middle, center
+background-image: url(../assets/capa/sec.png)
 background-size: cover
+
+## .font200[Obrigado!]
+
+```{r, echo=FALSE, out.width='20%', fig.align='center', fig.cap='', dpi=600}
+knitr::include_graphics('../assets/logos/LMFTCA.png')
+```
+
+👨🏻‍👩🏻‍👦🏻‍👦🏻 [@lmftca_ufpa](https://www.instagram.com/lmftca_ufpa/)
+
+🌎 [https://www.lmftca.com.br/](https://www.lmftca.com.br/)
