@@ -104,7 +104,7 @@ CustomDT <- function(data){
 <!-- title-slide -->
 # Estatística Computacional com R <br> (PPGBC/UFPA e PPGCTIF/UFOPA)
 
-## ᨒ <br> `r anicon::faa("pagelines", animate="horizontal", colour="green")` .font80[Visualização de Dados]`r anicon::faa("pagelines", animate="horizontal", colour="green")`
+## ᨒ <br> `r anicon::faa("pagelines", animate="horizontal", colour="green")` .font80[Visualização de Dados no R]`r anicon::faa("pagelines", animate="horizontal", colour="green")`
 ###### (Pacote: ggplot2)
 
 ##### 〰〰〰〰〰〰🌱〰〰〰〰〰〰
@@ -311,6 +311,31 @@ layout: true
 class: with-logo logo-lmftca-fixed
 <div class="my-header"></div>
 <div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao Tidyverse (Módulo 2)</div2> </div>
+
+---
+name: workflow
+## Fluxo de Trabalho em Ciência de Dados com R
+
+<br>
+
+.center[
+```{r echo=FALSE, out.width='70%', fig.align='center', fig.cap='', dpi=600}
+knitr::include_graphics("fig/workflow.png")
+```
+.font65[**Fonte**: WICKHAM, H.; ÇETINKAYA-RUNDEL, M.; GROLEMUND, G. R for Data Science: Import, Tidy, Transform, Visualize, and Model Data. 2. ed. Sebastopol: O'Reilly Media, 2023.]
+]
+
+<br>
+
+.center[
+.font110[
+.alert2[
+🎯 **Foco da aula**: **Visualizar Dados**
+
+.orange[**ggplot2**]
+]
+]
+]
 
 ---
 name: mot
