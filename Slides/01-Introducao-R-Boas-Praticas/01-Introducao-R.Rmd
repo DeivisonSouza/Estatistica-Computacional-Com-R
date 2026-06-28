@@ -1,6 +1,6 @@
 ---
 title: "Estatística Computacional com R"
-subtitle: "Introdução ao R-base"
+subtitle: "Introdução ao R (Instalação, Sintaxe e Projetos)"
 author: "Prof. Dr. Deivison Venicio Souza"
 institute: "Universidade Federal do Pará (UFPA)"
 date: ""
@@ -106,7 +106,17 @@ use_clipboard()
 layout: true
 class: with-logo logo-lmftca-fixed
 <div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao R-base (Módulo 1)</div2> </div>
+<div class="my-footer">
+<span>
+Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
+&emsp;&emsp;
+<div2>Estatística Computacional com R</div2>
+&bull;
+<div3>Introdução ao R (Módulo 1)</div3>
+&bull;
+<div4>Instalação, Sintaxe e Projetos</div4>
+</span>
+</div>
 
 ---
 
@@ -209,7 +219,17 @@ background-size: cover
 layout: true
 class: with-logo logo-lmftca-fixed
 <div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional Com R</div3>/ <div2>Módulo 1 - Introdução ao R-base</div2> </div>
+<div class="my-footer">
+<span>
+Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
+&emsp;&emsp;
+<div2>Estatística Computacional com R</div2>
+&bull;
+<div3>Introdução ao R (Módulo 1)</div3>
+&bull;
+<div4>Instalação, Sintaxe e Projetos</div4>
+</span>
+</div>
 
 ---
 name: R
@@ -459,7 +479,17 @@ background-size: cover
 layout: true
 class: with-logo logo-lmftca-fixed
 <div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional Com R</div3>/ <div2>Módulo 1 - Introdução ao R-base</div2> </div>
+<div class="my-footer">
+<span>
+Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
+&emsp;&emsp;
+<div2>Estatística Computacional com R</div2>
+&bull;
+<div3>Introdução ao R (Módulo 1)</div3>
+&bull;
+<div4>Instalação, Sintaxe e Projetos</div4>
+</span>
+</div>
 
 ---
 name: expressao
@@ -768,7 +798,17 @@ background-size: cover
 layout: true
 class: with-logo logo-lmftca-fixed
 <div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional Com R</div3>/ <div2>Módulo 1 - Introdução ao R-base</div2> </div>
+<div class="my-footer">
+<span>
+Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
+&emsp;&emsp;
+<div2>Estatística Computacional com R</div2>
+&bull;
+<div3>Introdução ao R (Módulo 1)</div3>
+&bull;
+<div4>Instalação, Sintaxe e Projetos</div4>
+</span>
+</div>
 
 ---
 name: projeto
