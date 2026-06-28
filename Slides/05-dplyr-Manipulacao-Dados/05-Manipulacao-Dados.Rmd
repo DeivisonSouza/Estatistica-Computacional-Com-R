@@ -119,8 +119,17 @@ CustomDT <- function(data){
 
 layout: true
 class: with-logo logo-lmftca-fixed
-<div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao Tidyverse (Módulo 2)</div2> </div>
+<div class="my-footer">
+<span>
+Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
+&emsp;&emsp;
+<div2>Estatística Computacional com R</div2>
+&bull;
+<div3>Introdução ao Tidyverse (Módulo 2)</div3>
+&bull;
+<div4>Manipulação de Dados no R: dplyr</div4>
+</span>
+</div>
 
 ---
 
@@ -221,9 +230,18 @@ knitr::include_graphics("https://dplyr.tidyverse.org/logo.png")
 ---
 
 layout: true
-class: with-logo logo-ufpa
-<div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao Tidyverse (Módulo 2)</div2> </div>
+class: with-logo logo-lmftca-fixed
+<div class="my-footer">
+<span>
+Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
+&emsp;&emsp;
+<div2>Estatística Computacional com R</div2>
+&bull;
+<div3>Introdução ao Tidyverse (Módulo 2)</div3>
+&bull;
+<div4>Manipulação de Dados no R: dplyr</div4>
+</span>
+</div>
 
 ---
 name: workflow
@@ -366,9 +384,18 @@ background-size: cover
 ---
 
 layout: true
-class: with-logo logo-ufpa
-<div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao Tidyverse (Módulo 2)</div2> </div>
+class: with-logo logo-lmftca-fixed
+<div class="my-footer">
+<span>
+Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
+&emsp;&emsp;
+<div2>Estatística Computacional com R</div2>
+&bull;
+<div3>Introdução ao Tidyverse (Módulo 2)</div3>
+&bull;
+<div4>Manipulação de Dados no R: dplyr</div4>
+</span>
+</div>
 
 ---
 
@@ -927,9 +954,18 @@ background-size: cover
 ---
 
 layout: true
-class: with-logo logo-ufpa
-<div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao Tidyverse (Módulo 2)</div2> </div>
+class: with-logo logo-lmftca-fixed
+<div class="my-footer">
+<span>
+Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
+&emsp;&emsp;
+<div2>Estatística Computacional com R</div2>
+&bull;
+<div3>Introdução ao Tidyverse (Módulo 2)</div3>
+&bull;
+<div4>Manipulação de Dados no R: dplyr</div4>
+</span>
+</div>
 
 ---
 
@@ -1077,9 +1113,18 @@ background-size: cover
 ---
 
 layout: true
-class: with-logo logo-ufpa
-<div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao Tidyverse (Módulo 2)</div2> </div>
+class: with-logo logo-lmftca-fixed
+<div class="my-footer">
+<span>
+Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
+&emsp;&emsp;
+<div2>Estatística Computacional com R</div2>
+&bull;
+<div3>Introdução ao Tidyverse (Módulo 2)</div3>
+&bull;
+<div4>Manipulação de Dados no R: dplyr</div4>
+</span>
+</div>
 
 ---
 
@@ -1314,9 +1359,18 @@ background-size: cover
 ---
 
 layout: true
-class: with-logo logo-ufpa
-<div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao Tidyverse (Módulo 2)</div2> </div>
+class: with-logo logo-lmftca-fixed
+<div class="my-footer">
+<span>
+Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
+&emsp;&emsp;
+<div2>Estatística Computacional com R</div2>
+&bull;
+<div3>Introdução ao Tidyverse (Módulo 2)</div3>
+&bull;
+<div4>Manipulação de Dados no R: dplyr</div4>
+</span>
+</div>
 
 ---
 
@@ -1669,9 +1723,18 @@ background-size: cover
 ---
 
 layout: true
-class: with-logo logo-ufpa
-<div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao Tidyverse (Módulo 2)</div2> </div>
+class: with-logo logo-lmftca-fixed
+<div class="my-footer">
+<span>
+Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
+&emsp;&emsp;
+<div2>Estatística Computacional com R</div2>
+&bull;
+<div3>Introdução ao Tidyverse (Módulo 2)</div3>
+&bull;
+<div4>Manipulação de Dados no R: dplyr</div4>
+</span>
+</div>
 
 ---
 
@@ -1919,9 +1982,18 @@ background-size: cover
 ---
 
 layout: true
-class: with-logo logo-ufpa
-<div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao Tidyverse (Módulo 2)</div2> </div>
+class: with-logo logo-lmftca-fixed
+<div class="my-footer">
+<span>
+Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
+&emsp;&emsp;
+<div2>Estatística Computacional com R</div2>
+&bull;
+<div3>Introdução ao Tidyverse (Módulo 2)</div3>
+&bull;
+<div4>Manipulação de Dados no R: dplyr</div4>
+</span>
+</div>
 
 ---
 

@@ -102,8 +102,17 @@ use_clipboard()
 
 layout: true
 class: with-logo logo-lmftca-fixed
-<div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao Tidyverse (Módulo 2)</div2> </div>
+<div class="my-footer">
+<span>
+Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
+&emsp;&emsp;
+<div2>Estatística Computacional com R</div2>
+&bull;
+<div3>Introdução ao Tidyverse (Módulo 2)</div3>
+&bull;
+<div4>Im(Ex)portação de Dados no R: readr, readxl e writexl</div4>
+</span>
+</div>
 
 ---
 
@@ -183,9 +192,18 @@ Importação e Exportação de Dados
 ---
 
 layout: true
-class: with-logo logo-ufpa
-<div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao Tidyverse (Módulo 2)</div2> </div>
+class: with-logo logo-lmftca-fixed
+<div class="my-footer">
+<span>
+Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
+&emsp;&emsp;
+<div2>Estatística Computacional com R</div2>
+&bull;
+<div3>Introdução ao Tidyverse (Módulo 2)</div3>
+&bull;
+<div4>Im(Ex)portação de Dados no R: readr, readxl e writexl</div4>
+</span>
+</div>
 
 ---
 name: workflow
@@ -423,9 +441,18 @@ Importação e Exportação de Dados
 ---
 
 layout: true
-class: with-logo logo-ufpa
-<div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao Tidyverse (Módulo 2)</div2> </div>
+class: with-logo logo-lmftca-fixed
+<div class="my-footer">
+<span>
+Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
+&emsp;&emsp;
+<div2>Estatística Computacional com R</div2>
+&bull;
+<div3>Introdução ao Tidyverse (Módulo 2)</div3>
+&bull;
+<div4>Im(Ex)portação de Dados no R: readr, readxl e writexl</div4>
+</span>
+</div>
 
 ---
 name: fie
@@ -898,9 +925,18 @@ Importação e Exportação de Dados
 ---
 
 layout: true
-class: with-logo logo-ufpa
-<div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao Tidyverse (Módulo 2)</div2> </div>
+class: with-logo logo-lmftca-fixed
+<div class="my-footer">
+<span>
+Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
+&emsp;&emsp;
+<div2>Estatística Computacional com R</div2>
+&bull;
+<div3>Introdução ao Tidyverse (Módulo 2)</div3>
+&bull;
+<div4>Im(Ex)portação de Dados no R: readr, readxl e writexl</div4>
+</span>
+</div>
 
 ---
 name: read_intro
@@ -1198,9 +1234,18 @@ Importação e Exportação de Dados
 ---
 
 layout: true
-class: with-logo logo-ufpa
-<div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao Tidyverse (Módulo 2)</div2> </div>
+class: with-logo logo-lmftca-fixed
+<div class="my-footer">
+<span>
+Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
+&emsp;&emsp;
+<div2>Estatística Computacional com R</div2>
+&bull;
+<div3>Introdução ao Tidyverse (Módulo 2)</div3>
+&bull;
+<div4>Im(Ex)portação de Dados no R: readr, readxl e writexl</div4>
+</span>
+</div>
 
 ---
 name: col_select
@@ -1376,9 +1421,18 @@ Importação e Exportação de Dados
 ---
 
 layout: true
-class: with-logo logo-ufpa
-<div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao Tidyverse (Módulo 2)</div2> </div>
+class: with-logo logo-lmftca-fixed
+<div class="my-footer">
+<span>
+Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
+&emsp;&emsp;
+<div2>Estatística Computacional com R</div2>
+&bull;
+<div3>Introdução ao Tidyverse (Módulo 2)</div3>
+&bull;
+<div4>Im(Ex)portação de Dados no R: readr, readxl e writexl</div4>
+</span>
+</div>
 
 ---
 name: tibble
@@ -1502,9 +1556,18 @@ Aprender a **manipular e transformar dados** utilizando o pacote **dplyr**.
 ---
 
 layout: true
-class: with-logo logo-ufpa
-<div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao Tidyverse (Módulo 2)</div2> </div>
+class: with-logo logo-lmftca-fixed
+<div class="my-footer">
+<span>
+Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
+&emsp;&emsp;
+<div2>Estatística Computacional com R</div2>
+&bull;
+<div3>Introdução ao Tidyverse (Módulo 2)</div3>
+&bull;
+<div4>Im(Ex)portação de Dados no R: readr, readxl e writexl</div4>
+</span>
+</div>
 
 ---
 
