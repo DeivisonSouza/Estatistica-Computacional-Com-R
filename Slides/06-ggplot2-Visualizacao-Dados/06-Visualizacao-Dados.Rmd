@@ -105,7 +105,7 @@ CustomDT <- function(data){
 # Estatística Computacional com R <br> (PPGBC/UFPA e PPGCTIF/UFOPA)
 
 ## ᨒ <br> `r anicon::faa("pagelines", animate="horizontal", colour="green")` .font80[Visualização de Dados no R]`r anicon::faa("pagelines", animate="horizontal", colour="green")`
-###### (Pacote: ggplot2)
+###### (Pacotes: ggplot2 e patchwork)
 
 ##### 〰〰〰〰〰〰🌱〰〰〰〰〰〰
 ##### ᨒ
@@ -121,8 +121,17 @@ CustomDT <- function(data){
 
 layout: true
 class: with-logo logo-lmftca-fixed
-<div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao Tidyverse (Módulo 2)</div2> </div>
+<div class="my-footer">
+<span>
+Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
+&emsp;&emsp;
+<div2>Estatística Computacional com R</div2>
+&bull;
+<div3>Introdução ao Tidyverse (Módulo 2)</div3>
+&bull;
+<div4>Visualização de Dados no R: ggplot2</div4>
+</span>
+</div>
 
 ---
 
@@ -309,8 +318,17 @@ knitr::include_graphics("https://ggplot2.tidyverse.org/logo.png")
 
 layout: true
 class: with-logo logo-lmftca-fixed
-<div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao Tidyverse (Módulo 2)</div2> </div>
+<div class="my-footer">
+<span>
+Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
+&emsp;&emsp;
+<div2>Estatística Computacional com R</div2>
+&bull;
+<div3>Introdução ao Tidyverse (Módulo 2)</div3>
+&bull;
+<div4>Visualização de Dados no R: ggplot2</div4>
+</span>
+</div>
 
 ---
 name: workflow
@@ -2172,8 +2190,17 @@ knitr::include_graphics("https://patchwork.data-imaginist.com/reference/figures/
 
 layout: true
 class: with-logo logo-lmftca-fixed
-<div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao Tidyverse (Módulo 2)</div2> </div>
+<div class="my-footer">
+<span>
+Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
+&emsp;&emsp;
+<div2>Estatística Computacional com R</div2>
+&bull;
+<div3>Introdução ao Tidyverse (Módulo 2)</div3>
+&bull;
+<div4>Visualização de Dados no R: ggplot2</div4>
+</span>
+</div>
 
 ---
 name: patchwork
@@ -2817,8 +2844,17 @@ g3 + g1 +
 
 layout: true
 class: with-logo logo-lmftca-fixed
-<div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao Tidyverse (Módulo 2)</div2> </div>
+<div class="my-footer">
+<span>
+Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
+&emsp;&emsp;
+<div2>Estatística Computacional com R</div2>
+&bull;
+<div3>Introdução ao Tidyverse (Módulo 2)</div3>
+&bull;
+<div4>Visualização de Dados no R: ggplot2</div4>
+</span>
+</div>
 
 <!--Slide XX -->
 ---

@@ -157,12 +157,17 @@ div.my-header {
 }
 
 div2 {
-  color: #0000ff;
+  color: #2C7FB8;   /* Azul */
   font-weight: bold;
 }
 
 div3 {
-  color: #0B2545;
+  color: #1B9E77;   /* Verde */
+  font-weight: bold;
+}
+
+div4 {
+  color: #D95F02;   /* Laranja */
   font-weight: bold;
 }
 
