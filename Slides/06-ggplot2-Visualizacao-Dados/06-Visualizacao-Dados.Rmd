@@ -121,6 +121,7 @@ CustomDT <- function(data){
 
 layout: true
 class: with-logo logo-lmftca-fixed
+<div class="my-header"></div>
 <div class="my-footer">
 <span>
 Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
@@ -318,6 +319,7 @@ knitr::include_graphics("https://ggplot2.tidyverse.org/logo.png")
 
 layout: true
 class: with-logo logo-lmftca-fixed
+<div class="my-header"></div>
 <div class="my-footer">
 <span>
 Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
@@ -2190,6 +2192,7 @@ knitr::include_graphics("https://patchwork.data-imaginist.com/reference/figures/
 
 layout: true
 class: with-logo logo-lmftca-fixed
+<div class="my-header"></div>
 <div class="my-footer">
 <span>
 Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
@@ -2844,6 +2847,7 @@ g3 + g1 +
 
 layout: true
 class: with-logo logo-lmftca-fixed
+<div class="my-header"></div>
 <div class="my-footer">
 <span>
 Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)

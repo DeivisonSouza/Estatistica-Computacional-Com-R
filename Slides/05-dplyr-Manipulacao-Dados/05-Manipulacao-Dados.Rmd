@@ -1,6 +1,6 @@
 ---
 title: "Estatística Computacional com R"
-subtitle: "Importação e Exportação de Dados"
+subtitle: "Manipulação de Dados no R (dplyr)"
 author: "Prof. Dr. Deivison Venicio Souza"
 institute: "Universidade Federal do Pará (UFPA)"
 date: ""
