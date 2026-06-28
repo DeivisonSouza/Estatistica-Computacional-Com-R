@@ -102,7 +102,7 @@ CustomDT <- function(data){
 <!-- title-slide -->
 # Estatística Computacional com R <br> (PPGBC/UFPA e PPGCTIF/UFOPA)
 
-## ᨒ <br> `r anicon::faa("pagelines", animate="horizontal", colour="green")` .font80[Manipulação de Dados]`r anicon::faa("pagelines", animate="horizontal", colour="green")`
+## ᨒ <br> `r anicon::faa("pagelines", animate="horizontal", colour="green")` .font80[Manipulação de Dados no R]`r anicon::faa("pagelines", animate="horizontal", colour="green")`
 ###### (Pacote: dplyr)
 
 ##### 〰〰〰〰〰〰🌱〰〰〰〰〰〰

@@ -89,7 +89,7 @@ use_clipboard()
 # Estatística Computacional com R <br> (PPGBC/UFPA e PPGCTIF/UFOPA)
 
 ## ᨒ <br> `r anicon::faa("pagelines", animate="horizontal", colour="green")` Introdução ao R `r anicon::faa("pagelines", animate="horizontal", colour="green")`
-###### (Mecanismos de Indexação)
+###### (Mecanismos de Indexação no R)
 
 ##### 〰〰〰〰〰〰🌱〰〰〰〰〰〰
 ##### ᨒ
