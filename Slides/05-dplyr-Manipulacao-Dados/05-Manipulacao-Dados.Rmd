@@ -227,6 +227,32 @@ class: with-logo logo-ufpa
 
 ---
 
+name: workflow
+## Fluxo de Trabalho em Ciência de Dados com R
+
+<br>
+
+.center[
+```{r echo=FALSE, out.width='70%', fig.align='center', fig.cap='', dpi=600}
+knitr::include_graphics("fig/workflow.png")
+```
+.font65[**Fonte**: WICKHAM, H.; ÇETINKAYA-RUNDEL, M.; GROLEMUND, G. R for Data Science: Import, Tidy, Transform, Visualize, and Model Data. 2. ed. Sebastopol: O'Reilly Media, 2023.]
+]
+
+<br>
+
+.center[
+.font110[
+.alert2[
+🎯 **Foco da aula**: **Organizar e Transformar Dados**
+
+.orange[**dplyr**]
+]
+]
+]
+
+---
+
 ## Manipulação de dados com .orange[dplyr]
 <br>
 

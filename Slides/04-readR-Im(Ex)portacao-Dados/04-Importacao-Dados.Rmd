@@ -197,30 +197,18 @@ name: workflow
 ```{r echo=FALSE, out.width='70%', fig.align='center', fig.cap='', dpi=600}
 knitr::include_graphics("fig/workflow.png")
 ```
-.font80[**Fonte**: WICKHAM, H.; ÇETINKAYA-RUNDEL, M.; GROLEMUND, G. R for Data Science: Import, Tidy, Transform, Visualize, and Model Data. 2. ed. Sebastopol: O'Reilly Media, 2023.]
+.font65[**Fonte**: WICKHAM, H.; ÇETINKAYA-RUNDEL, M.; GROLEMUND, G. R for Data Science: Import, Tidy, Transform, Visualize, and Model Data. 2. ed. Sebastopol: O'Reilly Media, 2023.]
 ]
 
 <br>
 
 .center[
 .font110[
-**Esta aula aborda a primeira etapa desse fluxo:**
-]
-]
-
-.center[
-.font120[
 .alert2[
-**Im(Ex)portar dados**
-]
-]
-]
+🎯 **Foco da aula**: **Exportar e Importar Dados**
 
-<br>
-
-.center[
-.font95[
 .orange[**readr**] • .orange[**readxl**] • .orange[**writexl**]
+]
 ]
 ]
 
