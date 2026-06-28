@@ -1,6 +1,6 @@
 ---
 title: "Estatística Computacional com R"
-subtitle: "Importação e Exportação de Dados"
+subtitle: "Importação e Exportação de Dados no R"
 author: "Prof. Dr. Deivison Venicio Souza"
 institute: "Universidade Federal do Pará (UFPA)"
 date: ""
@@ -189,7 +189,7 @@ class: with-logo logo-ufpa
 
 ---
 name: workflow
-## Fluxo de trabalho em Ciência de Dados com R
+## Fluxo de Trabalho em Ciência de Dados com R
 
 <br>
 
@@ -197,6 +197,7 @@ name: workflow
 ```{r echo=FALSE, out.width='70%', fig.align='center', fig.cap='', dpi=600}
 knitr::include_graphics("fig/workflow.png")
 ```
+.font80[**Fonte**: WICKHAM, H.; ÇETINKAYA-RUNDEL, M.; GROLEMUND, G. R for Data Science: Import, Tidy, Transform, Visualize, and Model Data. 2. ed. Sebastopol: O'Reilly Media, 2023.]
 ]
 
 <br>
@@ -258,7 +259,7 @@ knitr::include_graphics("fig/tidy.png")
 
 .center[
 .font65[
-**Fonte**: Elaborado com auxílio do ChatGPT (OpenAI), com base na documentação oficial do Tidyverse.
+**Fonte**: Gerada com ChatGPT (OpenAI, modelo GPT-5.5, 2026).
 ]
 ]
 
@@ -1509,6 +1510,21 @@ Aprender a **manipular e transformar dados** utilizando o pacote **dplyr**.
 <br><br>
 
 💬 Perguntas, comentários ou sugestões?
+
+---
+
+layout: true
+class: with-logo logo-ufpa
+<div class="my-header"></div>
+<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao Tidyverse (Módulo 2)</div2> </div>
+
+---
+
+## Referência
+
+<br>
+
+WICKHAM, Hadley; ÇETINKAYA-RUNDEL, Mine; GROLEMUND, Garrett. R for Data Science: Import, Tidy, Transform, Visualize, and Model Data. 2. ed. Sebastopol: O'Reilly Media, 2023. ([eBook Inglês](https://www.oreilly.com/library/view/r-for-data/9781492097396/introduction01.html?utm_source=chatgpt.com)) - ([eBook Português](https://pt.r4ds.hadley.nz/)).
 
 ---
 layout: false
