@@ -106,7 +106,17 @@ use_clipboard()
 layout: true
 class: with-logo logo-lmftca-fixed
 <div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao R-base (Módulo 1)</div2> </div>
+<div class="my-footer">
+<span>
+Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
+&emsp;&emsp;
+<div2>Estatística Computacional com R</div2>
+&bull;
+<div3>Introdução ao R (Módulo 1)</div3>
+&bull;
+<div4>Mecanismos de Indexação no R</div4>
+</span>
+</div>
 
 ---
 
@@ -229,9 +239,19 @@ Mecanismos de Indexação no R
 ---
 
 layout: true
-class: with-logo logo-ufpa
+class: with-logo logo-lmftca-fixed
 <div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao R-base (Módulo 1)</div2> </div>
+<div class="my-footer">
+<span>
+Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
+&emsp;&emsp;
+<div2>Estatística Computacional com R</div2>
+&bull;
+<div3>Introdução ao R (Módulo 1)</div3>
+&bull;
+<div4>Mecanismos de Indexação no R</div4>
+</span>
+</div>
 
 ---
 
@@ -319,9 +339,19 @@ Mecanismos de Indexação no R
 ---
 
 layout: true
-class: with-logo logo-ufpa
+class: with-logo logo-lmftca-fixed
 <div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao R-base (Módulo 1)</div2> </div>
+<div class="my-footer">
+<span>
+Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
+&emsp;&emsp;
+<div2>Estatística Computacional com R</div2>
+&bull;
+<div3>Introdução ao R (Módulo 1)</div3>
+&bull;
+<div4>Mecanismos de Indexação no R</div4>
+</span>
+</div>
 
 ---
 
@@ -647,9 +677,19 @@ Mecanismos de Indexação no R
 ---
 
 layout: true
-class: with-logo logo-ufpa
+class: with-logo logo-lmftca-fixed
 <div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao R (Módulo 1)</div2> </div>
+<div class="my-footer">
+<span>
+Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
+&emsp;&emsp;
+<div2>Estatística Computacional com R</div2>
+&bull;
+<div3>Introdução ao R (Módulo 1)</div3>
+&bull;
+<div4>Mecanismos de Indexação no R</div4>
+</span>
+</div>
 
 ---
 
@@ -1070,9 +1110,19 @@ Mecanismos de Indexação no R
 ---
 
 layout: true
-class: with-logo logo-ufpa
+class: with-logo logo-lmftca-fixed
 <div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao R (Módulo 1)</div2> </div>
+<div class="my-footer">
+<span>
+Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
+&emsp;&emsp;
+<div2>Estatística Computacional com R</div2>
+&bull;
+<div3>Introdução ao R (Módulo 1)</div3>
+&bull;
+<div4>Mecanismos de Indexação no R</div4>
+</span>
+</div>
 
 ---
 
@@ -1377,9 +1427,19 @@ Mecanismos de Indexação no R
 ---
 
 layout: true
-class: with-logo logo-ufpa
+class: with-logo logo-lmftca-fixed
 <div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao R (Módulo 1)</div2> </div>
+<div class="my-footer">
+<span>
+Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
+&emsp;&emsp;
+<div2>Estatística Computacional com R</div2>
+&bull;
+<div3>Introdução ao R (Módulo 1)</div3>
+&bull;
+<div4>Mecanismos de Indexação no R</div4>
+</span>
+</div>
 
 ---
 
@@ -1933,9 +1993,19 @@ Mecanismos de Indexação no R
 ---
 
 layout: true
-class: with-logo logo-ufpa
+class: with-logo logo-lmftca-fixed
 <div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R</div3>/ <div2>Introdução ao R (Módulo 1)</div2> </div>
+<div class="my-footer">
+<span>
+Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
+&emsp;&emsp;
+<div2>Estatística Computacional com R</div2>
+&bull;
+<div3>Introdução ao R (Módulo 1)</div3>
+&bull;
+<div4>Mecanismos de Indexação no R</div4>
+</span>
+</div>
 
 ---
 name: IndL

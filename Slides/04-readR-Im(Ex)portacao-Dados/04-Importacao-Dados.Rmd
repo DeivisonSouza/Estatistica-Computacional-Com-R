@@ -102,6 +102,7 @@ use_clipboard()
 
 layout: true
 class: with-logo logo-lmftca-fixed
+<div class="my-header"></div>
 <div class="my-footer">
 <span>
 Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
@@ -193,6 +194,7 @@ Importação e Exportação de Dados
 
 layout: true
 class: with-logo logo-lmftca-fixed
+<div class="my-header"></div>
 <div class="my-footer">
 <span>
 Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
@@ -442,6 +444,7 @@ Importação e Exportação de Dados
 
 layout: true
 class: with-logo logo-lmftca-fixed
+<div class="my-header"></div>
 <div class="my-footer">
 <span>
 Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
@@ -926,6 +929,7 @@ Importação e Exportação de Dados
 
 layout: true
 class: with-logo logo-lmftca-fixed
+<div class="my-header"></div>
 <div class="my-footer">
 <span>
 Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
@@ -1235,6 +1239,7 @@ Importação e Exportação de Dados
 
 layout: true
 class: with-logo logo-lmftca-fixed
+<div class="my-header"></div>
 <div class="my-footer">
 <span>
 Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
@@ -1422,6 +1427,7 @@ Importação e Exportação de Dados
 
 layout: true
 class: with-logo logo-lmftca-fixed
+<div class="my-header"></div>
 <div class="my-footer">
 <span>
 Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
@@ -1557,6 +1563,7 @@ Aprender a **manipular e transformar dados** utilizando o pacote **dplyr**.
 
 layout: true
 class: with-logo logo-lmftca-fixed
+<div class="my-header"></div>
 <div class="my-footer">
 <span>
 Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
