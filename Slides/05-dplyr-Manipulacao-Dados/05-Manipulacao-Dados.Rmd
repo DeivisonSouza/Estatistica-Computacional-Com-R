@@ -119,6 +119,7 @@ CustomDT <- function(data){
 
 layout: true
 class: with-logo logo-lmftca-fixed
+<div class="my-header"></div>
 <div class="my-footer">
 <span>
 Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
@@ -231,6 +232,7 @@ knitr::include_graphics("https://dplyr.tidyverse.org/logo.png")
 
 layout: true
 class: with-logo logo-lmftca-fixed
+<div class="my-header"></div>
 <div class="my-footer">
 <span>
 Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
@@ -385,6 +387,7 @@ background-size: cover
 
 layout: true
 class: with-logo logo-lmftca-fixed
+<div class="my-header"></div>
 <div class="my-footer">
 <span>
 Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
@@ -955,6 +958,7 @@ background-size: cover
 
 layout: true
 class: with-logo logo-lmftca-fixed
+<div class="my-header"></div>
 <div class="my-footer">
 <span>
 Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
@@ -1114,6 +1118,7 @@ background-size: cover
 
 layout: true
 class: with-logo logo-lmftca-fixed
+<div class="my-header"></div>
 <div class="my-footer">
 <span>
 Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
@@ -1360,6 +1365,7 @@ background-size: cover
 
 layout: true
 class: with-logo logo-lmftca-fixed
+<div class="my-header"></div>
 <div class="my-footer">
 <span>
 Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
@@ -1724,6 +1730,7 @@ background-size: cover
 
 layout: true
 class: with-logo logo-lmftca-fixed
+<div class="my-header"></div>
 <div class="my-footer">
 <span>
 Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
@@ -1983,6 +1990,7 @@ background-size: cover
 
 layout: true
 class: with-logo logo-lmftca-fixed
+<div class="my-header"></div>
 <div class="my-footer">
 <span>
 Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
