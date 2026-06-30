@@ -1014,6 +1014,30 @@ data |>
 ]
 
 ---
+name: stby
+## AED Automatizada: Pacote **summarytools**
+
+<br>
+
+.font95[
+A função `stby()` aplica uma função do **summarytools** separadamente para cada grupo de uma variável categórica.
+]
+
+```{r stby, echo=TRUE, eval=FALSE}
+library(summarytools)
+
+stby(
+  data = data,
+  INDICES = data$Species,
+  FUN = descr,
+  style = "rmarkdown",
+  headings = FALSE
+)
+```
+
+.alert2[
+💡 `stby()` executa a função `descr()` para cada espécie do conjunto de dados.
+]
 
 ---
 name: ap
