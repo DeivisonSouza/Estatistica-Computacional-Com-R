@@ -58,7 +58,6 @@ library(readr)
 library(dplyr)
 library(ggplot2)
 library(summarytools)
-library(plotly)
 ```
 
 ```{r xaringan-logo, echo=FALSE}
@@ -73,8 +72,8 @@ use_extra_styles(
   mute_unhighlighted_code = TRUE
 )
 
-use_editable(expires = 1)
-use_clipboard()
+# use_editable(expires = 1)
+# use_clipboard()
 ```
 
 ```{r icon, echo=FALSE}
@@ -86,27 +85,11 @@ use_clipboard()
 # download_simple_icons()
 ```
 
-```{r customDT, echo=F}
-CustomDT <- function(data){
-  data |> DT::datatable(editable = 'cell', rownames = FALSE,
-                         style = "default",
-                         class = "display", width = '180px',
-                         caption = '',
-     options=list(pageLength = 20, dom = 't', autoWidth = F,
-       initComplete = htmlwidgets::JS(
-          "function(settings, json) {",
-          paste0("$(this.api().table().container()).css({'font-size': '", "9pt", "'});"),
-          "}")
-       ) 
-     )
-}
-```
-
 <!-- title-slide -->
 # Estatística Computacional com R <br> (PPGBC/UFPA e PPGCTIF/UFOPA)
 
 ## ᨒ <br> `r anicon::faa("pagelines", animate="horizontal", colour="green")` .font80[Análise Exploratória de Dados no R]`r anicon::faa("pagelines", animate="horizontal", colour="green")`
-###### (Pacotes: summarytools)
+###### (Pacotes: Tidyverse, summarytools)
 
 ##### 〰〰〰〰〰〰🌱〰〰〰〰〰〰
 ##### ᨒ
@@ -129,9 +112,9 @@ Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
 &emsp;&emsp;
 <div2>Estatística Computacional com R</div2>
 &bull;
-<div3>Introdução ao Tidyverse (Módulo 2)</div3>
+<div3>Análise Exploratória de Dados (Módulo 3)</div3>
 &bull;
-<div4>Manipulação de Dados no R: dplyr</div4>
+<div4>Iris Dataset</div4>
 </span>
 </div>
 
@@ -148,55 +131,9 @@ Ao final desta aula (.blue[Análise Exploratória de Dados]) espera-se que o dis
 
 ## Conteúdo
 
-.pull-left-4[
-**Parte 1 - Terminologias e conceitos básicos**
-
-[1 - O que é estatística?](#Est)
-
-[2 - Estatística descritiva e Estatística inferêncial](#DI)
-
-[3 - População e Amostra](#PA)
-
-[4 - Variável e Parâmetro](#VP)
-
-[5 - Tipos de Variáveis](#TV)
-]
-
 .pull-right-2[
 .pull-down[
-**Parte 2 - Medidas de tendência central (ou posição)**
-
-[1 - Conceito e importância](#CI)
-
-[2 - Moda](#Mo)
-
-[3 - Mediana](#Md)
-
-[4 - Média Aritmética](#Me)
-]
-]
-
----
-
-## Conteúdo
-
-.pull-left-4[
-**Parte 3 - Medidas de dispersão (ou variabilidade)**
-
-[1 - Conceito e importância](#CId)
-
-[2 - Amplitude Total](#AT)
-
-[4 - Variância](#Var)
-
-[5 - Desvio Padrão](#Dp)
-
-[6 - Coeficiente de Variação](#CV)
-]
-
-.pull-right-2[
-.pull-down[
-**Parte 4 - AED - Iris Flower**
+**AED - Iris Flower**
 
 [1 - AED: Iris Flower](#iris)
 
@@ -206,209 +143,632 @@ Ao final desta aula (.blue[Análise Exploratória de Dados]) espera-se que o dis
 ]
 
 ---
-
 layout: false
-name: md
 class: inverse, top, right
-background-image: url(fig/slide-title/secao.png)
+background-image: url(../assets/capa/sec.png)
 background-size: cover
 
 <br><br><br>
 
-.right[.font150[**.green[Módulo 3] <br> Análise Exploratória de Dados**]]
+.right[
+.font150[
+**.green[Módulo 3]** <br>
+Análise Exploratória de Dados
+]
+]
 
 <br><br>
 
-.right[.font150[**.green[Parte 4] - AED: Iris Flower** (Fisher, 1936)]]
+.right[
+.font150[
+**.green[Parte 1]** <br>
+Dataset Iris Flower
+]
+]
 
----
-
-layout: true
-class: with-logo logo-ufpa
-<div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R (PPGBC0030)</div3>/ <div2>Módulo 3 - Análise Exploratória de Dados</div2> </div>
-
----
-
-## Iris Flower
 <br>
-Os conjuntos de dados estão disponíveis no [UCI-Machine Learning Repository](https://archive.ics.uci.edu/ml/index.php).
 
-.shadow3[
-## .center[.brown[Iris Flower]]
-- O estudo intitulado "*The Use of Multiple Measurements in Taxonomic Problems*" (Fisher, 1936) foi o primeiro a usar o conjunto de dados .green[**Iris**].
-- **Estrutura do conjunto de dados:** <br>
-a) 150 amostras <br>
-b) 3 espécies: Setosa, Versicolor e Virginica (50 amostras de cada) <br>
-c) 5 atributos (variáveis): (Sepal Length, Sepal Width, Petal Length, Petal Width, Species)
+.right[
+.font120[
+**Fisher (1936)**
+]
 ]
 
 ---
 
-## Iris Flower
-<br>
-
-```{r, echo=FALSE, out.width='80%', fig.align='center', fig.cap='', dpi=600}
-knitr::include_graphics('fig/Iris.png')
-```
-.center[.font70[**Fonte**: [pt.wikipedia.org](https://pt.wikipedia.org/wiki/Conjunto_de_dados_flor_Iris)]]
+layout: true
+class: with-logo logo-lmftca-fixed
+<div class="my-header"></div>
+<div class="my-footer">
+<span>
+Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
+&emsp;&emsp;
+<div2>Estatística Computacional com R</div2>
+&bull;
+<div3>Análise Exploratória de Dados (Módulo 3)</div3>
+&bull;
+<div4>Iris Dataset</div4>
+</span>
+</div>
 
 ---
 
-## Iris Flower
+## Iris Flower Dataset
+
 <br>
 
-```{r, echo=FALSE, out.width='45%', fig.align='center', fig.cap='', dpi=600}
+O conjunto de dados **Iris Flower** está disponível no **R** (objeto `iris`) e em diversos repositórios públicos, como o **UCI Machine Learning Repository**.
+
+.alert2[
+### .brown[Características do conjunto de dados]
+
+- O conjunto de dados foi utilizado por **Ronald A. Fisher** no artigo *The Use of Multiple Measurements in Taxonomic Problems* (1936).
+- **150 observações** (flores)
+- **3 espécies** (*Setosa*, *Versicolor* e *Virginica*), com **50 observações** de cada espécie
+- **5 variáveis**:
+  - 4 quantitativas: `Sepal.Length`, `Sepal.Width`, `Petal.Length` e `Petal.Width`
+  - 1 qualitativa: `Species`
+]
+
+---
+
+## Iris Flower Dataset
+
+```{r, echo=FALSE, out.width='70%', fig.align='center', fig.cap=''}
+knitr::include_graphics('fig/Iris.png')
+```
+
+.center[
+.font70[
+[pt.wikipedia.org](https://pt.wikipedia.org/wiki/Conjunto_de_dados_flor_Iris)
+]
+]
+
+<br>
+
+.center[
+.alert2[
+**Quais características morfológicas permitem distinguir essas três espécies?**
+]
+]
+
+---
+
+## Iris Flower Dataset
+
+<br>
+
+```{r, echo=FALSE, out.width='45%', fig.align='center', fig.cap=''}
 knitr::include_graphics('fig/atributos.png')
 ```
 
 .center[.font70[**Fonte**: [https://www.integratedots.com](https://www.integratedots.com/determine-number-of-iris-species-with-k-means/)]]
 
 ---
+layout: false
+class: inverse, top, right
+background-image: url(../assets/capa/sec.png)
+background-size: cover
 
-## Iris Flower
-
-.pull-left-14[
-```{r iris, echo=T, eval=F}
-# Conjunto de dados
-data(iris)
-```
-
-```{r iris1, echo=T, eval=F}
-# Imprime 6 primeiras linhas
-head(iris)
-```
-
-```{r iris2, echo=T, eval=F}
-# Imprime 6 últimas linhas
-tail(iris)
-```
-]
-
-.pull-right-13[
-```{r ref.label="iris1", echo=FALSE, eval=TRUE, collapse=T}
-```
-
-```{r ref.label="iris2", echo=FALSE, eval=TRUE, collapse=T}
-```
-.font90[Obs.: O conjunto de dados "Iris Flower" está disponível no R-base. **Basta carregá-lo**!]
-]
-
----
-
-## Iris Flower
 <br>
 
-- Vamos realizar uma análise exploratória do conjunto ".brown[**Iris Flower**]". Prefira usar os pacote estudados (**readr**, **dplyr**, **ggplot2**). Ainda sim, outros pacotes para AED serão apresentados.
+.right[
+.font100[
+**.green[Módulo 3]** - Análise Exploratória de Dados
+]
+]
 
-.shadow3[
-## .font70[.brown[**Uma sugestão de caminho...**]]
-<br>
-**I - Estrutura do Projeto:**
+<br><br>
 
-.font90[
-1) Crie um projeto (.Rproj): **File** - **New Project** - **New Directory** - **New Project** - **Create Project**.
+.right[
+.font150[
+**.green[Parte 2]** <br>
+AED: Iris Dataset
+]
+]
 
-2) Crie os subdiretórios: .brown[Data],  .brown[Output] (Table, Figure, etc.)
+<br><br>
 
-3) Crie um R script (.R): **File** - **New File** - **R Script** (Ctrl+Shift+N). Atribua um nome adequado. <br><br>
-
-.center[.green[*Pronto! Podemos começar a desenvolver o Script!*]]
+.right[
+.font180[
+**Usando Tidyverse**
 ]
 ]
 
 ---
 
-## Iris Flower
-<br>
-
-- Vamos realizar uma análise exploratória do conjunto ".brown[**Iris Flower**]". Prefira usar os pacote estudados (**readr**, **dplyr**, **ggplot2**).
-
-.shadow3[
-## .font70[.brown[**Uma sugestão de caminho...** (cont.)]]
-<br>
-**II - Desenvolvimento do R Script:**
-.font90[
-1) Carregue o conjunto ".brown[Iris Flower]", a partir de um arquivo externo. (Use o pacote **readr**!) e salve no objeto chamado '**data**'.
-
-2) Avalie a estrutura dos dados.
-
-3) Obtenha uma tabela de frequência por categoria de flor.
-
-4) Obtenha um resumo estatístico por categoria de flor.
-
-]
-]
+layout: true
+class: with-logo logo-lmftca-fixed
+<div class="my-header"></div>
+<div class="my-footer">
+<span>
+Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
+&emsp;&emsp;
+<div2>Estatística Computacional com R</div2>
+&bull;
+<div3>Análise Exploratória de Dados (Módulo 3)</div3>
+&bull;
+<div4>AED com Tidyverse</div4>
+</span>
+</div>
 
 ---
 
-## Iris Flower
+## Organização do Projeto
+
 <br>
 
-- Vamos realizar uma análise exploratória do conjunto ".brown[**Iris Flower**]". Prefira usar os pacote estudados (**readr**, **dplyr**, **ggplot2**).
+Antes de iniciar a análise exploratória, organize o projeto conforme a estrutura abaixo.
 
-.shadow3[
-## .font70[.brown[**Uma sugestão de caminho...** (cont.)]]
-<br>
-**II - Desenvolvimento do R Script:**
+.pull-left[
+```text
+📁 Projeto
+├── 📄 README.md
+├── 📄 renv.lock
+├── 📂 data
+│   └── 📄 Iris.csv
+├── 📂 script
+│   └── 📜 01-AED.R
+├── 📂 output
+│   ├── 📂 figure
+│   ├── 📂 table
+│   └── 📂 report
+└── Ⓡ Projeto.Rproj
+```
+]
+
+.pull-right[
 .font90[
 
-5) Crie as seguintes visualizações: (Use **ggplot2**!)
+📄 iris.csv
 
-- .brown[Gráfico de Contagem] de amostras por classes.
-- .brown[Gráfico BoxPlot] por classe para as variáveis quantitativas.
-- .brown[Gráfico de Média e Desvio Padrão] por classe para as variáveis quantitativas.
-- .brown[Gráfico de Dispersão] para pares de variáveis (destaque os pontos de classes com cores diferentes!)
- 
+Conjunto de dados utilizado na análise.
+Armazene-o na pasta **data/**.
+
+<br>
+
+📜 01-AED.R
+
+Script onde será desenvolvida toda a análise exploratória.
+
+<br>
+
+Ⓡ Projeto.Rproj
+
+Abra o projeto para utilizar caminhos relativos.
+
 ]
 ]
 
 ---
 
-## Iris Flower
+## Fluxo de Trabalho da Análise Exploratória de Dados
 
-- Carregando o conjunto ".brown[Iris Flower]" e criando um objeto chamado "**data**"...
+<br>
 
-```{r, collapse = FALSE}
+```{r, echo=FALSE, out.width='45%', fig.align='center', fig.cap=''}
+#knitr::include_graphics('fig/fluxo.png')
+```
+
+.center[
+.font70[**Fonte**:
+]
+]
+
+---
+name: import
+## AED: Iris Flower Dataset
+
+<br>
+
+.font95[
+**Passo 1 (Importação):**: Importar o arquivo **Iris.csv** armazenado na pasta **data/** do projeto.
+]
+
+<br>
+
+```{r import, echo=TRUE, eval=TRUE}
 library(readr)
-(data <- read_csv(file = "data/Iris.csv", col_types = "ddddf"))
+
+data <- read_csv(
+  file = "data/Iris.csv",
+  col_types = "ddddf"
+)
 ```
+
+<br>
+
+.alert2[
+💡 O argumento `col_types = "ddddf"` define os tipos (classe) das 5 variáveis durante a importação, evitando conversões automáticas.
+]
+
+---
+name: inspect
+## AED: Iris Flower Dataset
+
+<br>
+
+.font95[
+**Passo 2 (Inspeção):** Verificar a estrutura dos dados e confirmar se a importação foi realizada corretamente.
+]
+
+```{r inspect, echo=TRUE, eval=FALSE}
+# Dimensão do conjunto de dados
+dim(data)
+
+# Estrutura das variáveis
+glimpse(data)
+
+# Nome das variáveis
+names(data)
+
+# Primeiras observações
+head(data)
+```
+
+<br>
+
+.alert2[
+💡 Essas funções permitem inspecionar rapidamente a estrutura do conjunto de dados.
+]
 
 ---
 
-## Iris Flower
-<br>
-**2 - Qual a estrutura do conjunto de dados?**
+## AED: Iris Flower Dataset
 
-- Usando a função .brown[glimpse()] do .orange[dplyr]:
+<br>
+
+**Passo 2 (Inspeção):** Qual a estrutura do conjunto de dados?
 
 ```{r, collapse = FALSE}
 glimpse(data)
 ```
 
-**Experimente:** `str()`, `ncol()`, `nrow()`, `dim()`, `head()`, `tail()`, `is.na()`, ...
+<br>
+
+.alert2[
+**Experimente:** `str()`, `ncol()`, `nrow()`, `tail()`, `is.na()`, ...
+]
+
+---
+name: count
+## AED: Iris Flower Dataset
+
+<br>
+
+.font95[
+**Passo 3 (Análise Exploratória):** Obter a frequência das categorias da variável **Species**.
+]
+
+```{r count, echo=TRUE, eval=TRUE, collapse=FALSE}
+data |>
+  count(Species)
+```
+
+.alert2[
+💡 O operador `|>` (Piper) envia o conjunto de dados para .orange[count()].
+
+💡 A função .orange[count()] contabiliza as observações por categoria.
+]
+
+---
+name: count_prop
+## AED: Iris Flower Dataset
+
+<br>
+
+.font95[
+**Passo 3 (Análise Exploratória):** Obter a frequência relativa das categorias da variável **Species**.
+]
+
+```{r count_prop, echo=TRUE, eval=TRUE, collapse=FALSE}
+data |>
+  count(Species) |>
+  mutate(
+    Percentual = 100 * n / sum(n)
+  )
+```
+
+.alert2[
+💡 A **frequência relativa** representa a proporção de observações em cada categoria.
+]
+
+---
+name: summarise
+## AED: Iris Flower Dataset
+
+<br>
+
+.font95[
+**Passo 3 (Análise Exploratória):** Obter estatísticas descritivas das variáveis quantitativas.
+]
+
+```{r summarise, echo=TRUE, eval=TRUE, collapse=FALSE}
+data |>
+  summarise(
+    across(
+      .cols = where(is.numeric),
+      .fns = mean,
+      .names = "Média_{.col}"
+    )
+  )
+```
+
+.alert2[
+💡 `summarise()` resume os dados, e `across()` aplica a mesma operação a múltiplas variáveis.
+]
+
+---
+name: summarise2
+## AED: Iris Flower Dataset
+
+<br>
+
+.font95[
+**Passo 3 (Análise Exploratória):** Obter múltiplas estatísticas descritivas das variáveis quantitativas.
+]
+
+```{r summarise2, echo=TRUE, eval=FALSE, collapse=FALSE}
+data |>
+  summarise(
+    across(
+      .cols = where(is.numeric),
+      .fns = list(
+        Média  = mean,
+        DP     = sd,
+        Mínimo = min,
+        Máximo = max
+      )
+    )
+  )
+```
+
+.alert2[
+💡 `across()` permite aplicar várias funções simultaneamente a múltiplas variáveis.
+]
+
+---
+name: group_by
+## AED: Iris Flower Dataset
+
+<br>
+
+.font95[
+**Passo 3 (Análise Exploratória):** Obter estatísticas descritivas por espécie.
+]
+
+.font80[
+```{r group_by, echo=TRUE, eval=TRUE, collapse=FALSE}
+data |>
+  group_by(Species) |>
+  summarise(
+    across(
+      .cols = where(is.numeric),
+      .fns = mean
+    )
+  )
+```
+]
+
+.alert2[
+💡 `group_by()` agrupa as observações e `summarise()` calcula as estatísticas para cada grupo.
+]
+
+---
+name: barplot
+## AED: Iris Flower Dataset
+
+<br>
+
+.font95[
+**Passo 3 (Análise Exploratória):** Visualizar a distribuição das observações por espécie.
+]
+
+.pull-left-4[
+
+```{r barplot, echo=TRUE, eval=FALSE}
+ggplot(
+  data,
+  aes(x = Species)
+) +
+  geom_bar() +
+  labs(
+    x = "Espécie",
+    y = "Frequência"
+  ) +
+  theme_minimal()
+```
+
+.alert2[
+💡 `geom_bar()` constrói um gráfico de contagem para variáveis categóricas.
+]
+
+]
+
+.pull-right-4[
+```{r ref.label="barplot", echo=FALSE, eval=TRUE, fig.align='center', out.width='80%'}
+```
+]
+
+---
+name: boxplot
+## AED: Iris Flower Dataset
+
+<br>
+
+.font95[
+**Passo 3 (Análise Exploratória):** Comparar a distribuição de uma variável quantitativa entre as espécies.
+]
+
+.pull-left-4[
+.font80[
+```{r boxplot, echo=TRUE, eval=FALSE}
+ggplot(
+  data,
+  aes(
+    x = Species,
+    y = Sepal_Length
+  )
+) +
+  geom_boxplot() +
+  labs(
+    x = "Espécie",
+    y = "Comprimento da Sépala (cm)"
+  ) +
+  theme_minimal()
+```
+]
+
+.alert2[
+💡 `geom_boxplot()` resume a distribuição dos dados por meio da mediana, quartis e valores extremos.
+]
+
+]
+
+.pull-right-4[
+```{r ref.label="boxplot", echo=FALSE, eval=TRUE,fig.align='center', out.width='80%'}
+```
+]
+
+---
+name: mean_sd
+
+## AED: Iris Flower Dataset
+
+<br>
+
+.font95[
+**Passo 3 (Análise Exploratória):** Comparar as médias e desvios-padrão entre as espécies.
+]
+
+.pull-left-4[
+.font70[
+```{r mean_sd, echo=TRUE, eval=FALSE}
+data |>
+  group_by(Species) |>
+  summarise(
+    Media = mean(Sepal_Length),
+    DP = sd(Sepal_Length)
+  ) |>
+  ggplot(
+    aes(
+      x = Species,
+      y = Media
+    )
+  ) +
+  geom_col() +
+  geom_errorbar(
+    aes(
+      ymin = Media - DP,
+      ymax = Media + DP
+    ),
+    width = 0.2
+  ) +
+  labs(
+    x = "Espécie",
+    y = "Comprimento da Sépala (cm)"
+  ) +
+  theme_minimal()
+```
+]
+]
+
+.pull-right-4[
+```{r ref.label="mean_sd", echo=FALSE, eval=TRUE,fig.align='center', out.width='80%'}
+```
+]
+
+---
+name: scatter
+## AED: Iris Flower Dataset
+
+<br>
+
+.font95[
+**Passo 3 (Análise Exploratória):** Avaliar a relação entre duas variáveis quantitativas.
+]
+
+.pull-left-4[
+.font70[
+```{r scatter, echo=TRUE, eval=FALSE}
+ggplot(
+  data,
+  aes(
+    x = Sepal_Length,
+    y = Petal_Length,
+    color = Species
+  )
+) +
+  geom_point(
+    size = 2
+  ) +
+  labs(
+    x = "Comprimento da Sépala (cm)",
+    y = "Comprimento da Pétala (cm)",
+    color = "Espécie"
+  ) +
+  theme_minimal()
+```
+]
+
+.alert2[
+💡 `geom_point()` representa a relação entre duas variáveis quantitativas.
+]
+
+]
+
+.pull-right-4[
+```{r ref.label="scatter", echo=FALSE, eval=TRUE, fig.align='center', out.width='80%'}
+```
+]
+
+---
+layout: false
+class: inverse, top, right
+background-image: url(../assets/capa/sec.png)
+background-size: cover
+
+<br>
+
+.right[
+.font100[
+**.green[Módulo 3]** - Análise Exploratória de Dados
+]
+]
+
+<br><br>
+
+.right[
+.font150[
+**.green[Parte 3]** <br>
+AED Automatizada com pacotes especializados
+]
+]
+
+<br><br>
+
+.right[
+.font180[
+**Pacote: summarytools**
+]
+]
 
 ---
 
-## Iris Flower
-<br>
-
-**3 - Obtenha uma tabela de frequências por .green[categoria de Flor].**
-
-- Usando verbos (.brown[group_by, summarise]) do Pacote **dplyr**:
-
-.font90[
-```{r, collapse = FALSE}
-library(dplyr)
-
-(freq_table <- data |>
-  group_by(Species) |>
-  summarise(Freq = n()) |>
-  mutate(Prop = prop.table(Freq)*100))
-
-#writexl::write_xlsx(freq_table, "Output/Tables/freq_table.xlsx")
-```
-]
+layout: true
+class: with-logo logo-lmftca-fixed
+<div class="my-header"></div>
+<div class="my-footer">
+<span>
+Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
+&emsp;&emsp;
+<div2>Estatística Computacional com R</div2>
+&bull;
+<div3>Análise Exploratória de Dados (Módulo 3)</div3>
+&bull;
+<div4>AED com summarytools</div4>
+</span>
+</div>
 
 ---
 
@@ -467,229 +827,6 @@ data |>
 ```
 
 ---
-
-## Iris Flower
-
-**5 - Crie as seguintes visualizações: (Use .green[ggplot2]!)**
-
-- .brown[Gráfico de Contagem] de amostras por classes.
-
-.pull-left-10[
-```{r ref.label="barnc", fig.width=5, fig.height=4, echo=F, eval=T}
-```
-]
-
---
-
-.pull-right-10[
-```{r barnc, echo=T, eval=F, R.options = list(width = 130)}
-ggplot(data = data) +                           # 1ª camada
-  geom_bar(aes(x = Species), stat = "count")    # 2ª camada
-```
-]
-
----
-
-## Iris Flower
-
-**5 - Crie as seguintes visualizações: (Use .green[ggplot2]!)**
-
-- .brown[Gráfico BoxPlot] por classe para as variáveis quantitativas.
-
-.pull-left-10[
-```{r ref.label="box",fig.width=6, fig.height=5, echo=F, eval=T}
-```
-]
-
---
-
-.pull-right-10[
-```{r box, echo=T, eval=F}
-data |>
-  ggplot(aes(x = Species, 
-             y = SepalWidthCm)) +     # 1ª camada    
-  geom_boxplot() +                    # 2ª camada
-  stat_summary(fun = mean, 
-               geom = "point", 
-               shape = 20, 
-               size = 4,
-               color = "red"
-               )                      # 3ª camada
-# geom_jitter(width = 0.1)
-```
-]
-
----
-
-## Iris Flower
-
-**5 - Crie as seguintes visualizações: (Use .green[ggplot2]!)**
-
-- .brown[Gráfico BoxPlot] por classe para as variáveis quantitativas (Usando .brown[(Facet_wrap()]).
-
-.pull-left-10[
-```{r ref.label="box1",fig.width=6, fig.height=5, echo=F, eval=T}
-```
-]
-
---
-
-.pull-right-10[
-```{r box1, echo=T, eval=F}
-library(tidyr)
-
-# Remodela os dados para o formato longo
-data2 <- data |> 
-  pivot_longer(cols = !Species, 
-               names_to = "Variables", 
-               values_to = "Value")
-
-# Visualização usando facet_
-data2 |>
-  ggplot(aes(x = Species, 
-             y = Value)) +       # 1ª camada   
-  geom_boxplot() +               # 2ª camada
-  facet_wrap(. ~ Variables, 
-             scales="free")      # 3ª camada
-```
-]
-
----
-
-## Iris Flower
-
-**5 - Crie as seguintes visualizações: (Use .green[ggplot2]!)**
-
-- .brown[Gráfico de Média e Desvio Padrão] por classe para as variáveis quantitativas.
-
-.pull-left-10[
-```{r ref.label="barmean",fig.width=6, fig.height=5, echo=F, eval=T}
-```
-]
-
---
-
-.pull-right-10[
-.font90[
-```{r, barmean, echo=T, eval=F}
-
-data |>
-  ggplot(mapping = aes(x = Species, 
-                  y = PetalWidthCm)) +      # 1ª camada
-  geom_bar(
-    mapping = aes(fill = Species),
-    stat = "summary",
-    fun = mean,
-    show.legend = F
-    ) +                                   # 2ª camada
-  geom_errorbar(stat = "summary", 
-                fun.ymin = function(x) {mean(x)-sd(x)},
-                fun.ymax = function(x) {mean(x)+sd(x)},
-                width = .2, colour="black", 
-                alpha=0.9, size=.7
-                ) +                       # 3ª camada
-  coord_flip()                            # 4ª camada
-```
-
-Veja outros tipos de barras: [R-graph-gallery](https://r-graph-gallery.com/4-barplot-with-error-bar.html)
-
-]
-]
-
----
-
-## Iris Flower
-
-**5 - Crie as seguintes visualizações: (Use .green[ggplot2]!)**
-
-- .brown[Gráfico de Média e Desvio Padrão] por classe para as variáveis quantitativas.
-
-.pull-left-10[
-```{r ref.label="barmeanall",fig.width=6, fig.height=5, echo=F, eval=T}
-```
-]
-
---
-
-.pull-right-10[
-.font90[
-```{r, barmeanall, echo=T, eval=F}
-
-data2 |>
-  ggplot(
-    mapping = aes(x = Species, 
-                  y = Value)) +           # 1ª camada
-  geom_bar(
-    mapping = aes(fill = Species),
-    stat = "summary",
-    fun = mean,
-    show.legend = F
-    ) +                                   # 2ª camada
-  geom_errorbar(stat = "summary", 
-                fun.ymin = function(x) {mean(x)-sd(x)},
-                fun.ymax = function(x) {mean(x)+sd(x)},
-                width = .2
-                )  +
-  facet_wrap(. ~ Variables, scales="free") # 3ª camada
-```
-]
-]
-
----
-
-## Iris Flower
-
-**5 - Crie as seguintes visualizações: (Use .green[ggplot2]!)**
-
-- .brown[Gráfico de Dispersão] para pares de variáveis (destaque os pontos de classes com cores diferentes!)
-
-.pull-left-10[
-```{r ref.label="point",fig.width=6, fig.height=5, echo=F, eval=T}
-```
-]
-
---
-
-.pull-right-10[
-.font90[
-```{r, point, echo=T, eval=F}
-data |>
-  ggplot(mapping = aes(
-    x = PetalLengthCm, y = PetalWidthCm)) +     # 1ª camada
-  geom_point(mapping = aes(colour = Species))   # 2ª camada
-```
-]
-]
-
----
-
-## Iris Flower
-
-**5 - Crie as seguintes visualizações: (Use .green[ggplot2]!)**
-
-- .brown[Gráfico de Dispersão] para pares de variáveis (destaque os pontos de classes com cores diferentes!)
-
-.pull-left-9[
-```{r ref.label="point2",fig.width=5, fig.height=3.5, echo=F, eval=T}
-```
-]
-
---
-
-.pull-right-9[
-.font90[
-```{r, point2, echo=T, eval=F}
-library(GGally)
-
-data |>
-  ggpairs(columns = 1:4,
-          aes(color = Species, alpha = 0.5),
-          upper = list(continuous = wrap("cor", size = 2)))
-```
-]
-]
-
----
 name: ap
 ## Atividade Prática
 
@@ -711,14 +848,36 @@ name: ap
 
 <!-- Slide XX -->
 ---
+
 layout: true
-class: with-logo logo-ufpa
+class: with-logo logo-lmftca-fixed
 <div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional com R (PPGBC0030)</div3>/ <div2>Módulo 3 - Análise Exploratória de Dados</div2> </div>
+<div class="my-footer">
+<span>
+Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
+&emsp;&emsp;
+<div2>Estatística Computacional com R</div2>
+&bull;
+<div3>Análise Exploratória de Dados (Módulo 3)</div3>
+&bull;
+<div4>Iris Dataset</div4>
+</span>
+</div>
 
 <!--Slide XX -->
 ---
+
 layout: false
-class: inverse, top, right
-background-image: url(fig/slide-title/end.png)
+class: inverse, middle, center
+background-image: url(../assets/capa/sec.png)
 background-size: cover
+
+## .font200[Obrigado!]
+
+```{r, echo=FALSE, out.width='20%', fig.align='center', fig.cap=''}
+knitr::include_graphics('../assets/logos/LMFTCA.png')
+```
+
+👨🏻‍👩🏻‍👦🏻‍👦🏻 [@lmftca_ufpa](https://www.instagram.com/lmftca_ufpa/)
+
+🌎 [https://www.lmftca.com.br/](https://www.lmftca.com.br/)
