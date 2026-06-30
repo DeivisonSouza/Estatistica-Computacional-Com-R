@@ -772,59 +772,248 @@ Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
 
 ---
 
-## Iris Flower
+## Pacote **summarytools**
+
 <br>
 
-**3 - Obtenha uma tabela de frequências por .green[categoria de Flor].**
+.font95[
+O pacote **summarytools** reúne funções para produzir, de forma rápida, tabelas e resumos estatísticos.
+]
 
-- Usando a função .brown[freq()] do Pacote **summarytools**:
+.alert2[
+### .brown[Principais funcionalidades]
 
-.font90[
-```{r, collapse = FALSE}
-library(summarytools)
-data |>
-  freq(var = Species, report.nas = FALSE, style = "rmarkdown")
-```
+- 📋 Tabelas de frequências para variáveis categóricas.
+- 📊 Estatísticas descritivas para variáveis numéricas.
+- 📑 Resumos completos de conjuntos de dados.
+- 🌐 Relatórios formatados para HTML, Markdown e outros formatos.
+]
+
+<br>
+
+.font80[
+**Autor:** Dominic Comtois
+
+**Vignette:** `vignette("introduction", package = "summarytools")`
 ]
 
 ---
+name: freq_summarytools
 
-## Iris Flower
+## AED Automatizada: Pacote **summarytools**
+
 <br>
 
-**4 - Obtenha um resumo estatístico por .green[categoria de Flor]**
+.font95[
+**Tabela de frequências** utilizando a função `freq()`.
+]
 
-- Usando a função .brown[stby()] do Pacote **summarytools**: (consulte a vinheta [summarytools](https://cran.r-project.org/web/packages/summarytools/vignettes/introduction.html))
+.pull-left-4[
 
-```{r, R.options = list(width = 130), collapse = F, results='hide'}
+```{r freq_summarytools, echo=TRUE, eval=FALSE}
 library(summarytools)
 
-(stats_by_species <- 
-    data |>
-    stby(INDICES = data$Species, 
-         FUN = descr,
-         stats = "common", 
-         transpose = TRUE) |> 
-  tb(order = 2)
-)
-
-#writexl::write_xlsx(stats_by_species, "Output/Tables/stats_by_species.xlsx")
+data |>
+  freq(
+    var = Species,
+    report.nas = FALSE,
+    style = "rmarkdown",
+    heading = FALSE
+  )
 ```
+
+.alert2[
+💡 `freq()` produz uma tabela de frequências absoluta, relativa e acumulada.
+]
+
+]
+
+.pull-right-4[
+
+```{r ref.label="freq_summarytools", echo=FALSE, eval=TRUE, results='asis'}
+```
+
+]
 
 ---
+name: descr
 
-## Iris Flower
+## AED Automatizada: Pacote **summarytools**
+
 <br>
 
-**4 - Obtenha um resumo estatístico por .green[categoria de Flor]**
+.font95[
+**Estatísticas descritivas** utilizando a função `descr()`.
+]
 
-- Usando verbos (.brown[group_by, summarise]) do Pacote **dplyr**:
+.pull-left-4[
 
-```{r, R.options = list(width = 130), collapse = FALSE}
+```{r descr, echo=TRUE, eval=FALSE}
+library(summarytools)
+
 data |>
-  group_by(Species) |>
-  summarise(across(where(is.double), tibble::lst(mean), .names = "{fn}_{col}"))
+  descr(
+    style = "rmarkdown",
+    heading = FALSE
+  )
 ```
+
+.alert2[
+💡 `descr()` produz um resumo estatístico das variáveis numéricas do conjunto de dados.
+]
+
+]
+
+.pull-right-4[
+
+.center[
+.font110[
+📊
+
+**Resumo estatístico**
+
+Média
+
+Mediana
+
+Desvio-padrão
+
+Quartis
+
+Mínimo
+
+Máximo
+
+...
+]
+]
+
+]
+
+---
+name: descr_output
+## AED Automatizada: Pacote **summarytools**
+
+<br>
+
+.font95[
+Resultado produzido pela função `descr()`.
+]
+
+.font50[
+```{r ref.label="descr", echo=FALSE, eval=TRUE, results='asis'}
+```
+]
+
+<br>
+
+.alert2[
+💡 Um único comando produz um relatório estatístico completo das variáveis numéricas.
+]
+
+---
+name: descr_stats
+
+## AED Automatizada: Pacote **summarytools**
+
+<br>
+
+.font95[
+A função `descr()` também permite selecionar quais estatísticas serão apresentadas.
+]
+
+.pull-left-13[
+
+```{r descr_stats, echo=TRUE, eval=FALSE}
+library(summarytools)
+
+data |>
+  descr(
+    stats = c(
+      "mean",
+      "sd",
+      "min",
+      "max"
+    ),
+    style = "rmarkdown",
+    heading = FALSE
+  )
+```
+
+.alert2[
+💡 Utilize o argumento `stats` para definir quais estatísticas descritivas serão exibidas.
+]
+
+]
+
+.font80[
+.pull-right-13[
+<br<br>
+```{r ref.label="descr_stats",echo=FALSE,eval=TRUE,results='asis'}
+```
+
+<br>
+
+**Estatísticas disponíveis**: `"mean"`, `"median"`, `"sd"`, `"var"`, `"min"`, `"max"`, `"range"`, `"iqr"`, `"cv"`, `"skewness"`, `"kurtosis"`, `"n.valid"`, `"n.miss"`, ...
+
+]
+]
+
+---
+name: dfsummary
+## AED Automatizada: Pacote **summarytools**
+
+<br>
+
+.font95[
+A função `dfSummary()` produz um relatório completo do conjunto de dados.
+]
+
+.pull-left-13[
+
+```{r dfsummary, echo=TRUE, eval=FALSE}
+library(summarytools)
+
+data |>
+  dfSummary(
+    style = "grid",
+    headings = FALSE
+  ) |>
+  view()
+```
+
+.alert2[
+💡 `dfSummary()` reúne, em um único relatório, informações sobre todas as variáveis do conjunto de dados.
+]
+
+]
+
+.pull-right-13[
+
+.center[
+.font105[
+
+📋 **Variáveis**
+
+⬇️
+
+🏷️ Classe
+
+📊 Estatísticas
+
+❓ Valores ausentes
+
+📈 Distribuição
+
+🔎 Valores distintos
+
+...
+]
+]
+
+]
+
+---
 
 ---
 name: ap
