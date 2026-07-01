@@ -58,6 +58,8 @@ library(readr)
 library(dplyr)
 library(ggplot2)
 library(summarytools)
+library(skimr)
+library(DataExplorer)
 ```
 
 ```{r xaringan-logo, echo=FALSE}
@@ -153,7 +155,7 @@ background-size: cover
 .right[
 .font150[
 **.green[Módulo 3]** <br>
-Análise Exploratória de Dados
+**Análise Exploratória de Dados**
 ]
 ]
 
@@ -190,6 +192,93 @@ Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
 <div4>Iris Dataset</div4>
 </span>
 </div>
+
+---
+name: objetivos_aed
+## AED: O que investigar nos dados?
+
+.alert2[
+.font90[
+💡 A AED busca compreender a **estrutura**, a **qualidade** e o **comportamento dos dados**, orientando as etapas seguintes da análise.
+]
+]
+
+.pull-left[
+.font80[
+### Estrutura dos dados
+
+- Quantas observações existem?
+- Quais são as variáveis?
+- Qual é o tipo de cada variável (numérica, etc.)?
+]
+]
+
+.pull-left[
+.font80[
+### Qualidade dos dados
+
+- Existem valores ausentes?
+- Existem valores extremos (outliers)?
+- Existem erros ou inconsistências nos dados?
+]
+]
+
+.pull-left[
+.font80[
+### Comportamento dos dados
+
+- Como as variáveis estão distribuídas?
+- Quais são suas principais características?
+- Existe relação entre as variáveis?
+- Existem padrões ou tendências nos dados?
+]
+]
+
+---
+name: fluxo_aed
+## Fluxo de Trabalho da AED
+
+<br>
+
+.center[
+.step[
+**1. Inspeção**  
+Estrutura e tipos de dados
+]
+
+.arrow[
+⬇️
+]
+
+.step[
+**2. Qualidade**  
+Valores ausentes, inconsistências e outliers
+]
+
+.arrow[
+⬇️
+]
+
+.step[
+**3. Exploração**  
+Estatísticas descritivas, distribuições e relações
+]
+
+.arrow[
+⬇️
+]
+
+.step[
+**4. Insights**  
+Interpretação e tomada de decisão
+]
+]
+
+<br>
+
+.alert2[
+💡 A AED transforma dados em informações que orientam as próximas etapas da análise.
+]
 
 ---
 
@@ -298,7 +387,7 @@ Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
 
 <br>
 
-Antes de iniciar a análise exploratória, organize o projeto conforme a estrutura abaixo.
+Antes de iniciar a AED, organize um projeto (`.Rproj`):
 
 .pull-left[
 ```text
@@ -337,21 +426,6 @@ Script onde será desenvolvida toda a análise exploratória.
 
 Abra o projeto para utilizar caminhos relativos.
 
-]
-]
-
----
-
-## Fluxo de Trabalho da Análise Exploratória de Dados
-
-<br>
-
-```{r, echo=FALSE, out.width='45%', fig.align='center', fig.cap=''}
-#knitr::include_graphics('fig/fluxo.png')
-```
-
-.center[
-.font70[**Fonte**:
 ]
 ]
 
@@ -741,7 +815,7 @@ background-size: cover
 .right[
 .font150[
 **.green[Parte 3]** <br>
-AED Automatizada com pacotes especializados
+Automatização da AED
 ]
 ]
 
@@ -1037,6 +1111,218 @@ stby(
 
 .alert2[
 💡 `stby()` executa a função `descr()` para cada espécie do conjunto de dados.
+]
+
+---
+layout: false
+class: inverse, top, right
+background-image: url(../assets/capa/sec.png)
+background-size: cover
+
+<br>
+
+.right[
+.font100[
+**.green[Módulo 3]** - Análise Exploratória de Dados
+]
+]
+
+<br><br>
+
+.right[
+.font150[
+**.green[Parte 3]** <br>
+Automatização da AED
+]
+]
+
+<br><br>
+
+.right[
+.font180[
+**Pacote: DataExplorer**
+]
+]
+
+---
+
+layout: true
+class: with-logo logo-lmftca-fixed
+<div class="my-header"></div>
+<div class="my-footer">
+<span>
+Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
+&emsp;&emsp;
+<div2>Estatística Computacional com R</div2>
+&bull;
+<div3>Análise Exploratória de Dados (Módulo 3)</div3>
+&bull;
+<div4>AED com DataExplorer</div4>
+</span>
+</div>
+
+---
+name: dataexplorer_intro
+## Pacote **DataExplorer**
+
+<br>
+
+.font95[
+O pacote .orange[**DataExplorer**] reúne funções para **automatizar** diversas etapas da **Análise Exploratória de Dados (AED)**, permitindo explorar rapidamente a estrutura, a qualidade e o comportamento dos dados.
+]
+
+<br>
+
+.center[
+.font110[
+.alert2[
+**Poucas linhas de código** → **Tabelas, gráficos e relatórios exploratórios**
+]
+]
+]
+
+.pull-left[
+
+.font90[
+### Principais recursos
+
+- Resumo geral dos dados
+- Detecção de valores ausentes
+- Gráficos: Histogramas e densidade
+]
+]
+
+.pull-right[
+
+.font90[
+### Também permite
+
+- Análise de correlação
+- Identificação de padrões
+- Análise de componentes principais
+- Relatório HTML completo
+]
+]
+
+<br>
+
+.alert[
+💡 O **DataExplorer** complementa os pacotes **skimr** e **summarytools**, adicionando recursos gráficos e relatórios automatizados para a AED.
+]
+
+---
+name: install_dataexplorer
+## Instalando e carregando o pacote
+
+<br>
+
+```{r install_dataexplorer, eval=FALSE}
+install.packages("DataExplorer")
+
+library(DataExplorer)
+```
+
+<br>
+
+.font95[
+Após carregar o pacote, suas funções estarão disponíveis para automatizar diferentes etapas da **Análise Exploratória de Dados (AED)**.
+]
+
+<br>
+
+.alert2[
+💡 O pacote é compatível com objetos da classe **data.frame** e **tibble**, integrando-se facilmente ao fluxo de trabalho do **Tidyverse**.
+]
+
+---
+name: introduce_dataexplorer
+## Conhecendo o conjunto de dados
+
+<br>
+
+- **Inspeção dos dados**: utilize a função .green[**introduce()**] para obter um resumo geral do conjunto de dados.
+
+<br>
+
+```{r introduce_dataexplorer, echo=TRUE, eval=FALSE}
+library(DataExplorer)
+introduce(data)
+```
+
+---
+name: plot_intro
+## Conhecendo o conjunto de dados
+
+<br>
+
+.pull-left-4[
+
+.font90[
+.alert2[
+💡 A função `plot_intro()` apresenta, em um único painel, informações sobre observações, variáveis, tipos de dados e valores ausentes.
+]
+]
+
+```{r plot_intro, echo=TRUE, eval=FALSE}
+library(DataExplorer)
+plot_intro(data)
+```
+
+]
+
+.pull-right-4[
+
+```{r ref.label="plot_intro", echo=FALSE, eval=TRUE, fig.align='center', out.width='100%'}
+
+plot_intro(data)
+```
+
+]
+
+---
+name: plot_missing
+## Identificando valores ausentes
+
+<br>
+
+.pull-left-4[
+
+.font90[
+.alert2[
+💡 A função `plot_missing()` resume visualmente a quantidade e a proporção de valores ausentes em cada variável do conjunto de dados.
+]
+]
+
+```{r plot_missing, echo=TRUE, eval=FALSE}
+# Insere valores faltantes
+data2 <-
+  data |>
+  mutate(
+    Sepal_Length = replace(Sepal_Length, c(5, 18, 42), NA),
+    Species = replace(Species, c(10, 35), NA)
+  )
+
+plot_missing(data2)
+
+```
+
+
+]
+
+.pull-right-4[
+
+```{r ref.label="plot_missing", echo=FALSE, eval=TRUE, fig.align='center', out.width='100%'}
+data2 <-
+  data |>
+  mutate(
+    Sepal_Length = replace(Sepal_Length, c(5, 18, 42), NA),
+    Species = replace(Species, c(10, 35), NA)
+  )
+
+plot_missing(data2)
+
+```
+
 ]
 
 ---
