@@ -1,126 +1,124 @@
 ---
-title: "Estatística Computacional (PPGBC0030)"
+title: "Estatística Computacional com R"
 subtitle: "R markdown: Relatórios Dinâmicos"
 author: "Prof. Dr. Deivison Venicio Souza"
 institute: "Universidade Federal do Pará (UFPA)"
-date: 
+date: ""
 encoding: "UTF-8"
-header-includes: 
-   - \usepackage{xcolor}
+
 output:
   xaringan::moon_reader:
     css:
       - default
-      - assets/sydney-fonts.css
-      - assets/slide-title/sydney-title.css
-    self_contained: false
+      - "../assets/sydney-fonts.css"
+      - "../assets/sydney-title.css"
+    self_contained: true
     seal: false
     includes:
-      in_header: "assets/mathjax-equation-numbers.html"
+      in_header: "../assets/mathjax-equation-numbers.html"
     nature:
-      beforeInit: ["assets/remark-zoom.js", "https://platform.twitter.com/widgets.js"]
+      beforeInit: "../assets/remark-zoom.js"
       highlightStyle: github
       highlightLines: true
+      highlightSpans: true
+      highlightLanguage:
+        - r
+        - css
+        - yaml
       countIncrementalSlides: false
-      highlightLanguage: ["r", "css", "yaml"]
-      ratio: '16:9'
+      ratio: "16:9"
       navigation:
         scroll: false
 ---
 class: title-slide, center, middle
-background-image: url(fig/slide-title/LMFTCA.png), url(fig/slide-title/ppgbc3.png), url(fig/slide-title/capa.png)
-background-position: 90% 90%, 10% 90%
-background-size: 150px, 300px, cover
+background-image: url(../assets/capa/capa.png)
+background-position: center
+background-size: cover
+background-repeat: no-repeat
+
+<div class="logo-lmftca"></div>
+<div class="logo-ppgctif"></div>
+<div class="logo-ppgbc"></div>
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(
-  fig.showtext = TRUE,
-  fig.align = "center", 
-  cache = FALSE,
-  error = FALSE,
-  message = FALSE, 
-  warning = FALSE, 
-  collapse = TRUE ,
-  dpi = 600)
-```
-
-```{css, echo=FALSE}
-.with-logo::before {
-	content: '';
-	width: 120px;
-	height: 120px;
-	position: absolute;
-	bottom: 1.3em;
-	right: -0.5em;
-	background-size: contain;
-	background-repeat: no-repeat;
-}
-
-.logo-ufpa::before {
-	background-image: url(fig/slide-title/ufpa.png);
-}
-
-.logo-dplyr::before {
-	background-image: url(https://github.com/rstudio/hex-stickers/raw/master/PNG/dplyr.png);
-}
-
-.logo-purrr::before {
-	background-image: url(https://github.com/rstudio/hex-stickers/raw/master/PNG/purrr.png);
-}
-
-.logo-plumber::before {
-	background-image: url(https://github.com/rstudio/hex-stickers/raw/master/PNG/plumber.png);
-}
+	error = FALSE,
+	fig.align = "center",
+	fig.showtext = TRUE,
+	message = FALSE,
+	warning = FALSE,
+	cache = FALSE,
+	collapse = TRUE,
+	dpi = 600
+)
 ```
 
 ```{r packages, include=FALSE}
-# remotes::install_github("dill/emoGG")
-library(tidyverse)
-library(ggimage)
-library(kableExtra)
+library(readr)
+library(dplyr)
+library(ggplot2)
+library(summarytools)
+library(skimr)
+library(DataExplorer)
 ```
 
 ```{r xaringan-logo, echo=FALSE}
 library(xaringanExtra)
-use_logo(
-  image_url = "fig/slide-title/LMFTCA.png",
-  position = css_position(top = "1em", right = ".5em"),
-  width = "130px",
-  height = "130px")
 
-use_scribble() # para escrever nos slides
+use_scribble()
 use_share_again()
 use_progress_bar()
-#use_animate_all(style = c("slide_down"))
 
 use_extra_styles(
-  hover_code_line = TRUE,         #<<
-  mute_unhighlighted_code = TRUE  #<<
+  hover_code_line = TRUE,
+  mute_unhighlighted_code = TRUE
 )
-xaringanExtra::use_editable(expires = 1)
-#.can-edit[Você pode editar este título de slide]
-#.can-edit.key-firstSlideTitle[Change this title and then reload the page]
-use_clipboard()
+
+# use_editable(expires = 1)
+# use_clipboard()
+```
+
+```{r icon, echo=FALSE}
+# remotes::install_github("dill/emoGG")
+# remotes::install_github("mitchelloharawild/icons")
+# remotes::install_github('emitanaka/anicon')
+# (icons)
+# download_fontawesome()
+# download_simple_icons()
 ```
 
 <!-- title-slide -->
-# .font120[Estatística Computacional <br> (PPGBC0030)]
+# Estatística Computacional com R <br> (PPGBC/UFPA e PPGCTIF/UFOPA)
 
-## `r anicon::faa("pagelines", animate="horizontal", colour="green")` .font90[R markdown: Relatórios Dinâmicos] `r anicon::faa("pagelines", animate="horizontal", colour="green")`
-<br>
+## ᨒ <br> `r anicon::faa("pagelines", animate="horizontal", colour="green")` .font80[Relatórios Dinâmicos com R]`r anicon::faa("pagelines", animate="horizontal", colour="green")`
+###### .font80[(Pacote: Rmarkdown)]
 
-#### **Prof. Dr. Deivison Venicio Souza**
-##### Universidade Federal do Pará (UFPA) 
+##### 〰〰〰〰〰〰🌱〰〰〰〰〰〰
+##### ᨒ
+##### .font120[**Prof. Dr. Deivison Venicio Souza**]
+##### Universidade Federal do Pará (UFPA)
 ##### Faculdade de Engenharia Florestal
+##### Laboratório de Manejo Florestal, Tecnologias e Comunidades Amazônicas
 ##### E-mail: deivisonvs@ufpa.br
 <br>
-##### 1ª versão: 19/novembro/2022 <br> (Atualizado em: `r format(Sys.Date(),"%d/%B/%Y")`)
+##### 1ª versão: 14/outubro/2022 <br> (Atualizado em: `r format(Sys.Date(),"%d/%B/%Y")`)
 
 ---
+
 layout: true
-class: with-logo logo-ufpa
+class: with-logo logo-lmftca-fixed
 <div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional (PPGBC0030)</div3>/ <div2>Módulo 4 - R markdown: Relatórios Dinâmicos</div2> </div>
+<div class="my-footer">
+<span>
+Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
+&emsp;&emsp;
+<div2>Estatística Computacional com R</div2>
+&bull;
+<div3>Relatórios Dinâmicos com R (Módulo 4)</div3>
+&bull;
+<div4>Rmarkdown</div4>
+</span>
+</div>
 
 ---
 
@@ -236,9 +234,8 @@ knitr::include_graphics('https://bookdown.org/yihui/rmarkdown-cookbook/images/co
 ---
 
 layout: false
-name: term
-class: inverse, top, right
-background-image: url(fig/slide-title/secao.png)
+class: inverse, middle, center
+background-image: url(../assets/capa/sec.png)
 background-size: cover
 
 <br><br><br>
@@ -254,10 +251,21 @@ background-size: cover
 
 <!-- Slide XX -->
 ---
+
 layout: true
-class: with-logo logo-ufpa
+class: with-logo logo-lmftca-fixed
 <div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional (PPGBC0030)</div3>/ <div2>Módulo 4 - R markdown: Relatórios Dinâmicos </div2> </div>
+<div class="my-footer">
+<span>
+Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
+&emsp;&emsp;
+<div2>Estatística Computacional com R</div2>
+&bull;
+<div3>Relatórios Dinâmicos com R (Módulo 4)</div3>
+&bull;
+<div4>Rmarkdown</div4>
+</span>
+</div>
 
 ---
 name: mot
@@ -524,9 +532,8 @@ name: emj
 ---
 
 layout: false
-name: term
-class: inverse, top, right
-background-image: url(fig/slide-title/secao.png)
+class: inverse, middle, center
+background-image: url(../assets/capa/sec.png)
 background-size: cover
 
 <br><br><br>
@@ -542,10 +549,21 @@ background-size: cover
 
 <!-- Slide XX -->
 ---
+
 layout: true
-class: with-logo logo-ufpa
+class: with-logo logo-lmftca-fixed
 <div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional (PPGBC0030)</div3>/ <div2>Módulo 4 - R markdown: Relatórios Dinâmicos </div2> </div>
+<div class="my-footer">
+<span>
+Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
+&emsp;&emsp;
+<div2>Estatística Computacional com R</div2>
+&bull;
+<div3>Relatórios Dinâmicos com R (Módulo 4)</div3>
+&bull;
+<div4>Rmarkdown</div4>
+</span>
+</div>
 
 ---
 name: oq
@@ -586,7 +604,7 @@ File > New File > R Markdown (Extensão: .red[`.Rmd`])
 
 .pull-right-2[
 ```{r echo=FALSE, out.width='90%', fig.align='center', fig.cap='', dpi=600}
-knitr::include_graphics("fig/part6/rmark.png")
+knitr::include_graphics("fig/rmark.png")
 ```
 ]
 ---
@@ -696,7 +714,7 @@ name: chunk
 <br>
 
 ```{r echo=FALSE, out.width='90%', fig.align='center', fig.cap='', dpi=600}
-knitr::include_graphics("fig/part6/chunk.png")
+knitr::include_graphics("fig/chunk.png")
 ```
 
 ---
@@ -833,14 +851,35 @@ name: ap
 
 <!-- Slide XX -->
 ---
+
 layout: true
-class: with-logo logo-ufpa
+class: with-logo logo-lmftca-fixed
 <div class="my-header"></div>
-<div class="my-footer"><span>Prof. Dr. Deivison Venicio Souza (E-mail: deivisonvs@ufpa.br)&emsp;&emsp;&emsp;&emsp;&emsp; <div3>Estatística Computacional (PPGBC0030)</div3>/ <div2>Módulo 4 - R markdown: Relatórios Dinâmicos</div2> </div>
+<div class="my-footer">
+<span>
+Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
+&emsp;&emsp;
+<div2>Estatística Computacional com R</div2>
+&bull;
+<div3>Relatórios Dinâmicos com R (Módulo 4)</div3>
+&bull;
+<div4>Rmarkdown</div4>
+</span>
+</div>
 
 <!--Slide XX -->
 ---
 layout: false
-class: inverse, top, right
-background-image: url(fig/slide-title/end.png)
+class: inverse, middle, center
+background-image: url(../assets/capa/sec.png)
 background-size: cover
+
+## .font200[Obrigado!]
+
+```{r, echo=FALSE, out.width='20%', fig.align='center', fig.cap=''}
+knitr::include_graphics('../assets/logos/LMFTCA.png')
+```
+
+👨🏻‍👩🏻‍👦🏻‍👦🏻 [@lmftca_ufpa](https://www.instagram.com/lmftca_ufpa/)
+
+🌎 [https://www.lmftca.com.br/](https://www.lmftca.com.br/)
