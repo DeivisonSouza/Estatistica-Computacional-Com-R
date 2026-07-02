@@ -123,24 +123,53 @@ Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
 ---
 
 ## Objetivos
-<br><br>
-Ao final desta aula (.blue[Análise Exploratória de Dados]) espera-se que o discente seja capaz de...
 
-* Recordar terminologias e conceitos básicos de estatística;
-* Aprender a realizar uma análise exploratória de dados usando a linguagem R.
+<br><br>
+
+Ao final desta aula (.blue[Análise Exploratória de Dados]), espera-se que o discente seja capaz de:
+
+- Compreender os fundamentos da **Análise Exploratória de Dados (AED)**;
+- Explorar e interpretar conjuntos de dados **Iris Flower** utilizando a linguagem **R**;
+- Produzir estatísticas descritivas, gráficos exploratórios e relatórios automatizados; e
+- Utilizar os pacotes **summarytools** e **DataExplorer** para apoiar a exploração inicial dos dados.
 
 ---
 
 ## Conteúdo
 
-.pull-right-2[
-.pull-down[
-**AED - Iris Flower**
+<br>
 
-[1 - AED: Iris Flower](#iris)
+.pull-left[
+.font90[
+[1. Introdução à Análise Exploratória de Dados](#iris)
+  - Conceitos
+  - Objetivos
+  - Fluxo de trabalho
 
-[2 - Atividade prática](#ap)
+[2. Análise Exploratória com o conjunto Iris](#iris)
+  - Importação e inspeção
+  - Estatísticas descritivas
+  - Visualização de dados
 
+]
+]
+
+.pull-right[
+.font90[
+
+[3. Automatizando a AED com summarytools](#iris)
+  - Tabelas de frequências
+  - Estatísticas descritivas
+  - Relatórios automatizados
+
+[4. Automatizando a AED com DataExplorer](#iris)
+  - Inspeção dos dados
+  - Valores ausentes
+  - Variáveis categóricas
+  - Correlação
+  - Relatórios automatizados
+
+[5. Atividade prática](#iris)
 ]
 ]
 
@@ -1536,7 +1565,8 @@ name: create_report
 
 ```{r create_report, echo=TRUE, eval=FALSE}
 data |> 
-  create_report()
+  create_report(output_file = "Relatorio.html",
+                output_dir = "report")
 ```
 
 <br>
@@ -1562,6 +1592,38 @@ name: ap
 - **Grupo 4**: [Seeds](https://archive.ics.uci.edu/ml/datasets/seeds) - (Medidas de propriedades geométricas de grãos pertencentes a três diferentes variedades de trigo.)
 - **Grupo 5**: [Car Evaluation](https://archive.ics.uci.edu/ml/datasets/Car+Evaluation) - (Dados de avaliação de carros baseado em 6 atributos)
 - **Grupo 6**: [Pinguins]() - (Medidas de pinguins adultos perto da Estação Palmer, Antártida (Palmer Station)) (`dados::pinguins`)
+]
+
+---
+name: boas_praticas
+## Boas práticas em AED
+
+<br>
+
+.alert2[
+💡 A qualidade de uma **Análise Exploratória de Dados (AED)** depende tanto das ferramentas utilizadas quanto da **interpretação crítica** dos resultados.
+]
+
+<br>
+
+.font95[
+✔️ **Conheça seus dados** antes de construir modelos e usar técnicas multivariadas.
+
+✔️ **Combine tabelas e gráficos** para compreender os dados.
+
+✔️ **Investigue valores ausentes** e possíveis inconsistências.
+
+✔️ **Correlação indica associação**, não relação de causa e efeito.
+
+✔️ **Ferramentas automatizam análises. A interpretação continua sendo responsabilidade do analista.**
+]
+
+<br>
+
+.center[
+.font110[
+🎯 **Uma boa AED produz conhecimento para orientar as próximas etapas da análise.**
+]
 ]
 
 <!-- Slide XX -->
