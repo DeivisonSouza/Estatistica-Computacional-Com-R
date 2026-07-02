@@ -91,7 +91,7 @@ use_extra_styles(
 # Estatística Computacional com R <br> (PPGBC/UFPA e PPGCTIF/UFOPA)
 
 ## ᨒ <br> `r anicon::faa("pagelines", animate="horizontal", colour="green")` .font80[Análise Exploratória de Dados no R]`r anicon::faa("pagelines", animate="horizontal", colour="green")`
-###### (Pacotes: Tidyverse, summarytools)
+###### .font80[(Pacotes: Tidyverse, summarytools e DataExplorer)]
 
 ##### 〰〰〰〰〰〰🌱〰〰〰〰〰〰
 ##### ᨒ
@@ -1218,7 +1218,6 @@ name: install_dataexplorer
 
 ```{r install_dataexplorer, eval=FALSE}
 install.packages("DataExplorer")
-
 library(DataExplorer)
 ```
 
@@ -1245,7 +1244,6 @@ name: introduce_dataexplorer
 <br>
 
 ```{r introduce_dataexplorer, echo=TRUE, eval=FALSE}
-library(DataExplorer)
 introduce(data)
 ```
 
@@ -1257,14 +1255,11 @@ name: plot_intro
 
 .pull-left-4[
 
-.font90[
-.alert2[
+.alert[
 💡 A função `plot_intro()` apresenta, em um único painel, informações sobre observações, variáveis, tipos de dados e valores ausentes.
-]
 ]
 
 ```{r plot_intro, echo=TRUE, eval=FALSE}
-library(DataExplorer)
 plot_intro(data)
 ```
 
@@ -1273,7 +1268,6 @@ plot_intro(data)
 .pull-right-4[
 
 ```{r ref.label="plot_intro", echo=FALSE, eval=TRUE, fig.align='center', out.width='100%'}
-
 plot_intro(data)
 ```
 
@@ -1285,44 +1279,270 @@ name: plot_missing
 
 <br>
 
-.pull-left-4[
-
-.font90[
-.alert2[
-💡 A função `plot_missing()` resume visualmente a quantidade e a proporção de valores ausentes em cada variável do conjunto de dados.
-]
+.alert[
+- A função `plot_missing()` resume visualmente os **valores ausentes** de cada variável.
 ]
 
 ```{r plot_missing, echo=TRUE, eval=FALSE}
-# Insere valores faltantes
-data2 <-
-  data |>
+
+data |>
   mutate(
     Sepal_Length = replace(Sepal_Length, c(5, 18, 42), NA),
     Species = replace(Species, c(10, 35), NA)
-  )
-
-plot_missing(data2)
+  ) |>
+  plot_missing()
 
 ```
 
+<br>
+
+.alert2[
+💡 Valores ausentes foram inseridos artificialmente para ilustrar a função.
+]
+
+---
+name: plot_missing_result
+## Identificando valores ausentes
+
+<br>
+
+.pull-left-4[
+
+.alert[
+🔎 **O que observar?**
+
+- Existem muitas observações com **valores ausentes**?
+- **Quais variáveis** são mais afetadas?
+- É necessário **tratar os valores ausentes** antes da análise?
+]
+]
+
+.pull-right-4[
+
+```{r ref.label="plot_missing", echo=FALSE, eval=TRUE, fig.align='center', out.width='90%'}
+
+data |>
+  mutate(
+    Sepal_Length = replace(Sepal_Length, c(5, 18, 42), NA),
+    Species = replace(Species, c(10, 35), NA)
+  ) |>
+  plot_missing()
+
+```
+
+]
+
+---
+name: plot_bar
+## Distribuição das variáveis categóricas
+
+<br>
+
+.alert[
+A função .green[**plot_bar()**] produz gráficos de barras para as **variáveis categóricas**.
+]
+
+<br>
+
+```{r plot_bar, echo=TRUE, eval=FALSE}
+data |>
+  plot_bar()
+```
+
+<br>
+
+.alert2[
+💡 Um gráfico é gerado para cada **variável categórica** do conjunto de dados.
+]
+
+---
+name: plot_bar_result
+## Distribuição das variáveis categóricas
+
+<br>
+
+.pull-left-4[
+
+.alert[
+🔎 **O que observar?**
+
+- As classes estão **balanceadas**?
+- Existem **categorias raras**?
+- Há possíveis **inconsistências** nas categorias?
+]
 
 ]
 
 .pull-right-4[
 
-```{r ref.label="plot_missing", echo=FALSE, eval=TRUE, fig.align='center', out.width='100%'}
-data2 <-
-  data |>
-  mutate(
-    Sepal_Length = replace(Sepal_Length, c(5, 18, 42), NA),
-    Species = replace(Species, c(10, 35), NA)
-  )
-
-plot_missing(data2)
-
+```{r ref.label="plot_bar", echo=FALSE, eval=TRUE, fig.align='center', out.width='90%'}
+plot_bar(data)
 ```
 
+]
+
+---
+name: plot_correlation
+## Correlação entre variáveis
+
+<br>
+
+.lert[
+- A função .green[**plot_correlation()**] calcula e representa graficamente a **correlação** entre as variáveis numéricas.
+]
+
+<br>
+
+```{r plot_correlation, echo=TRUE, eval=FALSE}
+data |>
+  select(where(is.numeric)) |>
+  plot_correlation()
+```
+
+<br>
+
+.alert2[
+💡 Produz um **mapa de calor** (heatmap) da **correlação de Pearson** entre as variáveis numéricas.
+]
+
+---
+name: plot_correlation_result
+## Correlação entre variáveis
+
+<br>
+
+.pull-left-4[
+
+.font80[
+.alert[
+🔎 **O que observar?**
+
+- Existem variáveis com **forte associação linear**?
+- As associações são **positivas** ou **negativas**?
+- Quais pares apresentam os **maiores coeficientes de correlação**?
+
+📌 **Lembrar (Pearson)**
+- O sinal (+ ou −) indica a direção da associação linear.
+- O valor absoluto de r (|r|) indica a força da associação linear.
+- Quanto mais próximo de ±1, mais forte é a associação linear.
+- A significância estatística da correlação pode ser avaliada pelo teste t.
+]
+]
+
+]
+
+.pull-right-4[
+
+```{r ref.label="plot_correlation", echo=FALSE, eval=TRUE, fig.align='center', out.width='90%'}
+data |>
+  select(where(is.numeric)) |>
+  plot_correlation()
+```
+
+]
+
+---
+name: correlation_causality
+## Correlação ≠ Causalidade
+
+<br>
+
+.alert[
+- A correlação mede a **intensidade e a direção** associação linear, não a relação de **causa e efeito**.
+]
+
+<br>
+
+.center[
+.font120[
+**Associação** ≠ **Causa e efeito**
+]
+]
+
+.pull-left-13[
+
+.font90[
+### Correlação
+
+- As variáveis **variam juntas**.
+- Pode ser **positiva** ou **negativa**.
+- Não explica **por que** isso acontece.
+]
+
+]
+
+.pull-right-13[
+
+.font90[
+### Causalidade
+
+- Alterações em uma variável **provocam mudanças** na outra.
+- Requer evidências adicionais, como experimentos ou estudos bem controlados.
+]
+
+]
+
+---
+name: correlation_causality_iris
+## Correlação ≠ Causalidade
+
+<br>
+
+.pull-left[
+
+.alert[
+### Exemplo: conjunto **Iris**
+
+As variáveis **Petal.Length** e **Petal.Width** apresentam forte correlação positiva (0,96).
+]
+
+]
+
+.pull-right[
+
+.alert[
+### Pergunta
+
+O aumento do **comprimento da pétala** causa o aumento da **largura da pétala**?
+]
+
+]
+
+<br>
+
+.center[
+.font120[
+❌ **Não necessariamente!**
+]
+]
+
+<br>
+
+.alert2[
+💡 A forte correlação provavelmente decorre do fato de que ambas as variáveis são influenciadas por **fatores biológicos comuns**, e **não porque uma variável causa alterações na outra**.
+]
+
+---
+name: create_report
+## Relatório exploratório automatizado
+
+<br>
+
+.alert[
+- A função .green[**create_report()**] gera automaticamente um **relatório HTML** contendo diversas análises exploratórias do conjunto de dados.
+]
+
+<br>
+
+```{r create_report, echo=TRUE, eval=FALSE}
+data |> 
+  create_report()
+```
+
+<br>
+
+.alert2[
+💡 O relatório reúne tabelas, gráficos e estatísticas em um único documento, facilitando a inspeção inicial dos dados.
 ]
 
 ---
@@ -1330,7 +1550,7 @@ name: ap
 ## Atividade Prática
 
 .font90[
-- Cada grupo (até 4 pessoas) deverá criar um Projeto (.Rproj) e desenvolver uma AED. Inicialmente, explore os pacotes estudados (**readr**, **dplyr**, **ggplot2**, **summarytools**, etc.). Fique a vontade para explorar outras bibliotecas especializadas em AED, como os Pacotes **DataExplorer**, **GGally**, **SmartEDA**, **psych**.
+- Cada grupo (até 4 pessoas) deverá criar um Projeto (.Rproj) e desenvolver uma AED. Inicialmente, explore os pacotes estudados do **Tidyverse** (**readr**, **dplyr**, **ggplot2**, etc.). Além disso, explore outras bibliotecas especializadas em AED, como os Pacotes **summarytools**, **DataExplorer**, **GGally**, **SmartEDA**, **psych**.
 ]
 
 **As bases de dados são as seguintes:**
@@ -1343,7 +1563,6 @@ name: ap
 - **Grupo 5**: [Car Evaluation](https://archive.ics.uci.edu/ml/datasets/Car+Evaluation) - (Dados de avaliação de carros baseado em 6 atributos)
 - **Grupo 6**: [Pinguins]() - (Medidas de pinguins adultos perto da Estação Palmer, Antártida (Palmer Station)) (`dados::pinguins`)
 ]
-
 
 <!-- Slide XX -->
 ---
