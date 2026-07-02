@@ -60,6 +60,7 @@ R** estão disponibilizados a seguir.
 | Slides/04-readR-Im(Ex)portacao-Dados/04-Importacao-Dados.html | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/04-readR-Im(Ex)portacao-Dados/04-Importacao-Dados.html> |
 | Slides/05-dplyr-Manipulacao-Dados/05-Manipulacao-Dados.html | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/05-dplyr-Manipulacao-Dados/05-Manipulacao-Dados.html> |
 | Slides/06-ggplot2-Visualizacao-Dados/06-Visualizacao-Dados.html | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/06-ggplot2-Visualizacao-Dados/06-Visualizacao-Dados.html> |
+| Slides/07-AED/07-AED.html | <https://deivisonsouza.github.io/Estatistica-Computacional-Com-R/Slides/07-AED/07-AED.html> |
 
 # Desafios
 
