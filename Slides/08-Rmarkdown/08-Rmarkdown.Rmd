@@ -879,6 +879,56 @@ name: emj
 ]
 
 ---
+name: resumo_markdown
+## Markdown: Resumo da Sintaxe
+
+.pull-left-4[
+.font80[
+### Estrutura
+
+| **Função** | **Sintaxe** |
+|:-----------|:------------|
+| Título | `# Título` |
+| Seção | `## Seção` |
+| Parágrafo | Linha em branco |
+| Quebra de linha | `<br>` |
+
+### Formatação
+
+| **Função** | **Sintaxe** |
+|:-----------|:------------|
+| Itálico | `*texto*` |
+| Negrito | `**texto**` |
+| Subscrito | `H~2~O` |
+| Sobrescrito | `m^2^` |
+]
+]
+
+.pull-right-4[
+.font80[
+### Listas
+
+| **Função** | **Sintaxe** |
+|:-----------|:------------|
+| Ordenada | `1. Item` |
+| Não ordenada | `- Item` |
+
+### Outros
+
+| **Função** | **Sintaxe** |
+|:-----------|:------------|
+| Link | `[Texto](destino)` |
+| Imagem | `![Texto](arquivo)` |
+| Tabela | <code>&#124; Coluna &#124; Valor &#124;</code> |
+]
+
+.alert[
+💡 O próximo passo é integrar Markdown e código R com R Markdown.
+]
+
+]
+
+---
 
 layout: false
 class: inverse, middle, center
