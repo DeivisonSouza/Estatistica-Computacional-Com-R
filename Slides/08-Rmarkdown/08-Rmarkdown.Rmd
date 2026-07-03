@@ -91,7 +91,7 @@ use_extra_styles(
 # Estatística Computacional com R <br> (PPGBC/UFPA e PPGCTIF/UFOPA)
 
 ## ᨒ <br> `r anicon::faa("pagelines", animate="horizontal", colour="green")` .font80[Relatórios Dinâmicos com R]`r anicon::faa("pagelines", animate="horizontal", colour="green")`
-###### .font80[(Pacote: Rmarkdown)]
+###### .font80[(Markdown e Rmarkdown)]
 
 ##### 〰〰〰〰〰〰🌱〰〰〰〰〰〰
 ##### ᨒ
@@ -240,7 +240,7 @@ background-size: cover
 
 <br><br><br>
 
-.right[.font150[**.green[Módulo 4] <br> R markdown: Relatórios Dinâmicos**]]
+.right[.font150[**.green[Módulo 4] <br> Relatórios Dinâmicos com R**]]
 
 <br><br>
 
@@ -263,29 +263,131 @@ Prof. Dr. Deivison Venicio Souza (deivisonvs@ufpa.br)
 &bull;
 <div3>Relatórios Dinâmicos com R (Módulo 4)</div3>
 &bull;
-<div4>Rmarkdown</div4>
+<div4>Markdown: Linguagem de Marcação</div4>
 </span>
 </div>
 
 ---
-name: mot
-## R markdown
+name: porque_markdown
+## Por que utilizar uma linguagem de marcação?
 
-.shadow3[
-### **Motivação**
+<br>
 
-Transformar análises de dados em documentos, relatórios, apresentações e dashboards de alta qualidade (estático ou dinâmico). Também permite criar websites, construir livros, vignettes, etc.
+**🤔 Em qual documento a estrutura do texto está explicitamente indicada para o computador?**
+
+.pull-right-15[
+.pull-left[
+
+.center[
+**Documento A**
 ]
 
-<br>**Algumas da possibilidade:**
+.content-box-purple[
 
-.font80[
-- 1) **Documentos**: Um único arquivo .magenta[R Markdown] (.Rmd) pode ser renderizado para diversos formatos (html, pdf, word, etc.);
-- 2) **Documentos interativos**: É possível combinar o .magenta[R Markdown] com htmlwidgets ou Shiny para criar documentos interativos;
-- 3) **Dashboards**: .magenta[R Markdown] + flexdashboard para construção de dashboards;
-- 4) **Apresentações**: Construa apresentações elegantes com auxílio do .magenta[R Markdown];
-- 5) **Livros**: .magenta[R Markdown] + bookdown para criar livros; ([Análises Ecológicas no R](https://analises-ecologicas.com/); [Bookdown](https://bookdown.org/yihui/bookdown/))
-- 6) **Websites**: O .magenta[R Markdown] facilita a criação de páginas web diretamente de arquivos .Rmd; (Páginas pessoais, blogs, projetos,...) ([Site rmarkdown](https://rmarkdown.rstudio.com/))
+Relatório de Biomassa
+
+Introdução
+
+A biomassa é um importante indicador ecológico.
+
+Métodos
+
+Foram avaliadas 120 árvores.
+
+Resultados
+
+]
+]
+
+.pull-right[
+
+.center[
+**Documento B**
+]
+
+.content-box-green[
+
+<span style="color:#d95f02;font-weight:bold;">#</span> Relatório de Biomassa
+
+<span style="color:#d95f02;font-weight:bold;">##</span> Introdução
+
+A biomassa é um importante indicador ecológico.
+
+<span style="color:#d95f02;font-weight:bold;">##</span> Métodos
+
+Foram avaliadas 120 árvores.
+
+<span style="color:#d95f02;font-weight:bold;">##</span> Resultados
+
+]
+]
+]
+
+---
+name: marcacao
+## O que muda entre os dois documentos?
+
+<br>
+
+.font95[
+Os dois documentos possuem exatamente o mesmo conteúdo.
+]
+
+<br>
+
+.center[
+.font120[
+**Introdução**
+]
+]
+
+.center[
+.font120[
+⬇
+]
+]
+
+.center[
+.font120[
+.orange[`## Introdução`]
+]
+]
+
+<br>
+
+.font95[
+- O símbolo .orange[`##`] não faz parte do título.
+- Ele é uma **marcação** que informa ao computador que aquele texto representa um **título de seção**.
+]
+
+.alert[
+💡 Uma **linguagem de marcação** informa ao computador a **estrutura do documento**.
+]
+
+---
+name: markdown
+## O que é Markdown?
+
+<br>
+
+.font95[
+**Markdown** é uma **linguagem de marcação leve** que utiliza **símbolos** simples para **descrever a estrutura** de um documento.
+]
+
+<br>
+
+.shadow3[
+.font95[
+- **Leve:** utiliza uma sintaxe simples e fácil de escrever;
+- **Legível:** o texto permanece compreensível mesmo sem formatação;
+- **Portável:** pode ser convertido para diferentes formatos de saída.
+]
+]
+
+<br>
+
+.alert[
+💡 Aprender **Markdown** é o primeiro passo para utilizar o **R Markdown**.
 ]
 
 ---
@@ -308,56 +410,136 @@ name: mark
 ---
 name: sb
 ## Markdown: Sintaxe básica
+
 <br>
 
-.shadow3[
-### **Markdown: .black[Sintaxe]**
-- Possui uma sintaxe simples, legível e discreta;
-- A sintaxe baseia-se, na maioria dos casos, em caracteres não-alfabéticos. Por exemplo, `#, ![](), *`.
-- Esses caracteres são usados para formatar textos: níveis de título, negrito, inserção de imagens e links, e entre outros.
+O Markdown utiliza **símbolos simples** para indicar a estrutura e a formatação de um documento.
+
+<br>
+
+.alert[
+.center[
+<span class="black"><code>&#35;</code></span>
+&nbsp;&nbsp;
+<span class="black"><code>&#42;</code></span>
+&nbsp;&nbsp;
+<span class="black"><code>&#42;&#42;</code></span>
+&nbsp;&nbsp;
+<span class="black"><code>&#45;</code></span>
+&nbsp;&nbsp;
+<span class="black"><code>&#91;&#93;&#40;&#41;</code></span>
+&nbsp;&nbsp;
+<span class="black"><code>&#33;&#91;&#93;&#40;&#41;</code></span>
+]
+]
+
+<br>
+
+Cada símbolo possui uma função específica, como criar **títulos**, **listas**, **ênfase**, **links** e **imagens**.
+
+<br>
+
+.alert[
+💡 A seguir, aprenderemos cada uma dessas marcações com exemplos práticos.
 ]
 
 ---
 name: nt
 ## Markdown: Sintaxe básica
 
+<br>
+
+### 1. Títulos
+
+.pull-left-4[
+.font95[
+- Utilize o símbolo .red[`#`] antes do texto para criar um título.
+- Quanto maior o número de .red[`#`], menor o nível do título.
+]
+
+<br>
+
+.alert[
+💡 Utilize os níveis de título para organizar a hierarquia do documento.
+]
+
+]
+
+.pull-right-4[
+.center[
 .font90[
-### **1 - Níveis de Título**:
-
-- Para criar um título use .red[`#`] na frente da palavra ou frase. 
-- A quantidade de .red[`#`] corresponde ao nível do título.
-
-|     **Markdown**    |          **HTML**         | **Saída Renderizada** |
-|:---------------------:|:-------------------------:|:---------------------:|
-|    # Título nível 1   |  `<h1>Título nível 1</h1>` |     <h1>Título nível 1</h1>   |
-|   ## Título nível 2   |  `<h2>Título nível 2</h2>` |     <h2>Título nível 2</h2>    |
-|   ### Título nível 3  |  `<h3>Título nível 3</h3>` |     <h3>Título nível 3</h3>    |
+| **Markdown** | **Saída Renderizada** |
+|:------------:|:-------------:|
+| `# Título nível 1` | <h1>Título nível 1</h1> |
+| `## Título nível 2` | <h2>Título nível 2</h2> |
+| `### Título nível 3` | <h3>Título nível 3</h3> |
+]
+]
 ]
 
 ---
 name: par
 ## Markdown: Sintaxe básica
+
 <br>
-### **2 - Parágrafos**:
 
-- Para criar parágrafos use uma **linha em branco** para separar o texto.
-- Não indente os parágrafos com espaços ou tabulações. <br />
+### 2. Parágrafos
 
-|     **Markdown**    |          **HTML**         | **Saída Renderizada** |
-|:---------------------:|:-------------------------:|:---------------------:|
-|    Viva a Amazônia. <br /><br /> Majestosa floresta... |  `<p>Viva a Amazônia.</p>` <br /><br /> `<p>Majestosa floresta...</p>` |     <p>Viva a Amazônia.</p>   <p>Majestosa floresta...</p>|
+.pull-left-4[
+.font95[
+- Utilize uma **linha em branco** para separar parágrafos.
+- Não utilize espaços ou tabulações para iniciar um parágrafo.
+]
+
+<br>
+
+.alert[
+💡 Uma linha em branco indica o início de um novo parágrafo.
+]
+
+]
+
+.pull-right-4[
+.center[
+.font90[
+| **Markdown** | **Saída Renderizada** |
+|:------------:|:---------------------:|
+| `Viva a Amazônia.`<br><br>`Majestosa floresta...` | <p>Viva a Amazônia.</p><p>Majestosa floresta...</p> |
+]
+]
+]
 
 ---
 name: ql
 ## Markdown: Sintaxe básica
+
 <br>
-### **3 - Quebras de linha**:
 
-- Para criar uma quebra de linha use .red[`<br>`] (tag html), ou finalize uma linha com **dois ou mais espaços em branco à direita**.
+### 3. Quebras de linha
 
-|     **Markdown**    |          **HTML**         | **Saída Renderizada** |
-|:---------------------:|:-------------------------:|:---------------------:|
-|    Viva a Amazônia.`<br>` <br>  Majestosa floresta... |  `<p>Viva a Amazônia. <br>`<br> `Majestosa floresta...</p>` |     <p>Viva a Amazônia.<br> Majestosa floresta...</p>|
+.pull-left-13[
+.font95[
+- Utilize a tag .red[`<br>`] para inserir uma quebra de linha.
+- O texto permanece no **mesmo parágrafo**, apenas em uma nova linha.
+]
+
+<br>
+
+.alert[
+💡 Uma quebra de linha (.red[`<br>`]) não cria um novo parágrafo.
+]
+
+]
+
+.pull-right-13[
+.center[
+.font80[
+| **Markdown** | **Saída Renderizada** |
+|:------------:|:---------------------:|
+| `Viva a Amazônia.<br>Majestosa floresta...` | Viva a Amazônia.<br>Majestosa floresta... |
+]
+]
+]
 
 ---
 name: enf
@@ -584,6 +766,27 @@ install.packages("rmarkdown")
 ]
 
 <br>
+]
+
+---
+name: mot
+## R markdown
+
+.shadow3[
+### **Motivação**
+
+Transformar análises de dados em documentos, relatórios, apresentações e dashboards de alta qualidade (estático ou dinâmico). Também permite criar websites, construir livros, vignettes, etc.
+]
+
+<br>**Algumas da possibilidade:**
+
+.font80[
+- 1) **Documentos**: Um único arquivo .magenta[R Markdown] (.Rmd) pode ser renderizado para diversos formatos (html, pdf, word, etc.);
+- 2) **Documentos interativos**: É possível combinar o .magenta[R Markdown] com htmlwidgets ou Shiny para criar documentos interativos;
+- 3) **Dashboards**: .magenta[R Markdown] + flexdashboard para construção de dashboards;
+- 4) **Apresentações**: Construa apresentações elegantes com auxílio do .magenta[R Markdown];
+- 5) **Livros**: .magenta[R Markdown] + bookdown para criar livros; ([Análises Ecológicas no R](https://analises-ecologicas.com/); [Bookdown](https://bookdown.org/yihui/bookdown/))
+- 6) **Websites**: O .magenta[R Markdown] facilita a criação de páginas web diretamente de arquivos .Rmd; (Páginas pessoais, blogs, projetos,...) ([Site rmarkdown](https://rmarkdown.rstudio.com/))
 ]
 
 ---
