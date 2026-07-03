@@ -544,172 +544,339 @@ name: ql
 ---
 name: enf
 ## Markdown: Sintaxe básica
+
 <br>
-### **4 - Ênfase**:
 
+### 4. Ênfase
+
+.pull-left-4[
+.font95[
+- Utilize .red[`*texto*`] para escrever em *itálico*.
+- Utilize .red[`**texto**`] para escrever em **negrito**.
+- Utilize .red[`***texto***`] para escrever em ***negrito e itálico***.
+]
+
+<br>
+
+.alert[
+💡 Prefira utilizar **asteriscos** para manter a sintaxe mais simples e consistente.
+]
+
+]
+
+.pull-right-4[
+.center[
 .font90[
-- **Itálico**: Use .orange[1 asterisco] (.red[*]) ou sublinhado (.red[_]) antes e depois de uma palavra ou frase.
-- **Negrito**: Use .orange[2 asterisco] (.red[**]) ou sublinhado (.red[__]) antes e depois de uma palavra ou frase.
-- **Negrito-Itálico**: Use .orange[3 asterisco] ou sublinhado antes e depois de uma palavra ou frase.
-
-|              **Markdown**              |                          **HTML**                         |          **Saída Renderizada**         |
-|:--------------------------------------:|:---------------------------------------------------------:|:--------------------------------------:|
-| Esse é um texto `*Itálico*`.             | Esse é um texto `<em>Itálico</em>.`                         | Esse é um texto *Itálico*.               |
-| Esse é um texto `**Negrito**`.           | Esse é um texto `<strong>Negrito</strong>.`                 | Esse é um texto **Negrito**.           |
-| Esse é um texto `***Negrito-Itálico***`. | Esse é um texto `<em><strong>Negrito-Itálico</strong></em>.` | Esse é um texto ***Negrito-Itálico***. |
+| **Markdown** | **Saída Renderizada** |
+|:------------:|:---------------------:|
+| `*Itálico*` | *Itálico* |
+| `**Negrito**` | **Negrito** |
+| `***Negrito-Itálico***` | ***Negrito-Itálico*** |
+]
+]
 ]
 
 ---
 name: sub
 ## Markdown: Sintaxe básica
+
 <br>
-### **5 - Subscrito e sobrescrito**:
 
+### 5. Subscrito e sobrescrito
+
+.pull-left-4[
+.font95[
+- Utilize .red[`~texto~`] para escrever em **subscrito**.
+- Utilize .red[`^texto^`] para escrever em **sobrescrito**.
+]
+
+<br>
+
+.alert[
+💡 Muito utilizado para representar **fórmulas químicas** e **expressões matemáticas**.
+]
+
+]
+
+.pull-right-4[
+.center[
 .font90[
-- **Subscrito**: Use til (.red[~]) antes e depois dos caracteres.
-- **Sobrescrito**: Use circunflexo (.red[^]) antes e depois dos caracteres.
-
-| **Markdown** | **HTML** | **Saída Renderizada** |
-|:---:|:---:|:---:|
-| `H~2~O` | `H<sub>2</sub>O` | H<sub>2</sub>O |
-| `X^2^` | `X<sup>2</sup>` | X<sup>2</sup> |
+| **Markdown** | **Saída Renderizada** |
+|:------------:|:---------------------:|
+| `H~2~O` | H<sub>2</sub>O |
+| `CO~2~` | CO<sub>2</sub> |
+| `X^2^` | X<sup>2</sup> |
+| `m^3^` | m<sup>3</sup> |
+]
+]
 ]
 
 ---
 name: lo
 ## Markdown: Sintaxe básica
+
 <br>
-### **6 - Listas Ordenadas**:
 
-.font90[
-- Use **números seguidos de pontos**. 
-- A lista deve começar no **número 1**.
-- Os números não precisam estar em ordem numérica.<br><br>
+### 6. Listas ordenadas
 
-| **Markdown** | **HTML** | **Saída Renderizada** |
-|:---:|:---|:---:|
-| 1. Primeiro item  <br> 2. Segundo item<br>   3. Terceiro item | `<ol>`<br> &nbsp;&nbsp;   `<li>Primeiro item</li>`<br> &nbsp;&nbsp;   `<li>Segundo item</li>`<br>  &nbsp;&nbsp;  `<li>Terceiro item</li>`<br>  `</ol>` | 1. Primeiro item<br> 2. Segundo item<br> 3. Terceiro item |
+.pull-left-4[
+.font95[
+- Utilize **números seguidos de ponto**.
+- Recomenda-se iniciar a lista pelo número **1**.
+- O Markdown pode numerar os itens automaticamente.
+]
+
+<br>
+
+.alert[
+💡 Escrever todos os itens iniciando por .red[`1.`] permite que o Markdown numere a lista automaticamente.
+]
 
 ]
 
----
-
-## Markdown: Sintaxe básica
-<br>
-### **6 - Listas Ordenadas** (cont.):
-
-.font80[
-- Use **números seguidos de pontos**. 
-- A lista deve começar no **número 1**.
-- Os números não precisam estar em ordem numérica.<br><br>
-
-| **Markdown** | **HTML** | **Saída Renderizada** |
-|:---:|:---|:---:|
-| 1. Primeiro item  <br> 2. Segundo item<br>  3. Terceiro item<br> &nbsp;&nbsp;&nbsp; 1.  Item recuado<br> &nbsp;&nbsp;&nbsp; 2. Item recuado | `<ol>`<br> &nbsp;&nbsp;   `<li>Primeiro item</li>`<br> &nbsp;&nbsp;   `<li>Segundo item</li>`<br>  &nbsp;&nbsp;  `<li>Terceiro item`<br>  &nbsp;&nbsp;&nbsp;&nbsp; `<ol>`<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`<li>Item recuado</li>`<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `<li>Item recuado</li>`<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`</ol>` <br> &nbsp;&nbsp;&nbsp;&nbsp;`</li>` <br> `</ol>`| 1. Primeiro item<br> 2. Segundo item<br> 3. Terceiro item <br> &nbsp;&nbsp;&nbsp; 1.  Item recuado<br> &nbsp;&nbsp;&nbsp; 2. Item recuado|
+.pull-right-4[
+.center[
+.font90[
+| **Markdown** | **Saída Renderizada** |
+|:------------:|:---------------------:|
+| `1. Primeiro item`<br>`1. Segundo item`<br>`1. Terceiro item` | 1. Primeiro item<br>2. Segundo item<br>3. Terceiro item |
+]
+]
 ]
 
 ---
-
+name: lno
 ## Markdown: Sintaxe básica
+
 <br>
-### **6 - Listas Não Ordenadas**:
 
+### 7. Listas não ordenadas
+
+.pull-left-4[
+.font95[
+- Utilize o símbolo .red[`-`] antes de cada item.
+- Cada item da lista deve iniciar em uma nova linha.
+]
+
+<br>
+
+.alert[
+💡 Utilize sempre o símbolo .red[`-`] para manter um padrão de escrita.
+]
+
+]
+
+.pull-right-4[
+.center[
 .font90[
-- Use traços (.red[-]), asteriscos (.red[*]) ou sinal de mais (.red[+]) na frente dos itens da lista.
-- Recue um ou mais itens para criar uma lista aninhada.
+| **Markdown** | **Saída Renderizada** |
+|:------------:|:---------------------:|
+| `- Primeiro item`<br>`- Segundo item`<br>`- Terceiro item` | • Primeiro item<br>• Segundo item<br>• Terceiro item |
+]
+]
+]
 
-| **Markdown** | **HTML** | **Saída Renderizada** |
-|:---:|:---|:---:|
-| - Primeiro item  <br> - Segundo item<br>  - Terceiro item<br> &nbsp;&nbsp;&nbsp; -  Item recuado<br> &nbsp;&nbsp;&nbsp; - Item recuado | `<ul>`<br> &nbsp;&nbsp;   `<li>Primeiro item</li>`<br> &nbsp;&nbsp;   `<li>Segundo item</li>`<br>  &nbsp;&nbsp;  `<li>Terceiro item`<br>  &nbsp;&nbsp;&nbsp;&nbsp; `<ul>`<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`<li>Item recuado</li>`<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `<li>Item recuado</li>`<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`</ul>` <br> &nbsp;&nbsp;&nbsp;&nbsp;`</li>` <br> `</ul>`| <ul>    <li>Primeiro item</li>    <li>Segundo item</li>    <li>Terceiro item      <ul>        <li>Item recuado</li>        <li>Item recuado</li>      </ul>    </li>  </ul>|
+---
+name: lo2
+## Markdown: Sintaxe básica
 
+<br>
+
+### 8. Listas aninhadas
+
+.pull-left-4[
+.font95[
+- Utilize **recuo** para criar uma sublista.
+- Cada nível de recuo cria uma nova lista hierárquica.
+]
+
+<br>
+
+.alert[
+💡 Utilize **quatro espaços** (ou uma tabulação) antes do item para criar uma sublista.
+]
+
+]
+
+.pull-right-4[
+.center[
+.font90[
+| **Markdown** | **Saída Renderizada** |
+|:------------:|:---------------------:|
+| `1. Primeiro item`<br>`2. Segundo item`<br>`3. Terceiro item`<br>&nbsp;&nbsp;&nbsp;&nbsp;`1. Item recuado`<br>&nbsp;&nbsp;&nbsp;&nbsp;`2. Item recuado` | 1. Primeiro item<br>2. Segundo item<br>3. Terceiro item<br>&nbsp;&nbsp;&nbsp;&nbsp;1. Item recuado<br>&nbsp;&nbsp;&nbsp;&nbsp;2. Item recuado |
+]
+]
 ]
 
 ---
 name: lin
 ## Markdown: Sintaxe básica
+
 <br>
-### **7 - Inserção de Links**:
 
-- Use o comando: .magenta[`[Nome do link]`]`(URL)` para inserir um link.
-- Use o comando < .magenta[link] > para converter um URL ou endereço de e-mail rapidamente.
-<br><br>
+### 9. Inserção de links
 
-.shadow3[
-**Entrada**: .magenta[`[Análises Ecológicas no R]`]`(https://analises-ecologicas.com/)`
-
-**Saída**: [Análises Ecológicas no R](https://analises-ecologicas.com/)
-
-*****************
-
-**Entrada**: < .magenta[`https://analises-ecologicas.com/`] >
-
-**Saída**: <https://analises-ecologicas.com/>
+.pull-left-4[
+.font95[
+- Utilize a sintaxe <span class="red"><code>&#91;Texto&#93;&#40;URL&#41;</code></span> para inserir um link.
+- O texto será exibido como um **hiperlink** para o endereço informado.
 ]
 
+<br>
+
+.alert[
+💡 Prefira utilizar um **texto descritivo** em vez de exibir a URL completa.
+]
+
+]
+
+.pull-right-4[
+.center[
+.font90[
+| **Markdown** | **Saída Renderizada** |
+|:------------:|:---------------------:|
+| `[Análises Ecológicas no R](https://analises-ecologicas.com/)` | [Análises Ecológicas no R](https://analises-ecologicas.com/) |
+]
+]
+]
 
 ---
 name: img
 ## Markdown: Sintaxe básica
-<br>
-### **8 - Inserção de Imagens**:
 
-.pull-left-5[
-- Use o comando: !.magenta[[`Nome do link`]]`(URL)` para inserir uma imagem.
-- A sintaxe Markdown para imagens não permite a especificação de largura e altura.
+<br>
+
+### 10. Inserção de imagens
+
+.pull-left-4[
+.font95[
+- Utilize a sintaxe <span class="red"><code>&#33;&#91;Texto alternativo&#93;&#40;arquivo&#41;</code></span> para inserir uma imagem.
+- Prefira utilizar **caminhos relativos** para arquivos do projeto.
 ]
 
-.pull-right-5[
-.font80[
-**Entrada**: !.magenta[[`Girassol`]]`(https://cdn.britannica.com/84/73184-004-E5A450B5/Sunflower-field-Fargo-North-Dakota.jpg)` <br>
-**Saída**: ![Girassol](https://cdn.britannica.com/84/73184-004-E5A450B5/Sunflower-field-Fargo-North-Dakota.jpg){width=100px}
+<br>
+
+.alert[
+💡 O texto alternativo é exibido quando a imagem não pode ser carregada e melhora a acessibilidade do documento.
+]
+
+]
+
+.pull-right-4[
+.center[
+.font90[
+**Markdown**
+
+.red[
+`![Girassol](fig/girassol.jpg)`
+]
+
+<br>
+
+**Saída Renderizada**
+
+```{r echo=FALSE, out.width="70%"}
+knitr::include_graphics("fig/girassol.jpg")
+```
+]
 ]
 ]
 
 ---
 name: tab
 ## Markdown: Sintaxe básica
-<br>
-### **9 - Inserção de Tabelas**:
 
-- Use a **barra vertical** (.red[|]) para definir colunas e linhas.
-- Use três ou mais **hifens** (.red[`---`]) para criar o cabeçalho de cada coluna.
-- Use **dois pontos** (.red[:]) o lado dos hífens na linha do cabeçalho para alinhar texto.
+<br>
+
+### 11. Tabelas
 
 .pull-left-10[
-.center[**Entrada**:]
-```
-| Espécie🌳  | diâmetro  | altura  |
-| :--------: | :---------| -------:|
-| Mogno      | 50        | 20      |
-| Ipê        | 70        | 25      |
+.font95[
+- Utilize a barra vertical .red[`|`] para separar as colunas.
+- Utilize três ou mais hífens .red[`---`] para definir o cabeçalho.
+- Utilize dois pontos .red[`:`] para alinhar o conteúdo das colunas.
+]
+
+.center[
+**Markdown**
+]
+
+```text
+| Espécie | Diâmetro | Altura |
+|:--------|----------:|:------:|
+| Mogno   | 50        |   20   |
+| Ipê     | 70        |   25   |
 ```
 
-.font90[
-**💡Use aplicações web**: [Markdown Tables Generator](https://www.tablesgenerator.com/markdown_tables)
+<br>
+
+.alert[
+💡 Para tabelas maiores, utilize um gerador de tabelas em Markdown.
 ]
+
 ]
 
 .pull-right-10[
-.center[**Saída**:]
+.center[
+**Saída Renderizada**
+]
 
-| Espécie🌳  | diâmetro  | altura  |
-| :--------: | :---------| -------:|
-| Mogno      | 50        | 20      |
-| Ipê        | 70        | 25      |
+| Espécie | Diâmetro | Altura |
+|:--------|----------:|:------:|
+| Mogno   | 50        |   20   |
+| Ipê     | 70        |   25   |
+
+<br>
+
+.font85[
+**Markdown Tables Generator**
+
+https://www.tablesgenerator.com/markdown_tables
+]
+
 ]
 
 ---
 name: emj
-## Markdown: Sintaxe básica
+## Markdown: Recursos adicionais
+
 <br>
-### **10 - Inserção de Emoji**:
 
-- **Existem duas possibilidades:**
+### Emojis
 
-> 1) Copiar e colar o emoji:
-[emojipedia](https://emojipedia.org/) 😎
+.pull-left-4[
+.font95[
+- Emojis podem ser inseridos diretamente no texto por **cópia e cola**.
+- Alguns renderizadores também aceitam **códigos de emoji**.
+]
 
-> 2) Usar códigos de acesso de emoji: [rxaviers](https://gist.github.com/rxaviers/7360908) :sunglasses:
+<br>
+
+.alert[
+💡 Em documentos científicos, utilize emojis com moderação. Eles são mais indicados para apresentações e materiais didáticos.
+]
+
+]
+
+.pull-right-4[
+.center[
+.font90[
+| **Entrada** | **Saída** |
+|:-----------:|:---------:|
+| 😎 | 😎 |
+| `:sunglasses:` | 😎 |
+]
+]
+
+<br>
+
+.font85[
+**Recursos úteis**
+
+- 🌐 Emojipedia: https://emojipedia.org/
+- 🌐 GitHub Emoji Cheat Sheet: https://github.com/ikatyang/emoji-cheat-sheet
+]
+]
 
 ---
 
